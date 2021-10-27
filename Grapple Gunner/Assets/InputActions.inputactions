@@ -789,6 +789,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "GrappleLeft",
+                    "type": "Button",
+                    "id": "0fd7209c-c332-4611-b2ff-bfbbd2516d58",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "GrappleRight",
+                    "type": "Button",
+                    "id": "e3e145a0-277a-499e-bc6f-d43a0eabfa03",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -811,6 +827,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a680aa75-b0b4-48b7-b4d0-d95884944815",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrappleLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ceb18d78-529a-4362-ac40-5399306779b5",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrappleRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

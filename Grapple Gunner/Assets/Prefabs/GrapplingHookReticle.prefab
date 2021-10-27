@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3767792928353564027}
   - component: {fileID: 133246852860510835}
   m_Layer: 2
-  m_Name: AnchorReticle
+  m_Name: GrapplingHookReticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
