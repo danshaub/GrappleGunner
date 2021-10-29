@@ -57,7 +57,9 @@ public class PlayerManager : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Movement();
+        if(continuousMoveEnabled || !grounded){
+            Movement();
+        }
     }
 
     // Update is called once per frame

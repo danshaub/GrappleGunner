@@ -385,11 +385,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1712295747853222614, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
       propertyPath: damping
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712295747853222614, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
+      propertyPath: massScale
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1712295747853222614, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
+      propertyPath: maxDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712295747853222614, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
+      propertyPath: minDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712295747853222614, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
       propertyPath: springForce
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1712295747853222614, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
       propertyPath: grappleReference
@@ -542,14 +554,6 @@ PrefabInstance:
     - target: {fileID: 5622675951407237565, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5622675951407237566, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
-      propertyPath: jumpForce
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 5622675951407237566, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
-      propertyPath: moveSpeed
-      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 5622675951407237566, guid: b6204ca41a9843f4c9a28f63c06f496f, type: 3}
       propertyPath: controller
@@ -2104,9 +2108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springForce: 30
-  damping: 5
-  massScale: 3
+  springForce: 15
+  damping: 20
+  massScale: 5
+  maxDistance: 0.1
+  minDistance: 0.1
   gunTip: {fileID: 1235605403}
   player: {fileID: 22593138}
   grappleReference: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}

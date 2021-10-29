@@ -10,6 +10,9 @@ public class GrapplingGun : MonoBehaviour
     public float springForce = 4.5f;
     public float damping = 7f;
     public float massScale = 4.5f;
+
+    public float maxDistance = 0.25f;
+    public float minDistance = 0.1f;
     private LineRenderer lr;
     private Vector3 grapplePoint;
     public Transform gunTip, player;
@@ -38,8 +41,8 @@ public class GrapplingGun : MonoBehaviour
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
             // The distance the grapple will try to keep from grapple point.
-            joint.maxDistance = distanceFromPoint * 0.8f;
-            joint.minDistance = distanceFromPoint * 0.25f;
+            joint.maxDistance = maxDistance;
+            joint.minDistance = minDistance;
 
             joint.spring = springForce;
             joint.damper = damping;

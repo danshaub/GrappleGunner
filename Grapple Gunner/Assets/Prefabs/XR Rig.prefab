@@ -221,6 +221,8 @@ MonoBehaviour:
   springForce: 10
   damping: 2
   massScale: 3
+  maxDistance: 0.25
+  minDistance: 0.1
   gunTip: {fileID: 7303344300209777605}
   player: {fileID: 5622675951407237442}
   grappleReference: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -1603,14 +1605,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 5622675951469532787}
   moveSpeed: 4500
-  maxSpeed: 20
+  maxSpeed: 5
   grounded: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 192
   counterMovement: 0.175
   maxSlopeAngle: 50
-  jumpForce: 550
+  jumpForce: 300
   continuousMoveEnabled: 1
   jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
