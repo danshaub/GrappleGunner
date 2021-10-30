@@ -15,8 +15,10 @@ public class GrapplingGun : MonoBehaviour
     public float minDistance = 0.1f;
     private LineRenderer lr;
     private Vector3 grapplePoint;
-    public Transform gunTip, player;
+    public Transform gunTip, player, anchor;
     private SpringJoint joint;
+
+    [HideInInspector] public bool grappling = false;
 
     public InputActionReference grappleReference = null;
     [SerializeField] private XRRayInteractor rayInteractor;
@@ -29,10 +31,14 @@ public class GrapplingGun : MonoBehaviour
 
     private void LateUpdate() {
         DrawRope();
+        if(grappling){
+            joint.anchor = anchor.localPosition;
+        }
     }
 
     private void StartGrapple(InputAction.CallbackContext context){
         if(rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit)){
+            grappling = true;
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
@@ -48,6 +54,8 @@ public class GrapplingGun : MonoBehaviour
             joint.damper = damping;
             joint.massScale = massScale;
 
+            joint.anchor = anchor.localPosition;
+
             lr.positionCount = 2;
         }
     }
@@ -60,6 +68,7 @@ public class GrapplingGun : MonoBehaviour
     }
 
     private void StopGrapple(InputAction.CallbackContext context){
+        grappling = false;
         lr.positionCount = 0;
         Destroy(joint);
     }

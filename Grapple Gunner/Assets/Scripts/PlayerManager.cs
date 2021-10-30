@@ -1,12 +1,20 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 // Reference: https://www.youtube.com/watch?v=XAC8U9-dTZU&ab_channel=DanisTutorials
 public class PlayerManager : MonoBehaviour
 {
     // Assigned Orientation
     public Transform orientation;
+    public Transform playerController;
+    public CapsuleCollider playerCollider;
+    public float colliderHeightOffset = .35f;
+
+    // public TrackedDevice
+
+    private float newHeight;
 
     // Player Rigidbody
     private Rigidbody rb;
@@ -22,6 +30,7 @@ public class PlayerManager : MonoBehaviour
     public float counterMovement = 0.175f;
     private float threshold = 0.01f;
     public float maxSlopeAngle = 35f;
+    public float airDampeningMultiplier = 0.25f;
 
     // Jumping
     private bool readyToJump = true;
@@ -52,11 +61,11 @@ public class PlayerManager : MonoBehaviour
         jumpReference.action.started += JumpStart;
         jumpReference.action.canceled += JumpCancel;
         moveReference.action.performed += ContinuousMove;
-        moveReference.action.canceled += ContinuousMove;
-        
+        moveReference.action.canceled += ContinuousMove;   
     }
 
     private void FixedUpdate() {
+        FollowPhysicalPlayer();
         if(continuousMoveEnabled || !grounded){
             Movement();
         }
@@ -69,6 +78,16 @@ public class PlayerManager : MonoBehaviour
         jumpReference.action.canceled -= JumpCancel;
         moveReference.action.performed -= ContinuousMove;
         moveReference.action.canceled -= ContinuousMove;
+    }
+
+    // Resets player collider to reflect the current location of the headset.
+    private void FollowPhysicalPlayer(){
+        // Player Height
+        newHeight = orientation.localPosition.y + colliderHeightOffset;
+        playerCollider.height = (newHeight >= playerCollider.radius * 2) ? newHeight : playerCollider.radius * 2;
+
+        // Reset Collider Center
+        playerCollider.center = new Vector3(orientation.localPosition.x, playerCollider.height / 2, orientation.localPosition.z);
     }
 
     private void Movement(){
@@ -100,8 +119,8 @@ public class PlayerManager : MonoBehaviour
         // Movement in air
         if (!grounded)
         {
-            multiplier = 0.5f;
-            multiplierV = 0.5f;
+            multiplier = airDampeningMultiplier;
+            multiplierV = airDampeningMultiplier;
         }
 
         //Apply forces to move player
@@ -221,15 +240,11 @@ public class PlayerManager : MonoBehaviour
     private void JumpStart(InputAction.CallbackContext context)
     {
         jumping = true;
-
-        Debug.Log("Start Jump");
     }
 
     private void JumpCancel(InputAction.CallbackContext context)
     {
         jumping = false;
-
-        Debug.Log("Stop Jump");
     }
 
     private void ContinuousMove(InputAction.CallbackContext context){
@@ -237,15 +252,11 @@ public class PlayerManager : MonoBehaviour
 
         x = input.x;
         y = input.y;
-
-        Debug.Log("X: " + x.ToString() + "  Y: " + y.ToString());
     }
 
     private void ContinuousMoveCancel(InputAction.CallbackContext context){
         x = 0;
         y = 0;
-
-        Debug.Log("X: " + x.ToString() + "  Y: " + y.ToString());
     }
 
     #endregion
