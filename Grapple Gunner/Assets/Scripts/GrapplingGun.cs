@@ -22,6 +22,7 @@ public class GrapplingGun : MonoBehaviour
 
     public InputActionReference grappleReference = null;
     [SerializeField] private XRRayInteractor rayInteractor;
+    [SerializeField] private XRInteractorReticleVisual reticleVisual;
 
     private void Awake() {
         lr = GetComponent<LineRenderer>();
@@ -57,6 +58,8 @@ public class GrapplingGun : MonoBehaviour
             joint.anchor = anchor.localPosition;
 
             lr.positionCount = 2;
+
+            reticleVisual.enabled = false;
         }
     }
 
@@ -71,5 +74,7 @@ public class GrapplingGun : MonoBehaviour
         grappling = false;
         lr.positionCount = 0;
         Destroy(joint);
+
+        reticleVisual.enabled = true;
     }
 }
