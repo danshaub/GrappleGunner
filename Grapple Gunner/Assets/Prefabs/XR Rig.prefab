@@ -223,6 +223,13 @@ MonoBehaviour:
   massScale: 5
   maxDistance: 0.1
   minDistance: 0.1
+  maxReticleDistance: 50
+  reticleScaleCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   gunTip: {fileID: 7303344300209777605}
   player: {fileID: 5622675951407237442}
   anchor: {fileID: 5622675950411661548}
@@ -1071,6 +1078,13 @@ MonoBehaviour:
   massScale: 5
   maxDistance: 0.1
   minDistance: 0.1
+  maxReticleDistance: 50
+  reticleScaleCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   gunTip: {fileID: 977460497650683160}
   player: {fileID: 5622675951407237442}
   anchor: {fileID: 5622675950066566858}
