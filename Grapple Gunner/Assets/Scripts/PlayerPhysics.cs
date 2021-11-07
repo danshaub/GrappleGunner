@@ -33,6 +33,10 @@ public class PlayerPhysics : MonoBehaviour
     public float maxSlopeAngle = 35f;
     public float airDampeningMultiplier = 0.25f;
 
+    // Projected look direction
+    Vector3 forward;
+    Vector3 right;
+
     // Jumping
     private bool readyToJump = true;
     private float jumpCooldown = 0.25f;
@@ -89,6 +93,9 @@ public class PlayerPhysics : MonoBehaviour
     }
 
     private void Movement(){
+
+        forward = new Vector3(orientation.transform.forward.x, 0, orientation.transform.forward.z).normalized;
+        right = new Vector3(orientation.transform.right.x, 0, orientation.transform.right.z).normalized;
     
         // Extra gravity
         rb.AddForce(Vector3.down * Time.deltaTime * 10);
@@ -122,8 +129,8 @@ public class PlayerPhysics : MonoBehaviour
         }
 
         //Apply forces to move player
-        rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
-        rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+        rb.AddForce(forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
+        rb.AddForce(right * x * moveSpeed * Time.deltaTime * multiplier);
     }
 
     public Vector2 FindVelRelativeToLook(){
@@ -146,11 +153,11 @@ public class PlayerPhysics : MonoBehaviour
         //Counter movement
         if (Math.Abs(mag.x) > threshold && Math.Abs(x) < 0.05f || (mag.x < -threshold && x > 0) || (mag.x > threshold && x < 0))
         {
-            rb.AddForce(moveSpeed * orientation.transform.right * Time.deltaTime * -mag.x * counterMovement);
+            rb.AddForce(moveSpeed * right * Time.deltaTime * -mag.x * counterMovement);
         }
         if (Math.Abs(mag.y) > threshold && Math.Abs(y) < 0.05f || (mag.y < -threshold && y > 0) || (mag.y > threshold && y < 0))
         {
-            rb.AddForce(moveSpeed * orientation.transform.forward * Time.deltaTime * -mag.y * counterMovement);
+            rb.AddForce(moveSpeed * forward * Time.deltaTime * -mag.y * counterMovement);
         }
 
         //Limit diagonal running. This will also cause a full stop if sliding fast and un-crouching, so not optimal.
