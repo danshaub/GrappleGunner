@@ -6,11 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class GrappleHook : MonoBehaviour
 {
-	public float rbDelay = 0.01f;
 	private bool fired = false;
 	private bool hooked = false;
+	private bool returned = true;
 
-	[SerializeField] private float travelSpeed;
+	private float travelSpeed;
+	private GrappleGun grappleGun;
+    private GrapplePoint.GrappleType lastGrappleType = GrapplePoint.GrappleType.None;
 
 	private Collider cd;
 	private Rigidbody rb;
@@ -24,52 +26,60 @@ public class GrappleHook : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-	// private void FixedUpdate() {
-	// 	if(fired && !hooked){
-	// 		rb.MovePosition(transform.position + (Vector3.forward * Time.fixedDeltaTime * travelSpeed));
-	// 	}
-	// }
-
 	void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "Player")
-        {
-			Debug.Log("hit player");
-            return;
-        }
-        
+        cd.enabled = false;
         if (other.gameObject.tag == "Hookable")
         {
-            hooked = true;
-            cd.enabled = false;
-
+			hooked = true;
 			rb.constraints = RigidbodyConstraints.FreezeAll;
 			rb.velocity = Vector3.zero;
 
 			GrapplePoint gp = other.gameObject.GetComponent<GrapplePoint>();
 			if(gp.useRaycastPosition){
-				Debug.Log(other.contacts[0].normal);
 				transform.position = other.contacts[0].point;
 				transform.rotation = Quaternion.LookRotation(-other.contacts[0].normal, Vector3.up);
 			}
 			else{
 				transform.position = gp.getGrapplePosition();
 				transform.rotation = gp.getGrappleRotation();
+
+                GrapplePoint grapplePoint = other.gameObject.GetComponent<GrapplePoint>();
+                lastGrappleType = grapplePoint.type;
+				switch (lastGrappleType)
+				{
+					case GrapplePoint.GrappleType.Red:
+						grappleGun.StartGrappleRed();
+						break;
+					case GrapplePoint.GrappleType.Green:
+						grappleGun.StartGrappleGreen();
+						break;
+					default:
+						break;
+				}
+            }
+
+			if(returned){
+                Invoke("ResetHook", .5f);
 			}
         }
         else
         {
+			lastGrappleType = GrapplePoint.GrappleType.None;
             rb.constraints = RigidbodyConstraints.None;
-			
+			rb.velocity = rb.velocity/10;
+			Invoke("ResetHook", .5f);
         }
 	}
 
-	public void SetProperties(float speed){
+	public void SetProperties(float speed, GrappleGun gun){
 		travelSpeed = speed;
+		grappleGun = gun;
 	}
 
 	public void FireHook(Vector3 pos, Quaternion rot){
 		fired = true;
-		StartCoroutine(DelayColliderActive());
+		returned = false;
+		cd.enabled = true;
 		
 
 		transform.position = pos;
@@ -79,10 +89,33 @@ public class GrappleHook : MonoBehaviour
 		rb.velocity = travelSpeed * transform.forward;
 	}
 	public void ReturnHook(){
-		cd.enabled = false;
-		fired = false;
-		hooked = false;
+		if(hooked){
+			ResetHook();
+		}
+		else{
+			returned = true;
+		}
 	}
+
+	private void ResetHook(){
+        cd.enabled = false;
+        fired = false;
+        hooked = false;
+		returned = false;
+
+        switch (lastGrappleType)
+        {
+            case GrapplePoint.GrappleType.Red:
+                grappleGun.StopGrappleRed();
+                break;
+            case GrapplePoint.GrappleType.Green:
+                grappleGun.StopGrappleGreen();
+                break;
+            default:
+                break;
+        }
+        gameObject.SetActive(false);
+    }
 
 	public bool Fired(){
 		return fired;

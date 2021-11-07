@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 // Reference: https://www.youtube.com/watch?v=XAC8U9-dTZU&ab_channel=DanisTutorials
 public class PlayerPhysics : MonoBehaviour
 {
-    public PlayerManager PlayerManager;
+    public PlayerManager playerManager;
     // Assigned Orientation
     public Transform orientation;
     public Transform playerController;
@@ -68,7 +68,7 @@ public class PlayerPhysics : MonoBehaviour
 
     private void FixedUpdate() {
         FollowPhysicalPlayer();
-        if(PlayerManager.allowMovement || !grounded){
+        if(playerManager.allowMovement || !grounded){
             Movement();
         }
     }
@@ -96,7 +96,19 @@ public class PlayerPhysics : MonoBehaviour
 
         forward = new Vector3(orientation.transform.forward.x, 0, orientation.transform.forward.z).normalized;
         right = new Vector3(orientation.transform.right.x, 0, orientation.transform.right.z).normalized;
-    
+
+        switch(playerManager.grappleState){
+            case PlayerManager.GrappleState.Red:
+                // movement handled by Grapple Gun Script
+                break;
+            case PlayerManager.GrappleState.None:
+                NonGrappleMovement();
+                break;
+        }
+    }
+
+    private void NonGrappleMovement(){  
+        rb.useGravity = true;
         // Extra gravity
         rb.AddForce(Vector3.down * Time.deltaTime * 10);
 

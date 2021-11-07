@@ -8,7 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class GrappleGun : MonoBehaviour
 {
 	[Header("Reference Objects")]
-	public PlayerManager PlayerManager;
+	public PlayerManager playerManager;
+	public Rigidbody playerRB;
 	public GrappleHook hook;
 	public Transform gunTip, player, ropePoint;
 	public GameObject dummyHook;
@@ -21,7 +22,9 @@ public class GrappleGun : MonoBehaviour
 	public float hookTravelSpeed = 40f;
 
 	[Header("Red Hook Options")]
-	public float grappleSpeed = 10f;
+	public float redGrappleSpeed = 10f;
+	public float redVelocityDamper = 1f;
+	public AnimationCurve redVelocityCurve;
 
 	[Header("Green Hook Options")]
 	public float springForce = 4.5f;
@@ -38,7 +41,6 @@ public class GrappleGun : MonoBehaviour
 	private Vector3 originalHookPosition;
 	private SpringJoint joint;
 	private Vector3 grapplePosition;
-	private GrapplePoint.GrappleType lastGrappleType;
 	[HideInInspector] public bool grappling = false;
 
 	private void Awake() {
@@ -52,7 +54,15 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	private void Start() {
-		hook.SetProperties(hookTravelSpeed);
+		hook.SetProperties(hookTravelSpeed, this);
+	}
+
+	private void Update() {
+		if(!hook.gameObject.activeInHierarchy){
+			dummyHook.SetActive(true);
+            ropeRenderer.positionCount = 0;
+            reticleVisual.SetActive(true);
+		}
 	}
 
 	private void LateUpdate() {
@@ -67,62 +77,53 @@ public class GrappleGun : MonoBehaviour
 		}
 	}
 
-	#region Start Grapple
-
-	private void StartGrapple(InputAction.CallbackContext context){
-		if(PlayerManager.allowGrapple){
-			dummyHook.SetActive(false);
-			hook.gameObject.SetActive(true);
-			hook.FireHook(dummyHook.transform.position, dummyHook.transform.rotation);
-
-            ropeRenderer.positionCount = 2;
-			// if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
-			// {
-			//     grappling = true;
-			//     grapplePosition = hit.point;
-
-			//     GrapplePoint grapplePoint = hit.transform.GetComponent<GrapplePoint>();
-			//     lastGrappleType = grapplePoint.type;
-
-			//     switch (lastGrappleType)
-			//     {
-			//         case GrapplePoint.GrappleType.Red:
-			//             StartGrappleRed();
-			//             break;
-			//         default:
-			//             StartGrappleGreen();
-			//             break;
-			//     }
-
-			//     reticleVisual.SetActive(false);
-			// }
+	private void FixedUpdate() {
+		switch(playerManager.grappleState){
+			case PlayerManager.GrappleState.Red:
+				HandleRedGrappleMovement();
+				break;
+			default:
+				break;
 		}
 	}
 
-	private void StartGrappleRed()
+	private void HandleRedGrappleMovement(){
+		playerRB.useGravity = false;
+
+		float distance = Vector3.Distance(ropePoint.position, gunTip.position);
+		float multiplier = redVelocityCurve.Evaluate(distance);
+		Vector3 targetVelocity = (ropePoint.position - gunTip.position).normalized * redGrappleSpeed * multiplier ;
+
+		float damper = multiplier >= 1 ? redVelocityDamper : 1;
+		playerRB.velocity = Vector3.Slerp(playerRB.velocity, targetVelocity, damper);
+	}
+
+	#region Start Grapple
+
+	private void StartGrapple(InputAction.CallbackContext context){
+		if(playerManager.allowGrapple){
+			grappling = true;
+
+			dummyHook.SetActive(false);
+			hook.gameObject.SetActive(true);
+            reticleVisual.SetActive(false);
+            ropeRenderer.positionCount = 2;
+
+			hook.FireHook(dummyHook.transform.position, dummyHook.transform.rotation);
+		}
+	}
+
+	public void StartGrappleRed()
 	{
-		// Debug.Log("Red Hit!");
+        Debug.Log("Start Red");
+		playerManager.allowGrapple = false;
+		playerManager.grappleState = PlayerManager.GrappleState.Red;
 	}
 
 	// TODO: Refactor this so it doesn't use the spring joint. Write propriterary joint for this.
-	private void StartGrappleGreen()
+	public void StartGrappleGreen()
 	{
-		// joint = player.gameObject.AddComponent<SpringJoint>();
-		// joint.autoConfigureConnectedAnchor = false;
-		// joint.connectedAnchor = grapplePosition;
-
-		// float distanceFromPoint = Vector3.Distance(player.position, grapplePosition);
-
-		// // The distance the grapple will try to keep from grapple point.
-		// joint.maxDistance = maxDistance;
-		// joint.minDistance = minDistance;
-
-		// joint.spring = springForce;
-		// joint.damper = damping;
-		// joint.massScale = massScale;
-
-		// joint.anchor = anchor.localPosition;
-
+        Debug.Log("Start Green");
 	}
 
 	#endregion
@@ -130,42 +131,34 @@ public class GrappleGun : MonoBehaviour
 	#region Stop Grapple
 	private void StopGrapple(InputAction.CallbackContext context)
 	{
-		grappling = false;
-
+		Debug.Log("In grapple gun Stop Grapple");
 		hook.ReturnHook();
-		hook.gameObject.SetActive(false);
-		dummyHook.SetActive(true);
-
-        // switch(lastGrappleType){
-        // 	case GrapplePoint.GrappleType.Red:
-        // 		StopGrappleRed();
-        // 		break;
-        // 	default:
-        // 		StopGrappleGreen();
-        // 		break;
-        // }
+		grappling = false;
+        reticleVisual.SetActive(true);
 
         ropeRenderer.positionCount = 0;
-		reticleVisual.SetActive(true);
 	}
 
 
-	private void StopGrappleRed(){
-		// Debug.Log("Red Stopped!");
+	public void StopGrappleRed(){
+		Debug.Log("Stop Red");
+        playerManager.allowGrapple = true;
+        playerManager.grappleState = PlayerManager.GrappleState.None;
 	}
 
-	private void StopGrappleGreen(){
-		
-		Destroy(joint);
+	public void StopGrappleGreen(){
+        Debug.Log("Stop Green");
+        playerManager.allowGrapple = true;
+        playerManager.grappleState = PlayerManager.GrappleState.None;
 	}
 
 	#endregion
 
 	private void DrawRope(){
-		// if(!joint) return;
-
-		ropeRenderer.SetPosition(0, gunTip.position);
-		ropeRenderer.SetPosition(1, ropePoint.position);
+		if(grappling){
+            ropeRenderer.SetPosition(0, gunTip.position);
+            ropeRenderer.SetPosition(1, ropePoint.position);
+		}
 	}
 
 	private void SetReticle(){
