@@ -35,32 +35,32 @@ public class GrappleHook : MonoBehaviour
 			rb.velocity = Vector3.zero;
 
 			GrapplePoint gp = other.gameObject.GetComponent<GrapplePoint>();
+			
 			if(gp.useRaycastPosition){
 				transform.position = other.contacts[0].point;
 				transform.rotation = Quaternion.LookRotation(-other.contacts[0].normal, Vector3.up);
 			}
 			else{
 				transform.position = gp.getGrapplePosition();
-				transform.rotation = gp.getGrappleRotation();
-
-                GrapplePoint grapplePoint = other.gameObject.GetComponent<GrapplePoint>();
-                lastGrappleType = grapplePoint.type;
-				switch (lastGrappleType)
-				{
-					case GrapplePoint.GrappleType.Red:
-						grappleGun.StartGrappleRed();
-						break;
-					case GrapplePoint.GrappleType.Green:
-						grappleGun.StartGrappleGreen();
-						break;
-					default:
-						break;
-				}
+				transform.rotation = gp.getGrappleRotation();                
             }
 
 			if(returned){
                 Invoke("ResetHook", .5f);
 			}
+
+            lastGrappleType = gp.type;
+            switch (lastGrappleType)
+            {
+                case GrapplePoint.GrappleType.Red:
+                    grappleGun.StartGrappleRed();
+                    break;
+                case GrapplePoint.GrappleType.Green:
+                    grappleGun.StartGrappleGreen();
+                    break;
+                default:
+                    break;
+            }
         }
         else
         {

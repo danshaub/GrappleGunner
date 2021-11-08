@@ -95,7 +95,7 @@ public class GrappleGun : MonoBehaviour
 		Vector3 targetVelocity = (ropePoint.position - gunTip.position).normalized * redGrappleSpeed * multiplier ;
 
 		float damper = multiplier >= 1 ? redVelocityDamper : 1;
-		playerRB.velocity = Vector3.Slerp(playerRB.velocity, targetVelocity, damper);
+		playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
 	}
 
 	#region Start Grapple
@@ -115,7 +115,6 @@ public class GrappleGun : MonoBehaviour
 
 	public void StartGrappleRed()
 	{
-        Debug.Log("Start Red");
 		playerManager.allowGrapple = false;
 		playerManager.grappleState = PlayerManager.GrappleState.Red;
 	}
@@ -131,7 +130,6 @@ public class GrappleGun : MonoBehaviour
 	#region Stop Grapple
 	private void StopGrapple(InputAction.CallbackContext context)
 	{
-		Debug.Log("In grapple gun Stop Grapple");
 		hook.ReturnHook();
 		grappling = false;
         reticleVisual.SetActive(true);
@@ -141,7 +139,6 @@ public class GrappleGun : MonoBehaviour
 
 
 	public void StopGrappleRed(){
-		Debug.Log("Stop Red");
         playerManager.allowGrapple = true;
         playerManager.grappleState = PlayerManager.GrappleState.None;
 	}
