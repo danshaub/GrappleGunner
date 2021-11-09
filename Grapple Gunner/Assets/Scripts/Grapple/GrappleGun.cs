@@ -27,21 +27,21 @@ public class GrappleGun : MonoBehaviour
 	public AnimationCurve redVelocityCurve;
 
 	[Header("Green Hook Options")]
-	public float springForce = 4.5f;
-	public float damping = 7f;
-	public float massScale = 4.5f;
-	public float maxDistance = 0.25f;
-	public float minDistance = 0.1f;
+	public float retractSpeed;
+	public float slackSpeed;
 
 	[Header("Reticle Options")]
+	public ReticleManager reticleManager;
+	public float disabledTransparency = 0.4f;
 	public float minReticleDistance = 5f;
 	public float maxReticleDistance = 50f;
 	public AnimationCurve reticleScaleCurve;
 
 	private Vector3 originalHookPosition;
-	private SpringJoint joint;
+	private ConfigurableJoint joint;
 	private Vector3 grapplePosition;
 	[HideInInspector] public bool grappling = false;
+	private Material reticleMaterial;
 
 	private void Awake() {
 		ropeRenderer = GetComponent<LineRenderer>();
@@ -55,6 +55,7 @@ public class GrappleGun : MonoBehaviour
 
 	private void Start() {
 		hook.SetProperties(hookTravelSpeed, this);
+        reticleMaterial = reticleVisual.GetComponent<Renderer>().material;
 	}
 
 	private void Update() {
@@ -69,9 +70,6 @@ public class GrappleGun : MonoBehaviour
 		if(hook.Fired()){
 			DrawRope();
 		}
-		// if(grappling && lastGrappleType == GrapplePoint.GrappleType.Green){
-		// 	joint.anchor = anchor.localPosition;
-		// }
 		else{
 			SetReticle();
 		}
@@ -125,6 +123,16 @@ public class GrappleGun : MonoBehaviour
         Debug.Log("Start Green");
 	}
 
+    public void StartGrappleBlue()
+    {
+        Debug.Log("Start Blue");
+    }
+
+    public void StartGrappleOrange()
+    {
+        Debug.Log("Start Orange");
+    }
+
 	#endregion
 
 	#region Stop Grapple
@@ -149,6 +157,20 @@ public class GrappleGun : MonoBehaviour
         playerManager.grappleState = PlayerManager.GrappleState.None;
 	}
 
+    public void StopGrappleBlue()
+    {
+        Debug.Log("Stop Blue");
+        playerManager.allowGrapple = true;
+        playerManager.grappleState = PlayerManager.GrappleState.None;
+    }
+
+    public void StopGrappleOrange()
+    {
+        Debug.Log("Stop Orange");
+        playerManager.allowGrapple = true;
+        playerManager.grappleState = PlayerManager.GrappleState.None;
+    }
+
 	#endregion
 
 	private void DrawRope(){
@@ -161,6 +183,29 @@ public class GrappleGun : MonoBehaviour
 	private void SetReticle(){
 		RaycastHit hit;
 		if (Physics.Raycast(gunTip.position, gunTip.forward, out hit)){
+			if(hit.transform.gameObject.tag == "Hookable"){
+				GrapplePoint.GrappleType type = hit.transform.gameObject.GetComponent<GrapplePoint>().type;
+				reticleMaterial.SetFloat("_Transparency", 1f);
+				switch(type){
+					case GrapplePoint.GrappleType.Red:
+						reticleMaterial.SetTexture("_MainTex", reticleManager.red);
+						break;
+                    case GrapplePoint.GrappleType.Green:
+                        reticleMaterial.SetTexture("_MainTex", reticleManager.green);
+                        break;
+                    case GrapplePoint.GrappleType.Blue:
+                        reticleMaterial.SetTexture("_MainTex", reticleManager.blue);
+                        break;
+                    case GrapplePoint.GrappleType.Orange:
+                        reticleMaterial.SetTexture("_MainTex", reticleManager.orange);
+                        break;
+				}
+			}
+			else{
+                reticleMaterial.SetFloat("_Transparency", disabledTransparency);
+                reticleMaterial.SetTexture("_MainTex", reticleManager.disabled);
+			}
+
 			float distanceFromPoint = Vector3.Distance(gunTip.position, hit.point);
 
 			float reticleDistance = Mathf.Clamp(distanceFromPoint, minReticleDistance, maxReticleDistance);

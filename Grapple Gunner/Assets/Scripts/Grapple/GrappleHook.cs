@@ -58,6 +58,12 @@ public class GrappleHook : MonoBehaviour
                 case GrapplePoint.GrappleType.Green:
                     grappleGun.StartGrappleGreen();
                     break;
+                case GrapplePoint.GrappleType.Blue:
+                    grappleGun.StartGrappleBlue();
+                    break;
+                case GrapplePoint.GrappleType.Orange:
+                    grappleGun.StartGrappleOrange();
+                    break;
                 default:
                     break;
             }
@@ -110,6 +116,12 @@ public class GrappleHook : MonoBehaviour
                 break;
             case GrapplePoint.GrappleType.Green:
                 grappleGun.StopGrappleGreen();
+                break;
+            case GrapplePoint.GrappleType.Blue:
+                grappleGun.StopGrappleBlue();
+                break;
+            case GrapplePoint.GrappleType.Orange:
+                grappleGun.StopGrappleOrange();
                 break;
             default:
                 break;
