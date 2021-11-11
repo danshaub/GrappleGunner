@@ -8,7 +8,8 @@ public class GrappleHook : MonoBehaviour
 {
 	private bool fired = false;
 	private bool hooked = false;
-	private bool returned = true;
+	private bool returning = true;
+	private bool retracting = false;
 
 	private float travelSpeed;
 	private GrappleGun grappleGun;
@@ -16,6 +17,9 @@ public class GrappleHook : MonoBehaviour
 
 	private Collider cd;
 	private Rigidbody rb;
+	private Transform returnTransform;
+	private float retractInterpolateValue;
+	private float snapReturnDistance = 0.5f;
 
 	void Awake()
 	{
@@ -24,6 +28,17 @@ public class GrappleHook : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
 		gameObject.SetActive(false);
+	}
+
+	private void FixedUpdate() {
+		if(retracting){
+			transform.position = Vector3.Lerp(transform.position, returnTransform.position, retractInterpolateValue);
+			transform.rotation = Quaternion.Slerp(transform.rotation, returnTransform.rotation, retractInterpolateValue);
+
+			if(Vector3.Distance(transform.position, returnTransform.position) <= snapReturnDistance){
+				FinishRetract();
+			}
+		}
 	}
 
 	void OnCollisionEnter(Collision other) {
@@ -45,10 +60,6 @@ public class GrappleHook : MonoBehaviour
 				transform.rotation = gp.getGrappleRotation();                
             }
 
-			if(returned){
-                Invoke("ResetHook", .5f);
-			}
-
             lastGrappleType = gp.type;
             switch (lastGrappleType)
             {
@@ -67,24 +78,27 @@ public class GrappleHook : MonoBehaviour
                 default:
                     break;
             }
+            if (returning)
+            {
+                ResetHook();
+            }
         }
         else
         {
-			lastGrappleType = GrapplePoint.GrappleType.None;
-            rb.constraints = RigidbodyConstraints.None;
-			rb.velocity = rb.velocity/10;
-			Invoke("ResetHook", .5f);
+			ResetHook();
         }
 	}
 
-	public void SetProperties(float speed, GrappleGun gun){
+	public void SetProperties(float speed, GrappleGun gun, Transform dummyTransform, float interpolateValue){
 		travelSpeed = speed;
 		grappleGun = gun;
+		returnTransform = dummyTransform;
+        retractInterpolateValue = interpolateValue;
 	}
 
 	public void FireHook(Vector3 pos, Quaternion rot){
 		fired = true;
-		returned = false;
+		returning = false;
 		cd.enabled = true;
 		
 
@@ -99,15 +113,14 @@ public class GrappleHook : MonoBehaviour
 			ResetHook();
 		}
 		else{
-			returned = true;
+			returning = true;
 		}
 	}
 
 	private void ResetHook(){
         cd.enabled = false;
-        fired = false;
         hooked = false;
-		returned = false;
+		returning = false;
 
         switch (lastGrappleType)
         {
@@ -126,18 +139,25 @@ public class GrappleHook : MonoBehaviour
             default:
                 break;
         }
-        gameObject.SetActive(false);
+        cd.enabled = false;
+		rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+		rb.isKinematic = true;
+		rb.detectCollisions = false;
+        retracting = true;
     }
+
+	private void FinishRetract(){
+		cd.enabled = true;
+		retracting = false;
+		fired = false;
+		rb.isKinematic = false;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+		rb.detectCollisions = true;
+
+		gameObject.SetActive(false);
+	}
 
 	public bool Fired(){
 		return fired;
-	}
-
-	private IEnumerator DelayColliderActive(){
-		if(fired){
-			yield return new WaitForSeconds(.01f);
-			cd.enabled = fired;
-		}
-
 	}
 }

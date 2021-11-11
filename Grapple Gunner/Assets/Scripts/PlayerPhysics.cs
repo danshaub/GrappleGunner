@@ -26,6 +26,7 @@ public class PlayerPhysics : MonoBehaviour
     // Movement
     public float moveSpeed = 4500;
     public float maxSpeed = 20;
+    public float coyoteTime = 3f;
     public bool grounded;
     public LayerMask whatIsGround;
     public float counterMovement = 0.175f;
@@ -71,6 +72,10 @@ public class PlayerPhysics : MonoBehaviour
         if(playerManager.allowMovement || !grounded){
             Movement();
         }
+
+        if(grounded != playerManager.grounded){
+            playerManager.grounded = grounded;
+        }
     }
 
     // Update is called once per frame
@@ -99,7 +104,7 @@ public class PlayerPhysics : MonoBehaviour
 
         switch(playerManager.grappleState){
             case PlayerManager.GrappleState.Red:
-                // movement handled by Grapple Gun Script
+                // Disable player movement completely when on red grapple
                 break;
             case PlayerManager.GrappleState.None:
                 NonGrappleMovement();
@@ -238,11 +243,10 @@ public class PlayerPhysics : MonoBehaviour
         }
 
         //Invoke ground/wall cancel, since we can't check normals with CollisionExit
-        float delay = 3f;
         if (!cancellingGrounded)
         {
             cancellingGrounded = true;
-            Invoke(nameof(StopGrounded), Time.deltaTime * delay);
+            Invoke(nameof(StopGrounded), Time.deltaTime * coyoteTime);
         }
     }
 

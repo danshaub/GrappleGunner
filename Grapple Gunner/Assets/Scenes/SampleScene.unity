@@ -6424,7 +6424,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21212
+  m_Name: pb_Mesh21240
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28528,7 +28528,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20446
+  m_Name: pb_Mesh20474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33331,7 +33331,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcca142e1f556f1479197239d934d42c, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33480,11 +33480,15 @@ MonoBehaviour:
   gunTip: {fileID: 7303344300156387287}
   player: {fileID: 5622675951488064848}
   ropePoint: {fileID: 0}
+  vrCamera: {fileID: 0}
   dummyHook: {fileID: 0}
   grappleAction: {fileID: 0}
+  reelAction: {fileID: 0}
+  slackAction: {fileID: 0}
   reticleVisual: {fileID: 0}
   rayInteractor: {fileID: 7723118044469486184}
   hookTravelSpeed: 40
+  retractInterpolateValue: 0.01
   redGrappleSpeed: 10
   redVelocityDamper: 1
   redVelocityCurve:
@@ -33493,12 +33497,22 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  springForce: 15
-  damping: 30
-  massScale: 5
-  maxDistance: 0.1
-  minDistance: 0.1
+  reelSpeed: 0
+  reelDeadZone: 0
+  minRopeLength: 0
+  forceDamperCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  slackSpeed: 0
+  limitContactDistance: 0
+  swingDamper: 0
+  groundedKickUp: 0
+  forceMode: 0
   reticleManager: {fileID: 0}
+  disabledTransparency: 0.4
   minReticleDistance: 5
   maxReticleDistance: 50
   reticleScaleCurve:
@@ -33507,6 +33521,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  reeling: 0
+  slacking: 0
   grappling: 0
 --- !u!136 &2757776424454973076
 CapsuleCollider:
@@ -35115,8 +35131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc19272f4ee0e646b8ba0becd5dbbfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightGun: {fileID: 0}
   allowGrapple: 1
   allowMovement: 1
+  grounded: 1
   grappleState: 1
 --- !u!114 &5622675951488064856
 MonoBehaviour:
@@ -35137,6 +35155,7 @@ MonoBehaviour:
   colliderHeightOffset: 0.35
   moveSpeed: 4500
   maxSpeed: 20
+  coyoteTime: 5
   grounded: 0
   whatIsGround:
     serializedVersion: 2
@@ -35394,13 +35413,17 @@ MonoBehaviour:
   gunTip: {fileID: 977460497729411338}
   player: {fileID: 5622675951488064848}
   ropePoint: {fileID: 2125107744}
+  vrCamera: {fileID: 5622675951413903969}
   dummyHook: {fileID: 780146485}
   grappleAction: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelAction: {fileID: 1679556561146902592, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  slackAction: {fileID: 4610322508894814125, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   reticleVisual: {fileID: 285262326}
   rayInteractor: {fileID: 9163903917198410869}
   hookTravelSpeed: 300
-  redGrappleSpeed: 30
-  redVelocityDamper: 0.05
+  retractInterpolateValue: 0.8
+  redGrappleSpeed: 40
+  redVelocityDamper: 0.06
   redVelocityCurve:
     serializedVersion: 2
     m_Curve:
@@ -35434,12 +35457,49 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  springForce: 15
-  damping: 30
-  massScale: 5
-  maxDistance: 0.1
-  minDistance: 0.1
+  reelSpeed: 3000
+  reelDeadZone: 0.01
+  minRopeLength: 0.25
+  forceDamperCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.66312754
+      outSlope: 0.66312754
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.07209595
+    - serializedVersion: 3
+      time: 1.0046897
+      value: 0.8091113
+      inSlope: 0.0047709555
+      outSlope: 0.0047709555
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.05684718
+    - serializedVersion: 3
+      time: 5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  slackSpeed: 0
+  limitContactDistance: 10
+  swingDamper: 0.005
+  groundedKickUp: 0
+  forceMode: 0
   reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
+  disabledTransparency: 0.4
   minReticleDistance: 5
   maxReticleDistance: 30
   reticleScaleCurve:
@@ -35466,6 +35526,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  reeling: 0
+  slacking: 0
   grappling: 0
 --- !u!114 &9163903917198410869
 MonoBehaviour:

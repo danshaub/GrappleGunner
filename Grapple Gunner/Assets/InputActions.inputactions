@@ -805,6 +805,38 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ReelLeft",
+                    "type": "Button",
+                    "id": "881bfdce-5d91-45c2-a9a8-4f3887e1afa5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ReelRight",
+                    "type": "Button",
+                    "id": "1b5915da-337e-4f70-8c24-7da75770c6f9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SlackLeft",
+                    "type": "Button",
+                    "id": "531fe063-3969-476d-9618-305f7b64cf3f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SlackRight",
+                    "type": "Button",
+                    "id": "8076a824-16ef-44b5-864f-835d03e7ab43",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -849,6 +881,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "GrappleRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d1961c1-616d-4905-9e9a-2e6cd117eafd",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SlackLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28629b22-ade9-47ed-9b44-6907b2214a9c",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SlackRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87bc670b-b699-497d-ac26-7def582a2c44",
+                    "path": "<XRController>{LeftHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1a499cd-f151-44b0-b464-5916091bb1c9",
+                    "path": "<XRController>{RightHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

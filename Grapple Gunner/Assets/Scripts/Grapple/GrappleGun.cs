@@ -11,24 +11,35 @@ public class GrappleGun : MonoBehaviour
 	public PlayerManager playerManager;
 	public Rigidbody playerRB;
 	public GrappleHook hook;
-	public Transform gunTip, player, ropePoint;
+	public Transform gunTip, player, ropePoint, vrCamera;
 	public GameObject dummyHook;
 	private LineRenderer ropeRenderer;
 	public InputActionReference grappleAction = null;
+	public InputActionReference reelAction = null;
+    public InputActionReference slackAction = null;
 	[SerializeField] private GameObject reticleVisual;
 	[SerializeField] private XRRayInteractor rayInteractor;
 
 	[Header("Hook Options")]
 	public float hookTravelSpeed = 40f;
+	public float retractInterpolateValue = .01f;
 
 	[Header("Red Hook Options")]
-	public float redGrappleSpeed = 10f;
-	public float redVelocityDamper = 1f;
+	public float redGrappleSpeed = 40f;
+	public float redVelocityDamper = 0.06f;
 	public AnimationCurve redVelocityCurve;
 
 	[Header("Green Hook Options")]
-	public float retractSpeed;
+	public float reelSpeed;
+	public float reelDeadZone;
+	public float minRopeLength;
+	public AnimationCurve forceDamperCurve;
 	public float slackSpeed;
+	public float limitContactDistance;
+	public float swingDamper;
+	public float groundedKickUp;
+	public ForceMode forceMode;
+
 
 	[Header("Reticle Options")]
 	public ReticleManager reticleManager;
@@ -39,7 +50,9 @@ public class GrappleGun : MonoBehaviour
 
 	private Vector3 originalHookPosition;
 	private ConfigurableJoint joint;
-	private Vector3 grapplePosition;
+	private float reelInput;
+	[SerializeField] private bool reeling;
+	[SerializeField] private bool slacking;
 	[HideInInspector] public bool grappling = false;
 	private Material reticleMaterial;
 
@@ -47,6 +60,8 @@ public class GrappleGun : MonoBehaviour
 		ropeRenderer = GetComponent<LineRenderer>();
 		grappleAction.action.started += StartGrapple;
 		grappleAction.action.canceled += StopGrapple;
+		slackAction.action.started += Slack;
+		slackAction.action.canceled += EndSlack;
 
 		reticleVisual.SetActive(true);
 
@@ -54,7 +69,7 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	private void Start() {
-		hook.SetProperties(hookTravelSpeed, this);
+		hook.SetProperties(hookTravelSpeed, this, dummyHook.transform, retractInterpolateValue);
         reticleMaterial = reticleVisual.GetComponent<Renderer>().material;
 	}
 
@@ -63,6 +78,11 @@ public class GrappleGun : MonoBehaviour
 			dummyHook.SetActive(true);
             ropeRenderer.positionCount = 0;
             reticleVisual.SetActive(true);
+		}
+
+		if(joint){
+			reelInput = reelAction.action.ReadValue<float>();
+			reeling = reelInput > reelDeadZone;
 		}
 	}
 
@@ -76,12 +96,11 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	private void FixedUpdate() {
-		switch(playerManager.grappleState){
-			case PlayerManager.GrappleState.Red:
-				HandleRedGrappleMovement();
-				break;
-			default:
-				break;
+		if(playerManager.grappleState == PlayerManager.GrappleState.Red){
+            HandleRedGrappleMovement();
+		}
+		else if(joint){
+            HandleGreenGrappleMovement();
 		}
 	}
 
@@ -96,10 +115,75 @@ public class GrappleGun : MonoBehaviour
 		playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
 	}
 
+	private void HandleGreenGrappleMovement(){
+        // joint.anchor = player.InverseTransformPoint(gunTip.position);
+        joint.anchor = player.InverseTransformPoint(vrCamera.position);
+
+        float distanceFromPoint = Vector3.Distance(gunTip.position, ropePoint.position);
+        SoftJointLimit limit = new SoftJointLimit();
+        limit.bounciness = 0;
+        limit.contactDistance = limitContactDistance;
+
+		if (reeling){
+			if(playerManager.grounded){
+                playerRB.AddForce(Vector3.up * groundedKickUp, forceMode);
+			}
+			float reelDistanceMultiplier = forceDamperCurve.Evaluate(distanceFromPoint);
+            Vector3 reelForce = (ropePoint.position - gunTip.position).normalized * reelSpeed * reelInput * reelDistanceMultiplier * Time.fixedDeltaTime ;
+
+			playerRB.AddForce(reelForce, forceMode);
+
+            limit.limit = Mathf.Clamp(distanceFromPoint, minRopeLength, joint.linearLimit.limit);       
+
+            joint.xMotion = ConfigurableJointMotion.Limited;
+            joint.yMotion = ConfigurableJointMotion.Limited;
+            joint.zMotion = ConfigurableJointMotion.Limited;
+		}
+        else if (playerManager.grounded)
+        {
+            limit.limit = distanceFromPoint;
+
+            joint.xMotion = ConfigurableJointMotion.Free;
+            joint.yMotion = ConfigurableJointMotion.Free;
+            joint.zMotion = ConfigurableJointMotion.Free;
+        }
+		else if(slacking){
+            // allow auto retracting, but not slacking
+            limit.limit = joint.linearLimit.limit + (slackSpeed * Time.deltaTime);
+
+            joint.xMotion = ConfigurableJointMotion.Limited;
+            joint.yMotion = ConfigurableJointMotion.Limited;
+            joint.zMotion = ConfigurableJointMotion.Limited;
+
+            playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, Vector3.zero, swingDamper);
+		}
+		else{
+			// allow auto retracting, but not slacking
+            limit.limit = Mathf.Clamp(distanceFromPoint, minRopeLength, joint.linearLimit.limit);
+
+            joint.xMotion = ConfigurableJointMotion.Limited;
+            joint.yMotion = ConfigurableJointMotion.Limited;
+            joint.zMotion = ConfigurableJointMotion.Limited;
+
+			playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, Vector3.zero, swingDamper);
+		}
+
+        joint.linearLimit = limit;
+	}
+
+    private void Slack(InputAction.CallbackContext context)
+    {
+		Debug.Log("Started giving slack");
+    }
+    private void EndSlack(InputAction.CallbackContext context)
+    {
+		Debug.Log("Ended giving slack");
+    }
+
 	#region Start Grapple
 
 	private void StartGrapple(InputAction.CallbackContext context){
-		if(playerManager.allowGrapple){
+		if(playerManager.allowGrapple && !hook.Fired()){
 			grappling = true;
 
 			dummyHook.SetActive(false);
@@ -120,7 +204,19 @@ public class GrappleGun : MonoBehaviour
 	// TODO: Refactor this so it doesn't use the spring joint. Write propriterary joint for this.
 	public void StartGrappleGreen()
 	{
-        Debug.Log("Start Green");
+        joint = player.gameObject.AddComponent<ConfigurableJoint>();
+		joint.autoConfigureConnectedAnchor = false;
+		// joint.anchor = player.InverseTransformPoint(gunTip.position);
+        joint.anchor = player.InverseTransformPoint(vrCamera.position);
+		joint.connectedAnchor = ropePoint.position;
+
+		float distanceFromPoint = Vector3.Distance(gunTip.position, ropePoint.position);
+
+		SoftJointLimit limit = new SoftJointLimit();
+		limit.limit = distanceFromPoint;
+		limit.bounciness = 0;
+        limit.contactDistance = limitContactDistance;
+		joint.linearLimit = limit;
 	}
 
     public void StartGrappleBlue()
@@ -141,8 +237,6 @@ public class GrappleGun : MonoBehaviour
 		hook.ReturnHook();
 		grappling = false;
         reticleVisual.SetActive(true);
-
-        ropeRenderer.positionCount = 0;
 	}
 
 
@@ -153,28 +247,28 @@ public class GrappleGun : MonoBehaviour
 
 	public void StopGrappleGreen(){
         Debug.Log("Stop Green");
-        playerManager.allowGrapple = true;
-        playerManager.grappleState = PlayerManager.GrappleState.None;
+        // playerManager.allowGrapple = true;
+		Destroy(joint);
 	}
 
     public void StopGrappleBlue()
     {
         Debug.Log("Stop Blue");
-        playerManager.allowGrapple = true;
+        // playerManager.allowGrapple = true;
         playerManager.grappleState = PlayerManager.GrappleState.None;
     }
 
     public void StopGrappleOrange()
     {
         Debug.Log("Stop Orange");
-        playerManager.allowGrapple = true;
+        // playerManager.allowGrapple = true;
         playerManager.grappleState = PlayerManager.GrappleState.None;
     }
 
 	#endregion
 
 	private void DrawRope(){
-		if(grappling){
+		if(hook.Fired()){
             ropeRenderer.SetPosition(0, gunTip.position);
             ropeRenderer.SetPosition(1, ropePoint.position);
 		}
