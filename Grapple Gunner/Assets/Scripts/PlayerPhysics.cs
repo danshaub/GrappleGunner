@@ -112,7 +112,7 @@ public class PlayerPhysics : MonoBehaviour
         }
     }
 
-    private void NonGrappleMovement(){  
+    private void NonGrappleMovement(){
         rb.useGravity = true;
         // Extra gravity
         rb.AddForce(Vector3.down * Time.deltaTime * 10);

@@ -837,6 +837,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "VelocityLeft",
+                    "type": "Value",
+                    "id": "a47c95ff-e9f4-4779-9f22-0e32c45ada6f",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "VelocityRight",
+                    "type": "Value",
+                    "id": "86329738-7e28-4962-b6f6-d1442c373f0a",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -925,6 +941,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ReelRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d47f7e4-de7b-4748-a188-22a8e86ae249",
+                    "path": "<XRController>{LeftHand}/deviceVelocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VelocityLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4881388-9d74-4f1a-9e7a-6255341859dc",
+                    "path": "<XRController>{RightHand}/deviceVelocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VelocityRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

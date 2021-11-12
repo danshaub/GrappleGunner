@@ -17,12 +17,17 @@ public class GrappleGun : MonoBehaviour
 	public InputActionReference grappleAction = null;
 	public InputActionReference reelAction = null;
     public InputActionReference slackAction = null;
+	public InputActionReference gunVelocity = null;
 	[SerializeField] private GameObject reticleVisual;
 	[SerializeField] private XRRayInteractor rayInteractor;
 
 	[Header("Hook Options")]
 	public float hookTravelSpeed = 40f;
 	public float retractInterpolateValue = .01f;
+	
+	//Hook State Variables
+	[HideInInspector] public bool grappling = false;
+	private Vector3 originalHookPosition;
 
 	[Header("Red Hook Options")]
 	public float redGrappleSpeed = 40f;
@@ -30,16 +35,31 @@ public class GrappleGun : MonoBehaviour
 	public AnimationCurve redVelocityCurve;
 
 	[Header("Green Hook Options")]
-	public float reelSpeed;
-	public float reelDeadZone;
 	public float minRopeLength;
-	public AnimationCurve forceDamperCurve;
-	public float slackSpeed;
-	public float limitContactDistance;
 	public float swingDamper;
-	public float groundedKickUp;
+	public float limitContactDistance;
+	public float swingVelocityThreshold;
+	public float maxSwingVelocity;
+	public float swingForceMultiplier;
+	public float swingForceActiveTime;
+	public float swingForceCooldown;
+	public float greenMaxReelSpeed;
+    public float greenReelDamper = 0.06f;
+	public AnimationCurve greenReelForceCurve;
+	public float reelDeadZone;
+	public float greenMaxSlackSpeed;
+	public float greenSlackDamper;
 	public ForceMode forceMode;
 
+	//Green Hook state variables
+	// public Vector3 greenReelForce;
+	// [HideInInspector] public float greenReelDamperClamped;
+	private ConfigurableJoint joint;
+	private float reelInput;
+	public bool reeling;
+	public bool slacking;
+	public float greenCurrentSpoolSpeed;
+	public bool swingForceReady = true;
 
 	[Header("Reticle Options")]
 	public ReticleManager reticleManager;
@@ -48,13 +68,9 @@ public class GrappleGun : MonoBehaviour
 	public float maxReticleDistance = 50f;
 	public AnimationCurve reticleScaleCurve;
 
-	private Vector3 originalHookPosition;
-	private ConfigurableJoint joint;
-	private float reelInput;
-	[SerializeField] private bool reeling;
-	[SerializeField] private bool slacking;
-	[HideInInspector] public bool grappling = false;
+	//Reticle State Variables
 	private Material reticleMaterial;
+
 
 	private void Awake() {
 		ropeRenderer = GetComponent<LineRenderer>();
@@ -83,6 +99,10 @@ public class GrappleGun : MonoBehaviour
 		if(joint){
 			reelInput = reelAction.action.ReadValue<float>();
 			reeling = reelInput > reelDeadZone;
+
+		}
+		else{
+			reeling = false;
 		}
 	}
 
@@ -116,24 +136,26 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	private void HandleGreenGrappleMovement(){
-        // joint.anchor = player.InverseTransformPoint(gunTip.position);
         joint.anchor = player.InverseTransformPoint(vrCamera.position);
 
-        float distanceFromPoint = Vector3.Distance(gunTip.position, ropePoint.position);
+        float distanceFromPoint = Vector3.Distance(ropePoint.position, vrCamera.position);
         SoftJointLimit limit = new SoftJointLimit();
+		limit.limit = joint.linearLimit.limit;
         limit.bounciness = 0;
         limit.contactDistance = limitContactDistance;
 
+		bool slackedThisFrame = false;
+		bool reeledThisFrame = false;
+		bool groundedThisFrame = false;
+
+		ApplySwingForce();
+
 		if (reeling){
-			if(playerManager.grounded){
-                playerRB.AddForce(Vector3.up * groundedKickUp, forceMode);
-			}
-			float reelDistanceMultiplier = forceDamperCurve.Evaluate(distanceFromPoint);
-            Vector3 reelForce = (ropePoint.position - gunTip.position).normalized * reelSpeed * reelInput * reelDistanceMultiplier * Time.fixedDeltaTime ;
+			reeledThisFrame = true;
 
-			playerRB.AddForce(reelForce, forceMode);
-
-            limit.limit = Mathf.Clamp(distanceFromPoint, minRopeLength, joint.linearLimit.limit);       
+            greenCurrentSpoolSpeed = Mathf.Lerp(greenCurrentSpoolSpeed, -greenMaxReelSpeed, greenReelDamper);
+            float newLimit = joint.linearLimit.limit + (greenCurrentSpoolSpeed * Time.deltaTime);
+            limit.limit = Mathf.Clamp(newLimit, minRopeLength, float.MaxValue); 
 
             joint.xMotion = ConfigurableJointMotion.Limited;
             joint.yMotion = ConfigurableJointMotion.Limited;
@@ -141,21 +163,25 @@ public class GrappleGun : MonoBehaviour
 		}
         else if (playerManager.grounded)
         {
+            groundedThisFrame = true;
+
             limit.limit = distanceFromPoint;
+
+			greenCurrentSpoolSpeed = 0f;
 
             joint.xMotion = ConfigurableJointMotion.Free;
             joint.yMotion = ConfigurableJointMotion.Free;
             joint.zMotion = ConfigurableJointMotion.Free;
         }
 		else if(slacking){
-            // allow auto retracting, but not slacking
-            limit.limit = joint.linearLimit.limit + (slackSpeed * Time.deltaTime);
+			slackedThisFrame = true;
+			greenCurrentSpoolSpeed = Mathf.Lerp(greenCurrentSpoolSpeed, greenMaxSlackSpeed, greenSlackDamper);
+            float newLimit = joint.linearLimit.limit + (greenCurrentSpoolSpeed * Time.deltaTime);
+            limit.limit = Mathf.Clamp(newLimit, minRopeLength, float.MaxValue);
 
             joint.xMotion = ConfigurableJointMotion.Limited;
             joint.yMotion = ConfigurableJointMotion.Limited;
             joint.zMotion = ConfigurableJointMotion.Limited;
-
-            playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, Vector3.zero, swingDamper);
 		}
 		else{
 			// allow auto retracting, but not slacking
@@ -168,16 +194,45 @@ public class GrappleGun : MonoBehaviour
 			playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, Vector3.zero, swingDamper);
 		}
 
+		if(!reeledThisFrame && !slackedThisFrame){
+            greenCurrentSpoolSpeed = Mathf.Lerp(greenCurrentSpoolSpeed, 0, greenReelDamper + greenSlackDamper);
+
+			if(!groundedThisFrame && greenCurrentSpoolSpeed >= 0.001){
+                float newLimit = joint.linearLimit.limit + (greenCurrentSpoolSpeed * Time.deltaTime);
+                limit.limit = Mathf.Clamp(newLimit, minRopeLength, float.MaxValue);
+			}
+		}
+
         joint.linearLimit = limit;
 	}
-
+	private void ApplySwingForce(){
+		if(swingForceReady){
+			Vector3 ropeDirection = (gunTip.position - ropePoint.position).normalized;
+			float swingMagnitude = Vector3.Dot(gunVelocity.action.ReadValue<Vector3>(), ropeDirection);
+			swingMagnitude = Mathf.Clamp(swingMagnitude, swingVelocityThreshold, maxSwingVelocity);
+			if(swingMagnitude > 0){
+				Debug.Log(swingMagnitude);
+			}
+            if(swingMagnitude > swingVelocityThreshold){
+				playerRB.AddForce(-ropeDirection * swingMagnitude * swingForceMultiplier);
+				Invoke("ActivateSwingForceCooldown", swingForceActiveTime);
+			}
+		}
+	}
+	private void ActivateSwingForceCooldown(){
+		swingForceReady = false;
+        Invoke("ResetSwingForce", swingForceCooldown);
+	}
+	private void ResetSwingForce(){
+		swingForceReady = true;
+	}
     private void Slack(InputAction.CallbackContext context)
     {
-		Debug.Log("Started giving slack");
+		slacking = true;
     }
     private void EndSlack(InputAction.CallbackContext context)
     {
-		Debug.Log("Ended giving slack");
+		slacking = false;
     }
 
 	#region Start Grapple
@@ -217,6 +272,9 @@ public class GrappleGun : MonoBehaviour
 		limit.bounciness = 0;
         limit.contactDistance = limitContactDistance;
 		joint.linearLimit = limit;
+
+		swingForceReady = true;
+		greenCurrentSpoolSpeed = 0;
 	}
 
     public void StartGrappleBlue()
@@ -246,8 +304,8 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	public void StopGrappleGreen(){
-        Debug.Log("Stop Green");
-        // playerManager.allowGrapple = true;
+        CancelInvoke("ActivateSwingForceCooldown");
+        CancelInvoke("ResetSwingForce");
 		Destroy(joint);
 	}
 
