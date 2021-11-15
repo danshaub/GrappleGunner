@@ -56,7 +56,7 @@ public class GrapplePoint : MonoBehaviour
 				break;
 		}
 		if (useRaycastPosition){
-			Gizmos.DrawWireMesh(GetComponent<MeshFilter>().sharedMesh,transform.position, transform.rotation, transform.localScale);
+			Gizmos.DrawWireMesh(GetComponent<MeshFilter>().sharedMesh,transform.position, transform.rotation, transform.lossyScale);
 		}
 		else{
             Vector3 drawPosition = transform.position + grapplePosition;

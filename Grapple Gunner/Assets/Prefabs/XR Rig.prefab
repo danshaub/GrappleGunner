@@ -218,11 +218,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springForce: 15
-  damping: 30
-  massScale: 5
-  maxDistance: 0.1
-  minDistance: 0.1
+  playerManager: {fileID: 0}
+  playerRB: {fileID: 0}
+  hook: {fileID: 0}
+  gunTip: {fileID: 7303344300209777605}
+  player: {fileID: 5622675951407237442}
+  ropePoint: {fileID: 0}
+  vrCamera: {fileID: 0}
+  dummyHook: {fileID: 0}
+  grappleAction: {fileID: 0}
+  reelAction: {fileID: 0}
+  slackAction: {fileID: 0}
+  gunVelocity: {fileID: 0}
+  reticleVisual: {fileID: 0}
+  rayInteractor: {fileID: 7723118044390766202}
+  hookTravelSpeed: 40
+  retractInterpolateValue: 0.01
+  grappling: 0
+  redGrappleSpeed: 40
+  redVelocityDamper: 0.06
+  redVelocityCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minRopeLength: 0
+  swingDamper: 0
+  limitContactDistance: 0
+  swingVelocityThreshold: 0
+  maxSwingVelocity: 0
+  swingForceMultiplier: 0
+  greenMaxReelSpeed: 0
+  greenReelDamper: 0.06
+  greenReelForceCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reelDeadZone: 0
+  greenMaxSlackSpeed: 0
+  greenSlackDamper: 0
+  forceMode: 0
+  reeling: 0
+  slacking: 0
+  greenCurrentSpoolSpeed: 0
+  reticleManager: {fileID: 0}
+  disabledTransparency: 0.4
+  minReticleDistance: 5
   maxReticleDistance: 50
   reticleScaleCurve:
     serializedVersion: 2
@@ -230,13 +274,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gunTip: {fileID: 7303344300209777605}
-  player: {fileID: 5622675951407237442}
-  anchor: {fileID: 5622675950411661548}
-  grappling: 0
-  grappleReference: {fileID: 493999774759131389, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rayInteractor: {fileID: 7723118044390766202}
-  reticleVisual: {fileID: 0}
 --- !u!114 &7723118044390766202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,7 +589,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5622675950066566859}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
@@ -655,7 +692,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5622675950066566859}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -760,7 +797,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5622675950066566859}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -1073,11 +1110,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springForce: 15
-  damping: 30
-  massScale: 5
-  maxDistance: 0.1
-  minDistance: 0.1
+  playerManager: {fileID: 0}
+  playerRB: {fileID: 0}
+  hook: {fileID: 0}
+  gunTip: {fileID: 977460497650683160}
+  player: {fileID: 5622675951407237442}
+  ropePoint: {fileID: 0}
+  vrCamera: {fileID: 0}
+  dummyHook: {fileID: 0}
+  grappleAction: {fileID: 0}
+  reelAction: {fileID: 0}
+  slackAction: {fileID: 0}
+  gunVelocity: {fileID: 0}
+  reticleVisual: {fileID: 0}
+  rayInteractor: {fileID: 0}
+  hookTravelSpeed: 40
+  retractInterpolateValue: 0.01
+  grappling: 0
+  redGrappleSpeed: 40
+  redVelocityDamper: 0.06
+  redVelocityCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minRopeLength: 0
+  swingDamper: 0
+  limitContactDistance: 0
+  swingVelocityThreshold: 0
+  maxSwingVelocity: 0
+  swingForceMultiplier: 0
+  greenMaxReelSpeed: 0
+  greenReelDamper: 0.06
+  greenReelForceCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reelDeadZone: 0
+  greenMaxSlackSpeed: 0
+  greenSlackDamper: 0
+  forceMode: 0
+  reeling: 0
+  slacking: 0
+  greenCurrentSpoolSpeed: 0
+  reticleManager: {fileID: 0}
+  disabledTransparency: 0.4
+  minReticleDistance: 5
   maxReticleDistance: 50
   reticleScaleCurve:
     serializedVersion: 2
@@ -1085,13 +1166,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gunTip: {fileID: 977460497650683160}
-  player: {fileID: 5622675951407237442}
-  anchor: {fileID: 5622675950066566858}
-  grappling: 0
-  grappleReference: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rayInteractor: {fileID: 0}
-  reticleVisual: {fileID: 0}
 --- !u!114 &9163903917145018471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,7 +1421,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5622675950411661549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
@@ -1450,7 +1524,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5622675950411661549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1555,7 +1629,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5622675950411661549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -1696,10 +1770,7 @@ GameObject:
   - component: {fileID: 5622675951407237441}
   - component: {fileID: 5622675951407237452}
   - component: {fileID: 1637040374150161577}
-  - component: {fileID: 5622675951407237453}
   - component: {fileID: 5622675951407237454}
-  - component: {fileID: 5622675951407237566}
-  - component: {fileID: 345912045292297132}
   - component: {fileID: 5622675951407237565}
   - component: {fileID: 2757776424374153862}
   m_Layer: 0
@@ -1807,19 +1878,6 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &5622675951407237453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5622675951407237444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 0}
 --- !u!114 &5622675951407237454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1859,53 +1917,6 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &5622675951407237566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5622675951407237444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e719b6e35728fcb4ebcc794948475818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orientation: {fileID: 5622675951469532787}
-  playerController: {fileID: 0}
-  playerCollider: {fileID: 0}
-  colliderHeightOffset: 0.2
-  moveSpeed: 4500
-  maxSpeed: 5
-  grounded: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 192
-  counterMovement: 0.175
-  maxSlopeAngle: 50
-  airDampeningMultiplier: 0.25
-  jumpForce: 300
-  continuousMoveEnabled: 1
-  jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &345912045292297132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5622675951407237444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7804ddafbea6c8f4a9286093718ae0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportationOffset: 0.01
-  teleportRightHand: {fileID: 2307464322626738743, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  teleportLeftHand: {fileID: 737890489006591557, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rayInteractorRight: {fileID: 5622675950066566855}
-  rayInteractorLeft: {fileID: 5622675950411661545}
-  teleportationProvider: {fileID: 5622675951407237453}
 --- !u!54 &5622675951407237565
 Rigidbody:
   m_ObjectHideFlags: 0
