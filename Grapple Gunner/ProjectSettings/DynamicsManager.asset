@@ -4,7 +4,7 @@
 PhysicsManager:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  m_Gravity: {x: 0, y: -30, z: 0}
+  m_Gravity: {x: 0, y: -15, z: 0}
   m_DefaultMaterial: {fileID: 13400000, guid: 7845bd358f55d854fbff50e8fc00f8c9, type: 2}
   m_BounceThreshold: 2
   m_DefaultMaxDepenetrationVelocity: 10

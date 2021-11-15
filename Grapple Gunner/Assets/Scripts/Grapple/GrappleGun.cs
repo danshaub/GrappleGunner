@@ -28,6 +28,7 @@ public class GrappleGun : MonoBehaviour
 	//Hook State Variables
 	[HideInInspector] public bool grappling = false;
 	private Vector3 originalHookPosition;
+	private Vector3 ropeDirection; //From gun tip to hook
 
 	[Header("Red Hook Options")]
 	public float redGrappleSpeed = 40f;
@@ -41,8 +42,6 @@ public class GrappleGun : MonoBehaviour
 	public float swingVelocityThreshold;
 	public float maxSwingVelocity;
 	public float swingForceMultiplier;
-	public float swingForceActiveTime;
-	public float swingForceCooldown;
 	public float greenMaxReelSpeed;
     public float greenReelDamper = 0.06f;
 	public AnimationCurve greenReelForceCurve;
@@ -59,7 +58,8 @@ public class GrappleGun : MonoBehaviour
 	public bool reeling;
 	public bool slacking;
 	public float greenCurrentSpoolSpeed;
-	public bool swingForceReady = true;
+	private Vector3 swingVelocity; // Velocity of controller in XR rig local space
+
 
 	[Header("Reticle Options")]
 	public ReticleManager reticleManager;
@@ -125,11 +125,12 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	private void HandleRedGrappleMovement(){
+		ropeDirection = (gunTip.position - ropePoint.position).normalized;
 		playerRB.useGravity = false;
 
 		float distance = Vector3.Distance(ropePoint.position, gunTip.position);
 		float multiplier = redVelocityCurve.Evaluate(distance);
-		Vector3 targetVelocity = (ropePoint.position - gunTip.position).normalized * redGrappleSpeed * multiplier ;
+		Vector3 targetVelocity = -ropeDirection * redGrappleSpeed * multiplier ;
 
 		float damper = multiplier >= 1 ? redVelocityDamper : 1;
 		playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
@@ -147,7 +148,7 @@ public class GrappleGun : MonoBehaviour
 		bool slackedThisFrame = false;
 		bool reeledThisFrame = false;
 		bool groundedThisFrame = false;
-
+		
 		ApplySwingForce();
 
 		if (reeling){
@@ -206,25 +207,15 @@ public class GrappleGun : MonoBehaviour
         joint.linearLimit = limit;
 	}
 	private void ApplySwingForce(){
-		if(swingForceReady){
-			Vector3 ropeDirection = (gunTip.position - ropePoint.position).normalized;
-			float swingMagnitude = Vector3.Dot(gunVelocity.action.ReadValue<Vector3>(), ropeDirection);
-			swingMagnitude = Mathf.Clamp(swingMagnitude, swingVelocityThreshold, maxSwingVelocity);
-			if(swingMagnitude > 0){
-				Debug.Log(swingMagnitude);
-			}
-            if(swingMagnitude > swingVelocityThreshold){
-				playerRB.AddForce(-ropeDirection * swingMagnitude * swingForceMultiplier);
-				Invoke("ActivateSwingForceCooldown", swingForceActiveTime);
-			}
+		ropeDirection = (gunTip.position - ropePoint.position).normalized;
+		swingVelocity = player.TransformVector(gunVelocity.action.ReadValue<Vector3>()); //Quaternion.Euler(0, player.eulerAngles.y, 0) * gunVelocity.action.ReadValue<Vector3>();
+		
+		float swingMagnitude = Vector3.Dot(swingVelocity, ropeDirection);
+		swingMagnitude = Mathf.Clamp(swingMagnitude, swingVelocityThreshold, maxSwingVelocity);
+		if(swingMagnitude > swingVelocityThreshold){
+			// playerRB.AddForce(-ropeDirection * swingMagnitude * swingForceMultiplier);
+            playerRB.AddForce(-(swingVelocity + ropeDirection).normalized * swingMagnitude * swingForceMultiplier);
 		}
-	}
-	private void ActivateSwingForceCooldown(){
-		swingForceReady = false;
-        Invoke("ResetSwingForce", swingForceCooldown);
-	}
-	private void ResetSwingForce(){
-		swingForceReady = true;
 	}
     private void Slack(InputAction.CallbackContext context)
     {
@@ -273,7 +264,6 @@ public class GrappleGun : MonoBehaviour
         limit.contactDistance = limitContactDistance;
 		joint.linearLimit = limit;
 
-		swingForceReady = true;
 		greenCurrentSpoolSpeed = 0;
 	}
 
