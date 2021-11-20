@@ -12,6 +12,7 @@ public class GrapplePoint : MonoBehaviour
 		Green,
 		Blue,
 		Orange,
+		UI,
 		None
 	}
 
