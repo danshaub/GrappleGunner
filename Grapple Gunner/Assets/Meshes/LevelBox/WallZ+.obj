@@ -1,0 +1,23 @@
+# ProBuilder 4.5.2
+# https://unity3d.com/unity/features/worldbuilding/probuilder
+# 11/22/2021 9:06:13 AM
+
+mtllib ./WallZ+.mtl
+o WallZ+
+
+g WallZ+
+v -199.9962 -99.99619 400
+v 200 -99.99619 400
+v 200 100.0019 400
+v -199.9962 100.0019 400
+
+vt 20.00003 -9.999781
+vt -20.00003 -9.999781
+vt -20.00003 9.999781
+vt 20.00003 9.999781
+
+vn 0 0 -1
+
+usemtl Floor
+f 4/4/1 3/3/1 2/2/1 1/1/1
+

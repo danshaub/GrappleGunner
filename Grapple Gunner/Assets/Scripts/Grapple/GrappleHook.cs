@@ -6,6 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class GrappleHook : MonoBehaviour
 {
+    public enum GrappleState
+    {
+        Red,
+		Green,
+		Blue,
+		Orange,
+        None
+    }
+
+	private GrappleState state;
 	private bool fired = false;
 	private bool hooked = false;
 	private bool returning = true;

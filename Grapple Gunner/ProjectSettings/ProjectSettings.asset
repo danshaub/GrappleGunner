@@ -76,7 +76,7 @@ PlayerSettings:
   androidFullscreenMode: 1
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
-  runInBackground: 1
+  runInBackground: 0
   captureSingleScreen: 0
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
@@ -142,8 +142,6 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 11400000, guid: c5739203eed9a0740b639ba902fb517b, type: 2}
   - {fileID: -3361950856756579310, guid: 57242b61dbb97674fad58497771d90a1, type: 2}
-  - {fileID: 0}
-  - {fileID: 6544296571827076151, guid: f597c013790b38344927d757e4013e33, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -160,7 +158,9 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.DefaultCompany.GrappleGunner
+    Standalone: com.DefaultCompany.GrappleGunner
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -707,7 +707,9 @@ PlayerSettings:
   gcIncremental: 1
   assemblyVersionValidation: 1
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Android: 6
+    Standalone: 6
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_3D
