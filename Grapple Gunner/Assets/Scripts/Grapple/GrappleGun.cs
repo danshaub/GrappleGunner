@@ -27,9 +27,11 @@ public class GrappleGun : MonoBehaviour
 	private Vector3 originalHookPosition;
 	private Vector3 ropeDirection; //From gun tip to hook
 
+	//Red Hook State Variables
+	private bool redLocked;
+	private bool redAttemptedRelease;
+
 	//Green Hook state variables
-	// public Vector3 greenReelForce;
-	// [HideInInspector] public float greenReelDamperClamped;
 	private ConfigurableJoint joint;
 	private float reelInput;
 	[HideInInspector] public bool reeling;
@@ -105,11 +107,23 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	private void HandleRedGrappleMovement(){
-		ropeDirection = (gunTip.position - ropePoint.position).normalized;
 		playerRB.useGravity = false;
 
-		float distance = Vector3.Distance(ropePoint.position, gunTip.position);
-		float multiplier = GrappleManager._instance.options.redVelocityCurve.Evaluate(distance);
+		ropeDirection = (gunTip.position - ropePoint.position).normalized;
+		float distanceFromPoint = Vector3.Distance(ropePoint.position, gunTip.position);
+
+        redLocked = (distanceFromPoint > PlayerManager._instance.playerHeight *
+               		 GrappleManager._instance.options.redUnlockDistanceMultiplier) ||
+            		(playerRB.velocity.magnitude > GrappleManager._instance.options.redUnlockVelosityThreshold);
+
+        if (!redLocked && redAttemptedRelease)
+        {
+            hook.ReturnHook();
+            grappling = false;
+            reticleVisual.SetActive(true);
+        }
+        
+		float multiplier = GrappleManager._instance.options.redVelocityCurve.Evaluate(distanceFromPoint);
 		Vector3 targetVelocity = -ropeDirection *GrappleManager._instance.options. redGrappleSpeed * multiplier ;
 
 		float damper = multiplier >= 1 ? GrappleManager._instance.options.redVelocityDamper : 1;
@@ -133,8 +147,10 @@ public class GrappleGun : MonoBehaviour
 		ApplySwingForce();
 
 		if(reeling && distanceFromPoint > PlayerManager._instance.playerHeight * GrappleManager._instance.options.snapDistanceMultiplier){
-            playerRB.AddForce(-ropeDirection * reelInput * (GrappleManager._instance.options.greenReelForce +
-				(System.Convert.ToInt32(PlayerManager._instance.grounded) * GrappleManager._instance.options.groundedReelMultiplier)));
+            playerRB.AddForce(-ropeDirection * reelInput * GrappleManager._instance.options.greenReelForce);
+			if(PlayerManager._instance.grounded) {
+				playerRB.AddForce(-ropeDirection * GrappleManager._instance.options.groundedReelMultiplier);
+			}
 		}
 		
         if (PlayerManager._instance.grounded)
@@ -158,7 +174,7 @@ public class GrappleGun : MonoBehaviour
             joint.yMotion = ConfigurableJointMotion.Limited;
             joint.zMotion = ConfigurableJointMotion.Limited;
 		}
-		else if(distanceFromPoint <= PlayerManager._instance.playerHeight){
+		else if(distanceFromPoint <= PlayerManager._instance.playerHeight * GrappleManager._instance.options.snapDistanceMultiplier){
             float multiplier = GrappleManager._instance.options.greenSnapVelocityCurve.Evaluate(distanceFromPoint);
             Vector3 targetVelocity = -ropeDirection * GrappleManager._instance.options.greenSnapSpeed * multiplier;
 
@@ -208,6 +224,7 @@ public class GrappleGun : MonoBehaviour
 	#region Start Grapple
 
 	private void StartGrapple(InputAction.CallbackContext context){
+		redAttemptedRelease = false;
 		if(GrappleManager._instance.allowGrapple && !hook.fired){
 			dummyHook.SetActive(false);
 			hook.gameObject.SetActive(true);
@@ -221,6 +238,7 @@ public class GrappleGun : MonoBehaviour
 	public void StartGrappleRed()
 	{
 		GrappleManager._instance.AddRed();
+		redLocked = true;
 	}
 
 	// TODO: Refactor this so it doesn't use the spring joint. Write propriterary joint for this.
@@ -260,9 +278,14 @@ public class GrappleGun : MonoBehaviour
 	#region Stop Grapple
 	private void StopGrapple(InputAction.CallbackContext context)
 	{
-		hook.ReturnHook();
-		grappling = false;
-        reticleVisual.SetActive(true);
+		if(!redLocked){
+            hook.ReturnHook();
+            grappling = false;
+            reticleVisual.SetActive(true);
+		}
+		else{
+			redAttemptedRelease = true;
+		}
 	}
 
 

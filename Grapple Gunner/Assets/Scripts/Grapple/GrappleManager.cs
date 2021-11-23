@@ -28,6 +28,8 @@ public class GrappleManager : MonoBehaviour
         public float retractInterpolateValue;
         
         [Header("Red Hook Options")]
+        public float redUnlockDistanceMultiplier;
+        public float redUnlockVelosityThreshold;
         public float redGrappleSpeed;
         public float redVelocityDamper;
         public AnimationCurve redVelocityCurve;
@@ -58,7 +60,6 @@ public class GrappleManager : MonoBehaviour
     }
 
     private void Awake() {
-        Debug.Log("Setting instance");
         if(_instance){
             Destroy(this);
         }
