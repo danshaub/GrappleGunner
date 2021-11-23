@@ -28,6 +28,7 @@ public class PlayerPhysics : MonoBehaviour
     public float maxSpeed = 20;
     public float coyoteTime = 3f;
     public bool grounded;
+    public bool touchingSurface;
     public LayerMask whatIsGround;
     public float counterMovement = 0.175f;
     private float threshold = 0.01f;
@@ -69,13 +70,10 @@ public class PlayerPhysics : MonoBehaviour
 
     private void FixedUpdate() {
         FollowPhysicalPlayer();
-        if(playerManager.allowMovement || !grounded){
+        if(PlayerManager._instance.allowMovement || !grounded){
             Movement();
         }
-
-        if(grounded != playerManager.grounded){
-            playerManager.grounded = grounded;
-        }
+        PlayerManager._instance.grounded = grounded;
     }
 
     // Update is called once per frame
@@ -95,21 +93,17 @@ public class PlayerPhysics : MonoBehaviour
 
         // Reset Collider Center
         playerCollider.center = new Vector3(orientation.localPosition.x, playerCollider.height / 2, orientation.localPosition.z);
+
+        // Send player height info to PlayerManager
+        PlayerManager._instance.playerHeight = orientation.localPosition.y;
     }
 
     private void Movement(){
 
         forward = new Vector3(orientation.transform.forward.x, 0, orientation.transform.forward.z).normalized;
         right = new Vector3(orientation.transform.right.x, 0, orientation.transform.right.z).normalized;
-
-        switch(playerManager.grappleState){
-            case PlayerManager.GrappleState.Red:
-                // Disable player movement completely when on red grapple
-                break;
-            case PlayerManager.GrappleState.None:
-                NonGrappleMovement();
-                break;
-        }
+        
+        NonGrappleMovement();
     }
 
     private void NonGrappleMovement(){

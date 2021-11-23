@@ -3275,7 +3275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510123922
 GameObject:
@@ -6719,7 +6719,7 @@ Transform:
   - {fileID: 437681793}
   - {fileID: 995226796}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995226795
 GameObject:
@@ -6758,6 +6758,17 @@ Transform:
   m_Father: {fileID: 986356690}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1003222709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6055129378741842383, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+  m_PrefabInstance: {fileID: 2914717042710039406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1014023885
 GameObject:
   m_ObjectHideFlags: 0
@@ -12320,6 +12331,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880155708}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1885651597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+  m_PrefabInstance: {fileID: 2914717042710039406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1886969516
 GameObject:
   m_ObjectHideFlags: 0
@@ -12669,8 +12691,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2020124633}
   - component: {fileID: 2020124632}
+  - component: {fileID: 2020124635}
+  - component: {fileID: 2020124634}
   m_Layer: 0
-  m_Name: XR Interaction Manager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12702,6 +12726,113 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2020124634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020124631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc19272f4ee0e646b8ba0becd5dbbfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowMovement: 1
+  grounded: 1
+  playerHeight: 0
+--- !u!114 &2020124635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020124631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ceb040fb6c3be4d830baf1341e3f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCase: 0
+  rightGun: {fileID: 1003222709}
+  leftGun: {fileID: 1885651597}
+  options:
+    hookTravelSpeed: 500
+    retractInterpolateValue: 0.8
+    redGrappleSpeed: 40
+    redVelocityDamper: 0.06
+    redVelocityCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.027339926
+        outSlope: 0.027339926
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.13833992
+      - serializedVersion: 3
+        time: 0.63238907
+        value: 0.8264354
+        inSlope: 0.043327726
+        outSlope: 0.043327726
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.31361032
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5
+        value: 1.0092888
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    limitContactDistance: 10
+    swingDamper: 0.005
+    swingVelocityThreshold: 0.25
+    maxSwingVelocity: 3.5
+    swingForceMultiplier: 100
+    greenReelForce: 25
+    groundedReelMultiplier: 0.75
+    greenMaxSlackSpeed: 20
+    reelDeadZone: 0.01
+    greenSlackDamper: 0.05
+    reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
+    disabledTransparency: 0.4
+    minReticleDistance: 5
+    maxReticleDistance: 30
+    reticleScaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.5
+        inSlope: 1.5
+        outSlope: 1.5
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 2
+        inSlope: 1.5
+        outSlope: 1.5
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  allowGrapple: 1
 --- !u!1 &2020730398
 GameObject:
   m_ObjectHideFlags: 0
@@ -13221,13 +13352,17 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 2020124632}
+    - target: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: isLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2914717044053797773, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 457428023}
     - target: {fileID: 3561913862872785002, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3561913862872785002, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13304,14 +13439,6 @@ PrefabInstance:
     - target: {fileID: 7382778892751757201, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7382778892751757205, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 2020124632}
-    - target: {fileID: 7382778892751757206, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7382778892924918196, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_Enabled

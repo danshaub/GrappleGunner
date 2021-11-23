@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // public GrappleGun leftGun;
-    public GrappleGun rightGun;
-    public bool allowGrapple = true;
-    public bool allowMovement = true;
+    public static PlayerManager _instance;
+    [SerializeField] public bool allowMovement = true;
+    [SerializeField] public bool grounded = true;
+    public float playerHeight = 0;
 
-    public bool grounded = true;
-    public GrappleState grappleState = GrappleState.None;
-
-    public enum GrappleState{
-        Red,
-        None
+    private void Awake()
+    {
+        if (_instance)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
-
 }

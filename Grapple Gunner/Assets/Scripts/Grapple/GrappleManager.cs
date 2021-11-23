@@ -5,9 +5,21 @@ using UnityEngine;
 public class GrappleManager : MonoBehaviour
 {
     public static GrappleManager _instance;
+    public GrappleCase currentCase;
     public GrappleGun rightGun;
     public GrappleGun leftGun;
     public GrappleOptions options;
+
+    [System.Serializable]
+    public enum GrappleCase{
+        None,
+        SingleRed,
+        LeftGreen,
+        RightGreen,
+        TwoGreen
+    }
+
+    public bool allowGrapple = true;
 
     [System.Serializable]
     public struct GrappleOptions{
@@ -21,19 +33,17 @@ public class GrappleManager : MonoBehaviour
         public AnimationCurve redVelocityCurve;
 
         [Header("Green Hook Options")]
-        public float minRopeLength;
-        public float swingDamper;
         public float limitContactDistance;
+        public float swingDamper;
+
         public float swingVelocityThreshold;
         public float maxSwingVelocity;
         public float swingForceMultiplier;
-        public float greenMaxReelSpeed;
-        public float greenReelDamper;
-        public AnimationCurve greenReelForceCurve;
-        public float reelDeadZone;
+        public float greenReelForce;
+        public float groundedReelMultiplier;
         public float greenMaxSlackSpeed;
+        public float reelDeadZone;
         public float greenSlackDamper;
-        public ForceMode forceMode;
 
         [Header("Reticle Options")]
         public ReticleManager reticleManager;
@@ -44,6 +54,7 @@ public class GrappleManager : MonoBehaviour
     }
 
     private void Awake() {
+        Debug.Log("Setting instance");
         if(_instance){
             Destroy(this);
         }
@@ -52,15 +63,22 @@ public class GrappleManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void AddRed(){
+        currentCase = GrappleCase.SingleRed;
+        if(rightGun.hook.state == GrappleHook.GrappleState.Red){
+            leftGun.hook.ReturnHook();
+        }
+        else{
+            rightGun.hook.ReturnHook();
+        }
+
+        allowGrapple = false;
+        PlayerManager._instance.allowMovement = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void RemoveRed(){
+        currentCase = GrappleCase.None;
+        allowGrapple = true;
+        PlayerManager._instance.allowMovement = true;
     }
 }

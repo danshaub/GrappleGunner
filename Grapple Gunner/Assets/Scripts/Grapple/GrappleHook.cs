@@ -8,22 +8,19 @@ public class GrappleHook : MonoBehaviour
 {
     public enum GrappleState
     {
+        None,
         Red,
 		Green,
 		Blue,
-		Orange,
-        None
+		Orange
     }
 
-	private GrappleState state;
-	private bool fired = false;
-	private bool hooked = false;
-	private bool returning = true;
-	private bool retracting = false;
+	public GrappleState state = GrappleState.None;
+	public bool fired = false;
+	public bool retracting = false;
 
 	private float travelSpeed;
 	private GrappleGun grappleGun;
-    private GrapplePoint.GrappleType lastGrappleType = GrapplePoint.GrappleType.None;
 
 	private Collider cd;
 	private Rigidbody rb;
@@ -55,7 +52,6 @@ public class GrappleHook : MonoBehaviour
         cd.enabled = false;
         if (other.gameObject.tag == "Hookable")
         {
-			hooked = true;
 			rb.constraints = RigidbodyConstraints.FreezeAll;
 			rb.velocity = Vector3.zero;
 
@@ -70,32 +66,31 @@ public class GrappleHook : MonoBehaviour
 				transform.rotation = gp.getGrappleRotation();                
             }
 
-            lastGrappleType = gp.type;
-            switch (lastGrappleType)
+            switch (gp.type)
             {
                 case GrapplePoint.GrappleType.Red:
+					state = GrappleState.Red;
                     grappleGun.StartGrappleRed();
                     break;
                 case GrapplePoint.GrappleType.Green:
+					state = GrappleState.Green;
                     grappleGun.StartGrappleGreen();
                     break;
                 case GrapplePoint.GrappleType.Blue:
+					state = GrappleState.Blue;
                     grappleGun.StartGrappleBlue();
                     break;
                 case GrapplePoint.GrappleType.Orange:
+					state = GrappleState.Orange;
                     grappleGun.StartGrappleOrange();
                     break;
                 default:
                     break;
             }
-            if (returning)
-            {
-                ResetHook();
-            }
         }
         else
         {
-			ResetHook();
+			ReturnHook();
         }
 	}
 
@@ -108,9 +103,12 @@ public class GrappleHook : MonoBehaviour
 
 	public void FireHook(Vector3 pos, Quaternion rot){
 		fired = true;
-		returning = false;
-		cd.enabled = true;
+		retracting = false;
 		
+		cd.enabled = true;
+        rb.isKinematic = false;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        rb.detectCollisions = true;
 
 		transform.position = pos;
 		transform.rotation = rot;
@@ -118,37 +116,26 @@ public class GrappleHook : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 		rb.velocity = travelSpeed * transform.forward;
 	}
+
 	public void ReturnHook(){
-		if(hooked){
-			ResetHook();
-		}
-		else{
-			returning = true;
-		}
-	}
-
-	private void ResetHook(){
-        cd.enabled = false;
-        hooked = false;
-		returning = false;
-
-        switch (lastGrappleType)
+        switch (state)
         {
-            case GrapplePoint.GrappleType.Red:
+			case GrappleState.None:
+				break;
+            case GrappleState.Red:
                 grappleGun.StopGrappleRed();
                 break;
-            case GrapplePoint.GrappleType.Green:
+            case GrappleState.Green:
                 grappleGun.StopGrappleGreen();
                 break;
-            case GrapplePoint.GrappleType.Blue:
+            case GrappleState.Blue:
                 grappleGun.StopGrappleBlue();
                 break;
-            case GrapplePoint.GrappleType.Orange:
+            case GrappleState.Orange:
                 grappleGun.StopGrappleOrange();
                 break;
-            default:
-                break;
         }
+        state = GrappleState.None;
         cd.enabled = false;
 		rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 		rb.isKinematic = true;
@@ -165,9 +152,5 @@ public class GrappleHook : MonoBehaviour
 		rb.detectCollisions = true;
 
 		gameObject.SetActive(false);
-	}
-
-	public bool Fired(){
-		return fired;
 	}
 }
