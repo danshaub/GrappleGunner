@@ -12757,7 +12757,7 @@ MonoBehaviour:
   rightGun: {fileID: 1003222709}
   leftGun: {fileID: 1885651597}
   options:
-    hookTravelSpeed: 500
+    hookTravelSpeed: 600
     retractInterpolateValue: 0.8
     redGrappleSpeed: 40
     redVelocityDamper: 0.06
@@ -12799,11 +12799,48 @@ MonoBehaviour:
     swingVelocityThreshold: 0.25
     maxSwingVelocity: 3.5
     swingForceMultiplier: 100
+    doubleGreenMultiplier: 75
+    snapDistanceMultiplier: 0.75
     greenReelForce: 25
-    groundedReelMultiplier: 0.75
+    groundedReelMultiplier: 15
+    greenSnapSpeed: 10
+    greenSnapVelocityDamper: 0.06
+    greenSnapVelocityCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.6779167
+        outSlope: 0.6779167
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.073755376
+      - serializedVersion: 3
+        time: 1
+        value: 0.2
+        inSlope: 0.14703377
+        outSlope: 0.14703377
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2
+        value: 0.4
+        inSlope: 0.09056437
+        outSlope: 0.09056437
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     greenMaxSlackSpeed: 20
     reelDeadZone: 0.01
-    greenSlackDamper: 0.05
+    greenSlackDamper: 0.2
     reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
     disabledTransparency: 0.4
     minReticleDistance: 5

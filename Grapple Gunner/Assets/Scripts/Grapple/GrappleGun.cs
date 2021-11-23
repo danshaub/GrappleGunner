@@ -132,7 +132,7 @@ public class GrappleGun : MonoBehaviour
 		
 		ApplySwingForce();
 
-		if(reeling && distanceFromPoint > PlayerManager._instance.playerHeight){
+		if(reeling && distanceFromPoint > PlayerManager._instance.playerHeight * GrappleManager._instance.options.snapDistanceMultiplier){
             playerRB.AddForce(-ropeDirection * reelInput * (GrappleManager._instance.options.greenReelForce +
 				(System.Convert.ToInt32(PlayerManager._instance.grounded) * GrappleManager._instance.options.groundedReelMultiplier)));
 		}
@@ -159,10 +159,10 @@ public class GrappleGun : MonoBehaviour
             joint.zMotion = ConfigurableJointMotion.Limited;
 		}
 		else if(distanceFromPoint <= PlayerManager._instance.playerHeight){
-            float multiplier = GrappleManager._instance.options.redVelocityCurve.Evaluate(distanceFromPoint);
-            Vector3 targetVelocity = -ropeDirection * GrappleManager._instance.options.redGrappleSpeed * multiplier;
+            float multiplier = GrappleManager._instance.options.greenSnapVelocityCurve.Evaluate(distanceFromPoint);
+            Vector3 targetVelocity = -ropeDirection * GrappleManager._instance.options.greenSnapSpeed * multiplier;
 
-            float damper = multiplier >= 1 ? GrappleManager._instance.options.redVelocityDamper : 1;
+            float damper = multiplier >= 1 ? GrappleManager._instance.options.greenSnapVelocityDamper : 1;
             playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
 		}
 		else{
@@ -193,7 +193,7 @@ public class GrappleGun : MonoBehaviour
 		float swingMagnitude = Vector3.Dot(swingVelocity, ropeDirection);
 		swingMagnitude = Mathf.Clamp(swingMagnitude, GrappleManager._instance.options.swingVelocityThreshold, GrappleManager._instance.options.maxSwingVelocity);
 		if(swingMagnitude > GrappleManager._instance.options.swingVelocityThreshold){
-            playerRB.AddForce(-ropeDirection * swingMagnitude * GrappleManager._instance.options.swingForceMultiplier);
+            playerRB.AddForce(-ropeDirection * swingMagnitude * GrappleManager._instance.SwingForceMultiplier());
 		}
 	}
     private void Slack(InputAction.CallbackContext context)
@@ -226,6 +226,8 @@ public class GrappleGun : MonoBehaviour
 	// TODO: Refactor this so it doesn't use the spring joint. Write propriterary joint for this.
 	public void StartGrappleGreen()
 	{
+        GrappleManager._instance.AddGreen(isLeft);
+
         joint = player.gameObject.AddComponent<ConfigurableJoint>();
 		joint.autoConfigureConnectedAnchor = false;
 		joint.anchor = player.InverseTransformPoint(gunTip.position);
@@ -269,8 +271,7 @@ public class GrappleGun : MonoBehaviour
 	}
 
 	public void StopGrappleGreen(){
-        CancelInvoke("ActivateSwingForceCooldown");
-        CancelInvoke("ResetSwingForce");
+		GrappleManager._instance.RemoveGreen(isLeft);
 		Destroy(joint);
 	}
 

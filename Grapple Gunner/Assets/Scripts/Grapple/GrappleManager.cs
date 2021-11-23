@@ -35,12 +35,16 @@ public class GrappleManager : MonoBehaviour
         [Header("Green Hook Options")]
         public float limitContactDistance;
         public float swingDamper;
-
         public float swingVelocityThreshold;
         public float maxSwingVelocity;
         public float swingForceMultiplier;
+        public float doubleGreenMultiplier;
+        public float snapDistanceMultiplier;
         public float greenReelForce;
         public float groundedReelMultiplier;
+        public float greenSnapSpeed;
+        public float greenSnapVelocityDamper;
+        public AnimationCurve greenSnapVelocityCurve;
         public float greenMaxSlackSpeed;
         public float reelDeadZone;
         public float greenSlackDamper;
@@ -80,5 +84,53 @@ public class GrappleManager : MonoBehaviour
         currentCase = GrappleCase.None;
         allowGrapple = true;
         PlayerManager._instance.allowMovement = true;
+    }
+
+    public void AddGreen(bool isLeft){
+        switch(currentCase){
+            case GrappleCase.None:
+                if(isLeft){
+                    currentCase = GrappleCase.LeftGreen;
+                }
+                else{
+                    currentCase = GrappleCase.RightGreen;
+                }
+                break;
+            case GrappleCase.LeftGreen:
+                currentCase = GrappleCase.TwoGreen;
+                break;
+            case GrappleCase.RightGreen:
+                currentCase = GrappleCase.TwoGreen;
+                break;
+            default:
+                break;
+        }
+    }
+    public void RemoveGreen(bool isLeft){
+        switch (currentCase)
+        {
+            case GrappleCase.LeftGreen:
+                currentCase = GrappleCase.None;
+                break;
+            case GrappleCase.RightGreen:
+                currentCase = GrappleCase.None;
+                break;
+            case GrappleCase.TwoGreen:
+                if (isLeft)
+                {
+                    currentCase = GrappleCase.RightGreen;
+                }
+                else
+                {
+                    currentCase = GrappleCase.LeftGreen;
+                }
+                break;
+            default:
+                break;
+        }   
+    }
+
+    public float SwingForceMultiplier(){
+        return currentCase == GrappleCase.TwoGreen ? options.doubleGreenMultiplier : options.swingForceMultiplier;
     }
 }
