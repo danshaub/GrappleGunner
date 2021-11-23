@@ -322,7 +322,7 @@ public class GrappleGun : MonoBehaviour
 	private void SetReticle(){
 		RaycastHit hit;
 		if (Physics.Raycast(gunTip.position, gunTip.forward, out hit)){
-			if(hit.transform.gameObject.tag == "Hookable"){
+			if(hit.transform.gameObject.tag == "Hookable" && GrappleManager._instance.allowGrapple){
 				GrapplePoint.GrappleType type = hit.transform.gameObject.GetComponent<GrapplePoint>().type;
 				reticleMaterial.SetFloat("_Transparency", 1f);
 				switch(type){
