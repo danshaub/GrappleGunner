@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager _instance;
+    [SerializeField] private PlayerPhysics playerPhysics;
     [SerializeField] public bool allowMovement = true;
     [SerializeField] public bool grounded = true;
     public float playerHeight = 0;
+    public Vector3 playerXZLocalPosistion;
 
     private void Awake()
     {
@@ -19,5 +21,12 @@ public class PlayerManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
+
+    public void Jump(){
+        playerPhysics.Jump();
+    }
+    public void StopGrounded(){
+        playerPhysics.StopGrounded();
     }
 }

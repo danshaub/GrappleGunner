@@ -94,8 +94,10 @@ public class PlayerPhysics : MonoBehaviour
         // Reset Collider Center
         playerCollider.center = new Vector3(orientation.localPosition.x, playerCollider.height / 2, orientation.localPosition.z);
 
-        // Send player height info to PlayerManager
+
+        // Send player height and offset info to PlayerManager
         PlayerManager._instance.playerHeight = orientation.localPosition.y;
+        PlayerManager._instance.playerXZLocalPosistion = new Vector3(orientation.localPosition.x, 0, orientation.localPosition.z);
     }
 
     private void Movement(){
@@ -180,7 +182,7 @@ public class PlayerPhysics : MonoBehaviour
         }
     }
 
-    private void Jump(){
+    public void Jump(){
         if(grounded && readyToJump) {
             readyToJump = false;
 
@@ -244,7 +246,7 @@ public class PlayerPhysics : MonoBehaviour
         }
     }
 
-    private void StopGrounded()
+    public void StopGrounded()
     {
         grounded = false;
     }

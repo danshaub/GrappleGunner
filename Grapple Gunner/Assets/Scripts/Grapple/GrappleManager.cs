@@ -16,7 +16,8 @@ public class GrappleManager : MonoBehaviour
         SingleRed,
         LeftGreen,
         RightGreen,
-        TwoGreen
+        TwoGreen,
+        OrangePreTP
     }
 
     public bool allowGrapple = true;
@@ -50,6 +51,10 @@ public class GrappleManager : MonoBehaviour
         public float greenMaxSlackSpeed;
         public float reelDeadZone;
         public float greenSlackDamper;
+
+        [Header("Orange Hook Options")]
+        public float orangeTimeToTeleport;
+        public float forceTuning;
 
         [Header("Reticle Options")]
         public ReticleManager reticleManager;
@@ -129,6 +134,30 @@ public class GrappleManager : MonoBehaviour
             default:
                 break;
         }   
+    }
+
+    public void AddOrange(bool isLeft){
+        if (isLeft)
+        {
+            if (rightGun.hook.state != GrappleHook.GrappleState.Blue)
+            {
+                rightGun.hook.ReturnHook();
+            }
+        }
+        else
+        {
+            if(leftGun.hook.state != GrappleHook.GrappleState.Blue){
+                leftGun.hook.ReturnHook();
+            }
+        }
+
+        currentCase = GrappleCase.OrangePreTP;
+        allowGrapple = false;
+    }
+
+    public void RemoveOrange(bool isLeft){
+        currentCase = GrappleCase.None;
+        allowGrapple = true;
     }
 
     public float SwingForceMultiplier(){

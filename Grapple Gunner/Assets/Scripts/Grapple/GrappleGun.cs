@@ -39,6 +39,11 @@ public class GrappleGun : MonoBehaviour
 	[HideInInspector] public float greenCurrentSpoolSpeed;
 	private Vector3 swingVelocity; // Velocity of controller in XR rig local space
 
+	//Orange Hook state variables
+	private Transform orangeTpTransform;
+    private Vector3 orangeTpOffset;
+	private GrapplePoint orangePoint;
+
 	//Reticle State Variables
 	private Material reticleMaterial;
 
@@ -221,6 +226,39 @@ public class GrappleGun : MonoBehaviour
 		slacking = false;
     }
 
+	private void OrangeTeleport(){
+		StartCoroutine(TPOnFixedUpdate());
+	}
+
+	private IEnumerator TPOnFixedUpdate(){
+        Vector3 tempPosition = player.position + PlayerManager._instance.playerXZLocalPosistion;
+        playerRB.MovePosition(orangeTpTransform.position + orangeTpOffset - PlayerManager._instance.playerXZLocalPosistion);
+        orangeTpTransform.position = tempPosition - orangeTpOffset;
+		PlayerManager._instance.StopGrounded();
+
+        orangePoint.DecrementUses();
+
+        hook.ReturnHook(true);
+
+		yield return new WaitForFixedUpdate();		
+		yield return new WaitForFixedUpdate();
+
+        try
+        {
+            Rigidbody pointRB = orangePoint.GetComponent<Rigidbody>();
+            Vector3 pointVelocity = pointRB.velocity;
+            pointRB.velocity = playerRB.velocity;
+            playerRB.velocity = pointVelocity;
+        }
+        catch { }
+
+        orangeTpTransform = null;
+        orangeTpOffset = Vector3.zero;
+        orangePoint = null;
+
+        GrappleManager._instance.RemoveOrange(isLeft);
+	}
+
 	#region Start Grapple
 
 	private void StartGrapple(InputAction.CallbackContext context){
@@ -268,9 +306,14 @@ public class GrappleGun : MonoBehaviour
         Debug.Log("Start Blue");
     }
 
-    public void StartGrappleOrange()
+    public void StartGrappleOrange(Transform tpTransform, Vector3 tpOffset, GrapplePoint point)
     {
-        Debug.Log("Start Orange");
+		GrappleManager._instance.AddOrange(isLeft);
+        orangeTpTransform = tpTransform;
+		orangeTpOffset = tpOffset;
+		orangePoint = point;
+
+		Invoke("OrangeTeleport", GrappleManager._instance.options.orangeTimeToTeleport);
     }
 
 	#endregion
@@ -307,9 +350,12 @@ public class GrappleGun : MonoBehaviour
 
     public void StopGrappleOrange()
     {
-        Debug.Log("Stop Orange");
-        // PlayerManager._instance.allowGrapple = true;
-        // PlayerManager._instance.grappleState = PlayerManager.GrappleState.None;
+        orangeTpTransform = null;
+        orangeTpOffset = Vector3.zero;
+
+		GrappleManager._instance.RemoveOrange(isLeft);
+
+        CancelInvoke("OrangeTeleport");
     }
 
 	#endregion

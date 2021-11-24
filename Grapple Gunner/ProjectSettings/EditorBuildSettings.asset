@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/L1-RED.unity
     guid: d31964ddf7bc5a24182132f4f907ba65
   - enabled: 1

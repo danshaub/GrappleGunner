@@ -12,6 +12,7 @@ public class GrapplePoint : MonoBehaviour
 		Green,
 		Blue,
 		Orange,
+		OrangeDisabled,
 		UI,
 		None
 	}
@@ -20,10 +21,20 @@ public class GrapplePoint : MonoBehaviour
 	public GrappleType type;
 	public bool useRaycastPosition = false;
 	public Vector3 grapplePosition;
-
 	public Vector3 grappleRotation;
 
+	[Header("Options for Orange Point")]
+	public Transform teleportParent;
+	public Vector3 teleportOffset;
+	public Material disabledMaterial;
+	public bool infiniteUses = true;
+	public int numberUses;
+	private int remainingUses;
+
+	[Header("Gizmo Mesh")]
 	public Mesh grappleMesh;
+	private Vector3 teleportCube = new Vector3(.1f,.1f,.1f);
+	private Material originalMaterial;
 
 	public Vector3 getGrapplePosition(){
 		return transform.position + grapplePosition;
@@ -34,6 +45,22 @@ public class GrapplePoint : MonoBehaviour
 
 	private void Start() {
 		gameObject.tag = "Hookable";
+		originalMaterial = GetComponent<MeshRenderer>().material;
+		remainingUses = numberUses;
+	}
+
+	public void DecrementUses(){
+		if(infiniteUses){
+			return;
+		}
+		else{
+			remainingUses--;
+			if(remainingUses == 0){
+				type = GrappleType.OrangeDisabled;
+				GetComponent<MeshRenderer>().material = disabledMaterial;
+			}
+		}
+
 	}
 
 
@@ -54,6 +81,7 @@ public class GrapplePoint : MonoBehaviour
 				break;
 			case GrappleType.Orange:
 				Gizmos.color = Color.yellow;
+				Gizmos.DrawCube((teleportParent.position + teleportOffset), teleportCube);
 				break;
 		}
 		if (useRaycastPosition){
