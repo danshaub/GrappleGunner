@@ -384,6 +384,9 @@ public class GrappleGun : MonoBehaviour
                     case GrapplePoint.GrappleType.Orange:
                         reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.orange);
                         break;
+					case GrapplePoint.GrappleType.OrangeDisabled:
+						reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.disabled);
+						break;
 				}
 			}
 			else{

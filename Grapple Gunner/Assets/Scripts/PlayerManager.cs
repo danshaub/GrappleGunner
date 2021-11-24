@@ -22,10 +22,6 @@ public class PlayerManager : MonoBehaviour
             _instance = this;
         }
     }
-
-    public void Jump(){
-        playerPhysics.Jump();
-    }
     public void StopGrounded(){
         playerPhysics.StopGrounded();
     }
