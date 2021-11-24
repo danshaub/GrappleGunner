@@ -82,7 +82,7 @@ public class GrappleHook : MonoBehaviour
                     break;
                 case GrapplePoint.GrappleType.Orange:
 					state = GrappleState.Orange;
-                    grappleGun.StartGrappleOrange();
+                    grappleGun.StartGrappleOrange(gp.teleportParent, gp.teleportOffset, gp);
                     break;
                 default:
                     break;
@@ -142,6 +142,14 @@ public class GrappleHook : MonoBehaviour
 		rb.detectCollisions = false;
         retracting = true;
     }
+	public void ReturnHook(bool instant){
+		if(instant){
+			FinishRetract();
+		}
+		else{
+			ReturnHook();
+		}
+	}
 
 	private void FinishRetract(){
 		cd.enabled = true;
