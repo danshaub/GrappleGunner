@@ -18,12 +18,13 @@ public class GrappleHook : MonoBehaviour
 	public GrappleState state = GrappleState.None;
 	public bool fired = false;
 	public bool retracting = false;
+	public bool blueReeling;
 
 	private float travelSpeed;
 	private GrappleGun grappleGun;
 
 	private Collider cd;
-	private Rigidbody rb;
+	[HideInInspector] public Rigidbody rb;
 	private Transform returnTransform;
 	private float retractInterpolateValue;
 	private float snapReturnDistance = 0.5f;
@@ -45,6 +46,16 @@ public class GrappleHook : MonoBehaviour
 			if(Vector3.Distance(transform.position, returnTransform.position) <= snapReturnDistance){
 				FinishRetract();
 			}
+		}
+		else if(blueReeling){
+            transform.position = Vector3.Lerp(transform.position, returnTransform.position, retractInterpolateValue);
+            transform.rotation = Quaternion.Slerp(transform.rotation, returnTransform.rotation, retractInterpolateValue);
+
+            if (Vector3.Distance(transform.position, returnTransform.position) <= snapReturnDistance)
+            {
+                rb.position = returnTransform.position;
+            	rb.rotation = returnTransform.rotation;
+            }
 		}
 	}
 
@@ -78,7 +89,7 @@ public class GrappleHook : MonoBehaviour
                     break;
                 case GrapplePoint.GrappleType.Blue:
 					state = GrappleState.Blue;
-                    grappleGun.StartGrappleBlue();
+                    grappleGun.StartGrappleBlue(gp.blueGrabRB);
                     break;
                 case GrapplePoint.GrappleType.Orange:
 					state = GrappleState.Orange;

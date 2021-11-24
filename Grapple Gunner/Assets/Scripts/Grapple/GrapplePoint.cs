@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Collider))]
 public class GrapplePoint : MonoBehaviour
@@ -22,6 +23,9 @@ public class GrapplePoint : MonoBehaviour
 	public bool useRaycastPosition = false;
 	public Vector3 grapplePosition;
 	public Vector3 grappleRotation;
+
+	[Header("Options for Blue Point")]
+	public Rigidbody blueGrabRB;
 
 	[Header("Options for Orange Point")]
 	public Transform teleportParent;
@@ -77,6 +81,10 @@ public class GrapplePoint : MonoBehaviour
 				Gizmos.color = Color.green;
 				break;
 			case GrappleType.Blue:
+				if(!blueGrabRB){
+					Gizmos.color = Color.red;
+					Gizmos.DrawWireSphere(transform.position, transform.lossyScale.magnitude);
+				}
 				Gizmos.color = Color.blue;
 				break;
 			case GrappleType.Orange:

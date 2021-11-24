@@ -9,7 +9,7 @@ LightingSettings:
   m_Name: Settings_Lighting
   serializedVersion: 3
   m_GIWorkflowMode: 1
-  m_EnableBakedLightmaps: 0
+  m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1
   m_BounceScale: 1
@@ -18,7 +18,7 @@ LightingSettings:
   m_UsingShadowmask: 0
   m_BakeBackend: 2
   m_LightmapMaxSize: 128
-  m_BakeResolution: 40
+  m_BakeResolution: 5
   m_Padding: 2
   m_TextureCompression: 1
   m_AO: 0

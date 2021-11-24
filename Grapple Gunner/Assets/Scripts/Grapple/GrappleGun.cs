@@ -39,6 +39,10 @@ public class GrappleGun : MonoBehaviour
 	[HideInInspector] public float greenCurrentSpoolSpeed;
 	private Vector3 swingVelocity; // Velocity of controller in XR rig local space
 
+	//Blue Hook state variables
+	private Rigidbody blueGrabRigidbody;
+	private FixedJoint blueFixedJoint;
+
 	//Orange Hook state variables
 	private Transform orangeTpTransform;
     private Vector3 orangeTpOffset;
@@ -301,9 +305,17 @@ public class GrappleGun : MonoBehaviour
 		greenCurrentSpoolSpeed = 0;
 	}
 
-    public void StartGrappleBlue()
+    public void StartGrappleBlue(Rigidbody pointRB)
     {
-        Debug.Log("Start Blue");
+        blueGrabRigidbody = pointRB;
+		// blueGrabRigidbody.isKinematic = true;
+
+		blueFixedJoint = hook.gameObject.AddComponent<FixedJoint>();
+		blueFixedJoint.connectedBody = blueGrabRigidbody;
+        hook.rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        hook.rb.isKinematic = true;
+        hook.rb.detectCollisions = false;
+		hook.blueReeling = true;
     }
 
     public void StartGrappleOrange(Transform tpTransform, Vector3 tpOffset, GrapplePoint point)
@@ -343,9 +355,12 @@ public class GrappleGun : MonoBehaviour
 
     public void StopGrappleBlue()
     {
-        Debug.Log("Stop Blue");
-        // PlayerManager._instance.allowGrapple = true;
-        // PlayerManager._instance.grappleState = PlayerManager.GrappleState.None;
+        // blueGrabRigidbody.isKinematic = true;
+		blueGrabRigidbody = null;
+
+		Destroy(blueFixedJoint);
+
+        hook.blueReeling = false;
     }
 
     public void StopGrappleOrange()
