@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -159,6 +159,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &15951740
 BoxCollider:
@@ -286,6 +291,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &16619447
 BoxCollider:
@@ -495,6 +505,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &23402916
 BoxCollider:
@@ -670,6 +685,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &39783960
 GameObject:
@@ -783,6 +803,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &51166635
 GameObject:
@@ -834,6 +859,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &51166638
 BoxCollider:
@@ -947,6 +977,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &70242707
 BoxCollider:
@@ -1122,6 +1157,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &78038329
 GameObject:
@@ -1235,6 +1275,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &134473344
 GameObject:
@@ -1348,6 +1393,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &157941104
 GameObject:
@@ -1385,6 +1435,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &157941106
 BoxCollider:
@@ -1512,6 +1567,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &158604449
 BoxCollider:
@@ -1687,6 +1747,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &164391718
 GameObject:
@@ -1738,6 +1803,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &164391721
 BoxCollider:
@@ -1913,6 +1983,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &207434691
 GameObject:
@@ -1964,6 +2039,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &207434694
 BoxCollider:
@@ -2077,6 +2157,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &229915241
 BoxCollider:
@@ -2252,6 +2337,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &247427977
 GameObject:
@@ -2303,6 +2393,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &247427980
 BoxCollider:
@@ -2416,6 +2511,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &250486406
 BoxCollider:
@@ -2529,6 +2629,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &269039939
 BoxCollider:
@@ -2628,6 +2733,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &275310601
 BoxCollider:
@@ -2836,6 +2946,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &287056155
 BoxCollider:
@@ -3011,6 +3126,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &290013280
 GameObject:
@@ -3124,6 +3244,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &292462422
 GameObject:
@@ -3175,6 +3300,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &292462425
 BoxCollider:
@@ -3350,6 +3480,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &302082646
 GameObject:
@@ -3401,6 +3536,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &302082649
 BoxCollider:
@@ -3514,6 +3654,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &322883825
 BoxCollider:
@@ -3689,6 +3834,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &335114272
 GameObject:
@@ -3740,6 +3890,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &335114275
 BoxCollider:
@@ -3915,6 +4070,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!850595691 &348191752
 LightingSettings:
@@ -4027,6 +4187,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &349994831
 BoxCollider:
@@ -4140,6 +4305,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &363195535
 BoxCollider:
@@ -4253,6 +4423,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &371719692
 BoxCollider:
@@ -4366,6 +4541,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &372174840
 BoxCollider:
@@ -4479,6 +4659,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &376135676
 BoxCollider:
@@ -4578,6 +4763,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &378503533
 BoxCollider:
@@ -4767,6 +4957,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &381667604
 GameObject:
@@ -4880,6 +5075,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &382975671
 GameObject:
@@ -4993,6 +5193,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &384995372
 GameObject:
@@ -5030,6 +5235,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &384995374
 BoxCollider:
@@ -5157,6 +5367,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &401009585
 BoxCollider:
@@ -5256,6 +5471,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &403984853
 BoxCollider:
@@ -5383,6 +5603,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &430558675
 BoxCollider:
@@ -5496,6 +5721,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &433109368
 BoxCollider:
@@ -5609,6 +5839,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &441609673
 BoxCollider:
@@ -5784,6 +6019,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &471747504
 GameObject:
@@ -5897,6 +6137,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &496232791
 GameObject:
@@ -5948,6 +6193,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &496232794
 BoxCollider:
@@ -6061,6 +6311,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &497783797
 BoxCollider:
@@ -6236,6 +6491,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &500890259
 GameObject:
@@ -6287,6 +6547,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &500890262
 BoxCollider:
@@ -6564,6 +6829,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &525578355
 BoxCollider:
@@ -6677,6 +6947,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &526111243
 BoxCollider:
@@ -6790,6 +7065,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &528113217
 BoxCollider:
@@ -6903,6 +7183,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &541963333
 BoxCollider:
@@ -7331,6 +7616,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &558982065
 BoxCollider:
@@ -7444,6 +7734,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &569389276
 BoxCollider:
@@ -7557,6 +7852,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &582226024
 BoxCollider:
@@ -7670,6 +7970,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &584201207
 BoxCollider:
@@ -7845,6 +8150,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &606043417
 GameObject:
@@ -7958,6 +8268,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &624705803
 GameObject:
@@ -8009,6 +8324,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &624705806
 BoxCollider:
@@ -8122,6 +8442,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &630040257
 BoxCollider:
@@ -8297,6 +8622,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &642479954
 GameObject:
@@ -8348,6 +8678,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &642479957
 BoxCollider:
@@ -8461,6 +8796,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &672970822
 BoxCollider:
@@ -8574,6 +8914,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &676340227
 BoxCollider:
@@ -8687,6 +9032,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &682285280
 BoxCollider:
@@ -8862,6 +9212,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
@@ -9068,6 +9423,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &731155771
 GameObject:
@@ -9181,6 +9541,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &750871168
 GameObject:
@@ -9294,6 +9659,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &759828730
 GameObject:
@@ -9407,6 +9777,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &767752463
 GameObject:
@@ -9520,6 +9895,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &768280083
 GameObject:
@@ -9571,6 +9951,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &768280086
 BoxCollider:
@@ -11536,6 +11921,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &790481459
 BoxCollider:
@@ -11649,6 +12039,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &802331173
 BoxCollider:
@@ -11824,6 +12219,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &830806899
 GameObject:
@@ -11875,6 +12275,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &830806902
 BoxCollider:
@@ -12050,6 +12455,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &854070915
 GameObject:
@@ -12163,6 +12573,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &886169007
 GameObject:
@@ -12276,6 +12691,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &893189366
 GameObject:
@@ -12327,6 +12747,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &893189369
 BoxCollider:
@@ -12440,6 +12865,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &894420932
 BoxCollider:
@@ -12615,6 +13045,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &909662399
 GameObject:
@@ -12666,6 +13101,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &909662402
 BoxCollider:
@@ -12841,6 +13281,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &948302884
 GameObject:
@@ -12954,6 +13399,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &963311221
 GameObject:
@@ -13067,6 +13517,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &986356689
 GameObject:
@@ -13151,6 +13606,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &988660931
 BoxCollider:
@@ -13326,6 +13786,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &993545209
 GameObject:
@@ -13377,6 +13842,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &993545212
 BoxCollider:
@@ -13490,6 +13960,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1012627470
 BoxCollider:
@@ -13603,6 +14078,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1032653505
 BoxCollider:
@@ -13716,6 +14196,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1034737360
 BoxCollider:
@@ -13829,6 +14314,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1035818131
 BoxCollider:
@@ -14004,6 +14494,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1050855466
 GameObject:
@@ -14041,6 +14536,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1050855468
 BoxCollider:
@@ -14168,6 +14668,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1061751346
 BoxCollider:
@@ -14281,6 +14786,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1063348557
 BoxCollider:
@@ -14456,6 +14966,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1109650635
 GameObject:
@@ -14507,6 +15022,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1109650638
 BoxCollider:
@@ -14620,6 +15140,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!135 &1121707164
 SphereCollider:
@@ -14733,6 +15258,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1130125825
 BoxCollider:
@@ -14846,6 +15376,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1139589423
 BoxCollider:
@@ -14959,6 +15494,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1147860497
 BoxCollider:
@@ -15072,6 +15612,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1150460829
 BoxCollider:
@@ -15185,6 +15730,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1163697837
 BoxCollider:
@@ -15360,6 +15910,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1188475176
 GameObject:
@@ -15397,6 +15952,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1188475178
 BoxCollider:
@@ -15524,6 +16084,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1213495581
 BoxCollider:
@@ -15637,6 +16202,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1216807865
 BoxCollider:
@@ -15750,6 +16320,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1233249380
 BoxCollider:
@@ -15863,6 +16438,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1234026716
 BoxCollider:
@@ -16038,6 +16618,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1242427838
 GameObject:
@@ -16089,6 +16674,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1242427841
 BoxCollider:
@@ -16366,6 +16956,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1275366125
 BoxCollider:
@@ -16479,6 +17074,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1305724399
 BoxCollider:
@@ -16654,6 +17254,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1371115019
 GameObject:
@@ -16705,6 +17310,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1371115022
 BoxCollider:
@@ -16818,6 +17428,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1372236410
 BoxCollider:
@@ -16931,6 +17546,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1405408121
 BoxCollider:
@@ -17106,6 +17726,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1419198057
 GameObject:
@@ -17157,6 +17782,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1419198060
 BoxCollider:
@@ -17332,6 +17962,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1422710239
 GameObject:
@@ -17445,6 +18080,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1437090116
 GameObject:
@@ -17496,6 +18136,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1437090119
 BoxCollider:
@@ -17671,6 +18316,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1471479291
 GameObject:
@@ -17722,6 +18372,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1471479294
 BoxCollider:
@@ -17850,6 +18505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  fired: 0
+  retracting: 0
 --- !u!135 &1491621952
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19718,6 +20376,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1491656726
 BoxCollider:
@@ -19893,6 +20556,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1522493312
 GameObject:
@@ -20006,6 +20674,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1535555503
 GameObject:
@@ -20119,6 +20792,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1568090874
 GameObject:
@@ -20170,6 +20848,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1568090877
 BoxCollider:
@@ -20269,6 +20952,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1570830643
 BoxCollider:
@@ -20384,6 +21072,9 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 4294967295
+  m_SelectMode: 0
   m_CustomReticle: {fileID: 460256861982694848, guid: ff3a582a6c6f27c418afab1e64fffd1c, type: 3}
   m_FirstHoverEntered:
     m_PersistentCalls:
@@ -20395,6 +21086,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_SelectEntered:
@@ -20439,6 +21136,9 @@ MonoBehaviour:
   m_TeleportationProvider: {fileID: 5622675951488064863}
   m_MatchOrientation: 0
   m_TeleportTrigger: 0
+  m_Teleporting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!64 &1576831357
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26982,6 +27682,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1594715503
 GameObject:
@@ -27033,6 +27738,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1594715506
 BoxCollider:
@@ -27208,6 +27918,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1641891082
 GameObject:
@@ -27259,6 +27974,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1641891085
 BoxCollider:
@@ -27372,6 +28092,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1648624553
 BoxCollider:
@@ -27485,6 +28210,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1662786460
 BoxCollider:
@@ -27660,6 +28390,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1678312285
 GameObject:
@@ -27711,6 +28446,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1678312288
 BoxCollider:
@@ -27886,6 +28626,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1701856746
 GameObject:
@@ -27999,6 +28744,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1705170872
 GameObject:
@@ -28036,6 +28786,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1705170874
 BoxCollider:
@@ -28163,6 +28918,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1709367732
 BoxCollider:
@@ -28426,6 +29186,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1711218471
 BoxCollider:
@@ -28553,6 +29318,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1724040369
 BoxCollider:
@@ -28666,6 +29436,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1741689688
 BoxCollider:
@@ -28841,6 +29616,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1745640543
 GameObject:
@@ -28892,6 +29672,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1745640546
 BoxCollider:
@@ -29005,6 +29790,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1761101184
 BoxCollider:
@@ -29118,6 +29908,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1775613506
 BoxCollider:
@@ -29231,6 +30026,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1777705698
 BoxCollider:
@@ -29406,6 +30206,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1799037025
 GameObject:
@@ -29457,6 +30262,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1799037028
 BoxCollider:
@@ -29556,6 +30366,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1809392805
 BoxCollider:
@@ -29683,6 +30498,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1818023133
 BoxCollider:
@@ -29858,6 +30678,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1819780592
 GameObject:
@@ -29909,6 +30734,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1819780595
 BoxCollider:
@@ -30022,6 +30852,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1828137712
 BoxCollider:
@@ -30135,6 +30970,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1832190340
 BoxCollider:
@@ -30310,6 +31150,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1894062870
 GameObject:
@@ -30361,6 +31206,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1894062873
 BoxCollider:
@@ -30474,6 +31324,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1897759212
 BoxCollider:
@@ -30587,6 +31442,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1913474861
 BoxCollider:
@@ -30762,6 +31622,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &1935821885
 GameObject:
@@ -30813,6 +31678,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1935821888
 BoxCollider:
@@ -30926,6 +31796,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1937868634
 BoxCollider:
@@ -31039,6 +31914,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1973182743
 BoxCollider:
@@ -31152,6 +32032,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &1976269523
 BoxCollider:
@@ -31429,6 +32314,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &2012939420
 BoxCollider:
@@ -31604,6 +32494,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &2020124631
 GameObject:
@@ -31760,6 +32655,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &2058692408
 GameObject:
@@ -31873,6 +32773,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &2080010254
 GameObject:
@@ -31924,6 +32829,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: -0.5, y: 0, z: 0}
   grappleRotation: {x: 0, y: 90, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &2080010257
 BoxCollider:
@@ -32037,6 +32947,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &2091617528
 BoxCollider:
@@ -32150,6 +33065,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &2092149435
 BoxCollider:
@@ -32325,6 +33245,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &2101723342
 GameObject:
@@ -32438,6 +33363,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &2109569191
 GameObject:
@@ -32489,6 +33419,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &2109569194
 BoxCollider:
@@ -32664,6 +33599,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!1 &2125107743
 GameObject:
@@ -32745,6 +33685,11 @@ MonoBehaviour:
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0.5}
   grappleRotation: {x: 0, y: 180, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: -2893882437805235404, guid: ba00e62de013ceb4a896749407f72b04, type: 3}
 --- !u!65 &2132137103
 BoxCollider:
@@ -32920,6 +33865,11 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: -0.5, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  teleportParent: {fileID: 0}
+  teleportOffset: {x: 0, y: 0, z: 0}
+  disabledMaterial: {fileID: 0}
+  infiniteUses: 1
+  numberUses: 0
   grappleMesh: {fileID: 0}
 --- !u!114 &345912045213601726
 MonoBehaviour:
@@ -33154,6 +34104,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RightHandTurnAction:
     m_UseReference: 1
@@ -33165,6 +34116,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1712295747906787012
 MonoBehaviour:
@@ -33178,39 +34130,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  isLeft: 0
   playerRB: {fileID: 0}
   hook: {fileID: 0}
   gunTip: {fileID: 7303344300156387287}
   player: {fileID: 5622675951488064848}
   ropePoint: {fileID: 0}
+  vrCamera: {fileID: 0}
   dummyHook: {fileID: 0}
   grappleAction: {fileID: 0}
+  reelAction: {fileID: 0}
+  slackAction: {fileID: 0}
+  gunVelocity: {fileID: 0}
   reticleVisual: {fileID: 0}
   rayInteractor: {fileID: 7723118044469486184}
-  hookTravelSpeed: 40
-  redGrappleSpeed: 10
-  redVelocityDamper: 1
-  redVelocityCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  springForce: 15
-  damping: 30
-  massScale: 5
-  maxDistance: 0.1
-  minDistance: 0.1
-  minReticleDistance: 5
-  maxReticleDistance: 50
-  reticleScaleCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   grappling: 0
+  reeling: 0
+  slacking: 0
+  greenCurrentSpoolSpeed: 0
 --- !u!136 &2757776424454973076
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33385,6 +34322,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -3326005586356538449, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RotationAction:
     m_UseReference: 1
@@ -33396,7 +34334,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 5101698808175986029, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_TrackingStateAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_SelectAction:
     m_UseReference: 1
     m_Action:
@@ -33407,7 +34358,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_SelectActionValue:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_ActivateAction:
     m_UseReference: 1
     m_Action:
@@ -33418,7 +34382,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_ActivateActionValue:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_UIPressAction:
     m_UseReference: 1
     m_Action:
@@ -33429,7 +34406,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 3279264004350380116, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_UIPressActionValue:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_HapticDeviceAction:
     m_UseReference: 1
     m_Action:
@@ -33440,6 +34430,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RotateAnchorAction:
     m_UseReference: 1
@@ -33451,6 +34442,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -5913262927076077117, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_TranslateAnchorAction:
     m_UseReference: 1
@@ -33462,6 +34454,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
 --- !u!114 &5622675950145163989
@@ -33480,7 +34473,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
+  m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -33508,6 +34504,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
+  m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -33541,6 +34538,7 @@ MonoBehaviour:
   m_LineType: 1
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
+  m_RayOriginTransform: {fileID: 0}
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 12
   m_Acceleration: 9.8
@@ -33558,7 +34556,6 @@ MonoBehaviour:
     m_Bits: 64
   m_RaycastTriggerInteraction: 1
   m_HitClosestOnly: 0
-  m_KeepSelectedTargetValid: 1
   m_HoverToSelect: 0
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 0
@@ -34048,6 +35045,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -2024308242397127297, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RotationAction:
     m_UseReference: 1
@@ -34059,7 +35057,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 8248158260566104461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_TrackingStateAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_SelectAction:
     m_UseReference: 1
     m_Action:
@@ -34070,7 +35081,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_SelectActionValue:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_ActivateAction:
     m_UseReference: 1
     m_Action:
@@ -34081,7 +35105,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_ActivateActionValue:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_UIPressAction:
     m_UseReference: 1
     m_Action:
@@ -34092,7 +35129,20 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -6395602842196007441, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_UIPressActionValue:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_HapticDeviceAction:
     m_UseReference: 1
     m_Action:
@@ -34103,6 +35153,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -8785819595477538065, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RotateAnchorAction:
     m_UseReference: 1
@@ -34114,6 +35165,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -7363382999065477798, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_TranslateAnchorAction:
     m_UseReference: 1
@@ -34125,6 +35177,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
 --- !u!114 &5622675950324552955
@@ -34143,7 +35196,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
+  m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -34171,6 +35227,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
+  m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -34204,6 +35261,7 @@ MonoBehaviour:
   m_LineType: 1
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
+  m_RayOriginTransform: {fileID: 0}
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 12
   m_Acceleration: 9.8
@@ -34221,7 +35279,6 @@ MonoBehaviour:
     m_Bits: 64
   m_RaycastTriggerInteraction: 1
   m_HitClosestOnly: 0
-  m_KeepSelectedTargetValid: 1
   m_HoverToSelect: 0
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 0
@@ -34629,6 +35686,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrackingType: 0
   m_UpdateType: 0
+  m_PositionInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Main Camera - TPD - Position
+      m_Type: 0
+      m_ExpectedControlType: Vector3
+      m_Id: 7dc9146a-d1b0-4b8d-bd21-da67e47782c2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: e4fc9c77-2456-47eb-a437-e987f09a9734
+        m_Path: <XRHMD>/centerEyePosition
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Main Camera - TPD - Position
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RotationInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Main Camera - TPD - Rotation
+      m_Type: 0
+      m_ExpectedControlType: Quaternion
+      m_Id: 2cac8723-4c87-4082-99b3-06c61e3ac4e2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: b3e8ac75-75b3-42b5-907b-8ce6d703e1ce
+        m_Path: <XRHMD>/centerEyeRotation
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Main Camera - TPD - Rotation
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   m_PositionAction:
     m_Name: Main Camera - TPD - Position
     m_Type: 0
@@ -34645,6 +35742,7 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Main Camera - TPD - Position
       m_Flags: 0
+    m_Flags: 0
   m_RotationAction:
     m_Name: Main Camera - TPD - Rotation
     m_Type: 0
@@ -34661,6 +35759,8 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Main Camera - TPD - Rotation
       m_Flags: 0
+    m_Flags: 0
+  m_HasMigratedActions: 1
 --- !u!1 &5622675951413903973
 GameObject:
   m_ObjectHideFlags: 0
@@ -34758,13 +35858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7448815bd5148434682b3d931066cd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RigBaseGameObject: {fileID: 5622675951488064854}
+  m_Camera: {fileID: 0}
+  m_OriginBaseGameObject: {fileID: 5622675951488064854}
   m_CameraFloorOffsetObject: {fileID: 5622675951085849058}
-  m_CameraGameObject: {fileID: 5622675951413903973}
   m_RequestedTrackingOriginMode: 0
   m_CameraYOffset: 1.36144
-  m_TrackingSpace: 3
-  m_TrackingOriginMode: -2147483648
+  m_CameraGameObject: {fileID: 5622675951413903973}
 --- !u!114 &5622675951488064851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34818,9 +35917,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc19272f4ee0e646b8ba0becd5dbbfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowGrapple: 1
+  playerPhysics: {fileID: 0}
   allowMovement: 1
-  grappleState: 1
+  grounded: 1
+  playerHeight: 0
+  playerXZLocalPosistion: {x: 0, y: 0, z: 0}
 --- !u!114 &5622675951488064856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34840,7 +35941,9 @@ MonoBehaviour:
   colliderHeightOffset: 0.35
   moveSpeed: 4500
   maxSpeed: 20
+  coyoteTime: 3
   grounded: 0
+  touchingSurface: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 192
@@ -34877,6 +35980,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RightHandSnapTurnAction:
     m_UseReference: 1
@@ -34888,6 +35992,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &5622675951488064862
 MonoBehaviour:
@@ -34902,7 +36007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Timeout: 10
-  m_XRRig: {fileID: 5622675951488064849}
+  m_XROrigin: {fileID: 5622675951488064849}
 --- !u!114 &5622675951488064863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34992,7 +36097,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  m_InteractionLayers:
+    m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
+  m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -35020,6 +36128,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
+  m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -35053,6 +36162,7 @@ MonoBehaviour:
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 2000
+  m_RayOriginTransform: {fileID: 0}
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
   m_Acceleration: 9.8
@@ -35070,7 +36180,6 @@ MonoBehaviour:
     m_Bits: 128
   m_RaycastTriggerInteraction: 1
   m_HitClosestOnly: 0
-  m_KeepSelectedTargetValid: 1
   m_HoverToSelect: 0
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 1
@@ -35091,84 +36200,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 5622675951488064855}
+  isLeft: 0
   playerRB: {fileID: 5622675951488064943}
   hook: {fileID: 1491621951}
   gunTip: {fileID: 977460497729411338}
   player: {fileID: 5622675951488064848}
   ropePoint: {fileID: 2125107744}
+  vrCamera: {fileID: 0}
   dummyHook: {fileID: 780146485}
   grappleAction: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelAction: {fileID: 0}
+  slackAction: {fileID: 0}
+  gunVelocity: {fileID: 0}
   reticleVisual: {fileID: 285262326}
   rayInteractor: {fileID: 9163903917198410869}
-  hookTravelSpeed: 300
-  redGrappleSpeed: 30
-  redVelocityDamper: 0.05
-  redVelocityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.027339926
-      outSlope: 0.027339926
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.13833992
-    - serializedVersion: 3
-      time: 2.5049438
-      value: 0.19647217
-      inSlope: 0.043327726
-      outSlope: 0.043327726
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.31361032
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 5
-      value: 1.0092888
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  springForce: 15
-  damping: 30
-  massScale: 5
-  maxDistance: 0.1
-  minDistance: 0.1
-  minReticleDistance: 5
-  maxReticleDistance: 30
-  reticleScaleCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.25
-      inSlope: 0.75
-      outSlope: 0.75
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.75
-      outSlope: 0.75
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   grappling: 0
+  reeling: 0
+  slacking: 0
+  greenCurrentSpoolSpeed: 0
 --- !u!114 &9163903917198410869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35185,7 +36234,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  m_InteractionLayers:
+    m_Bits: 128
   m_AttachTransform: {fileID: 0}
+  m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -35213,6 +36265,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
+  m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -35246,6 +36299,7 @@ MonoBehaviour:
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 2000
+  m_RayOriginTransform: {fileID: 0}
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
   m_Acceleration: 9.8
@@ -35263,7 +36317,6 @@ MonoBehaviour:
     m_Bits: 128
   m_RaycastTriggerInteraction: 1
   m_HitClosestOnly: 0
-  m_KeepSelectedTargetValid: 1
   m_HoverToSelect: 0
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 1
