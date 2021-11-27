@@ -147,8 +147,8 @@ MonoBehaviour:
     greenMaxSlackSpeed: 20
     reelDeadZone: 0.01
     greenSlackDamper: 0.5
-    orangeTimeToTeleport: 1
-    forceTuning: 0
+    orangeTimeToTeleport: 0.25
+    forceTuning: 2
     reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
     disabledTransparency: 0.4
     minReticleDistance: 5
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc19272f4ee0e646b8ba0becd5dbbfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPhysics: {fileID: 0}
+  playerPhysics: {fileID: 7382778893730682422}
   allowMovement: 1
   grounded: 1
   playerHeight: 0
@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &12026515619419124
 Transform:
   m_ObjectHideFlags: 0
@@ -2137,7 +2137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12026515767155275}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: RopePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2389,7 +2389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2914717042287056363}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: RopePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2510,7 +2510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2914717043003645012
 Transform:
   m_ObjectHideFlags: 0
@@ -4358,13 +4358,13 @@ GameObject:
   - component: {fileID: 2914717043379540817}
   - component: {fileID: 2914717043379540782}
   - component: {fileID: 2914717043379540816}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: HookRight
   m_TagString: Hook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2914717043379540819
 Transform:
   m_ObjectHideFlags: 0
@@ -6200,6 +6200,8 @@ MonoBehaviour:
   state: 0
   fired: 0
   retracting: 0
+  blueReeling: 0
+  rb: {fileID: 0}
 --- !u!135 &2914717043379540782
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6221,7 +6223,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914717043379540818}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -6244,13 +6246,13 @@ GameObject:
   - component: {fileID: 2914717043450199285}
   - component: {fileID: 2914717043450199284}
   - component: {fileID: 2914717043450199287}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: HookLeft
   m_TagString: Hook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2914717043450199281
 Transform:
   m_ObjectHideFlags: 0
@@ -8086,6 +8088,8 @@ MonoBehaviour:
   state: 0
   fired: 0
   retracting: 0
+  blueReeling: 0
+  rb: {fileID: 0}
 --- !u!135 &2914717043450199284
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8107,7 +8111,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914717043450199286}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -9139,7 +9143,7 @@ MonoBehaviour:
   m_RigBaseGameObject: {fileID: 7382778893730682424}
   m_CameraFloorOffsetObject: {fileID: 7382778893060063884}
   m_CameraGameObject: {fileID: 7382778893807782155}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.36144
   m_TrackingSpace: 3
   m_TrackingOriginMode: -2147483648
