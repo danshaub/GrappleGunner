@@ -278,7 +278,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -551,7 +550,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -670,7 +668,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -789,7 +786,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -908,7 +904,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1027,7 +1022,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1146,7 +1140,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1265,7 +1258,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1384,7 +1376,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1503,7 +1494,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1622,7 +1612,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1741,7 +1730,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1860,7 +1848,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -1979,7 +1966,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2098,7 +2084,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2217,7 +2202,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2336,7 +2320,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2415,22 +2398,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7382778892924918199, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
   m_PrefabInstance: {fileID: 12026515929793742}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &294734651
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294734648}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &296894345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7244698156261861633, guid: 6b73fc9ef0e59ce409bcb9824e0485b7, type: 3}
@@ -2486,7 +2453,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2605,7 +2571,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2724,7 +2689,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2848,7 +2812,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -2967,7 +2930,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -3086,7 +3048,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -3273,7 +3234,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -3392,7 +3352,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -3553,7 +3512,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -3765,7 +3723,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -3884,7 +3841,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4003,7 +3959,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4122,7 +4077,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4241,7 +4195,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4365,7 +4318,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4484,7 +4436,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4603,7 +4554,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4722,7 +4672,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4841,7 +4790,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -4960,7 +4908,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5079,7 +5026,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5198,7 +5144,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5317,7 +5262,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5436,7 +5380,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5555,7 +5498,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5674,7 +5616,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5793,7 +5734,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -5912,7 +5852,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -6031,7 +5970,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -6348,7 +6286,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -6467,7 +6404,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -6586,7 +6522,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -6782,7 +6717,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1354
+  m_Name: pb_Mesh-2818
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6990,7 +6925,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7109,7 +7043,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7228,7 +7161,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7347,7 +7279,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7466,7 +7397,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7590,7 +7520,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7709,7 +7638,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7833,7 +7761,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -7952,7 +7879,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -8071,7 +7997,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -8190,7 +8115,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -8410,7 +8334,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -8485,7 +8408,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1410
+  m_Name: pb_Mesh-2872
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8693,7 +8616,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -8812,7 +8734,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -8931,7 +8852,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9050,7 +8970,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9169,7 +9088,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9288,7 +9206,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9412,7 +9329,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9531,7 +9447,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9650,7 +9565,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9769,7 +9683,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -9888,7 +9801,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -10007,7 +9919,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -10126,7 +10037,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -10350,7 +10260,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -10695,7 +10604,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -10857,7 +10765,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -10976,7 +10883,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11095,7 +11001,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11214,7 +11119,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11333,7 +11237,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11452,7 +11355,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11571,7 +11473,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11690,7 +11591,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11809,7 +11709,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -11928,7 +11827,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -12047,7 +11945,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -12166,7 +12063,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -12285,7 +12181,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -12405,7 +12300,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 1736801226}
   teleportOffset: {x: 0, y: -1, z: 0}
   disabledMaterial: {fileID: 2100000, guid: 7c93e7907195b4b43b6a4ddedc2115ff, type: 2}
@@ -12540,7 +12434,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -12698,7 +12591,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -12817,7 +12709,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -13041,7 +12932,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -13160,7 +13050,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -13279,7 +13168,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -13398,7 +13286,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -13517,7 +13404,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -13591,22 +13477,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7382778892751757201, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
   m_PrefabInstance: {fileID: 12026515929793742}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1880018187
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880018184}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1880155708
 GameObject:
   m_ObjectHideFlags: 0
@@ -13657,7 +13527,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -13940,7 +13809,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -14059,7 +13927,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -14178,7 +14045,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -14297,7 +14163,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -14416,7 +14281,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
@@ -14645,7 +14509,6 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  blueGrabRB: {fileID: 0}
   teleportParent: {fileID: 0}
   teleportOffset: {x: 0, y: 0, z: 0}
   disabledMaterial: {fileID: 0}
