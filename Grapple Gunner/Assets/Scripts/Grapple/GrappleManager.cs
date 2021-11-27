@@ -27,6 +27,8 @@ public class GrappleManager : MonoBehaviour
         [Header("Hook Options")]
         public float hookTravelSpeed;
         public float retractInterpolateValue;
+        public float sphereCastRadius;
+        public LayerMask sphereCastMask;
         
         [Header("Red Hook Options")]
         public float redUnlockDistanceMultiplier;
