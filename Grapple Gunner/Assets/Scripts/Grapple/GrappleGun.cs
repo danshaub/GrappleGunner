@@ -27,10 +27,6 @@ public class GrappleGun : MonoBehaviour
     private Vector3 originalHookPosition;
     private Vector3 ropeDirection; //From gun tip to hook
 
-    //Red Hook State Variables
-    private bool redLocked;
-    private bool redAttemptedRelease;
-
     //Green Hook state variables
     private ConfigurableJoint joint;
     private float reelInput;
@@ -129,17 +125,6 @@ public class GrappleGun : MonoBehaviour
 
         ropeDirection = (gunTip.position - ropePoint.position).normalized;
         float distanceFromPoint = Vector3.Distance(ropePoint.position, gunTip.position);
-
-        redLocked = (distanceFromPoint > PlayerManager._instance.playerHeight *
-                        GrappleManager._instance.options.redUnlockDistanceMultiplier) ||
-                    (playerRB.velocity.magnitude > GrappleManager._instance.options.redUnlockVelosityThreshold);
-
-        if (!redLocked && redAttemptedRelease)
-        {
-            hook.ReturnHook();
-            grappling = false;
-            reticleVisual.SetActive(true);
-        }
 
         float multiplier = GrappleManager._instance.options.redVelocityCurve.Evaluate(distanceFromPoint);
         Vector3 targetVelocity = -ropeDirection * GrappleManager._instance.options.redGrappleSpeed * multiplier;
@@ -288,7 +273,6 @@ public class GrappleGun : MonoBehaviour
 
     private void StartGrapple(InputAction.CallbackContext context)
     {
-        redAttemptedRelease = false;
         if (GrappleManager._instance.allowGrapple && !hook.fired)
         {
             dummyHook.SetActive(false);
@@ -303,10 +287,8 @@ public class GrappleGun : MonoBehaviour
     public void StartGrappleRed()
     {
         GrappleManager._instance.AddRed();
-        redLocked = true;
     }
 
-    // TODO: Refactor this so it doesn't use the spring joint. Write propriterary joint for this.
     public void StartGrappleGreen()
     {
         GrappleManager._instance.AddGreen(isLeft);
@@ -348,28 +330,22 @@ public class GrappleGun : MonoBehaviour
     #region Stop Grapple
     private void StopGrapple(InputAction.CallbackContext context)
     {
-        if (!redLocked)
-        {
-            hook.ReturnHook();
-            grappling = false;
-            reticleVisual.SetActive(true);
-        }
-        else
-        {
-            redAttemptedRelease = true;
-        }
+        hook.ReturnHook();
+        grappling = false;
+        reticleVisual.SetActive(true);
     }
 
 
     public void StopGrappleRed()
     {
         GrappleManager._instance.RemoveRed();
+        playerRB.velocity = Vector3.zero;
     }
 
     public void StopGrappleGreen()
     {
-        GrappleManager._instance.RemoveGreen(isLeft);
         Destroy(joint);
+        GrappleManager._instance.RemoveGreen(isLeft);
     }
 
     public void StopGrappleBlue()
