@@ -10,5 +10,5 @@ public class ReticleManager : ScriptableObject
     public Texture green;
     public Texture blue;
     public Texture orange;
-    public Texture uiButton;
+    public Texture button;
 }

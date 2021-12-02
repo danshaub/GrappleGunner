@@ -90,6 +90,10 @@ public class GrappleHook : MonoBehaviour
                     state = GrappleState.Orange;
                     grappleGun.StartGrappleOrange(gp.teleportParent, gp.teleportOffset, gp);
                     break;
+                case GrapplePoint.GrappleType.Button:
+                    gp.InvokeButtonEvent();
+                    ReturnHook();
+                    break;
                 default:
                     break;
             }

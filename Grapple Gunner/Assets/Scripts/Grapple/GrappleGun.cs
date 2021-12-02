@@ -401,6 +401,9 @@ public class GrappleGun : MonoBehaviour
                     case GrapplePoint.GrappleType.OrangeDisabled:
                         reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.disabled);
                         break;
+                    case GrapplePoint.GrappleType.Button:
+                        reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.button);
+                        break;
                 }
             }
             else
