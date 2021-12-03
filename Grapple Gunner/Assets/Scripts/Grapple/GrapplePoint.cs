@@ -79,7 +79,7 @@ public class GrapplePoint : MonoBehaviour
 
 
 
-	#if UNITY_EDITOR
+	// #if UNITY_EDITOR
 	private float maxDimension(Vector3 v){
         
         return Mathf.Max(Mathf.Max(v.x, v.y), v.z);
@@ -146,5 +146,5 @@ public class GrapplePoint : MonoBehaviour
             }
 		}
 	}
-	#endif
+	// #endif
 }

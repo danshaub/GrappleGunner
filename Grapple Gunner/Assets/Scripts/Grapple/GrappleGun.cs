@@ -243,6 +243,7 @@ public class GrappleGun : MonoBehaviour
     {
         Vector3 tempPosition = player.position + PlayerManager._instance.playerXZLocalPosistion;
         playerRB.MovePosition(orangeTpTransform.position + orangeTpOffset - PlayerManager._instance.playerXZLocalPosistion);
+        orangeTpTransform.eulerAngles = new Vector3(0f, orangeTpTransform.eulerAngles.y, 0f);
         orangeTpTransform.position = tempPosition - orangeTpOffset;
         PlayerManager._instance.StopGrounded();
 

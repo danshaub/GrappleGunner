@@ -9,15 +9,35 @@ public class CubeLauncher : MonoBehaviour
     public Vector3 launchRotation;
     public Vector3 launchVelocity;
     public float launchPeriod;
-    public bool repeatLaunch;
+    public bool repeatOnStart;
+    public bool toggleRepeat;
+
+    private bool repeating = false;
 
     private void Start() {
-        if(repeatLaunch){
-            InvokeRepeating("Launch", 0f, launchPeriod);
+        if(repeatOnStart){
+            repeating = true;
+            InvokeRepeating("LaunchBlock", 0f, launchPeriod);
         }
     }
 
     public void Launch(){
+        if(toggleRepeat){
+            if(repeating){
+                repeating = false;
+                CancelInvoke("LaunchBlock");
+            }
+            else{
+                repeating = true;
+                InvokeRepeating("LaunchBlock", 0f, launchPeriod);
+            }
+        }
+        else{
+            LaunchBlock();
+        }
+    }
+
+    private void LaunchBlock(){
         rbToLaunch.angularVelocity = Vector3.zero;
 
         rbToLaunch.position = launchLocation;
