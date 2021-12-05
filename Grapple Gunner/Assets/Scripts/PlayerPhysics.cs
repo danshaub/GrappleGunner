@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
 
 // Reference: https://www.youtube.com/watch?v=XAC8U9-dTZU&ab_channel=DanisTutorials
 public class PlayerPhysics : MonoBehaviour
@@ -30,6 +29,7 @@ public class PlayerPhysics : MonoBehaviour
     public bool grounded;
     public bool touchingSurface;
     public LayerMask whatIsGround;
+    public LayerMask whatDisablesPlayer;
     public float counterMovement = 0.175f;
     private float threshold = 0.01f;
     public float maxSlopeAngle = 35f;
@@ -55,6 +55,10 @@ public class PlayerPhysics : MonoBehaviour
     // Controller Input Actions
     public InputActionReference jumpReference = null;
     public InputActionReference moveReference = null;
+
+    public void ResetVelocity(){
+        rb.velocity = Vector3.zero;
+    }
 
 
     // Start is called before the first frame update
@@ -265,10 +269,12 @@ public class PlayerPhysics : MonoBehaviour
     }
 
     private void ContinuousMove(InputAction.CallbackContext context){
-        Vector2 input = context.ReadValue<Vector2>();
+        if(PlayerManager._instance.allowMovement){
+            Vector2 input = context.ReadValue<Vector2>();
 
-        x = input.x;
-        y = input.y;
+            x = input.x;
+            y = input.y;
+        }
     }
 
     private void ContinuousMoveCancel(InputAction.CallbackContext context){

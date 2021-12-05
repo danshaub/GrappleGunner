@@ -194,11 +194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc19272f4ee0e646b8ba0becd5dbbfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xrRig: {fileID: 7382778893730682424}
   playerPhysics: {fileID: 7382778893730682422}
   allowMovement: 1
   grounded: 1
   playerHeight: 0
   playerXZLocalPosistion: {x: 0, y: 0, z: 0}
+  resetViewReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &12026515619419131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,6 +2401,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 192
+  whatDisablesPlayer:
+    serializedVersion: 2
+    m_Bits: 0
   counterMovement: 0.175
   maxSlopeAngle: 50
   airDampeningMultiplier: 0.1

@@ -57,6 +57,13 @@ public class GrappleGun : MonoBehaviour
         originalHookPosition = hook.transform.localPosition;
     }
 
+    private void OnDestroy() {
+        grappleAction.action.started -= StartGrapple;
+        grappleAction.action.canceled -= StopGrapple;
+        slackAction.action.started -= Slack;
+        slackAction.action.canceled -= EndSlack;
+    }
+
     private void Start()
     {
         options = GrappleManager._instance.options;
