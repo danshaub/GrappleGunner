@@ -888,7 +888,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "TryRecenter",
+                    "name": "Menu",
                     "type": "Button",
                     "id": "138c350c-818d-494a-ac5d-ebdc77e573fd",
                     "expectedControlType": "Button",
@@ -1015,7 +1015,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "TryRecenter",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

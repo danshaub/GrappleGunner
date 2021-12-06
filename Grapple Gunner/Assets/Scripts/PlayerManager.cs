@@ -15,8 +15,6 @@ public class PlayerManager : MonoBehaviour
     public float playerHeight = 0;
     public Vector3 playerXZLocalPosistion;
     private XRInputSubsystem subsystem = null;
-    public InputActionReference resetViewReference = null;
-
 
 
     private void Awake()
@@ -31,14 +29,9 @@ public class PlayerManager : MonoBehaviour
         }
 
         subsystem = XRGeneralSettings.Instance.Manager.activeLoader.GetLoadedSubsystem<XRInputSubsystem>();
-        resetViewReference.action.performed += ResetViewAction;
     }
 
     private void Start() {
-        ResetView();
-    }
-
-    private void ResetViewAction(InputAction.CallbackContext context){
         ResetView();
     }
 
