@@ -27967,14 +27967,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: gunVelocity
-      value: 
-      objectReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    - target: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: grappleAction
-      value: 
-      objectReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 3561913862872785002, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_RootOrder
       value: 1

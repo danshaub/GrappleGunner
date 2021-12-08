@@ -187,7 +187,7 @@ public class PlayerPhysics : MonoBehaviour
     }
 
     public void Jump(){
-        if(grounded && readyToJump) {
+        if(grounded && readyToJump && PlayerManager._instance.allowMovement) {
             readyToJump = false;
 
             // Add jump forces
@@ -269,12 +269,17 @@ public class PlayerPhysics : MonoBehaviour
     }
 
     private void ContinuousMove(InputAction.CallbackContext context){
+        Vector2 input;
         if(PlayerManager._instance.allowMovement){
-            Vector2 input = context.ReadValue<Vector2>();
+            input = context.ReadValue<Vector2>();
 
-            x = input.x;
-            y = input.y;
         }
+        else{
+            input = Vector2.zero;
+        }
+
+        x = input.x;
+        y = input.y;
     }
 
     private void ContinuousMoveCancel(InputAction.CallbackContext context){

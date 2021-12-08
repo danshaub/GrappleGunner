@@ -200,7 +200,6 @@ MonoBehaviour:
   grounded: 1
   playerHeight: 0
   playerXZLocalPosistion: {x: 0, y: 0, z: 0}
-  resetViewReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &12026515619419131
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12026515767155275}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: RopePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2914717042287056363}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: RopePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +848,7 @@ GameObject:
   - component: {fileID: 2914717043379540817}
   - component: {fileID: 2914717043379540782}
   - component: {fileID: 2914717043379540816}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: HookRight
   m_TagString: Hook
   m_Icon: {fileID: 0}
@@ -978,7 +977,7 @@ GameObject:
   - component: {fileID: 2914717043450199285}
   - component: {fileID: 2914717043450199284}
   - component: {fileID: 2914717043450199287}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: HookLeft
   m_TagString: Hook
   m_Icon: {fileID: 0}
