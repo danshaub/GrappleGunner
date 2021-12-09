@@ -12,6 +12,7 @@ public class GrapplePointEditor : Editor
     SerializedProperty teleportParent;
     SerializedProperty teleportOffset;
     SerializedProperty disabledMaterial;
+    SerializedProperty infiniteUses;
     SerializedProperty numberUses;
     SerializedProperty grappleMesh;
     SerializedProperty onButtonPress;
@@ -27,6 +28,7 @@ public class GrapplePointEditor : Editor
         teleportOffset = serializedObject.FindProperty("teleportOffset");
         disabledMaterial = serializedObject.FindProperty("disabledMaterial");
         numberUses = serializedObject.FindProperty("numberUses");
+        infiniteUses = serializedObject.FindProperty("infiniteUses");
         grappleMesh = serializedObject.FindProperty("grappleMesh");
         onButtonPress = serializedObject.FindProperty("onButtonPress");
     }
@@ -48,7 +50,10 @@ public class GrapplePointEditor : Editor
                 EditorGUILayout.PropertyField(teleportParent);
                 EditorGUILayout.PropertyField(teleportOffset);
                 EditorGUILayout.PropertyField(disabledMaterial);
-                EditorGUILayout.PropertyField(numberUses);
+                EditorGUILayout.PropertyField(infiniteUses);
+                if(!infiniteUses.boolValue){
+                    EditorGUILayout.PropertyField(numberUses);
+                }
                 break;
             case 5:
                 EditorGUILayout.PropertyField(onButtonPress);
