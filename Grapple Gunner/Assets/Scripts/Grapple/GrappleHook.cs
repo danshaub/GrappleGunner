@@ -53,7 +53,6 @@ public class GrappleHook : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.name);
         cd.enabled = false;
         if (other.gameObject.tag == "Hookable")
         {

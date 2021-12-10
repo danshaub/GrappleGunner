@@ -37,10 +37,15 @@ public class PlayerManager : MonoBehaviour
         menuAction.action.canceled += HideMenu;
     }
 
+    private void OnDestroy() {
+        menuAction.action.started -= ShowMenu;
+        menuAction.action.canceled -= HideMenu;
+    }
+
     private void Start() {
         ResetView();
 
-        // menu.SetActive(false);
+        menu.SetActive(false);
     }
 
     public void ResetView(){
@@ -62,6 +67,7 @@ public class PlayerManager : MonoBehaviour
     {
         menuHandReticle.enabled = false;
         menu.SetActive(true);
+        menu.GetComponent<MenuManager>().HomeMenu();
     }
 
     private void HideMenu(InputAction.CallbackContext context){
