@@ -1,28 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
-using UnityEngine.XR;
-using UnityEngine.XR.Management;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject xrRig;
-    private Slider contTurnSlider;
-    private Slider snapTurnSlider;
-    
-    public void incrementSnapTurn()
-    {
-       // xrRig.turnSpeed += 5;
-    }
+    public GameObject homeMenu;
+    public GameObject comfortMenu;
+    public GameObject controlsMenu;
+    public Transform controllerMountPoint;
+    public Transform controllerMounterTransform;
+    public ActionBasedContinuousTurnProvider continuousTurnProvider;
+    public ActionBasedSnapTurnProvider snapTurnProvider;
 
-    public void setContSlider(float val)
-    {
-        contTurnSlider.value = val;
-    }
-    public void setSnapSlider(float val)
-    {
-        snapTurnSlider.value = val;
+    private void Update() {
+        controllerMounterTransform.rotation = controllerMountPoint.rotation;
+        controllerMounterTransform.position = controllerMountPoint.position;
     }
 }

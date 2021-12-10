@@ -383,6 +383,10 @@ public class GrappleGun : MonoBehaviour
 
     private void SetReticle()
     {
+        if(!reticleVisual.activeInHierarchy){
+            return;
+        }
+        
         RaycastHit hit;
         // if (Physics.Raycast(gunTip.position, gunTip.forward, out hit))
         if (Physics.SphereCast(gunTip.position, GrappleManager._instance.options.sphereCastRadius,

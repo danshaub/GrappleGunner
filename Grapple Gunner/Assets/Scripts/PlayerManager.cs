@@ -9,13 +9,15 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager _instance;
     public GameObject xrRig;
+    public InputActionReference menuAction = null;
     [SerializeField] private PlayerPhysics playerPhysics;
     [SerializeField] public bool allowMovement = true;
     [SerializeField] public bool grounded = true;
     public float playerHeight = 0;
     public Vector3 playerXZLocalPosistion;
     private XRInputSubsystem subsystem = null;
-    public GameObject MenuManager;
+    public GameObject menu;
+    public MeshRenderer menuHandReticle;
 
 
     private void Awake()
@@ -30,10 +32,15 @@ public class PlayerManager : MonoBehaviour
         }
 
         subsystem = XRGeneralSettings.Instance.Manager.activeLoader.GetLoadedSubsystem<XRInputSubsystem>();
+
+        menuAction.action.started += ShowMenu;
+        menuAction.action.canceled += HideMenu;
     }
 
     private void Start() {
         ResetView();
+
+        // menu.SetActive(false);
     }
 
     public void ResetView(){
@@ -51,8 +58,14 @@ public class PlayerManager : MonoBehaviour
         xrRig.transform.rotation = tpTransform.rotation;
     }
 
-    public void Menu()
+    private void ShowMenu(InputAction.CallbackContext context)
     {
-        MenuManager.SetActive(true);
+        menuHandReticle.enabled = false;
+        menu.SetActive(true);
+    }
+
+    private void HideMenu(InputAction.CallbackContext context){
+        menuHandReticle.enabled = true;
+        menu.SetActive(false);
     }
 }
