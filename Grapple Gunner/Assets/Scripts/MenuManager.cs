@@ -2,34 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Management;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject mainMenuButtons;
-    public GameObject SettingsButtons;
-    public GameObject controlScheme;
-    public void ExitGame()
+    public GameObject xrRig;
+    private Slider contTurnSlider;
+    private Slider snapTurnSlider;
+    
+    public void incrementSnapTurn()
     {
-        Application.Quit();
+       // xrRig.turnSpeed += 5;
     }
-    public void Settings()
+
+    public void setContSlider(float val)
     {
-        mainMenuButtons.SetActive(false);
-        SettingsButtons.SetActive(true);
+        contTurnSlider.value = val;
     }
-    public void Controls()
+    public void setSnapSlider(float val)
     {
-        mainMenuButtons.SetActive(false);
-        controlScheme.SetActive(true);
+        snapTurnSlider.value = val;
     }
-    public void Menu()
-    {
-        mainMenuButtons.SetActive(true);
-        SettingsButtons.SetActive(false);
-        controlScheme.SetActive(false);
-    }
-    public void LevelSelect()
-    {
-        //needs to interact with scene manager script
-    }    
 }

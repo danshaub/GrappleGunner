@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     public float playerHeight = 0;
     public Vector3 playerXZLocalPosistion;
     private XRInputSubsystem subsystem = null;
+    public GameObject MenuManager;
 
 
     private void Awake()
@@ -48,5 +49,10 @@ public class PlayerManager : MonoBehaviour
 
         xrRig.transform.position = tpTransform.position;
         xrRig.transform.rotation = tpTransform.rotation;
+    }
+
+    public void Menu()
+    {
+        MenuManager.SetActive(true);
     }
 }
