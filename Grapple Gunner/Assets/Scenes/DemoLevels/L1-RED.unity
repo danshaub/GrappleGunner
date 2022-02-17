@@ -20204,7 +20204,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8444334085307048044, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.02
+      value: 0.14500003
       objectReference: {fileID: 0}
     - target: {fileID: 8444334085885108021, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
       propertyPath: m_Name
