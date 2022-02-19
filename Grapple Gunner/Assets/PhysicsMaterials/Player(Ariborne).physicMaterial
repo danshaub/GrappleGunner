@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ground
-  dynamicFriction: 2
+  m_Name: Player(Ariborne)
+  dynamicFriction: 1.5
   staticFriction: 1
-  bounciness: 0
+  bounciness: 0.05
   frictionCombine: 2
   bounceCombine: 0

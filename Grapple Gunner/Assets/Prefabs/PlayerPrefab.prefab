@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xrRig: {fileID: 7382778893730682424}
   menuAction: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  playerPhysics: {fileID: 7382778893730682422}
+  playerController: {fileID: 0}
   allowMovement: 1
   grounded: 1
   playerHeight: 0
@@ -881,7 +881,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 347224c7b2973af46a794360fe4f3eee, type: 2}
+  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1321,7 +1321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 347224c7b2973af46a794360fe4f3eee, type: 2}
+  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1537,7 +1537,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 347224c7b2973af46a794360fe4f3eee, type: 2}
+  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1672,7 +1672,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 347224c7b2973af46a794360fe4f3eee, type: 2}
+  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1807,7 +1807,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 347224c7b2973af46a794360fe4f3eee, type: 2}
+  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2910,7 +2910,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 347224c7b2973af46a794360fe4f3eee, type: 2}
+  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4505,11 +4505,12 @@ GameObject:
   - component: {fileID: 4488870517159474991}
   - component: {fileID: 7382778893730682429}
   - component: {fileID: 7382778893730682416}
+  - component: {fileID: 5233775104639338478}
   - component: {fileID: 4522960073376562133}
   - component: {fileID: 7382778893730682418}
   - component: {fileID: 7382778893730682561}
   - component: {fileID: 1024200299291061754}
-  - component: {fileID: 7382778893730682422}
+  - component: {fileID: 4011094463560922442}
   m_Layer: 3
   m_Name: XR Rig
   m_TagString: Player
@@ -4577,6 +4578,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 0}
+--- !u!114 &5233775104639338478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382778893730682424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d85f2637939054db1932112cc1c4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slopeLimit: 45
+  acceleration: 25
+  maxSpeed: 15
+  allowJump: 1
+  jumpSpeed: 8
+  colliderHeightOffset: 0.35
+  headTransform: {fileID: 7382778893807782159}
+  leftHandTransform: {fileID: 7382778892751757200}
+  rightHandTransform: {fileID: 7382778892924918198}
 --- !u!114 &4522960073376562133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4614,7 +4636,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: -6057892019764537086, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &7382778893730682418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4665,7 +4687,7 @@ Rigidbody:
   m_GameObject: {fileID: 7382778893730682424}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -4686,7 +4708,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7382778893730682422
+--- !u!114 &4011094463560922442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4695,29 +4717,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7382778893730682424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034eaacfb139f7a46b76033e58d84cef, type: 3}
+  m_Script: {fileID: 11500000, guid: 6159f28db951b61439d7125dc63f251c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
-  orientation: {fileID: 7382778893807782159}
-  playerController: {fileID: 7382778893730682430}
-  playerCollider: {fileID: 1024200299291061754}
-  colliderHeightOffset: 0.35
-  moveSpeed: 5000
-  maxSpeed: 10
-  coyoteTime: 5
-  grounded: 0
-  touchingSurface: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 192
-  whatDisablesPlayer:
-    serializedVersion: 2
-    m_Bits: 0
-  counterMovement: 0.175
-  maxSlopeAngle: 50
-  airDampeningMultiplier: 0.1
-  jumpForce: 300
   jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &7382778893807782155

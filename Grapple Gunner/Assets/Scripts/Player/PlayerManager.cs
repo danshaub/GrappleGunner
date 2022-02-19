@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager _instance;
     public GameObject xrRig;
     public InputActionReference menuAction = null;
-    [SerializeField] private PlayerPhysics playerPhysics;
+    [SerializeField] private PlayerController playerController;
     [SerializeField] public bool allowMovement = true;
     [SerializeField] public bool grounded = true;
     public float playerHeight = 0;
@@ -52,12 +52,12 @@ public class PlayerManager : MonoBehaviour
         subsystem.TryRecenter();
     }
     public void StopGrounded(){
-        playerPhysics.StopGrounded();
+        // playerPhysics.StopGrounded();
     }
 
     public void TeleportPlayer(Transform tpTransform){
         ResetView();
-        playerPhysics.ResetVelocity();
+        // playerPhysics.ResetVelocity();
 
         xrRig.transform.position = tpTransform.position;
         xrRig.transform.rotation = tpTransform.rotation;

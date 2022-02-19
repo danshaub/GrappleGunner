@@ -2,6 +2,138 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public class PlayerController : MonoBehaviour
+{
+    [Header("Physics Tuning")]
+    [Tooltip("Maximum slope the character can jump on")]
+    [Range(5f, 60f)]
+    public float slopeLimit = 45f;
+    [Tooltip("Movement acceleration")]
+    public float acceleration = 50f;
+    [Tooltip("Maximum lateral move speed in meters/second")]
+    public float maxSpeed = 10f;
+    [Tooltip("Whether the character can jump")]
+    public bool allowJump = false;
+    [Tooltip("Upward force to apply when jumping in newtons")]
+    public float jumpSpeed = 4f;
+    [Header("Physics Materials")]
+    public PhysicMaterial groundedPhysicsMat;
+    public PhysicMaterial airbornePhysicsMat;
+    [Header("IK Configuration")]
+    [Tooltip("Specifies distance between camera and top of collider")]
+    public float colliderHeightOffset = .35f;
+
+    public bool IsGrounded { get; private set; }
+    public Vector2 LateralMovement { get; set; }
+    public bool JumpInput { get; set; }
+    public bool AllowMovement { get; set; 
+    }
+
+    public Transform headTransform;
+    public Transform leftHandTransform;
+    public Transform rightHandTransform;
+
+    new private Rigidbody rigidbody;
+    private CapsuleCollider playerCollider;
+
+    private void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+        playerCollider = GetComponent<CapsuleCollider>();
+    }
+
+    private void FixedUpdate()
+    {
+        FollowPhysicalPlayer();
+        CheckGrounded();
+        Move();
+    }
+
+    // Resets player collider to reflect the current location of the headset.
+    private void FollowPhysicalPlayer()
+    {
+        // Player Height
+        float newHeight = headTransform.localPosition.y + colliderHeightOffset;
+        playerCollider.height = (newHeight >= playerCollider.radius * 2) ? newHeight : playerCollider.radius * 2;
+
+        // Reset Collider Center
+        playerCollider.center = new Vector3(headTransform.localPosition.x, playerCollider.height / 2, headTransform.localPosition.z);
+
+
+        // Send player height and offset info to PlayerManager
+        PlayerManager._instance.playerHeight = headTransform.localPosition.y;
+        PlayerManager._instance.playerXZLocalPosistion = new Vector3(headTransform.localPosition.x, 0, headTransform.localPosition.z);
+    }
+
+    /// <summary>
+    /// Checks whether the character is on the ground and updates <see cref="IsGrounded"/>
+    /// </summary>
+    private void CheckGrounded()
+    {
+        IsGrounded = false;
+        float capsuleHeight = Mathf.Max(playerCollider.radius * 2f, playerCollider.height);
+        Vector3 capsuleBottom = transform.TransformPoint(playerCollider.center - Vector3.up * capsuleHeight / 2f);
+        float radius = transform.TransformVector(playerCollider.radius, 0f, 0f).magnitude;
+
+        Ray ray = new Ray(capsuleBottom + transform.up * .01f, -transform.up);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, radius * 5f))
+        {
+            float normalAngle = Vector3.Angle(hit.normal, transform.up);
+            if (normalAngle < slopeLimit)
+            {
+                float maxDist = radius / Mathf.Cos(Mathf.Deg2Rad * normalAngle) - radius + .02f;
+                if (hit.distance < maxDist)
+                    IsGrounded = true;
+            }
+        }
+
+        // Sets physics materials depending on grounded state
+        playerCollider.material = IsGrounded ? groundedPhysicsMat : airbornePhysicsMat;
+    }
+
+    /// <summary>
+    /// Processes input actions and converts them into movement
+    /// </summary>
+    private void Move()
+    {
+        if(IsGrounded){
+            Vector3 transformedInput = TransformInputToMoveDirection(LateralMovement);
+            transformedInput = DampenMoveInput(transformedInput);
+            // Movement
+            Vector3 moveForce = transformedInput * acceleration;
+            rigidbody.AddForce(moveForce, ForceMode.VelocityChange);
+        }
+
+        // Jump
+        if (JumpInput && allowJump && IsGrounded)
+        {
+            rigidbody.AddForce(transform.up * jumpSpeed, ForceMode.VelocityChange);
+        }
+    }
+
+    public Vector3 TransformInputToMoveDirection(Vector2 inputVector)
+    {
+        float lookAngle = - headTransform.transform.eulerAngles.y;
+
+        float x = (float)(inputVector.x * Mathf.Cos(Mathf.Deg2Rad * lookAngle) - inputVector.y * Mathf.Sin(Mathf.Deg2Rad * lookAngle));
+        float y = (float)(inputVector.x * Mathf.Sin(Mathf.Deg2Rad * lookAngle) + inputVector.y * Mathf.Cos(Mathf.Deg2Rad * lookAngle));
+        
+        
+        Vector3 transformedInput = new Vector3(x, 0, y);
+
+        return transformedInput;
+    }
+
+    public Vector3 DampenMoveInput(Vector3 moveInput){
+        Vector3 horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
+        moveInput = moveInput - (Math.Min(horizontalVelocity.magnitude, maxSpeed) / maxSpeed) * horizontalVelocity.normalized ;
+
+        return moveInput;
+    }
+}
+
+/*
 // Reference: https://www.youtube.com/watch?v=XAC8U9-dTZU&ab_channel=DanisTutorials
 public class PlayerPhysics : MonoBehaviour
 {
@@ -289,3 +421,4 @@ public class PlayerPhysics : MonoBehaviour
 
     #endregion
 }
+*/
