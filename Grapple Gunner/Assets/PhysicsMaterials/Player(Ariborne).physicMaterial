@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: Player(Ariborne)
   dynamicFriction: 1.5
   staticFriction: 1
-  bounciness: 0.05
+  bounciness: 0.1
   frictionCombine: 2
   bounceCombine: 0
