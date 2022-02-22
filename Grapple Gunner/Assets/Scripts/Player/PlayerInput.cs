@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     // Controller Input Actions
     public InputActionReference jumpReference = null;
     public InputActionReference moveReference = null;
+    public InputActionReference debugReference = null;
 
     // Start is called before the first frame update
     void Awake()
@@ -19,6 +20,7 @@ public class PlayerInput : MonoBehaviour
         jumpReference.action.canceled += JumpCancel;
         moveReference.action.performed += ContinuousMove;
         moveReference.action.canceled += ContinuousMove;
+        debugReference.action.performed += Debug;
     }
     private void OnDestroy()
     {
@@ -26,6 +28,8 @@ public class PlayerInput : MonoBehaviour
         jumpReference.action.canceled -= JumpCancel;
         moveReference.action.performed -= ContinuousMove;
         moveReference.action.canceled -= ContinuousMove;
+        debugReference.action.performed -= Debug;
+
     }
 
     // Input action functions
@@ -53,7 +57,19 @@ public class PlayerInput : MonoBehaviour
             input = Vector2.zero;
         }
 
-        playerController.LateralMovement = input;
+        playerController.LateralInput = input;
+    }
+
+
+    private void Debug(InputAction.CallbackContext context)
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #elif UNITY_WEBPLAYER
+            Application.OpenURL(webplayerQuitURL);
+        #else
+            Application.Quit();
+        #endif
     }
     #endregion
 }

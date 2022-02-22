@@ -8,14 +8,23 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Maximum slope the character can jump on")]
     [Range(5f, 60f)]
     public float slopeLimit = 45f;
+    [Tooltip("Max height at which character steps up automatically")]
+    public LayerMask whatIsGround;
+    public float stepHeight = 0.3f;
+    public float stepSmooth = 0.1f;
+    public float stepCheckDistance = 0.1f;
     [Tooltip("Movement acceleration")]
     public float acceleration = 50f;
     [Tooltip("Maximum lateral move speed in meters/second")]
     public float maxSpeed = 10f;
+    [Tooltip("Determines strength of movement while airborne")]
+    [Range(0f, 1f)]
+    public float airborneMoveStrength = .1f;
     [Tooltip("Whether the character can jump")]
-    public bool allowJump = false;
+    public bool allowJump = true;
     [Tooltip("Upward force to apply when jumping in newtons")]
     public float jumpSpeed = 4f;
+    public float coyoteTime = 3f;
     [Header("Physics Materials")]
     public PhysicMaterial groundedPhysicsMat;
     public PhysicMaterial airbornePhysicsMat;
@@ -24,28 +33,41 @@ public class PlayerController : MonoBehaviour
     public float colliderHeightOffset = .35f;
 
     public bool IsGrounded { get; private set; }
-    public Vector2 LateralMovement { get; set; }
+    public Vector2 LateralInput { get; set; }
+    public Vector3 HorizontalVelocity { get; private set; }
     public bool JumpInput { get; set; }
-    public bool AllowMovement { get; set; 
+    public bool AllowMovement
+    {
+        get; set;
     }
 
-    public Transform headTransform;
-    public Transform leftHandTransform;
-    public Transform rightHandTransform;
+    [SerializeField] private Transform headTransform;
+    [SerializeField] private Transform leftHandTransform;
+    [SerializeField] private Transform rightHandTransform;
+    [SerializeField] private Transform stepRayLower;
+    [SerializeField] private Transform stepRayUpper;
 
     new private Rigidbody rigidbody;
     private CapsuleCollider playerCollider;
-
+    private bool steppedThisFrame;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
+
+        // stepRayUpper.position = new Vector3(stepRayUpper)
     }
 
     private void FixedUpdate()
     {
+        steppedThisFrame = false;
         FollowPhysicalPlayer();
-        CheckGrounded();
+        HorizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
+
+        if(HorizontalVelocity.magnitude > 0.1f){
+            StepClimb(transform.InverseTransformDirection(HorizontalVelocity.normalized));
+        }
+
         Move();
     }
 
@@ -64,44 +86,120 @@ public class PlayerController : MonoBehaviour
         PlayerManager._instance.playerHeight = headTransform.localPosition.y;
         PlayerManager._instance.playerXZLocalPosistion = new Vector3(headTransform.localPosition.x, 0, headTransform.localPosition.z);
     }
+    
+    #region Floor/Slope Collision
+    private bool IsFloor(Vector3 v)
+    {
+        float angle = Vector3.Angle(Vector3.up, v);
+        return angle < slopeLimit;
+    }
+
+    private bool cancellingGrounded;
 
     /// <summary>
-    /// Checks whether the character is on the ground and updates <see cref="IsGrounded"/>
+    /// Handle ground detection
     /// </summary>
-    private void CheckGrounded()
+    private void OnCollisionStay(Collision other)
     {
-        IsGrounded = false;
-        float capsuleHeight = Mathf.Max(playerCollider.radius * 2f, playerCollider.height);
-        Vector3 capsuleBottom = transform.TransformPoint(playerCollider.center - Vector3.up * capsuleHeight / 2f);
-        float radius = transform.TransformVector(playerCollider.radius, 0f, 0f).magnitude;
+        //Make sure we are only checking for walkable layers
+        int layer = other.gameObject.layer;
+        if (whatIsGround != (whatIsGround | (1 << layer))) return;
 
-        Ray ray = new Ray(capsuleBottom + transform.up * .01f, -transform.up);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, radius * 5f))
+        //Iterate through every collision in a physics update
+        for (int i = 0; i < other.contactCount; i++)
         {
-            float normalAngle = Vector3.Angle(hit.normal, transform.up);
-            if (normalAngle < slopeLimit)
+            Vector3 normal = other.contacts[i].normal;
+            //FLOOR
+            if (IsFloor(normal))
             {
-                float maxDist = radius / Mathf.Cos(Mathf.Deg2Rad * normalAngle) - radius + .02f;
-                if (hit.distance < maxDist)
-                    IsGrounded = true;
+                IsGrounded = true;
+                cancellingGrounded = false;
+                CancelInvoke(nameof(StopGrounded));
             }
         }
 
-        // Sets physics materials depending on grounded state
-        playerCollider.material = IsGrounded ? groundedPhysicsMat : airbornePhysicsMat;
+        //Invoke ground/wall cancel, since we can't check normals with CollisionExit
+        if (!cancellingGrounded)
+        {
+            cancellingGrounded = true;
+            Invoke(nameof(StopGrounded), Time.deltaTime * coyoteTime);
+        }
+    }
+
+    public void StopGrounded()
+    {
+        IsGrounded = false;
+    }
+
+    // Checks if there is a stair step in front of the player and steps accordingly
+    private void StepClimb(Vector3 checkDirection)
+    {
+        if(steppedThisFrame) return;
+
+        stepRayUpper.localPosition = playerCollider.center + (Vector3.down * playerCollider.height * .5f) + (Vector3.up * stepHeight) ;
+        stepRayLower.localPosition = playerCollider.center + (Vector3.down * playerCollider.height * .5f) + (Vector3.up * .05f);
+
+        RaycastHit hitLower;
+        if (Physics.Raycast(stepRayLower.position, checkDirection, out hitLower, stepCheckDistance))
+        {
+            RaycastHit hitUpper;
+            if (!Physics.Raycast(stepRayUpper.position, checkDirection, out hitUpper, (stepCheckDistance + .1f)))
+            {
+                rigidbody.MovePosition(transform.position + (Vector3.up * stepSmooth));
+                steppedThisFrame = true;
+                return;
+            }
+        }
+
+        checkDirection = Quaternion.AngleAxis(-45, Vector3.up) * checkDirection;
+        Debug.Log(checkDirection);
+
+
+        RaycastHit hitLowerLeft;
+        if (Physics.Raycast(stepRayLower.position, checkDirection, out hitLowerLeft, stepCheckDistance))
+        {
+            RaycastHit hitUpperLeft;
+            if (!Physics.Raycast(stepRayUpper.position, checkDirection, out hitUpperLeft, (stepCheckDistance + .1f)))
+            {
+                rigidbody.MovePosition(transform.position + (Vector3.up * stepSmooth));
+                steppedThisFrame = true;
+                return;
+            }
+        }
+
+        checkDirection = Quaternion.AngleAxis(90, Vector3.up) * checkDirection;
+        Debug.Log(checkDirection);
+
+
+        RaycastHit hitLowerRight;
+        if (Physics.Raycast(stepRayLower.position, checkDirection, out hitLowerRight, stepCheckDistance))
+        {
+            RaycastHit hitUpperRight;
+            if (!Physics.Raycast(stepRayUpper.position, checkDirection, out hitUpperRight, (stepCheckDistance + .1f)))
+            {
+                rigidbody.MovePosition(transform.position + (Vector3.up * stepSmooth));
+                steppedThisFrame = true;
+                return;
+            }
+        }
     }
 
     /// <summary>
     /// Processes input actions and converts them into movement
     /// </summary>
+
+    #endregion
+
     private void Move()
     {
-        if(IsGrounded){
-            Vector3 transformedInput = TransformInputToMoveDirection(LateralMovement);
+        if(LateralInput.magnitude > float.Epsilon){
+            Vector3 transformedInput = TransformInputToMoveDirection(LateralInput);
             transformedInput = DampenMoveInput(transformedInput);
             // Movement
             Vector3 moveForce = transformedInput * acceleration;
+            moveForce = IsGrounded ? moveForce : moveForce * airborneMoveStrength;
+
+            StepClimb(transformedInput.normalized);
             rigidbody.AddForce(moveForce, ForceMode.VelocityChange);
         }
 
@@ -109,25 +207,30 @@ public class PlayerController : MonoBehaviour
         if (JumpInput && allowJump && IsGrounded)
         {
             rigidbody.AddForce(transform.up * jumpSpeed, ForceMode.VelocityChange);
+            JumpInput = false;
         }
     }
 
+    // Ensures movement is applied in the correct direction relative to the direction the HMD is pointing
     public Vector3 TransformInputToMoveDirection(Vector2 inputVector)
     {
-        float lookAngle = - headTransform.transform.eulerAngles.y;
+        float lookAngle = -headTransform.transform.eulerAngles.y;
 
         float x = (float)(inputVector.x * Mathf.Cos(Mathf.Deg2Rad * lookAngle) - inputVector.y * Mathf.Sin(Mathf.Deg2Rad * lookAngle));
         float y = (float)(inputVector.x * Mathf.Sin(Mathf.Deg2Rad * lookAngle) + inputVector.y * Mathf.Cos(Mathf.Deg2Rad * lookAngle));
-        
-        
+
+
         Vector3 transformedInput = new Vector3(x, 0, y);
 
         return transformedInput;
+
+        // return Quaternion.AngleAxis(90, Vector3.up) * (new Vector3(inputVector.x, 0, inputVector.y));
     }
 
-    public Vector3 DampenMoveInput(Vector3 moveInput){
-        Vector3 horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
-        moveInput = moveInput - (Math.Min(horizontalVelocity.magnitude, maxSpeed) / maxSpeed) * horizontalVelocity.normalized ;
+    // Limits the strength of movement inputs depending on the velocity of the player
+    public Vector3 DampenMoveInput(Vector3 moveInput)
+    {
+        moveInput = moveInput - (Math.Min(HorizontalVelocity.magnitude, maxSpeed) / maxSpeed) * HorizontalVelocity.normalized;
 
         return moveInput;
     }
