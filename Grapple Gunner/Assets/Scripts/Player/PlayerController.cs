@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float slopeLimit = 45f;
     [Tooltip("Max height at which character steps up automatically")]
     public LayerMask whatIsGround;
+    public float rayCastHeightOffset = 0.5f;
     public float stepHeight = 0.3f;
     public float stepSmooth = 0.1f;
     public float stepCheckDistance = 0.1f;
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 1f)]
     public float airborneMoveStrength = .1f;
     [Tooltip("Whether the character can jump")]
-    public bool allowJump = true;
+    public bool jumped = true;
     [Tooltip("Upward force to apply when jumping in newtons")]
     public float jumpSpeed = 4f;
     public float coyoteTime = 3f;
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
             StepClimb(transform.InverseTransformDirection(HorizontalVelocity.normalized));
         }
 
+        HandleGround();
         Move();
     }
 
@@ -99,38 +102,31 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Handle ground detection
     /// </summary>
-    private void OnCollisionStay(Collision other)
+    private void HandleGround()
     {
-        //Make sure we are only checking for walkable layers
-        int layer = other.gameObject.layer;
-        if (whatIsGround != (whatIsGround | (1 << layer))) return;
+        Vector3 rayCastOrigin = new Vector3(playerCollider.center.x, 0, playerCollider.center.z);
+        rayCastOrigin = transform.TransformPoint(rayCastOrigin);
+        rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffset;
 
-        //Iterate through every collision in a physics update
-        for (int i = 0; i < other.contactCount; i++)
-        {
-            Vector3 normal = other.contacts[i].normal;
-            //FLOOR
-            if (IsFloor(normal))
-            {
-                IsGrounded = true;
-                cancellingGrounded = false;
-                CancelInvoke(nameof(StopGrounded));
-            }
+        RaycastHit hit;
+
+        if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, rayCastHeightOffset+0.01f, whatIsGround)){
+            CancelInvoke("CoyoteTime");
+            Debug.Log("Grounded");
+            IsGrounded = true;
+            jumped = false;
         }
+        else{
+            if(cancellingGrounded) Invoke("CoyoteTime", coyoteTime);
 
-        //Invoke ground/wall cancel, since we can't check normals with CollisionExit
-        if (!cancellingGrounded)
-        {
             cancellingGrounded = true;
-            Invoke(nameof(StopGrounded), Time.deltaTime * coyoteTime);
         }
     }
 
-    public void StopGrounded()
-    {
+    private void CoyoteTime(){
         IsGrounded = false;
+        cancellingGrounded = false;
     }
-
     // Checks if there is a stair step in front of the player and steps accordingly
     private void StepClimb(Vector3 checkDirection)
     {
@@ -152,7 +148,6 @@ public class PlayerController : MonoBehaviour
         }
 
         checkDirection = Quaternion.AngleAxis(-45, Vector3.up) * checkDirection;
-        Debug.Log(checkDirection);
 
 
         RaycastHit hitLowerLeft;
@@ -168,7 +163,6 @@ public class PlayerController : MonoBehaviour
         }
 
         checkDirection = Quaternion.AngleAxis(90, Vector3.up) * checkDirection;
-        Debug.Log(checkDirection);
 
 
         RaycastHit hitLowerRight;
@@ -204,10 +198,11 @@ public class PlayerController : MonoBehaviour
         }
 
         // Jump
-        if (JumpInput && allowJump && IsGrounded)
+        if (JumpInput && !jumped && IsGrounded)
         {
             rigidbody.AddForce(transform.up * jumpSpeed, ForceMode.VelocityChange);
             JumpInput = false;
+            jumped = true;
         }
     }
 
