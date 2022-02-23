@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 50f;
     public float maxSpeed = 10f;
     public float jumpStrength = 4f;
-    public float jumpTimer = .1f;
+    public float pauseTimer = .1f;
     public LayerMask whatIsGround;
     public float airborneMoveStrength = .1f;
     public float landingBounce = 100f;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput { get; set; }
     public Vector3 horizontalVelocity { get; private set; }
     public bool JumpInput { get; set; }
-    public bool jumped { get; private set; }
+    public bool pauseGroundSnap { get; private set; }
     public Vector3 groundNormal { get; private set; }
 
     [Header("Custom Physics")]
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        if(isGrounded && !jumped){
+        if(isGrounded && !pauseGroundSnap){
             if(transform.position.y < targetPosition.y){
                 rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, landingBounce));
             }
@@ -126,19 +126,24 @@ public class PlayerController : MonoBehaviour
         }
 
         // Jump
-        if (JumpInput && !jumped && isGrounded)
+        if (JumpInput && !pauseGroundSnap && isGrounded)
         {
             rigidbody.velocity = horizontalVelocity;
             rigidbody.AddForce(transform.up * jumpStrength, ForceMode.Force);
             JumpInput = false;
-            jumped = true;
-            Invoke("JumpTimer", jumpTimer);
+
+            PauseGroundSnap();
         }
     }
 
+    public void PauseGroundSnap(){
+        CancelInvoke("PauseTimer");
+        pauseGroundSnap = true;
+        Invoke("PauseTimer", pauseTimer);
+    }
     // Signals enough time has passed since jumping resume snapping to ground
-    void JumpTimer(){
-        jumped = false;
+    void PauseTimer(){
+        pauseGroundSnap = false;
     }
 
     // Ensures movement is applied in the correct direction relative to the direction the HMD is pointing
