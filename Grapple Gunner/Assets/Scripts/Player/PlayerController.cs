@@ -39,14 +39,6 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
     }
-
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space)){
-            JumpInput = true;
-        }
-
-    }
-
     private void FixedUpdate()
     {
         FollowPhysicalPlayer();
@@ -145,6 +137,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Signals enough time has passed since jumping resume snapping to ground
     void JumpTimer(){
         jumped = false;
     }

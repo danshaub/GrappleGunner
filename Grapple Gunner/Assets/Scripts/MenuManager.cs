@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject homeMenu;
     public GameObject comfortMenu;
     public GameObject controlsMenu;
+    public GameObject background;
     public TMP_Text indicatorArrow;
     public TMP_Text turnSpeedIndicator;
     public Transform controllerMountPoint;
@@ -24,6 +25,15 @@ public class MenuManager : MonoBehaviour
     private void Update() {
         controllerMounterTransform.rotation = controllerMountPoint.rotation;
         controllerMounterTransform.position = controllerMountPoint.position;
+    }
+
+    public void ShowMenu() {
+        background.SetActive(true);
+        HomeMenu();
+    }
+    public void HideMenu()
+    {
+        background.SetActive(false);
     }
 
     public void MainMenu(){

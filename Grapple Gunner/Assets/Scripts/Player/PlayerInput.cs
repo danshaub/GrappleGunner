@@ -6,20 +6,36 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerController playerController;
+    private MenuManager menuManager;
 
-    // Controller Input Actions
+    // Basic Input Actions
     public InputActionReference jumpReference = null;
     public InputActionReference moveReference = null;
+
+    // Grapple Actions (Right)
+    // Grapple Actions (Left)
+
+    // Menu Actions
+    public InputActionReference menuReference = null;
+
+    // REMOVE WITH BUILDS
     public InputActionReference debugReference = null;
 
     // Start is called before the first frame update
     void Awake()
     {
         playerController = GetComponent<PlayerController>();
+        menuManager = GetComponent<MenuManager>();
+
         jumpReference.action.started += JumpStart;
         jumpReference.action.canceled += JumpCancel;
         moveReference.action.performed += ContinuousMove;
         moveReference.action.canceled += ContinuousMove;
+        menuReference.action.started += ShowMenu;
+        menuReference.action.canceled += HideMenu;
+
+
+
         debugReference.action.performed += Debug;
     }
     private void OnDestroy()
@@ -28,8 +44,12 @@ public class PlayerInput : MonoBehaviour
         jumpReference.action.canceled -= JumpCancel;
         moveReference.action.performed -= ContinuousMove;
         moveReference.action.canceled -= ContinuousMove;
-        debugReference.action.performed -= Debug;
+        menuReference.action.started -= ShowMenu;
+        menuReference.action.canceled -= HideMenu;
 
+
+
+        debugReference.action.performed -= Debug;
     }
 
     // Input action functions
@@ -58,6 +78,16 @@ public class PlayerInput : MonoBehaviour
         }
 
         playerController.moveInput = input;
+    }
+
+    private void ShowMenu(InputAction.CallbackContext context)
+    {
+        menuManager.ShowMenu();
+    }
+
+    private void HideMenu(InputAction.CallbackContext context)
+    {
+        menuManager.HideMenu();
     }
 
 
