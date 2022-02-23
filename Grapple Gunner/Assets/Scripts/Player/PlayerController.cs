@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 50f;
     public float maxSpeed = 10f;
     public float jumpStrength = 4f;
+    public float jumpTimer = .1f;
     public LayerMask whatIsGround;
     public float airborneMoveStrength = .1f;
-    public float coyoteTime = 3f;
+    public float landingBounce = 100f;
     public float rayCastHeightOffset = 0.5f;
     public float colliderHeightOffset = .35f;
     public bool allowMovement = true;
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public float frictionCoefficient = 1f;
 
     [SerializeField] private Transform headTransform;
+    [SerializeField] private PhysicMaterial groundedMaterial;
+    [SerializeField] private PhysicMaterial airborneMaterial;
 
     new private Rigidbody rigidbody;
     private CapsuleCollider playerCollider;
@@ -72,7 +75,6 @@ public class PlayerController : MonoBehaviour
         PlayerManager._instance.playerXZLocalPosistion = new Vector3(headTransform.localPosition.x, 0, headTransform.localPosition.z);
     }
 
-    private bool cancellingGrounded;
     private void HandleGround()
     {
         Vector3 rayCastOrigin = playerCollider.center;
@@ -84,27 +86,26 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, (playerCollider.height * .5f) + rayCastHeightOffset, whatIsGround) &&
            Mathf.Abs(Vector3.Angle(hit.normal, Vector3.up)) < groundMaxNormal){
-            CancelInvoke("CoyoteTime");
             isGrounded = true;
-            jumped = false;
 
             targetPosition.y = hit.point.y;
             groundNormal = hit.normal;
         }
         else{
             groundNormal = Vector3.zero;
-            if(cancellingGrounded) Invoke("CoyoteTime", coyoteTime);
-            cancellingGrounded = true;
+            isGrounded = false;
         }
 
         if(isGrounded && !jumped){
-            transform.position = targetPosition;
+            if(transform.position.y < targetPosition.y){
+                transform.position = Vector3.Lerp(transform.position, targetPosition, landingBounce);
+            }
+            else{
+                transform.position = targetPosition;
+            }
         }
-    }
 
-    private void CoyoteTime(){
-        isGrounded = false;
-        cancellingGrounded = false;
+        playerCollider.material = isGrounded ? groundedMaterial : airborneMaterial;
     }
 
     private void ApplyGravity(){
@@ -135,13 +136,17 @@ public class PlayerController : MonoBehaviour
         // Jump
         if (JumpInput && !jumped && isGrounded)
         {
-            Debug.Log("Jump");
-            rigidbody.MovePosition(transform.position + (transform.up * .01f));
-            rigidbody.AddForce(transform.up * jumpStrength, ForceMode.VelocityChange);
+            rigidbody.MovePosition(transform.position);
+            rigidbody.velocity = horizontalVelocity;
+            rigidbody.AddForce(transform.up * jumpStrength, ForceMode.Force);
             JumpInput = false;
             jumped = true;
-            isGrounded = false;
+            Invoke("JumpTimer", jumpTimer);
         }
+    }
+
+    void JumpTimer(){
+        jumped = false;
     }
 
     // Ensures movement is applied in the correct direction relative to the direction the HMD is pointing
