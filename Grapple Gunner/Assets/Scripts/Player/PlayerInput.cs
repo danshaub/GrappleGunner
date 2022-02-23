@@ -31,6 +31,7 @@ public class PlayerInput : MonoBehaviour
         jumpReference.action.canceled += JumpCancel;
         moveReference.action.performed += ContinuousMove;
         moveReference.action.canceled += ContinuousMove;
+
         menuReference.action.started += ShowMenu;
         menuReference.action.canceled += HideMenu;
 
@@ -44,6 +45,7 @@ public class PlayerInput : MonoBehaviour
         jumpReference.action.canceled -= JumpCancel;
         moveReference.action.performed -= ContinuousMove;
         moveReference.action.canceled -= ContinuousMove;
+        
         menuReference.action.started -= ShowMenu;
         menuReference.action.canceled -= HideMenu;
 

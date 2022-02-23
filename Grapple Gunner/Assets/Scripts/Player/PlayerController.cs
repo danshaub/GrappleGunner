@@ -90,10 +90,10 @@ public class PlayerController : MonoBehaviour
 
         if(isGrounded && !jumped){
             if(transform.position.y < targetPosition.y){
-                transform.position = Vector3.Lerp(transform.position, targetPosition, landingBounce);
+                rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, landingBounce));
             }
             else{
-                transform.position = targetPosition;
+                rigidbody.MovePosition(targetPosition);
             }
         }
 
@@ -128,7 +128,6 @@ public class PlayerController : MonoBehaviour
         // Jump
         if (JumpInput && !jumped && isGrounded)
         {
-            rigidbody.MovePosition(transform.position);
             rigidbody.velocity = horizontalVelocity;
             rigidbody.AddForce(transform.up * jumpStrength, ForceMode.Force);
             JumpInput = false;
