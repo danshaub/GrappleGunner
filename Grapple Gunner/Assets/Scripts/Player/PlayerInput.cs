@@ -57,7 +57,7 @@ public class PlayerInput : MonoBehaviour
             input = Vector2.zero;
         }
 
-        playerController.LateralInput = input;
+        playerController.moveInput = input;
     }
 
 

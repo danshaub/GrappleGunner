@@ -1,65 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &298815751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 298815752}
-  m_Layer: 3
-  m_Name: StepRayLower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &298815752
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298815751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7382778893730682430}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &457896138
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 457896139}
-  m_Layer: 3
-  m_Name: StepRayUpper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &457896139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457896138}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7382778893730682430}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1400027854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,8 +4530,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7382778893060063891}
-  - {fileID: 298815752}
-  - {fileID: 457896139}
   m_Father: {fileID: 3561913862872785002}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4653,22 +4591,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slopeLimit: 60
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 193
+  rayCastHeightOffset: 0.25
   stepHeight: 0.3
-  stepSmooth: 0.1
-  stepCheckDistance: 0.1
+  stepSmooth: 0.255
+  stepCheckDistance: 0.5
   acceleration: 5
   maxSpeed: 15
   airborneMoveStrength: 0.05
-  allowJump: 1
+  jumped: 1
   jumpSpeed: 8
+  coyoteTime: 0.1
   groundedPhysicsMat: {fileID: 13400000, guid: 76d16598333f4a84b8e741a4f20302ce, type: 2}
   airbornePhysicsMat: {fileID: 13400000, guid: 4e931d55024b3994cbeb80670c1c74f4, type: 2}
   colliderHeightOffset: 0.35
   headTransform: {fileID: 7382778893807782159}
   leftHandTransform: {fileID: 7382778892751757200}
   rightHandTransform: {fileID: 7382778892924918198}
-  stepRayLower: {fileID: 298815752}
-  stepRayUpper: {fileID: 457896139}
+  stepRayLower: {fileID: 0}
+  stepRayUpper: {fileID: 0}
 --- !u!114 &4522960073376562133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4792,6 +4735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  debugReference: {fileID: -203908371383852545, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &7382778893807782155
 GameObject:
   m_ObjectHideFlags: 0
