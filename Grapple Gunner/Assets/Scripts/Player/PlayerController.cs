@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyGravity(){
         if(!isGrounded){
-            rigidbody.AddForce(Vector3.down * 9.8f, ForceMode.Acceleration);
+            rigidbody.AddForce(Vector3.down * gravityStrength, ForceMode.Acceleration);
         }
     }
 
