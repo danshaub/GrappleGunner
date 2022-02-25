@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 6259658}
   - component: {fileID: 6259657}
   m_Layer: 7
-  m_Name: GreenPoint (10)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,12 +255,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6259655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17, y: 50, z: -342}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 9
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6259657
 MonoBehaviour:
@@ -271,23 +271,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6259655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 6259656}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &6259658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -320,7 +307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -768,7 +755,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 17
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &61678540
 MonoBehaviour:
@@ -872,7 +859,7 @@ GameObject:
   - component: {fileID: 65982004}
   - component: {fileID: 65982003}
   m_Layer: 7
-  m_Name: GreenPoint (21)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,12 +872,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65982001}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 50, z: -377}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 20
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &65982003
 MonoBehaviour:
@@ -901,23 +888,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 65982001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 65982002}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &65982004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -950,7 +924,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2009,7 +1983,7 @@ GameObject:
   - component: {fileID: 145000960}
   - component: {fileID: 145000959}
   m_Layer: 7
-  m_Name: GreenPoint (61)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2022,12 +1996,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145000957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3, y: 82, z: -275}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 60
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &145000959
 MonoBehaviour:
@@ -2038,23 +2012,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 145000957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 145000958}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &145000960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2087,7 +2048,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2515,7 +2476,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 66
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &180926654
 MonoBehaviour:
@@ -2637,7 +2598,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 26
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &183260968
 MonoBehaviour:
@@ -2836,7 +2797,7 @@ GameObject:
   - component: {fileID: 207114371}
   - component: {fileID: 207114370}
   m_Layer: 7
-  m_Name: GreenPoint (55)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2849,12 +2810,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207114368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 49, y: 88, z: -290}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 54
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &207114370
 MonoBehaviour:
@@ -2865,23 +2826,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 207114368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 207114369}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &207114371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2914,7 +2862,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2973,7 +2921,7 @@ Transform:
   m_Children:
   - {fileID: 572834366}
   m_Father: {fileID: 1749457297}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &217864864
 GameObject:
@@ -2989,7 +2937,7 @@ GameObject:
   - component: {fileID: 217864867}
   - component: {fileID: 217864866}
   m_Layer: 7
-  m_Name: GreenPoint (58)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3002,12 +2950,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217864864}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 20, y: 45, z: -323}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 57
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &217864866
 MonoBehaviour:
@@ -3018,23 +2966,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 217864864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 217864865}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &217864867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3067,7 +3002,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3355,7 +3290,7 @@ GameObject:
   - component: {fileID: 243409993}
   - component: {fileID: 243409992}
   m_Layer: 7
-  m_Name: GreenPoint (41)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3368,12 +3303,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243409990}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 40, y: 26, z: -352}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 40
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &243409992
 MonoBehaviour:
@@ -3384,23 +3319,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 243409990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 243409991}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &243409993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3433,7 +3355,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3672,7 +3594,7 @@ GameObject:
   - component: {fileID: 271698168}
   - component: {fileID: 271698167}
   m_Layer: 7
-  m_Name: GreenPoint (69)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3685,12 +3607,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271698165}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -26, y: -4, z: -373}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 68
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &271698167
 MonoBehaviour:
@@ -3701,23 +3623,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 271698165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 271698166}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &271698168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3750,7 +3659,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3794,7 +3703,7 @@ GameObject:
   - component: {fileID: 274931973}
   - component: {fileID: 274931972}
   m_Layer: 7
-  m_Name: GreenPoint (7)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3807,12 +3716,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274931970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 27, y: 7, z: -276}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 6
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &274931972
 MonoBehaviour:
@@ -3823,23 +3732,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 274931970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 274931971}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &274931973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3872,7 +3768,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3934,7 +3830,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 19
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &286538290
 MonoBehaviour:
@@ -4174,8 +4070,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300691628}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 10, y: 50, z: 17}
-  m_LocalScale: {x: 25, y: 0.1, z: 25}
+  m_LocalPosition: {x: 10, y: 50, z: 22}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1211209266}
   m_RootOrder: 0
@@ -4422,7 +4318,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 41
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &321686538
 MonoBehaviour:
@@ -4512,6 +4408,116 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321686536}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &321842400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321842401}
+  - component: {fileID: 321842405}
+  - component: {fileID: 321842404}
+  - component: {fileID: 321842403}
+  - component: {fileID: 321842402}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &321842401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321842400}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000017881393}
+  m_LocalPosition: {x: -8.000009, y: -25, z: 62}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &321842402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321842400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &321842403
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321842400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &321842404
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321842400}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &321842405
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321842400}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &332528184
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,7 +4672,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 48
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &345277559
 MonoBehaviour:
@@ -4910,7 +4916,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 45
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &363523418
 MonoBehaviour:
@@ -5032,7 +5038,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 50
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &394397180
 MonoBehaviour:
@@ -5389,7 +5395,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 21
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &414714899
 MonoBehaviour:
@@ -5511,7 +5517,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 44
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &423174678
 MonoBehaviour:
@@ -5723,6 +5729,116 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455397713}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &458604806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458604807}
+  - component: {fileID: 458604811}
+  - component: {fileID: 458604810}
+  - component: {fileID: 458604809}
+  - component: {fileID: 458604808}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &458604807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458604806}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000017881393}
+  m_LocalPosition: {x: 18.999992, y: -25, z: 54.999992}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &458604808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458604806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &458604809
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458604806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &458604810
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458604806}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &458604811
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458604806}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &459384363
 GameObject:
   m_ObjectHideFlags: 0
@@ -5755,7 +5871,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 38
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &459384365
 MonoBehaviour:
@@ -5877,7 +5993,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 39
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &470950887
 MonoBehaviour:
@@ -5999,7 +6115,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 56
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &472683638
 MonoBehaviour:
@@ -6243,7 +6359,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 69
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &477589105
 MonoBehaviour:
@@ -6799,7 +6915,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 28
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &534081181
 MonoBehaviour:
@@ -6921,7 +7037,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 24
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &550543703
 MonoBehaviour:
@@ -7043,7 +7159,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 67
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &567646983
 MonoBehaviour:
@@ -7943,7 +8059,7 @@ GameObject:
   - component: {fileID: 630847389}
   - component: {fileID: 630847388}
   m_Layer: 7
-  m_Name: GreenPoint (34)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7956,12 +8072,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630847386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 15, y: 33, z: -414}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 33
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &630847388
 MonoBehaviour:
@@ -7972,23 +8088,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 630847386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 630847387}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &630847389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8021,7 +8124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8083,7 +8186,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 47
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &640718862
 MonoBehaviour:
@@ -8309,7 +8412,7 @@ GameObject:
   - component: {fileID: 652002210}
   - component: {fileID: 652002209}
   m_Layer: 7
-  m_Name: GreenPoint (24)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8322,12 +8425,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652002207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 50, y: -21, z: -261}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 23
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &652002209
 MonoBehaviour:
@@ -8338,23 +8441,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 652002207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 652002208}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &652002210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8387,7 +8477,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8693,7 +8783,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 22
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &666565533
 MonoBehaviour:
@@ -9046,7 +9136,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &721831402
 MonoBehaviour:
@@ -9150,7 +9240,7 @@ GameObject:
   - component: {fileID: 724125902}
   - component: {fileID: 724125901}
   m_Layer: 7
-  m_Name: GreenPoint (44)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9163,12 +9253,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724125899}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 26, y: 56, z: -216}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 43
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &724125901
 MonoBehaviour:
@@ -9179,23 +9269,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 724125899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 724125900}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &724125902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9228,7 +9305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9656,7 +9733,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 34
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &745470163
 MonoBehaviour:
@@ -9778,7 +9855,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &765650119
 MonoBehaviour:
@@ -10019,7 +10096,7 @@ Transform:
   m_GameObject: {fileID: 783073052}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 56, y: 50, z: -67}
-  m_LocalScale: {x: 25, y: 0.1, z: 25}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1211209266}
   m_RootOrder: 5
@@ -10144,7 +10221,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 30
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &783924242
 MonoBehaviour:
@@ -10710,7 +10787,7 @@ GameObject:
   - component: {fileID: 826149715}
   - component: {fileID: 826149714}
   m_Layer: 7
-  m_Name: GreenPoint (19)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10723,12 +10800,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826149712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15, y: 21, z: -223}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 18
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &826149714
 MonoBehaviour:
@@ -10739,23 +10816,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 826149712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 826149713}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &826149715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10788,7 +10852,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11570,6 +11634,116 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857662752}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &867761506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867761507}
+  - component: {fileID: 867761511}
+  - component: {fileID: 867761510}
+  - component: {fileID: 867761509}
+  - component: {fileID: 867761508}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &867761507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867761506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8, y: -5, z: 101}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867761508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867761506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &867761509
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867761506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &867761510
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867761506}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &867761511
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867761506}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &876312203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11870,7 +12044,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 65
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &901886562
 MonoBehaviour:
@@ -12082,6 +12256,116 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911100745}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &916369703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916369704}
+  - component: {fileID: 916369708}
+  - component: {fileID: 916369707}
+  - component: {fileID: 916369706}
+  - component: {fileID: 916369705}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &916369704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916369703}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000017881393}
+  m_LocalPosition: {x: -29.000004, y: -25, z: 90.00001}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &916369705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916369703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &916369706
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916369703}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &916369707
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916369703}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &916369708
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916369703}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &936904126
 GameObject:
   m_ObjectHideFlags: 0
@@ -12096,7 +12380,7 @@ GameObject:
   - component: {fileID: 936904129}
   - component: {fileID: 936904128}
   m_Layer: 7
-  m_Name: GreenPoint (50)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12109,12 +12393,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936904126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 46, y: 73, z: -416}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 49
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &936904128
 MonoBehaviour:
@@ -12125,23 +12409,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 936904126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 936904127}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &936904129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12174,7 +12445,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12602,7 +12873,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 27
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &976476782
 MonoBehaviour:
@@ -12724,7 +12995,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &985774571
 MonoBehaviour:
@@ -12936,7 +13207,7 @@ GameObject:
   - component: {fileID: 1012837668}
   - component: {fileID: 1012837667}
   m_Layer: 7
-  m_Name: GreenPoint (26)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12949,12 +13220,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012837665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17, y: 62, z: -342}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 25
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1012837667
 MonoBehaviour:
@@ -12965,23 +13236,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1012837665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1012837666}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1012837668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13014,7 +13272,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13058,7 +13316,7 @@ GameObject:
   - component: {fileID: 1014009133}
   - component: {fileID: 1014009132}
   m_Layer: 7
-  m_Name: GreenPoint (30)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13071,12 +13329,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014009130}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: 62, z: -342}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 29
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1014009132
 MonoBehaviour:
@@ -13087,23 +13345,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1014009130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1014009131}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1014009133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13136,7 +13381,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13320,7 +13565,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 62
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1040637846
 MonoBehaviour:
@@ -13546,7 +13791,7 @@ GameObject:
   - component: {fileID: 1060092042}
   - component: {fileID: 1060092041}
   m_Layer: 7
-  m_Name: GreenPoint (38)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13559,12 +13804,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060092039}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: 62, z: -450}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 37
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1060092041
 MonoBehaviour:
@@ -13575,23 +13820,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060092039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1060092040}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1060092042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13624,7 +13856,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13776,6 +14008,116 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116683390}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1134504503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134504504}
+  - component: {fileID: 1134504508}
+  - component: {fileID: 1134504507}
+  - component: {fileID: 1134504506}
+  - component: {fileID: 1134504505}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1134504504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134504503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18, y: -5, z: 84}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1134504505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134504503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &1134504506
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134504503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1134504507
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134504503}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1134504508
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134504503}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1148620690
 GameObject:
   m_ObjectHideFlags: 0
@@ -13808,7 +14150,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 53
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1148620692
 MonoBehaviour:
@@ -14174,7 +14516,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1185492921
 MonoBehaviour:
@@ -14418,7 +14760,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 42
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1190783541
 MonoBehaviour:
@@ -14663,69 +15005,47 @@ Transform:
   - {fileID: 2132847146}
   - {fileID: 1630337097}
   - {fileID: 783073053}
-  - {fileID: 274931971}
   - {fileID: 1936481954}
   - {fileID: 1558501418}
-  - {fileID: 6259656}
   - {fileID: 721831401}
   - {fileID: 1185492920}
-  - {fileID: 1946269813}
   - {fileID: 985774570}
   - {fileID: 765650118}
-  - {fileID: 1634581418}
   - {fileID: 1218048726}
   - {fileID: 61678539}
-  - {fileID: 826149713}
   - {fileID: 286538289}
-  - {fileID: 65982002}
   - {fileID: 414714898}
   - {fileID: 666565532}
-  - {fileID: 652002208}
   - {fileID: 550543702}
-  - {fileID: 1012837666}
   - {fileID: 183260967}
   - {fileID: 976476781}
   - {fileID: 534081180}
-  - {fileID: 1014009131}
   - {fileID: 783924241}
-  - {fileID: 1800372015}
   - {fileID: 1590933403}
-  - {fileID: 630847387}
   - {fileID: 745470162}
   - {fileID: 1293113112}
-  - {fileID: 2112798492}
-  - {fileID: 1060092040}
   - {fileID: 459384364}
   - {fileID: 470950886}
-  - {fileID: 243409991}
   - {fileID: 321686537}
   - {fileID: 1190783540}
-  - {fileID: 724125900}
   - {fileID: 423174677}
   - {fileID: 363523417}
-  - {fileID: 1922844268}
   - {fileID: 640718861}
   - {fileID: 345277558}
-  - {fileID: 936904127}
   - {fileID: 394397179}
   - {fileID: 1559077768}
   - {fileID: 2069176086}
   - {fileID: 1148620691}
-  - {fileID: 207114369}
   - {fileID: 1233044535}
   - {fileID: 472683637}
-  - {fileID: 217864865}
   - {fileID: 2142455388}
   - {fileID: 1676804264}
-  - {fileID: 145000958}
   - {fileID: 1373534412}
   - {fileID: 1040637845}
   - {fileID: 1662183078}
-  - {fileID: 1800889544}
   - {fileID: 901886561}
   - {fileID: 180926653}
   - {fileID: 567646982}
-  - {fileID: 271698166}
   - {fileID: 477589104}
   m_Father: {fileID: 1749457297}
   m_RootOrder: 2
@@ -14762,7 +15082,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 16
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1218048727
 MonoBehaviour:
@@ -14884,7 +15204,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 55
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1233044536
 MonoBehaviour:
@@ -15460,7 +15780,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 35
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1293113113
 MonoBehaviour:
@@ -15794,6 +16114,116 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349494296}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1361320962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361320963}
+  - component: {fileID: 1361320967}
+  - component: {fileID: 1361320966}
+  - component: {fileID: 1361320965}
+  - component: {fileID: 1361320964}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1361320963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361320962}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000017881393}
+  m_LocalPosition: {x: 18.000004, y: -25, z: 98}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1361320964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361320962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &1361320965
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361320962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1361320966
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361320962}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1361320967
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361320962}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1367915095
 GameObject:
   m_ObjectHideFlags: 0
@@ -15948,7 +16378,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 61
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1373534413
 MonoBehaviour:
@@ -16509,6 +16939,116 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -627661383884688647, guid: 0504acf82a5652e41b6ef3c4b7319a50, type: 3}
+--- !u!1 &1428836724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428836725}
+  - component: {fileID: 1428836729}
+  - component: {fileID: 1428836728}
+  - component: {fileID: 1428836727}
+  - component: {fileID: 1428836726}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1428836725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428836724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25, y: -5, z: 67}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1428836726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428836724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &1428836727
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428836724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1428836728
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428836724}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1428836729
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428836724}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1432981805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16712,8 +17252,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550794623}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 56, y: 50, z: 17}
-  m_LocalScale: {x: 25, y: 0.1, z: 25}
+  m_LocalPosition: {x: 56, y: 50, z: 22}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1211209266}
   m_RootOrder: 1
@@ -16838,7 +17378,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1558501419
 MonoBehaviour:
@@ -16960,7 +17500,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 51
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1559077769
 MonoBehaviour:
@@ -17204,7 +17744,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 32
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1590933404
 MonoBehaviour:
@@ -17523,7 +18063,7 @@ Transform:
   m_LocalScale: {x: 100, y: 10, z: 2}
   m_Children: []
   m_Father: {fileID: 1749457297}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1615831428
 GameObject:
@@ -17706,7 +18246,7 @@ Transform:
   m_GameObject: {fileID: 1630337096}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 10, y: 50, z: -67}
-  m_LocalScale: {x: 25, y: 0.1, z: 25}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1211209266}
   m_RootOrder: 4
@@ -17813,7 +18353,7 @@ GameObject:
   - component: {fileID: 1634581420}
   - component: {fileID: 1634581419}
   m_Layer: 7
-  m_Name: GreenPoint (16)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17826,12 +18366,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634581417}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -32, y: 18, z: -304}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 15
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1634581419
 MonoBehaviour:
@@ -17842,23 +18382,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1634581417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1634581418}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1634581420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17891,7 +18418,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18197,7 +18724,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 63
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1662183079
 MonoBehaviour:
@@ -18446,7 +18973,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 59
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1676804265
 MonoBehaviour:
@@ -19255,6 +19782,7 @@ Transform:
   - {fileID: 7452071941459888335}
   - {fileID: 1211209266}
   - {fileID: 1713037886}
+  - {fileID: 2030815367}
   - {fileID: 1591772051}
   - {fileID: 213384866}
   m_Father: {fileID: 0}
@@ -19745,7 +20273,7 @@ GameObject:
   - component: {fileID: 1800372017}
   - component: {fileID: 1800372016}
   m_Layer: 7
-  m_Name: GreenPoint (32)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19758,12 +20286,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800372014}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -20, y: 22, z: -289}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 31
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1800372016
 MonoBehaviour:
@@ -19774,23 +20302,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800372014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1800372015}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1800372017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19823,7 +20338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19867,7 +20382,7 @@ GameObject:
   - component: {fileID: 1800889546}
   - component: {fileID: 1800889545}
   m_Layer: 7
-  m_Name: GreenPoint (65)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19880,12 +20395,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800889543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 82, z: -403}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 64
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1800889545
 MonoBehaviour:
@@ -19896,23 +20411,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800889543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1800889544}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1800889546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19945,7 +20447,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20591,7 +21093,7 @@ GameObject:
   - component: {fileID: 1922844270}
   - component: {fileID: 1922844269}
   m_Layer: 7
-  m_Name: GreenPoint (47)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20604,12 +21106,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922844267}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -62, y: 73, z: -263}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 46
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1922844269
 MonoBehaviour:
@@ -20620,23 +21122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1922844267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1922844268}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1922844270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20669,7 +21158,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20731,7 +21220,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1936481955
 MonoBehaviour:
@@ -20835,7 +21324,7 @@ GameObject:
   - component: {fileID: 1946269815}
   - component: {fileID: 1946269814}
   m_Layer: 7
-  m_Name: GreenPoint (13)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20848,12 +21337,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946269812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -50, y: 7, z: -399}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 12
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1946269814
 MonoBehaviour:
@@ -20864,23 +21353,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1946269812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1946269813}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &1946269815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20913,7 +21389,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20971,8 +21447,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983498361}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 10, y: 50, z: -24}
-  m_LocalScale: {x: 25, y: 0.1, z: 25}
+  m_LocalPosition: {x: -5, y: 50, z: -21.5}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1211209266}
   m_RootOrder: 2
@@ -21187,6 +21663,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029057784}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2030815366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030815367}
+  m_Layer: 7
+  m_Name: DeathCubes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2030815367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030815366}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 88, y: 0, z: 61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 274931971}
+  - {fileID: 6259656}
+  - {fileID: 1946269813}
+  - {fileID: 1634581418}
+  - {fileID: 826149713}
+  - {fileID: 65982002}
+  - {fileID: 652002208}
+  - {fileID: 1012837666}
+  - {fileID: 1014009131}
+  - {fileID: 1800372015}
+  - {fileID: 630847387}
+  - {fileID: 2112798492}
+  - {fileID: 1060092040}
+  - {fileID: 243409991}
+  - {fileID: 724125900}
+  - {fileID: 1922844268}
+  - {fileID: 936904127}
+  - {fileID: 207114369}
+  - {fileID: 217864865}
+  - {fileID: 145000958}
+  - {fileID: 1800889544}
+  - {fileID: 271698166}
+  m_Father: {fileID: 1749457297}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069176085
 GameObject:
   m_ObjectHideFlags: 0
@@ -21219,7 +21747,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 52
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2069176087
 MonoBehaviour:
@@ -21431,6 +21959,116 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081312273}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2091033269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2091033270}
+  - component: {fileID: 2091033274}
+  - component: {fileID: 2091033273}
+  - component: {fileID: 2091033272}
+  - component: {fileID: 2091033271}
+  m_Layer: 6
+  m_Name: DeathCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2091033270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091033269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: -5, z: 74}
+  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_Children: []
+  m_Father: {fileID: 7045274188474312649}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2091033271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091033269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTeleportPoint: {fileID: 836350776}
+--- !u!136 &2091033272
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091033269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &2091033273
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091033269}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2091033274
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091033269}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2112798491
 GameObject:
   m_ObjectHideFlags: 0
@@ -21445,7 +22083,7 @@ GameObject:
   - component: {fileID: 2112798494}
   - component: {fileID: 2112798493}
   m_Layer: 7
-  m_Name: GreenPoint (37)
+  m_Name: DeathCube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21458,12 +22096,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112798491}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -48, y: 18, z: -360}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 1211209266}
-  m_RootOrder: 36
+  m_Father: {fileID: 2030815367}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2112798493
 MonoBehaviour:
@@ -21474,23 +22112,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2112798491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 2112798492}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 0
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1012139144}
 --- !u!65 &2112798494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21523,7 +22148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f994533900b764c4a8c3bd5984d5fe2c, type: 2}
+  - {fileID: 2100000, guid: dc921220ade9a9e4dbeb54797665a701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21686,8 +22311,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132847145}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 56, y: 50, z: -24}
-  m_LocalScale: {x: 25, y: 0.1, z: 25}
+  m_LocalPosition: {x: 71, y: 50, z: -21.5}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1211209266}
   m_RootOrder: 3
@@ -21812,7 +22437,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1211209266}
-  m_RootOrder: 58
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2142455389
 MonoBehaviour:
@@ -22987,6 +23612,14 @@ Transform:
   m_Children:
   - {fileID: 7349124817778367120}
   - {fileID: 2733960093867073779}
+  - {fileID: 2091033270}
+  - {fileID: 1428836725}
+  - {fileID: 1134504504}
+  - {fileID: 867761507}
+  - {fileID: 1361320963}
+  - {fileID: 458604807}
+  - {fileID: 916369704}
+  - {fileID: 321842401}
   m_Father: {fileID: 7452071941459888335}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
