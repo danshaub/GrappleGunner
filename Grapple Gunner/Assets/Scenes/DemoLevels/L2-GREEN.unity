@@ -1215,7 +1215,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 992cf7aa4b19e754aa4e9e09ae86c13d, type: 2}
     - target: {fileID: 8444334085885108021, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
       propertyPath: m_Name
-      value: Ch1Marker
+      value: Checkpoint2Marker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444334085885108021, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
       propertyPath: m_RootOrder
@@ -19328,7 +19332,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 992cf7aa4b19e754aa4e9e09ae86c13d, type: 2}
     - target: {fileID: 8444334085885108021, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
       propertyPath: m_Name
-      value: Ch2Marker
+      value: Checkpoint3Marker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444334085885108021, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
       propertyPath: m_RootOrder
