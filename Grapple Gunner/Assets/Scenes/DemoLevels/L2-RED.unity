@@ -1101,7 +1101,6 @@ GameObject:
   - component: {fileID: 83630383}
   - component: {fileID: 83630382}
   - component: {fileID: 83630381}
-  - component: {fileID: 83630380}
   - component: {fileID: 83630384}
   m_Layer: 7
   m_Name: Sphere (19)
@@ -1124,32 +1123,6 @@ Transform:
   m_Father: {fileID: 1749427738}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &83630380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83630378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 83630379}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!135 &83630381
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1224,7 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &85102324
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,7 +4654,6 @@ GameObject:
   - component: {fileID: 465012181}
   - component: {fileID: 465012180}
   - component: {fileID: 465012179}
-  - component: {fileID: 465012178}
   - component: {fileID: 465012177}
   m_Layer: 7
   m_Name: Sphere (25)
@@ -4716,33 +4688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
---- !u!114 &465012178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465012175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 465012176}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &465012179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5320,80 +5266,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528862760}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &534160809
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 986356690}
-    m_Modifications:
-    - target: {fileID: 8444334085307048040, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085307048044, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108021, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_Name
-      value: CheckPoint1Marker
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108021, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_RootOrder
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 62
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
---- !u!4 &534160810 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8444334085885108022, guid: e2b0b74b0377e634f9791a60b11c99b8, type: 3}
-  m_PrefabInstance: {fileID: 534160809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &535758193
 GameObject:
   m_ObjectHideFlags: 0
@@ -8861,7 +8733,6 @@ GameObject:
   - component: {fileID: 823187704}
   - component: {fileID: 823187703}
   - component: {fileID: 823187702}
-  - component: {fileID: 823187701}
   - component: {fileID: 823187700}
   m_Layer: 7
   m_Name: Sphere (28)
@@ -8896,33 +8767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
---- !u!114 &823187701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823187698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 823187699}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &823187702
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10407,7 +10252,6 @@ GameObject:
   - component: {fileID: 925038951}
   - component: {fileID: 925038950}
   - component: {fileID: 925038949}
-  - component: {fileID: 925038948}
   - component: {fileID: 925038952}
   m_Layer: 7
   m_Name: Sphere (21)
@@ -10430,32 +10274,6 @@ Transform:
   m_Father: {fileID: 1749427738}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &925038948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925038946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 925038947}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!135 &925038949
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10530,7 +10348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &930389242
 GameObject:
   m_ObjectHideFlags: 0
@@ -10843,64 +10661,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944463226}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &986356689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 986356690}
-  m_Layer: 7
-  m_Name: LevelGeometry
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &986356690
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986356689}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 638017389}
-  - {fileID: 528862761}
-  - {fileID: 43480005}
-  - {fileID: 2131950946}
-  - {fileID: 1906229828}
-  - {fileID: 369394180}
-  - {fileID: 739774841}
-  - {fileID: 1146037982}
-  - {fileID: 919531838}
-  - {fileID: 78508430}
-  - {fileID: 1485813509}
-  - {fileID: 3563412}
-  - {fileID: 1457159503}
-  - {fileID: 1681795840}
-  - {fileID: 85102325}
-  - {fileID: 1593100046}
-  - {fileID: 556861753}
-  - {fileID: 9576465}
-  - {fileID: 1956170134}
-  - {fileID: 635378920}
-  - {fileID: 702861256}
-  - {fileID: 1196855541}
-  - {fileID: 125178018}
-  - {fileID: 1349354552}
-  - {fileID: 477600429}
-  - {fileID: 1324626734}
-  - {fileID: 534160810}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &991523264
+--- !u!1 &956775419
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14139,7 +13900,6 @@ GameObject:
   - component: {fileID: 1220636900}
   - component: {fileID: 1220636899}
   - component: {fileID: 1220636898}
-  - component: {fileID: 1220636897}
   - component: {fileID: 1220636896}
   m_Layer: 7
   m_Name: Sphere (26)
@@ -14174,33 +13934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
---- !u!114 &1220636897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220636894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1220636895}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1220636898
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15469,7 +15203,6 @@ GameObject:
   - component: {fileID: 1416274792}
   - component: {fileID: 1416274791}
   - component: {fileID: 1416274790}
-  - component: {fileID: 1416274789}
   - component: {fileID: 1416274788}
   m_Layer: 7
   m_Name: Sphere (27)
@@ -15504,33 +15237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
---- !u!114 &1416274789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416274786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1416274787}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1416274790
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15605,7 +15312,6 @@ GameObject:
   - component: {fileID: 1427081529}
   - component: {fileID: 1427081528}
   - component: {fileID: 1427081527}
-  - component: {fileID: 1427081526}
   - component: {fileID: 1427081525}
   m_Layer: 7
   m_Name: Sphere (24)
@@ -15640,33 +15346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
---- !u!114 &1427081526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427081523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1427081524}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1427081527
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15741,7 +15421,6 @@ GameObject:
   - component: {fileID: 1428416994}
   - component: {fileID: 1428416993}
   - component: {fileID: 1428416992}
-  - component: {fileID: 1428416991}
   - component: {fileID: 1428416990}
   m_Layer: 7
   m_Name: Sphere (23)
@@ -15776,33 +15455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
---- !u!114 &1428416991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428416988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1428416989}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1428416992
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17755,23 +17408,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1556110967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1556110968}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1556110970
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19196,7 +18836,6 @@ GameObject:
   - component: {fileID: 1847704918}
   - component: {fileID: 1847704917}
   - component: {fileID: 1847704916}
-  - component: {fileID: 1847704915}
   - component: {fileID: 1847704919}
   m_Layer: 7
   m_Name: Sphere (22)
@@ -19219,32 +18858,6 @@ Transform:
   m_Father: {fileID: 1749427738}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1847704915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847704913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1847704914}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!135 &1847704916
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19319,7 +18932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &1855233196
 GameObject:
   m_ObjectHideFlags: 0
@@ -20810,26 +20423,6 @@ PrefabInstance:
     - target: {fileID: 3336896427513198062, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
       propertyPath: m_Name
       value: RespawnMenuBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 5327969162870687948, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 559.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 5327969162870687948, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 16.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 5327969162870687948, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5327969162870687948, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5327969162870687948, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5626962303109630750, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
       propertyPath: m_RootOrder
@@ -22662,7 +22255,6 @@ GameObject:
   - component: {fileID: 2088722129}
   - component: {fileID: 2088722128}
   - component: {fileID: 2088722127}
-  - component: {fileID: 2088722126}
   - component: {fileID: 2088722130}
   m_Layer: 7
   m_Name: Sphere (20)
@@ -22685,32 +22277,6 @@ Transform:
   m_Father: {fileID: 1749427738}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2088722126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088722124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 2088722125}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!135 &2088722127
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22785,7 +22351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 0}
+  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &2128770999
 GameObject:
   m_ObjectHideFlags: 0
