@@ -801,7 +801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7786593523382705496
 Transform:
   m_ObjectHideFlags: 0
@@ -832,6 +832,7 @@ GameObject:
   - component: {fileID: 8199274447417130926}
   - component: {fileID: 1960357711885694703}
   - component: {fileID: 7328682074636957651}
+  - component: {fileID: 5070189335308849953}
   m_Layer: 7
   m_Name: Back Button
   m_TagString: Hookable
@@ -954,6 +955,25 @@ MonoBehaviour:
         m_CallState: 2
   gizmoAlpha: 0
   grappleMesh: {fileID: 0}
+--- !u!95 &5070189335308849953
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771567241839749731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51e8c5a4ec8aecc4fb01ab9960fa13d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1869835406956676400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,7 +2851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7726995548913607201
 Transform:
   m_ObjectHideFlags: 0
