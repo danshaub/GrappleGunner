@@ -1,86 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &424262150
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 424262151}
-  - component: {fileID: 424262153}
-  - component: {fileID: 424262152}
-  m_Layer: 2
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &424262151
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424262150}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7382778893730682430}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &424262153
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424262150}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &424262152
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424262150}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1400027854
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,131 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ceb040fb6c3be4d830baf1341e3f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCase: 0
-  rightGun: {fileID: 8958145294123646575}
-  leftGun: {fileID: 2914717044053797771}
-  options:
-    hookTravelSpeed: 800
-    retractInterpolateValue: 0.8
-    sphereCastRadius: 0.15
-    sphereCastMask:
-      serializedVersion: 2
-      m_Bits: 1216
-    redUnlockDistanceMultiplier: 1
-    redUnlockVelosityThreshold: 0.25
-    redGrappleSpeed: 40
-    redVelocityDamper: 0.06
-    redVelocityCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0.027339926
-        outSlope: 0.027339926
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.13833992
-      - serializedVersion: 3
-        time: 0.63238907
-        value: 0.8264354
-        inSlope: 0.043327726
-        outSlope: 0.043327726
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.31361032
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 5
-        value: 1.0092888
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    limitContactDistance: 10
-    swingDamper: 0.005
-    swingVelocityThreshold: 0.25
-    maxSwingVelocity: 3.5
-    swingForceMultiplier: 100
-    doubleGreenMultiplier: 75
-    snapDistanceMultiplier: 0.6
-    greenReelForce: 25
-    groundedReelMultiplier: 15
-    greenSnapSpeed: 10
-    greenSnapVelocityDamper: 0.06
-    greenSnapVelocityCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0.6779167
-        outSlope: 0.6779167
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.073755376
-      - serializedVersion: 3
-        time: 1
-        value: 0.2
-        inSlope: 0.14703377
-        outSlope: 0.14703377
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 0.4
-        inSlope: 0.09056437
-        outSlope: 0.09056437
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    greenMaxSlackSpeed: 20
-    reelDeadZone: 0.01
-    greenSlackDamper: 0.5
-    orangeTimeToTeleport: 0.25
-    forceTuning: 2
-    reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
-    disabledTransparency: 0.4
-    minReticleDistance: 5
-    maxReticleDistance: 30
-    reticleScaleCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.5
-        inSlope: 1.5
-        outSlope: 1.5
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 2
-        inSlope: 1.5
-        outSlope: 1.5
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  allowGrapple: 1
 --- !u!114 &12026514179171092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,7 +705,6 @@ GameObject:
   - component: {fileID: 3275258445524658507}
   - component: {fileID: 8199274447417130926}
   - component: {fileID: 1960357711885694703}
-  - component: {fileID: 7328682074636957651}
   m_Layer: 7
   m_Name: Back Button
   m_TagString: Hookable
@@ -996,44 +789,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7328682074636957651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771567241839749731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 8557081354669361059}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: HomeMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &1869835406956676400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +801,6 @@ GameObject:
   - component: {fileID: 1869835406956676427}
   - component: {fileID: 1869835406956676404}
   - component: {fileID: 1869835406956676405}
-  - component: {fileID: 1869835406956676406}
   m_Layer: 7
   m_Name: ComfortMenuButton
   m_TagString: Hookable
@@ -1131,44 +885,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1869835406956676406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869835406956676400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1869835406956676407}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ComfortMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: comfort button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &1869835407623370124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1067,6 @@ GameObject:
   - component: {fileID: 7072931791674884065}
   - component: {fileID: 8926921319148053981}
   - component: {fileID: 4029421375567951439}
-  - component: {fileID: 55643684601045738}
   m_Layer: 7
   m_Name: IncrementUp
   m_TagString: Hookable
@@ -1436,44 +1151,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &55643684601045738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114460911075009123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1386947723801539334}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Increment
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &2208607032874029617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,7 +1244,6 @@ GameObject:
   - component: {fileID: 7528821188058023033}
   - component: {fileID: 4192384787018709348}
   - component: {fileID: 6717575115351247083}
-  - component: {fileID: 3340285181402256474}
   m_Layer: 7
   m_Name: SetContinuousTurn
   m_TagString: Hookable
@@ -1652,44 +1328,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3340285181402256474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441689573411466656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 4487268610654467508}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: SetCont
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &2531134576264104636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1340,6 @@ GameObject:
   - component: {fileID: 1752543866533923648}
   - component: {fileID: 5608483235880185945}
   - component: {fileID: 3552661464944515813}
-  - component: {fileID: 8512065077019399539}
   m_Layer: 7
   m_Name: IncrementDown
   m_TagString: Hookable
@@ -1787,44 +1424,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8512065077019399539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2531134576264104636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 5813294656921391274}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Decrement
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &2745008542209231656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1436,6 @@ GameObject:
   - component: {fileID: 2012544086163219568}
   - component: {fileID: 7616081115186715281}
   - component: {fileID: 6857659903238935336}
-  - component: {fileID: 6710943688027062749}
   m_Layer: 7
   m_Name: SetSnapTurn
   m_TagString: Hookable
@@ -1922,44 +1520,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6710943688027062749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2745008542209231656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 2974292520605310717}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: SetSnap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &2868139585907034664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,9 +1853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
-  fired: 0
-  retracting: 0
 --- !u!135 &2914717043379540782
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2422,9 +1979,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
-  fired: 0
-  retracting: 0
 --- !u!135 &2914717043450199284
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2601,24 +2155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeft: 1
-  playerRB: {fileID: 7382778893730682561}
-  hook: {fileID: 2914717043450199285}
-  gunTip: {fileID: 2730171560821330532}
-  player: {fileID: 7382778893730682430}
-  ropePoint: {fileID: 12026515767155275}
-  vrCamera: {fileID: 7382778893807782159}
-  dummyHook: {fileID: 2914717043003645019}
-  grappleAction: {fileID: 493999774759131389, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelAction: {fileID: 4208902377528026715, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  slackAction: {fileID: -5307361493287533570, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  gunVelocity: {fileID: -6426830716809561938, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reticleVisual: {fileID: 2914717042424842904}
-  rayInteractor: {fileID: 2914717044053797770}
-  grappling: 0
-  reeling: 0
-  slacking: 0
-  greenCurrentSpoolSpeed: 0
 --- !u!114 &2914717044053797770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2940,7 +2476,6 @@ GameObject:
   - component: {fileID: 2841190127513973009}
   - component: {fileID: 1918548334795577200}
   - component: {fileID: 7149264627170715266}
-  - component: {fileID: 5877239452868978865}
   m_Layer: 7
   m_Name: Back Button
   m_TagString: Hookable
@@ -3025,44 +2560,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5877239452868978865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3749673516207202386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 8707817987593062559}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: HomeMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &5601523897871501629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,7 +2742,6 @@ GameObject:
   - component: {fileID: 5601523898495629818}
   - component: {fileID: 5601523898495629701}
   - component: {fileID: 5601523898495629700}
-  - component: {fileID: 5601523898495629703}
   m_Layer: 7
   m_Name: ControlMenuButton
   m_TagString: Hookable
@@ -3330,44 +2826,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5601523898495629703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601523898495629697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 5601523898495629702}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ControlsMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: control button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &5633294987779602774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,24 +2980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeft: 0
-  playerRB: {fileID: 7382778893730682561}
-  hook: {fileID: 2914717043379540817}
-  gunTip: {fileID: 989130734809832900}
-  player: {fileID: 7382778893730682430}
-  ropePoint: {fileID: 2914717042287056363}
-  vrCamera: {fileID: 7382778893807782159}
-  dummyHook: {fileID: 12026515619419131}
-  grappleAction: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelAction: {fileID: 1679556561146902592, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  slackAction: {fileID: 4610322508894814125, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  gunVelocity: {fileID: 53145656014371319, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reticleVisual: {fileID: 12026515644564792}
-  rayInteractor: {fileID: 9153003301762859195}
-  grappling: 0
-  reeling: 0
-  slacking: 0
-  greenCurrentSpoolSpeed: 0
 --- !u!114 &9153003301762859195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4611,7 +4051,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7382778893060063891}
-  - {fileID: 424262151}
   m_Father: {fileID: 3561913862872785002}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4753,6 +4192,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  fireReferenceRight: {fileID: 0}
+  reelInReferenceRight: {fileID: 0}
+  reelOutReferenceRight: {fileID: 0}
+  fireReferenceLeft: {fileID: 0}
+  reelInReferenceLeft: {fileID: 0}
+  reelOutReferenceLeft: {fileID: 0}
   menuReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   debugReference: {fileID: -203908371383852545, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &5233775104639338478
@@ -4770,7 +4215,7 @@ MonoBehaviour:
   acceleration: 5
   maxSpeed: 15
   jumpStrength: 400
-  jumpTimer: 0.1
+  pauseTimer: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 193
@@ -5396,7 +4841,6 @@ GameObject:
   - component: {fileID: 7879720571180242109}
   - component: {fileID: 7879720571180242114}
   - component: {fileID: 7879720571180242115}
-  - component: {fileID: 7879720571180242112}
   m_Layer: 7
   m_Name: MainMenuButton
   m_TagString: Hookable
@@ -5481,44 +4925,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7879720571180242112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7879720571180242118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 7879720571180242113}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: MainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
 --- !u!1 &7909455717619216594
 GameObject:
   m_ObjectHideFlags: 0
