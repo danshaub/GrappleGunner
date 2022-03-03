@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RedPoint : GrapplePoint
 {
-    override protected void Start()
+    override protected void Awake()
     {
-        base.Start();
+        base.Awake();
         type = GrappleType.Red;
     }
     override public void OnPointHit()

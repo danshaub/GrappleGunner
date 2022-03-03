@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class ButtonPoint : GrapplePoint
 {
-    override protected void Start()
+    override protected void Awake()
     { 
-        base.Start();
+        base.Awake();
         type = GrappleType.Button;
     }
     override public void OnPointHit()

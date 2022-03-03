@@ -8,7 +8,9 @@ public class GrappleOptions : ScriptableObject
     [Header("Hook Options")]
     public float hookTravelSpeed;
     public float retractInterpolateValue;
+    public float returnSnapDistance;
     public float sphereCastRadius;
+    public float timeBeforeRetract;
     public LayerMask sphereCastMask;
 
     [Header("Reticle Options")]

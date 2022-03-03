@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class OrangePoint : GrapplePoint
 {
-    override protected void Start()
+    override protected void Awake()
     {
-        base.Start();
+        base.Awake();
         type = GrappleType.Orange;
     }
     override public void OnPointHit()

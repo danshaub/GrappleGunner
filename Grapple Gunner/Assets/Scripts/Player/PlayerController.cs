@@ -45,10 +45,19 @@ public class PlayerController : MonoBehaviour
         horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
 
         HandleGround();
-        if(useGravity) ApplyGravity();
+        if (useGravity) ApplyGravity();
         ApplyFriction();
 
-        if(allowMovement) Move();
+        if (allowMovement) Move();
+
+        if (GrappleManager._instance.grappleInteractions[0] != null)
+        {
+            GrappleManager._instance.grappleInteractions[0].OnFixedUpdate();
+        }
+        if (GrappleManager._instance.grappleInteractions[1] != null)
+        {
+            GrappleManager._instance.grappleInteractions[1].OnFixedUpdate();
+        }
     }
 
     // Resets player collider to reflect the current location of the headset.
@@ -77,22 +86,27 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, (playerCollider.height * .5f) + rayCastHeightOffset, whatIsGround) &&
-           Mathf.Abs(Vector3.Angle(hit.normal, Vector3.up)) < groundMaxNormal){
+           Mathf.Abs(Vector3.Angle(hit.normal, Vector3.up)) < groundMaxNormal)
+        {
             isGrounded = true;
 
             targetPosition.y = hit.point.y;
             groundNormal = hit.normal;
         }
-        else{
+        else
+        {
             groundNormal = Vector3.zero;
             isGrounded = false;
         }
 
-        if(isGrounded && !pauseGroundSnap){
-            if(transform.position.y < targetPosition.y){
+        if (isGrounded && !pauseGroundSnap)
+        {
+            if (transform.position.y < targetPosition.y)
+            {
                 rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, landingBounce));
             }
-            else{
+            else
+            {
                 rigidbody.MovePosition(targetPosition);
             }
         }
@@ -100,23 +114,28 @@ public class PlayerController : MonoBehaviour
         playerCollider.material = isGrounded ? groundedMaterial : airborneMaterial;
     }
 
-    private void ApplyGravity(){
-        if(!isGrounded){
+    private void ApplyGravity()
+    {
+        if (!isGrounded)
+        {
             rigidbody.AddForce(Vector3.down * gravityStrength, ForceMode.Acceleration);
         }
     }
 
-    private void ApplyFriction(){
-        if(isGrounded){
+    private void ApplyFriction()
+    {
+        if (isGrounded)
+        {
             rigidbody.AddForce(-rigidbody.velocity * frictionCoefficient, ForceMode.Force);
         }
     }
-   
+
 
     private void Move()
     {
         // Movement
-        if(moveInput.magnitude > float.Epsilon){
+        if (moveInput.magnitude > float.Epsilon)
+        {
             Vector3 transformedInput = TransformInputToMoveDirection(moveInput);
             transformedInput = DampenMoveInput(transformedInput);
             Vector3 moveForce = transformedInput * acceleration;
@@ -136,13 +155,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void PauseGroundSnap(){
+    public void PauseGroundSnap()
+    {
         CancelInvoke("PauseTimer");
         pauseGroundSnap = true;
         Invoke("PauseTimer", pauseTimer);
     }
     // Signals enough time has passed since jumping resume snapping to ground
-    void PauseTimer(){
+    void PauseTimer()
+    {
         pauseGroundSnap = false;
     }
 

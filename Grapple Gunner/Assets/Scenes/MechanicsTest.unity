@@ -506,8 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &9167445
@@ -772,8 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &27094025
@@ -943,8 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &41246016
@@ -1287,8 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &46411627
@@ -1515,8 +1511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &69536116
@@ -1738,8 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &76948165
@@ -1850,8 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &94555546
@@ -1948,7 +1941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -2246,170 +2238,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!43 &114527456
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22928
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 18
-    localAABB:
-      m_Center: {x: 1.5, y: 2.5, z: -5}
-      m_Extent: {x: 1.5, y: 2.5, z: 5}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 0000010002000100030002000400050006000700080009000a000b000c000b000d000c000e000f0010000f0011001000
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 18
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 864
-    _typelessdata: 00000000000000000000000000000000000000000000803f000080bf0000000000000000000080bf000000000000000000004040000000000000000000000000000000000000803f000080bf0000000000000000000080bf000040c000000000000000000000a0400000000000000000000000000000803f000080bf0000000000000000000080bf000000000000a040000040400000a0400000000000000000000000000000803f000080bf0000000000000000000080bf000040c00000a0400000404000000000000000000000803f000000000000000000000000000000000000803f000080bf00000000000000000000404000000000000020c10000803f000000000000000000000000000000000000803f000080bf000020c100000000000040400000a040000000000000803f000000000000000000000000000000000000803f000080bf000000000000a040000000000000000000000000000080bf00000000000000000000000000000000000080bf000080bf0000000000000000000000000000a04000000000000080bf00000000000000000000000000000000000080bf000080bf000000000000a0400000000000000000000020c1000080bf00000000000000000000000000000000000080bf000080bf0000204100000000000000000000a04000000000000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00000000bd1b0f40000040400000a04000000000000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00004040bd1b0f400000000000000000000020c1000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00000000bd1b0fc10000404000000000000020c1000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00004040bd1b0fc10000000000000000000020c100000000000080bf00000000000080bf0000000000000000000080bf00000000000020c10000404000000000000020c100000000000080bf00000000000080bf0000000000000000000080bf000040c0000020c100000000000000000000000000000000000080bf00000000000080bf0000000000000000000080bf000000000000000000004040000000000000000000000000000080bf00000000000080bf0000000000000000000080bf000040c000000000
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 1.5, y: 2.5, z: -5}
-    m_Extent: {x: 1.5, y: 2.5, z: 5}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!21 &118738989
 Material:
   serializedVersion: 6
@@ -2799,8 +2627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &151439272
@@ -3143,8 +2970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &165829695
@@ -3371,8 +3197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &168807990
@@ -3483,8 +3308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &173455212
@@ -3595,8 +3419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &174231418
@@ -3690,14 +3513,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175320219}
   serializedVersion: 2
-  m_Mass: 0.01
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 10
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &175320221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3710,7 +3533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -3822,8 +3644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &196813966
@@ -4161,8 +3982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &206971076
@@ -4273,8 +4093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &225920856
@@ -4385,8 +4204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &230486136
@@ -4608,8 +4426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &254762579
@@ -4864,8 +4681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &297475935
@@ -4930,27 +4746,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297475932}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &301692714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5601523898495629697, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &301692719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301692714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &311794789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,8 +4792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &311794792
@@ -5341,8 +5135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &332528187
@@ -6123,11 +5916,6 @@ Transform:
   m_Father: {fileID: 1769494714}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &418257721 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7217931630424305380, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &432987745 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5327969163311940778, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
@@ -6145,10 +5933,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+--- !u!54 &432987751
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432987745}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!21 &435488991
 Material:
   serializedVersion: 6
@@ -8032,8 +7835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &455397716
@@ -8144,8 +7946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &475678750
@@ -8256,8 +8057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &489315008
@@ -8438,17 +8238,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &498113742 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6162773615012304493, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &499350345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8478,14 +8267,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499350345}
   serializedVersion: 2
-  m_Mass: 0.01
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 10
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &499350347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8498,7 +8287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -8678,8 +8466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &510123925
@@ -8790,8 +8577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &510168687
@@ -8856,22 +8642,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510168684}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &542938457 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4502704401645207161, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &555908892 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7382778892751757200, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &556861752
 GameObject:
   m_ObjectHideFlags: 0
@@ -9078,8 +8848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &571618686
@@ -9288,8 +9057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &595406169
@@ -9400,8 +9168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &599677373
@@ -9628,8 +9395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &605265884
@@ -9816,7 +9582,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22174
+  m_Name: pb_Mesh22182
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9974,11 +9740,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &613357371 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7798767920855442831, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!21 &622735678
 Material:
   serializedVersion: 6
@@ -10090,6 +9851,11 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!4 &629890330 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 12026515619419124, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+  m_PrefabInstance: {fileID: 12026515929793742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!21 &633696056
 Material:
   serializedVersion: 6
@@ -10206,6 +9972,175 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!43 &638056726
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pb_Mesh22954
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 18
+    localAABB:
+      m_Center: {x: 1.5, y: 2.5, z: -5}
+      m_Extent: {x: 1.5, y: 2.5, z: 5}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 0000010002000100030002000400050006000700080009000a000b000c000b000d000c000e000f0010000f0011001000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 18
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 40
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 864
+    _typelessdata: 00000000000000000000000000000000000000000000803f000080bf0000000000000000000080bf000000000000000000004040000000000000000000000000000000000000803f000080bf0000000000000000000080bf000040c000000000000000000000a0400000000000000000000000000000803f000080bf0000000000000000000080bf000000000000a040000040400000a0400000000000000000000000000000803f000080bf0000000000000000000080bf000040c00000a0400000404000000000000000000000803f000000000000000000000000000000000000803f000080bf00000000000000000000404000000000000020c10000803f000000000000000000000000000000000000803f000080bf000020c100000000000040400000a040000000000000803f000000000000000000000000000000000000803f000080bf000000000000a040000000000000000000000000000080bf00000000000000000000000000000000000080bf000080bf0000000000000000000000000000a04000000000000080bf00000000000000000000000000000000000080bf000080bf000000000000a0400000000000000000000020c1000080bf00000000000000000000000000000000000080bf000080bf0000204100000000000000000000a04000000000000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00000000bd1b0f40000040400000a04000000000000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00004040bd1b0f400000000000000000000020c1000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00000000bd1b0fc10000404000000000000020c1000000002ef9643f2ef9e4be0000803f0000000000000000000080bf00004040bd1b0fc10000000000000000000020c100000000000080bf00000000000080bf0000000000000000000080bf00000000000020c10000404000000000000020c100000000000080bf00000000000080bf0000000000000000000080bf000040c0000020c100000000000000000000000000000000000080bf00000000000080bf0000000000000000000080bf000000000000000000004040000000000000000000000000000080bf00000000000080bf0000000000000000000080bf000040c000000000
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 1.5, y: 2.5, z: -5}
+    m_Extent: {x: 1.5, y: 2.5, z: 5}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+--- !u!4 &642175312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2914717043003645012, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+  m_PrefabInstance: {fileID: 12026515929793742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!21 &645723468
 Material:
   serializedVersion: 6
@@ -10368,8 +10303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &646299866
@@ -10480,8 +10414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &660804183
@@ -10838,8 +10771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &684731224
@@ -11136,17 +11068,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &697928232 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8958145294123646575, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &703989156
 GameObject:
   m_ObjectHideFlags: 0
@@ -11193,8 +11114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &703989159
@@ -11734,8 +11654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &730479504
@@ -11846,8 +11765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &733816213
@@ -11958,8 +11876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &734927281
@@ -12070,8 +11987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &742148214
@@ -12298,8 +12214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &753294166
@@ -12364,27 +12279,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753294163}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &766354336 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2441689573411466656, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &766354341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766354336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!21 &767068043
 Material:
   serializedVersion: 6
@@ -12501,27 +12395,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &774180833 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2531134576264104636, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &774180838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774180833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &778891131
 GameObject:
   m_ObjectHideFlags: 0
@@ -12568,8 +12441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &778891134
@@ -12680,8 +12552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &788119046
@@ -12792,8 +12663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &799741032
@@ -13353,8 +13223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &833231929
@@ -13465,8 +13334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &836063012
@@ -13577,8 +13445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &843718942
@@ -13649,7 +13516,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23622
+  m_Name: pb_Mesh23670
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13853,8 +13720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &857099148
@@ -13965,8 +13831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &857662755
@@ -14507,8 +14372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &911100748
@@ -14735,8 +14599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &956333138
@@ -15074,8 +14937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &969533349
@@ -15227,24 +15089,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &990811908 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8119268187331320939, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &990811912
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990811908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 6.1232336e-17}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!21 &991361044
 Material:
   serializedVersion: 6
@@ -15662,7 +15506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -15745,10 +15588,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+--- !u!54 &1010503007
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010503001}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1014023885
 GameObject:
   m_ObjectHideFlags: 0
@@ -15795,8 +15653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1014023888
@@ -15907,8 +15764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1029274447
@@ -16130,8 +15986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1043039194
@@ -16196,11 +16051,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043039191}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1048355777 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1268525247686481136, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!21 &1048967194
 Material:
   serializedVersion: 6
@@ -16317,44 +16167,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1056264000 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d68388620afae4db1a483f837088d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1073275605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7382778893730682424, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1073275612 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4522960073376562133, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073275605}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1073275613 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7382778893730682418, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073275605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1078548381
 GameObject:
   m_ObjectHideFlags: 0
@@ -16401,8 +16213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1078548384
@@ -16629,8 +16440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1102827555
@@ -17335,8 +17145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1167785418
@@ -17447,8 +17256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1168202087
@@ -17573,8 +17381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1177797499
@@ -17685,8 +17492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1181792262
@@ -17797,8 +17603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1185967782
@@ -18025,8 +17830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1189598944
@@ -18091,27 +17895,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189598941}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1214494225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2114460911075009123, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1214494230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214494225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1001 &1234531742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18259,8 +18042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1236922414
@@ -18325,11 +18107,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236922411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1257010589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3417143100221972610, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1258718307
 GameObject:
   m_ObjectHideFlags: 0
@@ -18376,8 +18153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1258718310
@@ -18488,8 +18264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1264955895
@@ -18716,8 +18491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1284360418
@@ -19055,8 +18829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1309766046
@@ -19167,8 +18940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1319547258
@@ -19382,7 +19154,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 114527456}
+  m_Mesh: {fileID: 638056726}
 --- !u!33 &1327010743
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -19390,7 +19162,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327010741}
-  m_Mesh: {fileID: 114527456}
+  m_Mesh: {fileID: 638056726}
 --- !u!23 &1327010744
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19606,7 +19378,7 @@ MonoBehaviour:
     m_AreaError: 15
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
-  m_Mesh: {fileID: 114527456}
+  m_Mesh: {fileID: 638056726}
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -19671,8 +19443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1328672775
@@ -20145,8 +19916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1367915098
@@ -20257,8 +20027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1369969179
@@ -20369,8 +20138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1378900409
@@ -20481,8 +20249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1387125230
@@ -20704,8 +20471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1397122801
@@ -20770,27 +20536,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397122798}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1403297550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1771567241839749731, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1403297555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403297550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1407503488
 GameObject:
   m_ObjectHideFlags: 0
@@ -20837,8 +20582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1407503491
@@ -21176,8 +20920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1414577192
@@ -21393,8 +21136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1427898392
@@ -21955,8 +21697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1464910154
@@ -22267,27 +22008,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &1480680690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1869835406956676400, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1480680695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480680690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1487292798
 GameObject:
   m_ObjectHideFlags: 0
@@ -22317,14 +22037,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487292798}
   serializedVersion: 2
-  m_Mass: 0.01
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 10
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &1487292800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22337,7 +22057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -22511,8 +22230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!21 &1510779294
@@ -22764,10 +22482,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+--- !u!54 &1514958308
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514958302}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!21 &1516260238
 Material:
   serializedVersion: 6
@@ -22884,11 +22617,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!4 &1518521135 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2730171560821330532, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!21 &1524958938
 Material:
   serializedVersion: 6
@@ -23267,8 +22995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1559726342
@@ -23379,8 +23106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1561533004
@@ -23874,17 +23600,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1583312334 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2914717043379540817, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1586372288
 GameObject:
   m_ObjectHideFlags: 0
@@ -23931,8 +23646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1586372291
@@ -24043,8 +23757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1591034220
@@ -24155,8 +23868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1592086003
@@ -24267,8 +23979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1613366912
@@ -24488,8 +24199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1617045315
@@ -24600,8 +24310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1632282832
@@ -24828,8 +24537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1646822329
@@ -24940,8 +24648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1668936082
@@ -25135,6 +24842,7 @@ GameObject:
   - component: {fileID: 1676768727}
   - component: {fileID: 1676768726}
   - component: {fileID: 1676768725}
+  - component: {fileID: 1676768730}
   m_Layer: 7
   m_Name: LauncherButton
   m_TagString: Hookable
@@ -25154,7 +24862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -25234,6 +24941,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1676768730
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676768724}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1683443327
 GameObject:
   m_ObjectHideFlags: 0
@@ -25280,8 +25003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1683443330
@@ -25508,8 +25230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1693827883
@@ -25603,14 +25324,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699274916}
   serializedVersion: 2
-  m_Mass: 0.01
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 10
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &1699274918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25623,7 +25344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -25805,27 +25525,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &1718959105 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7879720571180242118, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1718959110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718959105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1726729042
 GameObject:
   m_ObjectHideFlags: 0
@@ -25872,8 +25571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1726729045
@@ -25985,7 +25683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -26224,8 +25921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1740207636
@@ -26401,17 +26097,6 @@ Material:
     - _EmissionColor: {r: 0.5, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1762602719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2914717043450199285, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1769494713
 GameObject:
   m_ObjectHideFlags: 0
@@ -26497,8 +26182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1776449280
@@ -26609,8 +26293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1779839025
@@ -26842,16 +26525,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1172201841477172338, guid: 1486a78ebb7dacf45babebf7fc13dfa8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1486a78ebb7dacf45babebf7fc13dfa8, type: 3}
---- !u!4 &1810732703 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 989130734809832900, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1817440967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 12026515644564792, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!21 &1821959734
 Material:
   serializedVersion: 6
@@ -27014,8 +26687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1824539915
@@ -27126,8 +26798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffb66ac51b3f774f90fc47e40b16124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!135 &1830029854
@@ -27354,8 +27025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1850067370
@@ -27466,8 +27136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1855941801
@@ -27578,8 +27247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1857250411
@@ -27690,8 +27358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1864079824
@@ -27918,8 +27585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1880155711
@@ -28030,8 +27696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1886969519
@@ -28258,8 +27923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1901836437
@@ -28324,27 +27988,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901836434}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1932850616 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2745008542209231656, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1932850621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932850616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1937566632
 GameObject:
   m_ObjectHideFlags: 0
@@ -28391,8 +28034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1937566635
@@ -28716,7 +28358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -28898,27 +28539,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &1999793075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3749673516207202386, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1999793080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999793075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  useRaycastPosition: 0
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!21 &2001518330
 Material:
   serializedVersion: 6
@@ -29035,55 +28655,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &2017282959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 12026514179171097, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2017282964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017282959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af1edbce434a8f49ba6961bd5dffdd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  homeMenu: {fileID: 1048355777}
-  comfortMenu: {fileID: 418257721}
-  controlsMenu: {fileID: 1257010589}
-  background: {fileID: 990811908}
-  indicatorArrow: {fileID: 498113742}
-  turnSpeedIndicator: {fileID: 542938457}
-  controllerMountPoint: {fileID: 555908892}
-  controllerMounterTransform: {fileID: 613357371}
-  continuousTurnProvider: {fileID: 1073275612}
-  snapTurnProvider: {fileID: 1073275613}
---- !u!114 &2017282965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017282959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6159f28db951b61439d7125dc63f251c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  fireReferenceRight: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelInReferenceRight: {fileID: 1679556561146902592, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelOutReferenceRight: {fileID: 4610322508894814125, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  fireReferenceLeft: {fileID: 493999774759131389, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelInReferenceLeft: {fileID: 4208902377528026715, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelOutReferenceLeft: {fileID: -5307361493287533570, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  menuReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  debugReference: {fileID: -203908371383852545, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &2020730398
 GameObject:
   m_ObjectHideFlags: 0
@@ -29130,8 +28701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &2020730401
@@ -29358,8 +28928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &2032527913
@@ -29554,11 +29123,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0.19016437, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &2043252956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2914717042424842904, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-  m_PrefabInstance: {fileID: 12026515929793742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!21 &2050342088
 Material:
   serializedVersion: 6
@@ -29707,7 +29271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808cd141a5a0494ba328f459fa97b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -31751,8 +31314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6660f28f90b7c514599eb09ba5d8157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &2142284299
@@ -31935,102 +31497,70 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1400027854, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
+    - target: {fileID: 301692719, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 12026514179171092, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: player
+    - target: {fileID: 766354341, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 774180838, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214494230, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403297555, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480680695, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718959110, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932850621, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999793080, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: useRaycastPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914717043379540782, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: m_Material
       value: 
-      objectReference: {fileID: 1073275605}
-    - target: {fileID: 12026514179171093, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: options
+      objectReference: {fileID: 13400000, guid: 231ed06743a833c408b6567cfe6a4fa8, type: 2}
+    - target: {fileID: 2914717043379540817, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: dummyHookTransform
       value: 
-      objectReference: {fileID: 11400000, guid: 9d0e85e735aeb67459f066e3b4a4c172, type: 2}
-    - target: {fileID: 12026514179171093, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: guns.Array.data[0]
+      objectReference: {fileID: 629890330}
+    - target: {fileID: 2914717043379540818, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914717043450199284, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: m_Material
       value: 
-      objectReference: {fileID: 1056264000}
-    - target: {fileID: 12026514179171093, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: guns.Array.data[1]
+      objectReference: {fileID: 13400000, guid: 231ed06743a833c408b6567cfe6a4fa8, type: 2}
+    - target: {fileID: 2914717043450199285, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: dummyHookTransform
       value: 
-      objectReference: {fileID: 697928232}
-    - target: {fileID: 12026514179171093, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: hooks.Array.data[0]
-      value: 
-      objectReference: {fileID: 1762602719}
-    - target: {fileID: 12026514179171093, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: hooks.Array.data[1]
-      value: 
-      objectReference: {fileID: 1583312334}
-    - target: {fileID: 55643684601045738, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      objectReference: {fileID: 642175312}
+    - target: {fileID: 2914717043450199286, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 733839466591430047, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268525247686481136, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1771567241839749731, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869835406956676400, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869835406956676406, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869835407623370124, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2114460911075009123, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2441689573411466656, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2531134576264104636, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745008542209231656, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: gunTip
-      value: 
-      objectReference: {fileID: 1518521135}
     - target: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: debugRet
       value: 
       objectReference: {fileID: 1568513100}
-    - target: {fileID: 2914717044053797771, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: reticleVisual
-      value: 
-      objectReference: {fileID: 2043252956}
-    - target: {fileID: 3296257239946571944, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3340285181402256474, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417143100221972610, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 3561913862872785002, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -32075,112 +31605,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3749673516207202386, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5601523897871501629, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5601523898495629697, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5601523898495629703, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5877239452868978865, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062993307147459253, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 6526743759689566027, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 6710943688027062749, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+    - target: {fileID: 7382778893730682561, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7032072655597123796, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7217931630424305380, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328682074636957651, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609278578223989481, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7879720570689299578, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7879720571180242112, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7879720571180242118, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909455717619216594, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8119268187331320939, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8119268187331320939, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_TagString
-      value: HandheldMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354113207357456401, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8512065077019399539, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958145294123646575, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: gunTip
-      value: 
-      objectReference: {fileID: 1810732703}
     - target: {fileID: 8958145294123646575, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
       propertyPath: debugRet
       value: 
       objectReference: {fileID: 723651254}
-    - target: {fileID: 8958145294123646575, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: reticleVisual
-      value: 
-      objectReference: {fileID: 1817440967}
-    - target: {fileID: 9187414066057761642, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8512065077019399539, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 55643684601045738, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 6710943688027062749, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 3340285181402256474, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 5877239452868978865, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 7328682074636957651, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 1869835406956676406, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 5601523898495629703, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 7879720571180242112, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 4011094463560922442, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
-    - {fileID: 8498298106326680827, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c833f4bc5445dc46bcb338304e7ed4f, type: 3}

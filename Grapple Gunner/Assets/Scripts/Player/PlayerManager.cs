@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager _instance;
     public GameObject player;
+    public PlayerController controller;
     [SerializeField] public bool allowMovement = true;
     [SerializeField] public bool grounded = true;
     public float playerHeight = 0;
@@ -31,7 +32,7 @@ public class PlayerManager : MonoBehaviour
 
         subsystem = XRGeneralSettings.Instance.Manager.activeLoader.GetLoadedSubsystem<XRInputSubsystem>();
 
-
+        controller = player.GetComponent<PlayerController>();
     }
 
     private void Start() {

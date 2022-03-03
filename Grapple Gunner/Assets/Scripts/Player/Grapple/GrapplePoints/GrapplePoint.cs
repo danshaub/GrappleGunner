@@ -16,14 +16,23 @@ public abstract class GrapplePoint : MonoBehaviour
         None = 6
     }
 
-    protected virtual void Start() {
+    protected virtual void Awake() {
         gameObject.tag = "Hookable";
     }
 
-    public GrappleType type;
-    public bool useRaycastPosition;
+    public GrappleType type {get; protected set;}
+    public bool useRaycastPosition = true;
     public Vector3 grapplePosition;
     public Vector3 grappleRotation;
+
+    public Vector3 GetGrapplePosition()
+    {
+        return transform.position + grapplePosition;
+    }
+    public Quaternion GetGrappleRotation()
+    {
+        return Quaternion.Euler(grappleRotation);
+    }
 
     public abstract void OnPointHit();
 }

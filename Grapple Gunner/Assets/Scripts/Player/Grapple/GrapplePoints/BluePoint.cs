@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BluePoint : GrapplePoint
 {
-    override protected void Start()
+    override protected void Awake()
     {
-        base.Start();
+        base.Awake();
         type = GrappleType.Blue;
     }
     override public void OnPointHit()

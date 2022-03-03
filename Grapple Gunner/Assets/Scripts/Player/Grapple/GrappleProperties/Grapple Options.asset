@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de4702cd3652ab4e87c99a8529b9144, type: 3}
   m_Name: Grapple Options
   m_EditorClassIdentifier: 
-  hookTravelSpeed: 100
-  retractInterpolateValue: 0.1
+  hookTravelSpeed: 300
+  retractInterpolateValue: 0.75
+  returnSnapDistance: 0.5
   sphereCastRadius: 0.15
+  timeBeforeRetract: 0.25
   sphereCastMask:
     serializedVersion: 2
     m_Bits: 3265

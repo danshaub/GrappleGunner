@@ -11,19 +11,23 @@ public class GrappleGun : MonoBehaviour
 
     public Transform debugRet;
 
-    private void Start() {
+    private void Start()
+    {
         reticleMaterial = reticleVisual.GetComponent<Renderer>().material;
     }
 
 
     #region Reticle Functions
-    public void DisableReticle(){
+    public void DisableReticle()
+    {
         reticleVisual.SetActive(false);
     }
-    public void EnableReticle(){
+    public void EnableReticle()
+    {
         reticleVisual.SetActive(true);
     }
-    public void UpdateReticle(){
+    public void UpdateReticle()
+    {
         if (!reticleVisual.activeInHierarchy)
         {
             return;
@@ -32,12 +36,13 @@ public class GrappleGun : MonoBehaviour
         bool hitMenu = false;
 
         RaycastHit hit;
-        if(Physics.SphereCast(gunTip.position, GrappleManager._instance.options.sphereCastRadius, 
+        if (Physics.SphereCast(gunTip.position, GrappleManager._instance.options.sphereCastRadius,
                               gunTip.forward, out hit, 2000, GrappleManager._instance.options.sphereCastMask))
         {
             hitMenu = hit.transform.gameObject.layer == 11;
 
-            if(hit.transform.CompareTag("Hookable")){
+            if (hit.transform.CompareTag("Hookable"))
+            {
                 GrapplePoint.GrappleType type = hit.transform.gameObject.GetComponent<GrapplePoint>().type;
                 reticleMaterial.SetFloat("_Transparency", 1f);
                 switch (type)
@@ -74,10 +79,12 @@ public class GrappleGun : MonoBehaviour
 
         float reticleDistance;
 
-        if(hitMenu){
+        if (hitMenu)
+        {
             reticleDistance = distanceFromPoint;
         }
-        else{
+        else
+        {
             reticleDistance = Mathf.Clamp(distanceFromPoint, GrappleManager._instance.options.minReticleDistance, GrappleManager._instance.options.maxReticleDistance);
         }
 

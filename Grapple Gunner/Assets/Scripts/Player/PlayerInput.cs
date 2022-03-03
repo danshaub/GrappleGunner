@@ -5,9 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    private PlayerController playerController;
     private MenuManager menuManager;
-    private GrappleManager grappleManager;
 
     // Basic Input Actions
     public InputActionReference jumpReference = null;
@@ -39,26 +37,25 @@ public class PlayerInput : MonoBehaviour
         menuReference.action.started += ShowMenu;
         menuReference.action.canceled += HideMenu;
 
-        fireReferenceRight.action.started += FireRightHook;
-        fireReferenceRight.action.started += ReleaseRightHook;
-        reelInReferenceRight.action.started += ReelInStartRightHook;
-        reelInReferenceRight.action.started += ReelInEndRightHook;
-        reelOutReferenceRight.action.started += ReelOutStartRightHook;
-        reelOutReferenceRight.action.started += ReelOutEndRightHook;
         fireReferenceLeft.action.started += FireLeftHook;
-        fireReferenceLeft.action.started += ReleaseLeftHook;
+        fireReferenceLeft.action.canceled += ReleaseLeftHook;
         reelInReferenceLeft.action.started += ReelInStartLeftHook;
-        reelInReferenceLeft.action.started += ReelInEndLeftHook;
+        reelInReferenceLeft.action.canceled += ReelInEndLeftHook;
         reelOutReferenceLeft.action.started += ReelOutStartLeftHook;
-        reelOutReferenceLeft.action.started += ReelOutEndLeftHook;
+        reelOutReferenceLeft.action.canceled += ReelOutEndLeftHook;
+        fireReferenceRight.action.started += FireRightHook;
+        fireReferenceRight.action.canceled += ReleaseRightHook;
+        reelInReferenceRight.action.started += ReelInStartRightHook;
+        reelInReferenceRight.action.canceled += ReelInEndRightHook;
+        reelOutReferenceRight.action.started += ReelOutStartRightHook;
+        reelOutReferenceRight.action.canceled += ReelOutEndRightHook;
 
         debugReference.action.performed += Debug;
     }
 
-    private void Start() {
-        playerController = PlayerManager._instance.player.GetComponent<PlayerController>();
+    private void Start()
+    {
         menuManager = GetComponent<MenuManager>();
-        grappleManager = GetComponent<GrappleManager>();
     }
     private void OnDestroy()
     {
@@ -66,22 +63,22 @@ public class PlayerInput : MonoBehaviour
         jumpReference.action.canceled -= JumpCancel;
         moveReference.action.performed -= ContinuousMove;
         moveReference.action.canceled -= ContinuousMove;
-        
+
         menuReference.action.started -= ShowMenu;
         menuReference.action.canceled -= HideMenu;
 
-        fireReferenceRight.action.started -= FireRightHook;
-        fireReferenceRight.action.started -= ReleaseRightHook;
-        reelInReferenceRight.action.started -= ReelInStartRightHook;
-        reelInReferenceRight.action.started -= ReelInEndRightHook;
-        reelOutReferenceRight.action.started -= ReelOutStartRightHook;
-        reelOutReferenceRight.action.started -= ReelOutEndRightHook;
         fireReferenceLeft.action.started -= FireLeftHook;
-        fireReferenceLeft.action.started -= ReleaseLeftHook;
+        fireReferenceLeft.action.canceled -= ReleaseLeftHook;
         reelInReferenceLeft.action.started -= ReelInStartLeftHook;
-        reelInReferenceLeft.action.started -= ReelInEndLeftHook;
+        reelInReferenceLeft.action.canceled -= ReelInEndLeftHook;
         reelOutReferenceLeft.action.started -= ReelOutStartLeftHook;
-        reelOutReferenceLeft.action.started -= ReelOutEndLeftHook;
+        reelOutReferenceLeft.action.canceled -= ReelOutEndLeftHook;
+        fireReferenceRight.action.started -= FireRightHook;
+        fireReferenceRight.action.canceled -= ReleaseRightHook;
+        reelInReferenceRight.action.started -= ReelInStartRightHook;
+        reelInReferenceRight.action.canceled -= ReelInEndRightHook;
+        reelOutReferenceRight.action.started -= ReelOutStartRightHook;
+        reelOutReferenceRight.action.canceled -= ReelOutEndRightHook;
 
         debugReference.action.performed -= Debug;
     }
@@ -91,12 +88,12 @@ public class PlayerInput : MonoBehaviour
     #region BasicMovement
     private void JumpStart(InputAction.CallbackContext context)
     {
-        playerController.JumpInput = true;
+        PlayerManager._instance.controller.JumpInput = true;
     }
 
     private void JumpCancel(InputAction.CallbackContext context)
     {
-        playerController.JumpInput = false;
+        PlayerManager._instance.controller.JumpInput = false;
     }
 
     private void ContinuousMove(InputAction.CallbackContext context)
@@ -112,51 +109,31 @@ public class PlayerInput : MonoBehaviour
             input = Vector2.zero;
         }
 
-        playerController.moveInput = input;
+        PlayerManager._instance.controller.moveInput = input;
     }
     #endregion
     #region MenuActions
     private void ShowMenu(InputAction.CallbackContext context)
     {
-        grappleManager.DisableReticle(0);
+        GrappleManager._instance.DisableReticle(0);
         menuManager.ShowMenu();
     }
 
     private void HideMenu(InputAction.CallbackContext context)
     {
-        grappleManager.EnableReticle(0);
+        GrappleManager._instance.EnableReticle(0);
         menuManager.HideMenu();
     }
     #endregion
     #region HookActions
-    #region RightHook
-    private void FireRightHook(InputAction.CallbackContext context){
-
-    }
-    private void ReleaseRightHook(InputAction.CallbackContext context){
-
-    }
-    private void ReelInStartRightHook(InputAction.CallbackContext context){
-
-    }
-    private void ReelInEndRightHook(InputAction.CallbackContext context){
-
-    }
-    private void ReelOutStartRightHook(InputAction.CallbackContext context){
-
-    }
-    private void ReelOutEndRightHook(InputAction.CallbackContext context){
-
-    }
-    #endregion
     #region LeftHook
     private void FireLeftHook(InputAction.CallbackContext context)
     {
-
+        GrappleManager._instance.FireHook(0);
     }
     private void ReleaseLeftHook(InputAction.CallbackContext context)
     {
-
+        GrappleManager._instance.ReleaseHook(0);
     }
     private void ReelInStartLeftHook(InputAction.CallbackContext context)
     {
@@ -175,18 +152,44 @@ public class PlayerInput : MonoBehaviour
 
     }
     #endregion
+    #region RightHook
+    private void FireRightHook(InputAction.CallbackContext context)
+    {
+        GrappleManager._instance.FireHook(1);
+    }
+    private void ReleaseRightHook(InputAction.CallbackContext context)
+    {
+        GrappleManager._instance.ReleaseHook(1);
+    }
+    private void ReelInStartRightHook(InputAction.CallbackContext context)
+    {
+
+    }
+    private void ReelInEndRightHook(InputAction.CallbackContext context)
+    {
+
+    }
+    private void ReelOutStartRightHook(InputAction.CallbackContext context)
+    {
+
+    }
+    private void ReelOutEndRightHook(InputAction.CallbackContext context)
+    {
+
+    }
+    #endregion
     #endregion
 
 
     private void Debug(InputAction.CallbackContext context)
     {
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #elif UNITY_WEBPLAYER
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER
             Application.OpenURL(webplayerQuitURL);
-        #else
+#else
             Application.Quit();
-        #endif
+#endif
     }
     #endregion
 }
