@@ -16,7 +16,11 @@ public abstract class GrapplePoint : MonoBehaviour
         None = 6
     }
 
-    [HideInInspector] public GrappleType type;
+    protected virtual void Start() {
+        gameObject.tag = "Hookable";
+    }
+
+    public GrappleType type;
     public bool useRaycastPosition;
     public Vector3 grapplePosition;
     public Vector3 grappleRotation;

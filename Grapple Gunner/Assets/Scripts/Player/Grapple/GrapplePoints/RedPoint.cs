@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedPoint : MonoBehaviour
+public class RedPoint : GrapplePoint
 {
-    GrapplePoint.GrappleType type = GrapplePoint.GrappleType.Red;
-
-    void OnPointHit(){
+    override protected void Start()
+    {
+        base.Start();
+        type = GrappleType.Red;
+    }
+    override public void OnPointHit()
+    {
         return;
     }
-
 }

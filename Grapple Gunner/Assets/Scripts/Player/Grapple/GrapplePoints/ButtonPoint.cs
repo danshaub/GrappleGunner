@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ButtonPoint : MonoBehaviour
+public class ButtonPoint : GrapplePoint
 {
-    public GrapplePoint.GrappleType type = GrapplePoint.GrappleType.Button;
-    public UnityEvent onButtonPress;
-
-    void OnPointHit()
-    {
-        onButtonPress.Invoke();
+    override protected void Start()
+    { 
+        base.Start();
+        type = GrappleType.Button;
     }
-
+    override public void OnPointHit()
+    {
+        return;
+    }
 }

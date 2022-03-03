@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hookable
   - Hook
+  - HandheldMenu
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Hook
   - InvisibleWall
   - MenuButton
-  - 
+  - HandheldMenu
   - 
   - 
   - 

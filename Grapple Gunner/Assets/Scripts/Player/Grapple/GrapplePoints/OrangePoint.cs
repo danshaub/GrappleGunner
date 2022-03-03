@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrangePoint : MonoBehaviour
+public class OrangePoint : GrapplePoint
 {
-    public GrapplePoint.GrappleType type = GrapplePoint.GrappleType.Orange;
-
-    void OnPointHit()
+    override protected void Start()
+    {
+        base.Start();
+        type = GrappleType.Orange;
+    }
+    override public void OnPointHit()
     {
         return;
     }
-
 }

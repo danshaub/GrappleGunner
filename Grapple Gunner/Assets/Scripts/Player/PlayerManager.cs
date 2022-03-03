@@ -8,8 +8,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager _instance;
-    public GameObject xrRig;
-    [SerializeField] private PlayerController playerController;
+    public GameObject player;
     [SerializeField] public bool allowMovement = true;
     [SerializeField] public bool grounded = true;
     public float playerHeight = 0;
@@ -52,7 +51,7 @@ public class PlayerManager : MonoBehaviour
         ResetView();
         // playerPhysics.ResetVelocity();
 
-        xrRig.transform.position = tpTransform.position;
-        xrRig.transform.rotation = tpTransform.rotation;
+        player.transform.position = tpTransform.position;
+        player.transform.rotation = tpTransform.rotation;
     }
 }

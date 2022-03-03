@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
 {
     private PlayerController playerController;
     private MenuManager menuManager;
-    private GrappleManagerDep grappleManager;
+    private GrappleManager grappleManager;
 
     // Basic Input Actions
     public InputActionReference jumpReference = null;
@@ -31,10 +31,6 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        playerController = GetComponent<PlayerController>();
-        menuManager = GetComponent<MenuManager>();
-        grappleManager = GetComponent<GrappleManagerDep>();
-
         jumpReference.action.started += JumpStart;
         jumpReference.action.canceled += JumpCancel;
         moveReference.action.performed += ContinuousMove;
@@ -57,6 +53,12 @@ public class PlayerInput : MonoBehaviour
         reelOutReferenceLeft.action.started += ReelOutEndLeftHook;
 
         debugReference.action.performed += Debug;
+    }
+
+    private void Start() {
+        playerController = PlayerManager._instance.player.GetComponent<PlayerController>();
+        menuManager = GetComponent<MenuManager>();
+        grappleManager = GetComponent<GrappleManager>();
     }
     private void OnDestroy()
     {
@@ -116,11 +118,13 @@ public class PlayerInput : MonoBehaviour
     #region MenuActions
     private void ShowMenu(InputAction.CallbackContext context)
     {
+        grappleManager.DisableReticle(0);
         menuManager.ShowMenu();
     }
 
     private void HideMenu(InputAction.CallbackContext context)
     {
+        grappleManager.EnableReticle(0);
         menuManager.HideMenu();
     }
     #endregion

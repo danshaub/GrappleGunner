@@ -153,6 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ceb040fb6c3be4d830baf1341e3f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redProperties: {fileID: 0}
+  greenProperties: {fileID: 0}
+  orangeProperties: {fileID: 0}
+  blueProperties: {fileID: 0}
+  rightGun: {fileID: 0}
+  leftGun: {fileID: 0}
+  rightHook: {fileID: 0}
+  leftHook: {fileID: 0}
 --- !u!114 &12026514179171092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4192,12 +4200,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  fireReferenceRight: {fileID: 0}
-  reelInReferenceRight: {fileID: 0}
-  reelOutReferenceRight: {fileID: 0}
-  fireReferenceLeft: {fileID: 0}
-  reelInReferenceLeft: {fileID: 0}
-  reelOutReferenceLeft: {fileID: 0}
+  fireReferenceRight: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelInReferenceRight: {fileID: 1679556561146902592, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelOutReferenceRight: {fileID: 4610322508894814125, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  fireReferenceLeft: {fileID: 493999774759131389, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelInReferenceLeft: {fileID: 4208902377528026715, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelOutReferenceLeft: {fileID: -5307361493287533570, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   menuReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   debugReference: {fileID: -203908371383852545, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &5233775104639338478
