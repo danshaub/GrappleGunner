@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7382778893730682424}
   movementController: {fileID: 0}
+  grappleController: {fileID: 0}
   allowMovement: 1
   grounded: 1
   playerHeight: 0
@@ -222,12 +223,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpReference: {fileID: 7050764188135042145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   moveReference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  fireReferenceRight: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelInReferenceRight: {fileID: 1679556561146902592, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  reelOutReferenceRight: {fileID: 4610322508894814125, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   fireReferenceLeft: {fileID: 493999774759131389, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   reelInReferenceLeft: {fileID: 4208902377528026715, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   reelOutReferenceLeft: {fileID: -5307361493287533570, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  swingReferenceLeft: {fileID: -6426830716809561938, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  fireReferenceRight: {fileID: 6628109277995449492, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelInReferenceRight: {fileID: 1679556561146902592, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reelOutReferenceRight: {fileID: 4610322508894814125, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  swingReferenceRight: {fileID: 53145656014371319, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   menuReference: {fileID: -7366542290326973910, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   debugReference: {fileID: -203908371383852545, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &12026515619419131
@@ -859,50 +862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 8557081354669361059}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: HomeMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!95 &5070189335308849953
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771567241839749731}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51e8c5a4ec8aecc4fb01ab9960fa13d1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1869835406956676400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1869835407623370124
@@ -1294,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &2208607032874029617
@@ -1487,7 +1449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &2531134576264104636
@@ -1599,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &2745008542209231656
@@ -1711,7 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &2868139585907034664
@@ -1970,7 +1932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2914717043379540819
 Transform:
   m_ObjectHideFlags: 0
@@ -2047,8 +2009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dummyHookTransform: {fileID: 0}
-  index: 0
+  dummyHookTransform: {fileID: 12026515619419124}
+  index: 1
 --- !u!135 &2914717043379540782
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2056,7 +2018,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914717043379540818}
-  m_Material: {fileID: 13400000, guid: 45692f66d0b7e6c4ea687f63d25241ad, type: 2}
+  m_Material: {fileID: 13400000, guid: 231ed06743a833c408b6567cfe6a4fa8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2098,7 +2060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2914717043450199281
 Transform:
   m_ObjectHideFlags: 0
@@ -2175,7 +2137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dummyHookTransform: {fileID: 0}
+  dummyHookTransform: {fileID: 2914717043003645012}
   index: 0
 --- !u!135 &2914717043450199284
 SphereCollider:
@@ -2184,7 +2146,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914717043450199286}
-  m_Material: {fileID: 13400000, guid: 45692f66d0b7e6c4ea687f63d25241ad, type: 2}
+  m_Material: {fileID: 13400000, guid: 231ed06743a833c408b6567cfe6a4fa8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2774,7 +2736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &5601523897871501629
@@ -3056,7 +3018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &5633294987779602774
@@ -5141,7 +5103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRaycastPosition: 0
+  useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &7909455717619216594
