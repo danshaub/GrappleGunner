@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de4702cd3652ab4e87c99a8529b9144, type: 3}
   m_Name: Grapple Options
   m_EditorClassIdentifier: 
+  swingVelocityThreshold: 0
+  reelDeadZone: 0.1
   hookTravelSpeed: 300
   retractInterpolateValue: 0.75
   returnSnapDistance: 0.5

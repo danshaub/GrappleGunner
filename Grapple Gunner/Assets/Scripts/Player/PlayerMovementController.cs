@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour
 {
     public float acceleration = 50f;
     public float maxSpeed = 10f;
@@ -49,15 +49,6 @@ public class PlayerController : MonoBehaviour
         ApplyFriction();
 
         if (allowMovement) Move();
-
-        if (GrappleManager._instance.grappleInteractions[0] != null)
-        {
-            GrappleManager._instance.grappleInteractions[0].OnFixedUpdate();
-        }
-        if (GrappleManager._instance.grappleInteractions[1] != null)
-        {
-            GrappleManager._instance.grappleInteractions[1].OnFixedUpdate();
-        }
     }
 
     // Resets player collider to reflect the current location of the headset.

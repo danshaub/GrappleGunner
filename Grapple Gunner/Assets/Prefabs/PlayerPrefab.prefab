@@ -166,7 +166,6 @@ MonoBehaviour:
   hooks:
   - {fileID: 2914717043450199285}
   - {fileID: 2914717043379540817}
-  reticleIsActive: 0101
 --- !u!114 &12026514179171092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7382778893730682424}
+  movementController: {fileID: 0}
   allowMovement: 1
   grounded: 1
   playerHeight: 0
@@ -859,7 +859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -972,7 +971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -1255,7 +1253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -1449,7 +1446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -1562,7 +1558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -1675,7 +1670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -2012,6 +2006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dummyHookTransform: {fileID: 0}
+  index: 0
 --- !u!135 &2914717043379540782
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2138,6 +2134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfd4e9ade164b447956ecb3a6e959d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dummyHookTransform: {fileID: 0}
+  index: 0
 --- !u!135 &2914717043450199284
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2735,7 +2733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -3018,7 +3015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
@@ -4229,6 +4225,7 @@ GameObject:
   - component: {fileID: 5233775104639338478}
   - component: {fileID: 7382778893730682561}
   - component: {fileID: 1024200299291061754}
+  - component: {fileID: 7006819083821130499}
   m_Layer: 3
   m_Name: XR Rig
   m_TagString: Player
@@ -4436,6 +4433,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7006819083821130499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382778893730682424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f085efd52ec674a959e4bc7943acc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7382778893807782155
 GameObject:
   m_ObjectHideFlags: 0
@@ -5091,7 +5100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   useRaycastPosition: 0
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}

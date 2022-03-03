@@ -30,15 +30,14 @@ public class GrappleManager : MonoBehaviour
     public GrappleGun[] guns = new GrappleGun[2];
     [Tooltip("References to the hook objects. Indices 0 and 1 are left and right respectively")]
     public GrappleHook[] hooks = new GrappleHook[2];
-    public bool[] reticleIsActive = { true, true };
     public I_GrappleInteraction[] grappleInteractions = new I_GrappleInteraction[2];
 
 
     private void Update()
     {
-        for (int i = 0; i < 2; i++)
+        for (int index = 0; index < 2; index++)
         {
-            if (reticleIsActive[i]) guns[i].UpdateReticle();
+            guns[index].UpdateReticle();
         }
     }
 
@@ -61,11 +60,19 @@ public class GrappleManager : MonoBehaviour
         guns[index].EnableReticle();
     }
 
-    public void BeginGrapple(int index, GrapplePoint.GrappleType type){
-        switch(type){
+    public void BeginGrapple(int index, GrapplePoint.GrappleType type)
+    {
+        // Release other hook if connected to red
+        if (grappleInteractions[(index + 1) % 2] != null &&
+            grappleInteractions[(index + 1) % 2].GetType() == typeof(RedInteraction))
+        {
+            hooks[(index + 1) % 2].ReleaseHook();
+        }
+        switch (type)
+        {
             case GrapplePoint.GrappleType.Red:
                 grappleInteractions[index] = new RedInteraction();
-                hooks[(index+1)%2].ReleaseHook();
+                hooks[(index + 1) % 2].ReleaseHook();
                 break;
             case GrapplePoint.GrappleType.Orange:
                 grappleInteractions[index] = new OrangeInteraction();
@@ -77,10 +84,20 @@ public class GrappleManager : MonoBehaviour
                 grappleInteractions[index] = new BlueInteraction();
                 break;
         }
+
+        if (grappleInteractions[index] != null)
+        {
+            grappleInteractions[index].OnHit();
+        }
     }
 
-    public void EndGrapple(int index){
+    public void EndGrapple(int index)
+    {
+        if (grappleInteractions[index] != null)
+        {
+            grappleInteractions[index].OnRelease();
+        }
+
         grappleInteractions[index] = null;
     }
-
 }

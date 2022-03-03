@@ -13,13 +13,13 @@ public class OrangeInteraction : I_GrappleInteraction
     public void OnFixedUpdate(){
         Debug.Log("Orange F_Update");
     }
-    public void OnReelIn(){
+    public void OnReelIn(float reelStrength){
         Debug.Log("Orange R_In");
     }
     public void OnReelOut(){
         Debug.Log("Orange R_Out");
     }
-    public void OnSwing(){
+    public void OnSwing(Vector3 swingVelocity){
         Debug.Log("Orange R_Swing");
     }
 }

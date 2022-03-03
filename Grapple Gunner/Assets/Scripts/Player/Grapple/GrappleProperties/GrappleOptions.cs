@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GrappleOptions : ScriptableObject
 {
+    [Header("Gun Options")]
+    public float swingVelocityThreshold;
+    public float reelDeadZone;
     [Header("Hook Options")]
     public float hookTravelSpeed;
     public float retractInterpolateValue;

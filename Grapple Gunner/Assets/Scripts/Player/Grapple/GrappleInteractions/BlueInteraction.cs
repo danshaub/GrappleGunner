@@ -13,13 +13,13 @@ public class BlueInteraction : I_GrappleInteraction
     public void OnFixedUpdate(){
         Debug.Log("Blue F_Update");
     }
-    public void OnReelIn(){
+    public void OnReelIn(float reelStrength){
         Debug.Log("Blue R_In");
     }
     public void OnReelOut(){
         Debug.Log("Blue R_Out");
     }
-    public void OnSwing(){
+    public void OnSwing(Vector3 swingVelocity){
         Debug.Log("Blue R_Swing");
     }
 }
