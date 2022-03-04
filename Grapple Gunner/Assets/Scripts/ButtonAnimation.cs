@@ -12,12 +12,11 @@ public class ButtonAnimation : MonoBehaviour
     // Start is called before the first frame update
         void Start()
     {
-        Invoke("MoveButton",5);
         returnPosition = visualTransform.localPosition;
     }
     private void FixedUpdate()
     {
-        visualTransform.localPosition = Vector3.Lerp(visualTransform.localPosition, returnPosition,returnSpeed);
+        visualTransform.localPosition = Vector3.Lerp(visualTransform.localPosition, returnPosition,returnSpeed*Time.fixedDeltaTime);
     }
 
     public void MoveButton(){
