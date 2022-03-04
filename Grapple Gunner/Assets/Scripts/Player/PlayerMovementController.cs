@@ -32,12 +32,15 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private PhysicMaterial groundedMaterial;
     [SerializeField] private PhysicMaterial airborneMaterial;
 
+
     new public Rigidbody rigidbody { get; private set; }
     private CapsuleCollider playerCollider;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
+
+        
     }
     private void FixedUpdate()
     {
