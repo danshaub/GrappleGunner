@@ -2317,6 +2317,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticleVisual: {fileID: 2914717042424842904}
   gunTip: {fileID: 2730171560821330532}
+  hookPoint: {fileID: 0}
+  ropeRender: {fileID: 0}
   debugRet: {fileID: 0}
 --- !u!114 &2914717044053797770
 MonoBehaviour:
@@ -3177,6 +3179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticleVisual: {fileID: 12026515644564792}
   gunTip: {fileID: 989130734809832900}
+  hookPoint: {fileID: 0}
+  ropeRender: {fileID: 0}
   debugRet: {fileID: 0}
 --- !u!114 &9153003301762859195
 MonoBehaviour:

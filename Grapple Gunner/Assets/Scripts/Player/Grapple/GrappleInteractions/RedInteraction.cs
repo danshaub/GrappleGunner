@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RedInteraction : I_GrappleInteraction
 {
+    
     public void OnHit(){
         Debug.Log("Red Hit");
     }

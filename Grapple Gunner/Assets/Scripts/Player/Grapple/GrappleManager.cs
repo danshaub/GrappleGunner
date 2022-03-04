@@ -33,11 +33,12 @@ public class GrappleManager : MonoBehaviour
     public I_GrappleInteraction[] grappleInteractions = new I_GrappleInteraction[2];
 
 
-    private void Update()
+    private void LateUpdate()
     {
         for (int index = 0; index < 2; index++)
         {
             guns[index].UpdateReticle();
+            guns[index].DrawRope();
         }
     }
 

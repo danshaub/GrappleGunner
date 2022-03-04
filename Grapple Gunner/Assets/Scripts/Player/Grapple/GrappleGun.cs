@@ -7,13 +7,26 @@ public class GrappleGun : MonoBehaviour
 
     [SerializeField] private GameObject reticleVisual;
     private Material reticleMaterial;
-    [SerializeField] private Transform gunTip;
-
+    [SerializeField] private Transform gunTip, hookPoint;
+    public LineRenderer ropeRender;
+    private bool fired;
     public Transform debugRet;
 
     private void Start()
     {
         reticleMaterial = reticleVisual.GetComponent<Renderer>().material;
+    }
+
+    public void DrawRope()
+    {
+        if(hookPoint.gameObject.activeInHierarchy){
+            ropeRender.enabled = true;
+            ropeRender.SetPosition(0, gunTip.position);
+            ropeRender.SetPosition(1, hookPoint.position);
+        }
+        else{
+            ropeRender.enabled = false;
+        }
     }
 
 
