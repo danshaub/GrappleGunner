@@ -44,11 +44,13 @@ public class GrappleManager : MonoBehaviour
 
     public void FireHook(int index)
     {
+        guns[index].DisableReticle();
         hooks[index].FireHook();
     }
 
     public void ReleaseHook(int index)
     {
+        guns[index].EnableReticle();
         hooks[index].ReleaseHook();
     }
 
@@ -88,7 +90,7 @@ public class GrappleManager : MonoBehaviour
 
         if (grappleInteractions[index] != null)
         {
-            grappleInteractions[index].OnHit();
+            grappleInteractions[index].OnHit(guns[index].gunTip, guns[index].hookPoint);
         }
     }
 

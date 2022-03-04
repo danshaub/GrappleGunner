@@ -7,10 +7,10 @@ public class GrappleGun : MonoBehaviour
 
     [SerializeField] private GameObject reticleVisual;
     private Material reticleMaterial;
-    [SerializeField] private Transform gunTip, hookPoint;
+    [SerializeField] public Transform gunTip;
+    [SerializeField] public Transform hookPoint;
     public LineRenderer ropeRender;
     private bool fired;
-    public Transform debugRet;
 
     private void Start()
     {

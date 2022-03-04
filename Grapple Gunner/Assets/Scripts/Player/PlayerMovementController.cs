@@ -32,7 +32,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private PhysicMaterial groundedMaterial;
     [SerializeField] private PhysicMaterial airborneMaterial;
 
-    new private Rigidbody rigidbody;
+    new public Rigidbody rigidbody { get; private set; }
     private CapsuleCollider playerCollider;
     private void Awake()
     {

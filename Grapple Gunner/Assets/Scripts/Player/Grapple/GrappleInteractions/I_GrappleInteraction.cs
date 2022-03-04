@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface I_GrappleInteraction
 {
-    public void OnHit();
+    public void OnHit(Transform gunTip, Transform hookPoint);
     public void OnRelease();
     public void OnFixedUpdate();
     public void OnReelIn(float reelStrength);

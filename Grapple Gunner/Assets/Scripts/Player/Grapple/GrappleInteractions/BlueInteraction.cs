@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlueInteraction : I_GrappleInteraction
 {
-    public void OnHit(){
+    public void OnHit(Transform gunTip, Transform hookPoint){
         Debug.Log("Blue Hit");
     }
     public void OnRelease(){

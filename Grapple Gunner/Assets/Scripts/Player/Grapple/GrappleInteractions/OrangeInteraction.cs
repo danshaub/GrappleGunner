@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrangeInteraction : I_GrappleInteraction
 {
-    public void OnHit(){
+    public void OnHit(Transform gunTip, Transform hookPoint){
         Debug.Log("Orange Hit");
     }
     public void OnRelease(){
