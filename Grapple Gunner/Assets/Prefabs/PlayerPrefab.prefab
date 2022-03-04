@@ -763,9 +763,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8557081354669361059}
   - component: {fileID: 1960357711885694703}
-  - component: {fileID: 7328682074636957651}
-  - component: {fileID: 5070189335308849953}
-  - component: {fileID: 3754343000942082186}
+  - component: {fileID: 1403297555}
+  - component: {fileID: 3633976921476033968}
   m_Layer: 7
   m_Name: Back Button
   m_TagString: Hookable
@@ -817,60 +816,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 8557081354669361059}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: HomeMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3754343000942082186}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!95 &5070189335308849953
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771567241839749731}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51e8c5a4ec8aecc4fb01ab9960fa13d1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3754343000942082186
+--- !u!114 &3633976921476033968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -879,12 +825,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1771567241839749731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 7415262506755402476}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &1869835406956676400
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,8 +841,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1869835406956676407}
   - component: {fileID: 1869835406956676405}
-  - component: {fileID: 1869835406956676406}
-  - component: {fileID: 743761602143829884}
+  - component: {fileID: 1480680695}
+  - component: {fileID: 8831980656025475837}
   m_Layer: 7
   m_Name: ComfortMenuButton
   m_TagString: Hookable
@@ -948,41 +894,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1869835406956676407}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ComfortMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: comfort button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 743761602143829884}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &743761602143829884
+--- !u!114 &8831980656025475837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -991,12 +903,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1869835406956676400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 3960915934138019889}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &1869835407623370124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,8 +1089,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1386947723801539334}
   - component: {fileID: 4029421375567951439}
-  - component: {fileID: 55643684601045738}
-  - component: {fileID: 8021324867101310108}
+  - component: {fileID: 1214494230}
+  - component: {fileID: 5112957418462606134}
   m_Layer: 7
   m_Name: IncrementUp
   m_TagString: Hookable
@@ -1230,41 +1142,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 1386947723801539334}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Increment
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8021324867101310108}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &8021324867101310108
+--- !u!114 &5112957418462606134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1273,12 +1151,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2114460911075009123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 1460369833410629874}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &2208607032874029617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,8 +1248,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4487268610654467508}
   - component: {fileID: 6717575115351247083}
-  - component: {fileID: 3340285181402256474}
-  - component: {fileID: 4292237391492884559}
+  - component: {fileID: 766354341}
+  - component: {fileID: 6914565765000263886}
   m_Layer: 7
   m_Name: SetContinuousTurn
   m_TagString: Hookable
@@ -1423,41 +1301,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 4487268610654467508}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: SetCont
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4292237391492884559}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &4292237391492884559
+--- !u!114 &6914565765000263886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1466,12 +1310,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2441689573411466656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 6211666487342334765}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &2531134576264104636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,8 +1326,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5813294656921391274}
   - component: {fileID: 3552661464944515813}
-  - component: {fileID: 8512065077019399539}
-  - component: {fileID: 3728526418760701589}
+  - component: {fileID: 774180838}
+  - component: {fileID: 3728730157531276147}
   m_Layer: 7
   m_Name: IncrementDown
   m_TagString: Hookable
@@ -1535,41 +1379,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 5813294656921391274}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Decrement
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3728526418760701589}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &3728526418760701589
+--- !u!114 &3728730157531276147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1578,12 +1388,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2531134576264104636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 49666738547233304}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &2745008542209231656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,8 +1404,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2974292520605310717}
   - component: {fileID: 6857659903238935336}
-  - component: {fileID: 6710943688027062749}
-  - component: {fileID: 214883473463938532}
+  - component: {fileID: 1932850621}
+  - component: {fileID: 5280958104999226133}
   m_Layer: 7
   m_Name: SetSnapTurn
   m_TagString: Hookable
@@ -1647,41 +1457,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 2974292520605310717}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: SetSnap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 214883473463938532}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &214883473463938532
+--- !u!114 &5280958104999226133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1690,12 +1466,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2745008542209231656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 2671879191329207512}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &2868139585907034664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,7 +2115,6 @@ MonoBehaviour:
   gunTip: {fileID: 2730171560821330532}
   hookPoint: {fileID: 0}
   ropeRender: {fileID: 0}
-  debugRet: {fileID: 0}
 --- !u!114 &2914717044053797770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2740,8 +2515,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8707817987593062559}
   - component: {fileID: 7149264627170715266}
-  - component: {fileID: 5877239452868978865}
-  - component: {fileID: 7120307962633519411}
+  - component: {fileID: 6978177277032959618}
+  - component: {fileID: 6275497123958792591}
   m_Layer: 7
   m_Name: Back Button
   m_TagString: Hookable
@@ -2778,7 +2553,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1.25, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5877239452868978865
+--- !u!114 &6978177277032959618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2787,48 +2562,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3749673516207202386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
+  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 8707817987593062559}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: HomeMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7120307962633519411}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &7120307962633519411
+--- !u!114 &6275497123958792591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2837,12 +2577,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3749673516207202386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 2678799079776160507}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &4526795107108809826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,7 +2690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4866466211010669486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.007, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7879720571180242113}
@@ -3185,8 +2925,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5601523898495629702}
   - component: {fileID: 5601523898495629700}
-  - component: {fileID: 5601523898495629703}
-  - component: {fileID: 1904525811868419535}
+  - component: {fileID: 301692719}
+  - component: {fileID: 2854865210684149836}
   m_Layer: 7
   m_Name: ControlMenuButton
   m_TagString: Hookable
@@ -3238,41 +2978,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 5601523898495629702}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ControlsMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: control button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1904525811868419535}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &1904525811868419535
+--- !u!114 &2854865210684149836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3281,12 +2987,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5601523898495629697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 7876398651527250987}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &5633294987779602774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,7 +3151,6 @@ MonoBehaviour:
   gunTip: {fileID: 989130734809832900}
   hookPoint: {fileID: 0}
   ropeRender: {fileID: 0}
-  debugRet: {fileID: 0}
 --- !u!114 &9153003301762859195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,8 +5220,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7879720571180242113}
   - component: {fileID: 7879720571180242115}
-  - component: {fileID: 7879720571180242112}
-  - component: {fileID: 4085045178196538072}
+  - component: {fileID: 1718959110}
+  - component: {fileID: 6360712375852684758}
   m_Layer: 7
   m_Name: MainMenuButton
   m_TagString: Hookable
@@ -5568,41 +5273,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 7879720571180242113}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6962427479450132305}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: MainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: mm button
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4085045178196538072}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &4085045178196538072
+--- !u!114 &6360712375852684758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5611,12 +5282,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7879720571180242118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 5716245001375813707}
   targetPosition: {x: 0, y: 0, z: 0.5}
-  returnSpeed: 0.1
+  returnSpeed: 10
 --- !u!1 &7909455717619216594
 GameObject:
   m_ObjectHideFlags: 0

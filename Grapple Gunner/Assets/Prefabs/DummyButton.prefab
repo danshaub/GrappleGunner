@@ -122,8 +122,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7123590309084902277}
   - component: {fileID: 4682032787535214606}
-  - component: {fileID: 6833522264748477541}
-  - component: {fileID: 5079958242629382780}
+  - component: {fileID: 7729848293334716223}
+  - component: {fileID: 6317172076098762262}
   m_Layer: 7
   m_Name: Cube
   m_TagString: Hookable
@@ -138,9 +138,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9102180245583655514}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.084659584, y: 0.74982345, z: -0.9534397}
-  m_LocalScale: {x: 1, y: 1, z: 0.28}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.25}
   m_Children:
   - {fileID: 5941357496036806905}
   m_Father: {fileID: 1986298190535856381}
@@ -159,7 +159,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6833522264748477541
+--- !u!114 &7729848293334716223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,47 +168,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 9102180245583655514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d90fdb4d7471f42895ae9dc3efdac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  useRaycastPosition: 1
-  grapplePosition: {x: 0, y: 0, z: 0}
-  grappleRotation: {x: 0, y: 0, z: 0}
-  teleportParent: {fileID: 7123590309084902277}
-  teleportOffset: {x: 0, y: 0, z: 0}
-  disabledMaterial: {fileID: 0}
-  infiniteUses: 1
-  numberUses: 0
-  onButtonPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5079958242629382780}
-        m_TargetAssemblyTypeName: ButtonAnimation, Assembly-CSharp
-        m_MethodName: MoveButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gizmoAlpha: 0
-  grappleMesh: {fileID: 0}
---- !u!114 &5079958242629382780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9102180245583655514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f205a4a267a86174c90a8d058492b01a, type: 3}
+  m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 5941357496036806905}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
+--- !u!114 &6317172076098762262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102180245583655514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f47720c3d3fcc4d9cae9ff26df9124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useRaycastPosition: 1
+  grapplePosition: {x: 0, y: 0, z: 0}
+  grappleRotation: {x: 0, y: 0, z: 0}
