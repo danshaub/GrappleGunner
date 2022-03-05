@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class GreenProperties : ScriptableObject
+public class OrangeOptions : ScriptableObject
 {
     
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RedInteraction : I_GrappleInteraction
 {
-    private RedProperties props;
+    private RedOptions props;
     private Transform currentGunTip, currentHookPoint;
     private Rigidbody playerRB;
     private Vector3 ropeDirection;

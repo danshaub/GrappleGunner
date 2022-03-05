@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class RedProperties : ScriptableObject
+public class RedOptions : ScriptableObject
 {
     public float redGrappleSpeed;
     public float redVelocityDamper;

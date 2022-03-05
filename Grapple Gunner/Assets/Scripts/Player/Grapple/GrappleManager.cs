@@ -21,10 +21,10 @@ public class GrappleManager : MonoBehaviour
     #endregion
 
     public GrappleOptions options;
-    public RedProperties redProperties;
-    public GreenProperties greenProperties;
-    public OrangeProperties orangeProperties;
-    public BlueProperties blueProperties;
+    public RedOptions redProperties;
+    public GreenOptions greenProperties;
+    public OrangeOptions orangeProperties;
+    public BlueOptions blueProperties;
 
     [Tooltip("References to the gun objects. Indices 0 and 1 are left and right respectively")]
     public GrappleGun[] guns = new GrappleGun[2];

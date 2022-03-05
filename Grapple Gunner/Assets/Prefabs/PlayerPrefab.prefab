@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: {fileID: 11400000, guid: 9d0e85e735aeb67459f066e3b4a4c172, type: 2}
-  redProperties: {fileID: 0}
+  redProperties: {fileID: 11400000, guid: dcff21dd3c6fbe04b826b4cc4789f649, type: 2}
   greenProperties: {fileID: 0}
   orangeProperties: {fileID: 0}
   blueProperties: {fileID: 0}
@@ -816,6 +816,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3633976921476033968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,6 +900,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8831980656025475837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,6 +1154,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5112957418462606134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1319,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6914565765000263886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,6 +1403,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3728730157531276147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,6 +1487,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5280958104999226133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,8 +2149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticleVisual: {fileID: 2914717042424842904}
   gunTip: {fileID: 2730171560821330532}
-  hookPoint: {fileID: 0}
-  ropeRender: {fileID: 0}
+  hookPoint: {fileID: 2914717043450199281}
+  ropeRender: {fileID: 2914717044053797768}
 --- !u!114 &2914717044053797770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,6 +2604,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6275497123958792591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2978,6 +3020,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2854865210684149836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3070,10 +3118,12 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions: []
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.06
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -3084,17 +3134,8 @@ LineRenderer:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3149,8 +3190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticleVisual: {fileID: 12026515644564792}
   gunTip: {fileID: 989130734809832900}
-  hookPoint: {fileID: 0}
-  ropeRender: {fileID: 0}
+  hookPoint: {fileID: 2914717043379540819}
+  ropeRender: {fileID: 1000807457354809730}
 --- !u!114 &9153003301762859195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5273,6 +5314,12 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
+  onButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onButtonRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6360712375852684758
 MonoBehaviour:
   m_ObjectHideFlags: 0

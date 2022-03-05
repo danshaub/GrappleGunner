@@ -18,7 +18,7 @@ MonoBehaviour:
   retractInterpolateValue: 0.75
   returnSnapDistance: 0.5
   sphereCastRadius: 0.15
-  timeBeforeRetract: 0.25
+  timeBeforeRetract: 0.1
   sphereCastMask:
     serializedVersion: 2
     m_Bits: 3265
