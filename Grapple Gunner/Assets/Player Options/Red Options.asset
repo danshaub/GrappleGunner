@@ -16,34 +16,34 @@ MonoBehaviour:
   redVelocityDamper: 0.25
   redVelocityCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 0.117168635
-      tangentMode: 65
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 4.7782125
-      value: 0.55985665
-      inSlope: 0.44599175
-      outSlope: 1.9845277
-      tangentMode: 65
-      weightedMode: 0
-      inWeight: 0.082381934
-      outWeight: 0.081948124
-    - serializedVersion: 3
-      time: 5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.027339926
+        outSlope: 0.027339926
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.13833992
+      - serializedVersion: 3
+        time: 0.63238907
+        value: 0.8264354
+        inSlope: 0.043327726
+        outSlope: 0.043327726
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.31361032
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5
+        value: 1.0092888
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
