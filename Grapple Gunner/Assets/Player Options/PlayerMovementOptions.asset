@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff3b09e5fe71b7439633c8f53331f79, type: 3}
+  m_Name: PlayerMovementOptions
+  m_EditorClassIdentifier: 
+  acceleration: 50
+  maxSpeed: 5
+  jumpStrength: 4
+  pauseTimer: 0.1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 193
+  airborneMoveStrength: 0.1
+  landingBounce: 100
+  rayCastHeightOffset: 0.5
+  colliderHeightOffset: 0.35
+  gravityStrength: 9.8
+  groundMaxNormal: 60
+  frictionCoefficient: 10

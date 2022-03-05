@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "GrappleOptions", menuName = "Grapple Gunner/GrappleOptions", order = 1)]
 public class GrappleOptions : ScriptableObject
 {
     [Header("Gun Options")]

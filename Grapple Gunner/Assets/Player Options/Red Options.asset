@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Red Options
   m_EditorClassIdentifier: 
   redGrappleSpeed: 50
-  redVelocityDamper: 0.5
+  redVelocityDamper: 0.25
   redVelocityCurve:
     serializedVersion: 2
     m_Curve:
@@ -21,23 +21,23 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      outSlope: 0.117168635
+      tangentMode: 65
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.047173
-      value: 0.53077066
-      inSlope: 0.620017
-      outSlope: 0.620017
-      tangentMode: 0
+      time: 4.7782125
+      value: 0.55985665
+      inSlope: 0.44599175
+      outSlope: 1.9845277
+      tangentMode: 65
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.082381934
+      outWeight: 0.081948124
     - serializedVersion: 3
-      time: 2.501648
-      value: 0.9874115
+      time: 5
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

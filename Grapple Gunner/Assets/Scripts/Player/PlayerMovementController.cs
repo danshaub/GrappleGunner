@@ -4,37 +4,22 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    public float acceleration = 50f;
-    public float maxSpeed = 10f;
-    public float jumpStrength = 4f;
-    public float pauseTimer = .1f;
-    public LayerMask whatIsGround;
-    public float airborneMoveStrength = .1f;
-    public float landingBounce = 100f;
-    public float rayCastHeightOffset = 0.5f;
-    public float colliderHeightOffset = .35f;
-    public bool allowMovement = true;
-
+    public PlayerMovementOptions options;
     public bool isGrounded { get; private set; }
-    public Vector2 moveInput { get; set; }
+    public Vector2 moveInput { private get; set; }
     public Vector3 horizontalVelocity { get; private set; }
-    public bool JumpInput { get; set; }
+    public bool JumpInput { private get; set; }
     public bool pauseGroundSnap { get; private set; }
     public Vector3 groundNormal { get; private set; }
-
-    [Header("Custom Physics")]
-    public float gravityStrength = 9.8f;
-    public bool useGravity = true;
-    public float groundMaxNormal = 60f;
-    public float frictionCoefficient = 1f;
 
     [SerializeField] private Transform headTransform;
     [SerializeField] private PhysicMaterial groundedMaterial;
     [SerializeField] private PhysicMaterial airborneMaterial;
-
+    [SerializeField] private PhysicMaterial grappleMaterial;
 
     new public Rigidbody rigidbody { get; private set; }
     private CapsuleCollider playerCollider;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -48,21 +33,21 @@ public class PlayerMovementController : MonoBehaviour
         horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
 
         HandleGround();
-        if (useGravity) ApplyGravity();
+        if (PlayerManager._instance.useGravity) ApplyGravity();
         ApplyFriction();
 
-        if (allowMovement) Move();
+        if (PlayerManager._instance.allowMovement) Move();
     }
 
     // Resets player collider to reflect the current location of the headset.
     private void FollowPhysicalPlayer()
     {
         // Player Height
-        float newHeight = (headTransform.localPosition.y + colliderHeightOffset) - rayCastHeightOffset;
+        float newHeight = (headTransform.localPosition.y + options.colliderHeightOffset) - options.rayCastHeightOffset;
         playerCollider.height = (newHeight >= playerCollider.radius * 2) ? newHeight : playerCollider.radius * 2;
 
         // Reset Collider Center
-        playerCollider.center = new Vector3(headTransform.localPosition.x, (playerCollider.height / 2) + rayCastHeightOffset, headTransform.localPosition.z);
+        playerCollider.center = new Vector3(headTransform.localPosition.x, (playerCollider.height / 2) + options.rayCastHeightOffset, headTransform.localPosition.z);
 
 
         // Send player height and offset info to PlayerManager
@@ -79,8 +64,8 @@ public class PlayerMovementController : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, (playerCollider.height * .5f) + rayCastHeightOffset, whatIsGround) &&
-           Mathf.Abs(Vector3.Angle(hit.normal, Vector3.up)) < groundMaxNormal)
+        if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, (playerCollider.height * .5f) + options.rayCastHeightOffset, options.whatIsGround) &&
+           Mathf.Abs(Vector3.Angle(hit.normal, Vector3.up)) < options.groundMaxNormal)
         {
             isGrounded = true;
 
@@ -97,7 +82,7 @@ public class PlayerMovementController : MonoBehaviour
         {
             if (transform.position.y < targetPosition.y)
             {
-                rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, landingBounce));
+                rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, options.landingBounce));
             }
             else
             {
@@ -105,14 +90,23 @@ public class PlayerMovementController : MonoBehaviour
             }
         }
 
-        playerCollider.material = isGrounded ? groundedMaterial : airborneMaterial;
+        if(PlayerManager._instance.useGrapplePhysicsMaterial){
+            playerCollider.material = grappleMaterial;
+        }
+        else if(isGrounded){
+            playerCollider.material = groundedMaterial;
+        }
+        else{
+            playerCollider.material = airborneMaterial;
+        }
+        
     }
 
     private void ApplyGravity()
     {
         if (!isGrounded)
         {
-            rigidbody.AddForce(Vector3.down * gravityStrength, ForceMode.Acceleration);
+            rigidbody.AddForce(Vector3.down * options.gravityStrength, ForceMode.Acceleration);
         }
     }
 
@@ -120,7 +114,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (isGrounded)
         {
-            rigidbody.AddForce(-rigidbody.velocity * frictionCoefficient, ForceMode.Force);
+            rigidbody.AddForce(-rigidbody.velocity * options.frictionCoefficient, ForceMode.Force);
         }
     }
 
@@ -132,8 +126,8 @@ public class PlayerMovementController : MonoBehaviour
         {
             Vector3 transformedInput = TransformInputToMoveDirection(moveInput);
             transformedInput = DampenMoveInput(transformedInput);
-            Vector3 moveForce = transformedInput * acceleration;
-            moveForce = isGrounded ? moveForce : moveForce * airborneMoveStrength;
+            Vector3 moveForce = transformedInput * options.acceleration;
+            moveForce = isGrounded ? moveForce : moveForce * options.airborneMoveStrength;
 
             rigidbody.AddForce(moveForce, ForceMode.VelocityChange);
         }
@@ -142,7 +136,7 @@ public class PlayerMovementController : MonoBehaviour
         if (JumpInput && !pauseGroundSnap && isGrounded)
         {
             rigidbody.velocity = horizontalVelocity;
-            rigidbody.AddForce(transform.up * jumpStrength, ForceMode.Force);
+            rigidbody.AddForce(transform.up * options.jumpStrength, ForceMode.Force);
             JumpInput = false;
 
             PauseGroundSnap();
@@ -153,7 +147,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         CancelInvoke("PauseTimer");
         pauseGroundSnap = true;
-        Invoke("PauseTimer", pauseTimer);
+        Invoke("PauseTimer", options.pauseTimer);
     }
     // Signals enough time has passed since jumping resume snapping to ground
     void PauseTimer()
@@ -178,7 +172,7 @@ public class PlayerMovementController : MonoBehaviour
     // Limits the strength of movement inputs depending on the velocity of the player
     public Vector3 DampenMoveInput(Vector3 moveInput)
     {
-        moveInput = moveInput - (Math.Min(horizontalVelocity.magnitude, maxSpeed) / maxSpeed) * horizontalVelocity.normalized;
+        moveInput = moveInput - (Math.Min(horizontalVelocity.magnitude, options.maxSpeed) / options.maxSpeed) * horizontalVelocity.normalized;
 
         return moveInput;
     }

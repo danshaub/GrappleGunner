@@ -183,6 +183,9 @@ MonoBehaviour:
   grappleController: {fileID: 0}
   allowMovement: 1
   grounded: 1
+  useGrapplePhysicsMaterial: 0
+  useFriction: 1
+  useGravity: 1
   playerHeight: 0
   playerXZLocalPosistion: {x: 0, y: 0, z: 0}
   menu: {fileID: 8119268187331320939}
@@ -765,7 +768,7 @@ GameObject:
   - component: {fileID: 1960357711885694703}
   - component: {fileID: 1403297555}
   - component: {fileID: 3633976921476033968}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Back Button
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -849,7 +852,7 @@ GameObject:
   - component: {fileID: 1869835406956676405}
   - component: {fileID: 1480680695}
   - component: {fileID: 8831980656025475837}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: ComfortMenuButton
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -1103,7 +1106,7 @@ GameObject:
   - component: {fileID: 4029421375567951439}
   - component: {fileID: 1214494230}
   - component: {fileID: 5112957418462606134}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: IncrementUp
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -1268,7 +1271,7 @@ GameObject:
   - component: {fileID: 6717575115351247083}
   - component: {fileID: 766354341}
   - component: {fileID: 6914565765000263886}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SetContinuousTurn
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -1352,7 +1355,7 @@ GameObject:
   - component: {fileID: 3552661464944515813}
   - component: {fileID: 774180838}
   - component: {fileID: 3728730157531276147}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: IncrementDown
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -1436,7 +1439,7 @@ GameObject:
   - component: {fileID: 6857659903238935336}
   - component: {fileID: 1932850621}
   - component: {fileID: 5280958104999226133}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SetSnapTurn
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -2439,7 +2442,7 @@ GameObject:
   - component: {fileID: 3960915934138019889}
   - component: {fileID: 6238511093442463058}
   - component: {fileID: 2735452245946667364}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: ComfortMenuVisual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -2518,7 +2521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7726995548913607201}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Controls Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2553,7 +2556,7 @@ GameObject:
   - component: {fileID: 7149264627170715266}
   - component: {fileID: 6978177277032959618}
   - component: {fileID: 6275497123958792591}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Back Button
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -2636,7 +2639,7 @@ GameObject:
   - component: {fileID: 6211666487342334765}
   - component: {fileID: 4900942342774296710}
   - component: {fileID: 6437291650387578570}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SetContinuousTurnVisual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -2717,7 +2720,7 @@ GameObject:
   - component: {fileID: 5716245001375813707}
   - component: {fileID: 9138233815508346194}
   - component: {fileID: 8185354292029908972}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: VisualButton
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -2969,7 +2972,7 @@ GameObject:
   - component: {fileID: 5601523898495629700}
   - component: {fileID: 301692719}
   - component: {fileID: 2854865210684149836}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: ControlMenuButton
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -3310,7 +3313,7 @@ GameObject:
   - component: {fileID: 7415262506755402476}
   - component: {fileID: 3586953456343479610}
   - component: {fileID: 6599199348772174723}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Back Visual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -3563,7 +3566,7 @@ GameObject:
   - component: {fileID: 2671879191329207512}
   - component: {fileID: 3212006861048222657}
   - component: {fileID: 7361159953395738192}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SetSnapTurnVisual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -3967,7 +3970,7 @@ GameObject:
   - component: {fileID: 7876398651527250987}
   - component: {fileID: 6614464261109876145}
   - component: {fileID: 5735714106926061779}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: ControlMenuVisual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -4644,25 +4647,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d85f2637939054db1932112cc1c4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 5
-  maxSpeed: 15
-  jumpStrength: 400
-  pauseTimer: 0.1
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 193
-  airborneMoveStrength: 0.05
-  landingBounce: 0.25
-  rayCastHeightOffset: 0.25
-  colliderHeightOffset: 0.35
-  allowMovement: 1
-  gravityStrength: 9.8
-  useGravity: 1
-  groundMaxNormal: 60
-  frictionCoefficient: 15
+  options: {fileID: 11400000, guid: 6843017e1d79e734496b6f3f57132513, type: 2}
   headTransform: {fileID: 7382778893807782159}
   groundedMaterial: {fileID: 13400000, guid: 76d16598333f4a84b8e741a4f20302ce, type: 2}
   airborneMaterial: {fileID: 13400000, guid: f14ae809b8ec7c44b8bae87fd23060e2, type: 2}
+  grappleMaterial: {fileID: 0}
 --- !u!54 &7382778893730682561
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5263,7 +5252,7 @@ GameObject:
   - component: {fileID: 7879720571180242115}
   - component: {fileID: 1718959110}
   - component: {fileID: 6360712375852684758}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: MainMenuButton
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -5784,7 +5773,7 @@ GameObject:
   - component: {fileID: 2678799079776160507}
   - component: {fileID: 7377048522008062850}
   - component: {fileID: 7525751619346922654}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Back Visual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -5865,7 +5854,7 @@ GameObject:
   - component: {fileID: 1460369833410629874}
   - component: {fileID: 4333472901978784638}
   - component: {fileID: 3530035269330273842}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: IncrementUpVisual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -6058,7 +6047,7 @@ GameObject:
   - component: {fileID: 49666738547233304}
   - component: {fileID: 8602483635223576634}
   - component: {fileID: 5490616960297213636}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: IncrementDownVisual
   m_TagString: Hookable
   m_Icon: {fileID: 0}

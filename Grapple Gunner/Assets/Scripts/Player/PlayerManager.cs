@@ -11,8 +11,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
     public PlayerMovementController movementController;
     public PlayerGrappleController grappleController;
-    [SerializeField] public bool allowMovement = true;
-    [SerializeField] public bool grounded = true;
+    public bool allowMovement = true;
+    public bool grounded = true;
+    public bool useGrapplePhysicsMaterial = false;
+    public bool useFriction = true;
+    public bool useGravity = true;
     public float playerHeight = 0;
     public Vector3 playerXZLocalPosistion;
     private XRInputSubsystem subsystem = null;
