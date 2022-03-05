@@ -11,6 +11,7 @@ public class GrappleHook : MonoBehaviour
     private Collider cd;
     private Rigidbody rb;
     public Transform dummyHookTransform;
+    public GrapplePoint grapplePoint { get; private set; }
 
     private FixedJoint joint;
     [Tooltip("Set to 0 for left, set to 1 for right")]
@@ -56,7 +57,9 @@ public class GrappleHook : MonoBehaviour
         if (other.gameObject.CompareTag("Hookable"))
         {
 
-            GrapplePoint grapplePoint = other.gameObject.GetComponent<GrapplePoint>();
+            grapplePoint = other.gameObject.GetComponent<GrapplePoint>();
+            grapplePoint.OnPointHit();
+
             if (grapplePoint.useRaycastPosition)
             {
                 transform.position = other.contacts[0].point;
@@ -68,16 +71,20 @@ public class GrappleHook : MonoBehaviour
                 transform.rotation = grapplePoint.GetGrappleRotation();
             }
 
-            GrapplePoint.GrappleType[] interactablePoints = {GrapplePoint.GrappleType.Red,
-                              GrapplePoint.GrappleType.Orange,
-                              GrapplePoint.GrappleType.Green,
-                              GrapplePoint.GrappleType.Blue};
+            GrapplePoint.GrappleType[] interactablePoints =
+                {GrapplePoint.GrappleType.Red,
+                 GrapplePoint.GrappleType.Orange,
+                 GrapplePoint.GrappleType.Green,
+                 GrapplePoint.GrappleType.Blue};
 
 
-            if (Array.IndexOf(interactablePoints, grapplePoint.type) >= 0){
+            if (Array.IndexOf(interactablePoints, grapplePoint.type) >= 0)
+            {
                 GrappleManager._instance.BeginGrapple(index, grapplePoint.type);
             }
-            else{
+            else
+            {
+                Debug.Log("Release");
                 Invoke("ReleaseHook", GrappleManager._instance.options.timeBeforeRetract);
             }
         }
@@ -112,6 +119,11 @@ public class GrappleHook : MonoBehaviour
 
     public void ReleaseHook()
     {
+        if (grapplePoint)
+        {
+            grapplePoint.OnPointReleased();
+            grapplePoint = null;
+        }
         ReleaseHook(false);
     }
 

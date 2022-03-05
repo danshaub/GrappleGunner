@@ -13,4 +13,9 @@ public class GreenPoint : GrapplePoint
     {
         return;
     }
+
+    override public void OnPointReleased()
+    {
+        return;
+    }
 }

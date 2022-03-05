@@ -13,4 +13,9 @@ public class OrangePoint : GrapplePoint
     {
         return;
     }
+
+    override public void OnPointReleased()
+    {
+        return;
+    }
 }

@@ -35,4 +35,5 @@ public abstract class GrapplePoint : MonoBehaviour
     }
 
     public abstract void OnPointHit();
+    public abstract void OnPointReleased();
 }
