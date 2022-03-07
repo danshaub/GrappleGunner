@@ -24,6 +24,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
     protected override void Awake()
     {
+        base.Awake();
         subsystem = XRGeneralSettings.Instance.Manager.activeLoader.GetLoadedSubsystem<XRInputSubsystem>();
 
         movementController = player.GetComponent<PlayerMovementController>();

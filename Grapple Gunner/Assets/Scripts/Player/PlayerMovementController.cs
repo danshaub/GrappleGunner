@@ -25,7 +25,6 @@ public class PlayerMovementController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
 
-        
     }
     private void FixedUpdate()
     {
