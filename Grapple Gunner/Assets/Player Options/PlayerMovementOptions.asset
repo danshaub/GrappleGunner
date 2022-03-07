@@ -26,3 +26,6 @@ MonoBehaviour:
   gravityStrength: 9.8
   groundMaxNormal: 60
   frictionCoefficient: 15
+  groundedMaterial: {fileID: 13400000, guid: 76d16598333f4a84b8e741a4f20302ce, type: 2}
+  airborneMaterial: {fileID: 13400000, guid: f14ae809b8ec7c44b8bae87fd23060e2, type: 2}
+  grappleMaterial: {fileID: 13400000, guid: 3757aa8ab8f716845b678a870f7bd04f, type: 2}

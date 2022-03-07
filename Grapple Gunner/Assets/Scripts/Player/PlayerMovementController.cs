@@ -13,9 +13,6 @@ public class PlayerMovementController : MonoBehaviour
     public Vector3 groundNormal { get; private set; }
 
     [SerializeField] private Transform headTransform;
-    [SerializeField] private PhysicMaterial groundedMaterial;
-    [SerializeField] private PhysicMaterial airborneMaterial;
-    [SerializeField] private PhysicMaterial grappleMaterial;
 
     new public Rigidbody rigidbody { get; private set; }
     private CapsuleCollider playerCollider;
@@ -90,13 +87,13 @@ public class PlayerMovementController : MonoBehaviour
         }
 
         if(PlayerManager.Instance.useGrapplePhysicsMaterial){
-            playerCollider.material = grappleMaterial;
+            playerCollider.material = options.grappleMaterial;
         }
         else if(isGrounded){
-            playerCollider.material = groundedMaterial;
+            playerCollider.material = options.groundedMaterial;
         }
         else{
-            playerCollider.material = airborneMaterial;
+            playerCollider.material = options.airborneMaterial;
         }
         
     }
