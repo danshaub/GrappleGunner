@@ -13,20 +13,20 @@ public class RedInteraction : I_GrappleInteraction
     private bool reverse;
 
     public void OnHit(Transform gunTip, Transform hookPoint){
-        props = GrappleManager._instance.redProperties;
-        playerRB = PlayerManager._instance.movementController.rigidbody;
+        props = GrappleManager.Instance.redProperties;
+        playerRB = PlayerManager.Instance.movementController.rigidbody;
         currentGunTip = gunTip;
         currentHookPoint = hookPoint;
 
-        PlayerManager._instance.allowMovement = false;
-        PlayerManager._instance.useGravity = false;
-        PlayerManager._instance.useFriction = false;
+        PlayerManager.Instance.allowMovement = false;
+        PlayerManager.Instance.useGravity = false;
+        PlayerManager.Instance.useFriction = false;
 
     }
     public void OnRelease(){
-        PlayerManager._instance.allowMovement = true;
-        PlayerManager._instance.useGravity = true;
-        PlayerManager._instance.useFriction = true;
+        PlayerManager.Instance.allowMovement = true;
+        PlayerManager.Instance.useGravity = true;
+        PlayerManager.Instance.useFriction = true;
 
         playerRB.velocity = Vector3.zero;
     }

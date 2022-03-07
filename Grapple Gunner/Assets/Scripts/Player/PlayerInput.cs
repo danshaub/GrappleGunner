@@ -82,18 +82,18 @@ public class PlayerInput : MonoBehaviour
     #region BasicMovement
     private void JumpStart(InputAction.CallbackContext context)
     {
-        PlayerManager._instance.movementController.JumpInput = true;
+        PlayerManager.Instance.movementController.JumpInput = true;
     }
 
     private void JumpCancel(InputAction.CallbackContext context)
     {
-        PlayerManager._instance.movementController.JumpInput = false;
+        PlayerManager.Instance.movementController.JumpInput = false;
     }
 
     private void ContinuousMove(InputAction.CallbackContext context)
     {
         Vector2 input;
-        if (PlayerManager._instance.allowMovement)
+        if (PlayerManager.Instance.allowMovement)
         {
             input = context.ReadValue<Vector2>();
 
@@ -103,19 +103,19 @@ public class PlayerInput : MonoBehaviour
             input = Vector2.zero;
         }
 
-        PlayerManager._instance.movementController.moveInput = input;
+        PlayerManager.Instance.movementController.moveInput = input;
     }
     #endregion
     #region MenuActions
     private void ShowMenu(InputAction.CallbackContext context)
     {
-        GrappleManager._instance.DisableReticle(0);
+        GrappleManager.Instance.DisableReticle(0);
         menuManager.ShowMenu();
     }
 
     private void HideMenu(InputAction.CallbackContext context)
     {
-        GrappleManager._instance.EnableReticle(0);
+        GrappleManager.Instance.EnableReticle(0);
         menuManager.HideMenu();
     }
     #endregion
@@ -123,47 +123,47 @@ public class PlayerInput : MonoBehaviour
     #region LeftHook
     private void FireLeftHook(InputAction.CallbackContext context)
     {
-        GrappleManager._instance.FireHook(0);
+        GrappleManager.Instance.FireHook(0);
     }
     private void ReleaseLeftHook(InputAction.CallbackContext context)
     {
-        GrappleManager._instance.ReleaseHook(0);
+        GrappleManager.Instance.ReleaseHook(0);
     }
     private void ReelOutStartLeftHook(InputAction.CallbackContext context)
     {
-        PlayerManager._instance.grappleController.SetReelingOut(0, true);
+        PlayerManager.Instance.grappleController.SetReelingOut(0, true);
     }
     private void ReelOutEndLeftHook(InputAction.CallbackContext context)
     {
-        PlayerManager._instance.grappleController.SetReelingOut(0, false);
+        PlayerManager.Instance.grappleController.SetReelingOut(0, false);
     }
     #endregion
     #region RightHook
     private void FireRightHook(InputAction.CallbackContext context)
     {
-        GrappleManager._instance.FireHook(1);
+        GrappleManager.Instance.FireHook(1);
     }
     private void ReleaseRightHook(InputAction.CallbackContext context)
     {
-        GrappleManager._instance.ReleaseHook(1);
+        GrappleManager.Instance.ReleaseHook(1);
     }
     private void ReelOutStartRightHook(InputAction.CallbackContext context)
     {
-        PlayerManager._instance.grappleController.SetReelingOut(1, true);
+        PlayerManager.Instance.grappleController.SetReelingOut(1, true);
     }
     private void ReelOutEndRightHook(InputAction.CallbackContext context)
     {
-        PlayerManager._instance.grappleController.SetReelingOut(1, false);
+        PlayerManager.Instance.grappleController.SetReelingOut(1, false);
     }
     #endregion
 
     private void FixedUpdate()
     {
-        PlayerManager._instance.grappleController.SetReelingIn(0, reelInReferenceLeft.action.ReadValue<float>());
-        PlayerManager._instance.grappleController.SetReelingIn(1, reelInReferenceRight.action.ReadValue<float>());
+        PlayerManager.Instance.grappleController.SetReelingIn(0, reelInReferenceLeft.action.ReadValue<float>());
+        PlayerManager.Instance.grappleController.SetReelingIn(1, reelInReferenceRight.action.ReadValue<float>());
 
-        PlayerManager._instance.grappleController.SetSwingVelocity(0, swingReferenceLeft.action.ReadValue<Vector3>());
-        PlayerManager._instance.grappleController.SetSwingVelocity(1, swingReferenceRight.action.ReadValue<Vector3>());
+        PlayerManager.Instance.grappleController.SetSwingVelocity(0, swingReferenceLeft.action.ReadValue<Vector3>());
+        PlayerManager.Instance.grappleController.SetSwingVelocity(1, swingReferenceRight.action.ReadValue<Vector3>());
     }
     #endregion
 

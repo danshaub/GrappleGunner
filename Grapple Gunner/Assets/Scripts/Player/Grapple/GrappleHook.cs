@@ -30,10 +30,10 @@ public class GrappleHook : MonoBehaviour
     {
         if (retracting)
         {
-            transform.position = Vector3.Lerp(transform.position, dummyHookTransform.position, GrappleManager._instance.options.retractInterpolateValue);
-            transform.rotation = Quaternion.Slerp(transform.rotation, dummyHookTransform.rotation, GrappleManager._instance.options.retractInterpolateValue);
+            transform.position = Vector3.Lerp(transform.position, dummyHookTransform.position, GrappleManager.Instance.options.retractInterpolateValue);
+            transform.rotation = Quaternion.Slerp(transform.rotation, dummyHookTransform.rotation, GrappleManager.Instance.options.retractInterpolateValue);
 
-            if (Vector3.Distance(transform.position, dummyHookTransform.position) <= GrappleManager._instance.options.returnSnapDistance)
+            if (Vector3.Distance(transform.position, dummyHookTransform.position) <= GrappleManager.Instance.options.returnSnapDistance)
             {
                 FinishRetract();
             }
@@ -80,12 +80,12 @@ public class GrappleHook : MonoBehaviour
 
             if (Array.IndexOf(interactablePoints, grapplePoint.type) >= 0)
             {
-                GrappleManager._instance.BeginGrapple(index, grapplePoint.type);
+                GrappleManager.Instance.BeginGrapple(index, grapplePoint.type);
             }
             else
             {
                 Debug.Log("Release");
-                Invoke("ReleaseHook", GrappleManager._instance.options.timeBeforeRetract);
+                Invoke("ReleaseHook", GrappleManager.Instance.options.timeBeforeRetract);
             }
         }
         else
@@ -93,7 +93,7 @@ public class GrappleHook : MonoBehaviour
 
             transform.position = other.contacts[0].point;
             transform.rotation = Quaternion.LookRotation(-other.contacts[0].normal, Vector3.up);
-            Invoke("ReleaseHook", GrappleManager._instance.options.timeBeforeRetract);
+            Invoke("ReleaseHook", GrappleManager.Instance.options.timeBeforeRetract);
         }
 
     }
@@ -114,7 +114,7 @@ public class GrappleHook : MonoBehaviour
         transform.rotation = dummyHookTransform.rotation;
 
         rb.constraints = RigidbodyConstraints.FreezeRotation;
-        rb.velocity = GrappleManager._instance.options.hookTravelSpeed * transform.forward;
+        rb.velocity = GrappleManager.Instance.options.hookTravelSpeed * transform.forward;
     }
 
     public void ReleaseHook()
@@ -129,7 +129,7 @@ public class GrappleHook : MonoBehaviour
 
     public void ReleaseHook(bool instant)
     {
-        GrappleManager._instance.EndGrapple(index);
+        GrappleManager.Instance.EndGrapple(index);
         Destroy(joint);
         if (instant)
         {

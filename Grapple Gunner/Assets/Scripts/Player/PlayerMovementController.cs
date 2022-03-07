@@ -33,10 +33,10 @@ public class PlayerMovementController : MonoBehaviour
         horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
 
         HandleGround();
-        if (PlayerManager._instance.useGravity) ApplyGravity();
+        if (PlayerManager.Instance.useGravity) ApplyGravity();
         ApplyFriction();
 
-        if (PlayerManager._instance.allowMovement) Move();
+        if (PlayerManager.Instance.allowMovement) Move();
     }
 
     // Resets player collider to reflect the current location of the headset.
@@ -51,8 +51,8 @@ public class PlayerMovementController : MonoBehaviour
 
 
         // Send player height and offset info to PlayerManager
-        PlayerManager._instance.playerHeight = headTransform.localPosition.y;
-        PlayerManager._instance.playerXZLocalPosistion = new Vector3(headTransform.localPosition.x, 0, headTransform.localPosition.z);
+        PlayerManager.Instance.playerHeight = headTransform.localPosition.y;
+        PlayerManager.Instance.playerXZLocalPosistion = new Vector3(headTransform.localPosition.x, 0, headTransform.localPosition.z);
     }
 
     private void HandleGround()
@@ -90,7 +90,7 @@ public class PlayerMovementController : MonoBehaviour
             }
         }
 
-        if(PlayerManager._instance.useGrapplePhysicsMaterial){
+        if(PlayerManager.Instance.useGrapplePhysicsMaterial){
             playerCollider.material = grappleMaterial;
         }
         else if(isGrounded){

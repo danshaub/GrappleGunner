@@ -5,9 +5,8 @@ using UnityEngine.XR;
 using UnityEngine.XR.Management;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
-    public static PlayerManager _instance;
     public GameObject player;
     public PlayerMovementController movementController;
     public PlayerGrappleController grappleController;
@@ -23,17 +22,8 @@ public class PlayerManager : MonoBehaviour
     public MeshRenderer menuHandReticle;
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (_instance)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            _instance = this;
-        }
-
         subsystem = XRGeneralSettings.Instance.Manager.activeLoader.GetLoadedSubsystem<XRInputSubsystem>();
 
         movementController = player.GetComponent<PlayerMovementController>();

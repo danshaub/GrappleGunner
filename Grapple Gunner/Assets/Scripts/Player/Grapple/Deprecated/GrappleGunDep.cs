@@ -157,16 +157,16 @@ public class GrappleGunDep : MonoBehaviour
 
         ApplySwingForce();
 
-        if (reeling && distanceFromPoint > PlayerManager._instance.playerHeight * GrappleManagerDep._instance.options.snapDistanceMultiplier)
+        if (reeling && distanceFromPoint > PlayerManager.Instance.playerHeight * GrappleManagerDep._instance.options.snapDistanceMultiplier)
         {
             playerRB.AddForce(-ropeDirection * reelInput * GrappleManagerDep._instance.options.greenReelForce);
-            if (PlayerManager._instance.grounded)
+            if (PlayerManager.Instance.grounded)
             {
                 playerRB.AddForce(-ropeDirection * GrappleManagerDep._instance.options.groundedReelMultiplier);
             }
         }
 
-        if (PlayerManager._instance.grounded)
+        if (PlayerManager.Instance.grounded)
         {
             groundedThisFrame = true;
 
@@ -188,7 +188,7 @@ public class GrappleGunDep : MonoBehaviour
             joint.yMotion = ConfigurableJointMotion.Limited;
             joint.zMotion = ConfigurableJointMotion.Limited;
         }
-        else if (distanceFromPoint <= PlayerManager._instance.playerHeight * GrappleManagerDep._instance.options.snapDistanceMultiplier)
+        else if (distanceFromPoint <= PlayerManager.Instance.playerHeight * GrappleManagerDep._instance.options.snapDistanceMultiplier)
         {
             float multiplier = GrappleManagerDep._instance.options.greenSnapVelocityCurve.Evaluate(distanceFromPoint);
             Vector3 targetVelocity = -ropeDirection * GrappleManagerDep._instance.options.greenSnapSpeed * multiplier;
@@ -199,7 +199,7 @@ public class GrappleGunDep : MonoBehaviour
         else
         {
             // allow auto retracting, but not slacking
-            limit.limit = Mathf.Clamp(distanceFromPoint, PlayerManager._instance.playerHeight - .05f, joint.linearLimit.limit);
+            limit.limit = Mathf.Clamp(distanceFromPoint, PlayerManager.Instance.playerHeight - .05f, joint.linearLimit.limit);
 
             joint.xMotion = ConfigurableJointMotion.Limited;
             joint.yMotion = ConfigurableJointMotion.Limited;
@@ -248,11 +248,11 @@ public class GrappleGunDep : MonoBehaviour
 
     private IEnumerator TPOnFixedUpdate()
     {
-        Vector3 tempPosition = player.position + PlayerManager._instance.playerXZLocalPosistion;
-        playerRB.MovePosition(orangeTpTransform.position + orangeTpOffset - PlayerManager._instance.playerXZLocalPosistion);
+        Vector3 tempPosition = player.position + PlayerManager.Instance.playerXZLocalPosistion;
+        playerRB.MovePosition(orangeTpTransform.position + orangeTpOffset - PlayerManager.Instance.playerXZLocalPosistion);
         orangeTpTransform.eulerAngles = new Vector3(0f, orangeTpTransform.eulerAngles.y, 0f);
         orangeTpTransform.position = tempPosition - orangeTpOffset;
-        PlayerManager._instance.StopGrounded();
+        PlayerManager.Instance.StopGrounded();
 
         orangePoint.DecrementUses();
 

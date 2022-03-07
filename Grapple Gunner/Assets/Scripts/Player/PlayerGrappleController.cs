@@ -15,23 +15,23 @@ public class PlayerGrappleController : MonoBehaviour
     {
         for (int index = 0; index < 2; index++)
         {
-            if (GrappleManager._instance.grappleInteractions[index] != null)
+            if (GrappleManager.Instance.grappleInteractions[index] != null)
             {
-                GrappleManager._instance.grappleInteractions[index].OnFixedUpdate();
-                GrappleManager._instance.grappleInteractions[index].OnSwing(swingVelocity[index]);
+                GrappleManager.Instance.grappleInteractions[index].OnFixedUpdate();
+                GrappleManager.Instance.grappleInteractions[index].OnSwing(swingVelocity[index]);
                 if(reelingIn[index]){
-                    GrappleManager._instance.grappleInteractions[index].OnReelIn(reelInInput[index]);
+                    GrappleManager.Instance.grappleInteractions[index].OnReelIn(reelInInput[index]);
                 }
                 else if (reelingOut[index])
                 {
-                    GrappleManager._instance.grappleInteractions[index].OnReelOut();
+                    GrappleManager.Instance.grappleInteractions[index].OnReelOut();
                 }
             }
         }
     }
 
     public void SetReelingIn(int index, float reelInput){
-        reelingIn[index] = reelInput > GrappleManager._instance.options.reelDeadZone;
+        reelingIn[index] = reelInput > GrappleManager.Instance.options.reelDeadZone;
         reelInInput[index] = reelInput;
     }
 

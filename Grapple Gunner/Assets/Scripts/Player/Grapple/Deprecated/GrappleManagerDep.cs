@@ -85,13 +85,13 @@ public class GrappleManagerDep : MonoBehaviour
         }
 
         allowGrapple = false;
-        PlayerManager._instance.allowMovement = false;
+        PlayerManager.Instance.allowMovement = false;
     }
 
     public void RemoveRed(){
         currentCase = GrappleCase.None;
         allowGrapple = true;
-        PlayerManager._instance.allowMovement = true;
+        PlayerManager.Instance.allowMovement = true;
     }
 
     public void AddGreen(bool isLeft){

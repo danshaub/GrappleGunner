@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3b09e5fe71b7439633c8f53331f79, type: 3}
   m_Name: PlayerMovementOptions
   m_EditorClassIdentifier: 
-  acceleration: 50
-  maxSpeed: 5
-  jumpStrength: 4
+  acceleration: 5
+  maxSpeed: 15
+  jumpStrength: 400
   pauseTimer: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 193
-  airborneMoveStrength: 0.1
-  landingBounce: 100
-  rayCastHeightOffset: 0.5
+  airborneMoveStrength: 0.05
+  landingBounce: 0.25
+  rayCastHeightOffset: 0.25
   colliderHeightOffset: 0.35
   gravityStrength: 9.8
   groundMaxNormal: 60
-  frictionCoefficient: 10
+  frictionCoefficient: 15

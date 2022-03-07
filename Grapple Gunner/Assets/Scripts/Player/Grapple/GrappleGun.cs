@@ -49,8 +49,8 @@ public class GrappleGun : MonoBehaviour
         bool hitMenu = false;
 
         RaycastHit hit;
-        if (Physics.SphereCast(gunTip.position, GrappleManager._instance.options.sphereCastRadius,
-                              gunTip.forward, out hit, 2000, GrappleManager._instance.options.sphereCastMask))
+        if (Physics.SphereCast(gunTip.position, GrappleManager.Instance.options.sphereCastRadius,
+                              gunTip.forward, out hit, 2000, GrappleManager.Instance.options.sphereCastMask))
         {
             hitMenu = hit.transform.gameObject.layer == 11;
 
@@ -61,29 +61,29 @@ public class GrappleGun : MonoBehaviour
                 switch (type)
                 {
                     case GrapplePoint.GrappleType.Red:
-                        reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.red);
+                        reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.red);
                         break;
                     case GrapplePoint.GrappleType.Green:
-                        reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.green);
+                        reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.green);
                         break;
                     case GrapplePoint.GrappleType.Blue:
-                        reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.blue);
+                        reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.blue);
                         break;
                     case GrapplePoint.GrappleType.Orange:
-                        reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.orange);
+                        reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.orange);
                         break;
                     case GrapplePoint.GrappleType.OrangeDisabled:
-                        reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.disabled);
+                        reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.disabled);
                         break;
                     case GrapplePoint.GrappleType.Button:
-                        reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.button);
+                        reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.button);
                         break;
                 }
             }
             else
             {
-                reticleMaterial.SetFloat("_Transparency", GrappleManager._instance.options.disabledTransparency);
-                reticleMaterial.SetTexture("_MainTex", GrappleManager._instance.options.reticleManager.disabled);
+                reticleMaterial.SetFloat("_Transparency", GrappleManager.Instance.options.disabledTransparency);
+                reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.disabled);
             }
         }
 
@@ -98,11 +98,11 @@ public class GrappleGun : MonoBehaviour
         }
         else
         {
-            reticleDistance = Mathf.Clamp(distanceFromPoint, GrappleManager._instance.options.minReticleDistance, GrappleManager._instance.options.maxReticleDistance);
+            reticleDistance = Mathf.Clamp(distanceFromPoint, GrappleManager.Instance.options.minReticleDistance, GrappleManager.Instance.options.maxReticleDistance);
         }
 
-        float reticleScale = GrappleManager._instance.options.reticleScaleCurve.Evaluate((reticleDistance / GrappleManager._instance.options.maxReticleDistance));
-        reticleVisual.transform.localPosition = Vector3.forward * (reticleDistance + GrappleManager._instance.options.sphereCastRadius);
+        float reticleScale = GrappleManager.Instance.options.reticleScaleCurve.Evaluate((reticleDistance / GrappleManager.Instance.options.maxReticleDistance));
+        reticleVisual.transform.localPosition = Vector3.forward * (reticleDistance + GrappleManager.Instance.options.sphereCastRadius);
         reticleVisual.transform.localScale = new Vector3(reticleScale, reticleScale, 1);
     }
     #endregion

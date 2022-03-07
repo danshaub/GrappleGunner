@@ -3,23 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrappleManager : MonoBehaviour
+public class GrappleManager : Singleton<GrappleManager>
 {
-    #region Singleton
-    public static GrappleManager _instance;
-    private void Awake()
-    {
-        if (_instance)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            _instance = this;
-        }
-    }
-    #endregion
-
     public GrappleOptions options;
     public RedOptions redProperties;
     public GreenOptions greenProperties;
