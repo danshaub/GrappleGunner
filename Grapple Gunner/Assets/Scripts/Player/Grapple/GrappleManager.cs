@@ -50,23 +50,28 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void BeginGrapple(int index, GrapplePoint.GrappleType type)
     {
-        // Release other hook if connected to red
-        if (grappleInteractions[(index + 1) % 2] != null &&
-            grappleInteractions[(index + 1) % 2].GetType() == typeof(RedInteraction))
-        {
-            hooks[(index + 1) % 2].ReleaseHook();
-        }
+
         switch (type)
         {
             case GrapplePoint.GrappleType.Red:
                 grappleInteractions[index] = new RedInteraction();
-                hooks[(index + 1) % 2].ReleaseHook();
+                if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction) || 
+                    grappleInteractions[(index + 1) % 2]?.GetType() == typeof(GreenInteraction))
+                {
+                    hooks[(index + 1) % 2]?.ReleaseHook();
+                    guns[(index + 1) % 2].EnableReticle();
+                }
                 break;
             case GrapplePoint.GrappleType.Orange:
                 grappleInteractions[index] = new OrangeInteraction();
                 break;
             case GrapplePoint.GrappleType.Green:
                 grappleInteractions[index] = new GreenInteraction();
+                if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction))
+                {
+                    hooks[(index + 1) % 2]?.ReleaseHook();
+                    guns[(index + 1) % 2].EnableReticle();
+                }
                 break;
             case GrapplePoint.GrappleType.Blue:
                 grappleInteractions[index] = new BlueInteraction();

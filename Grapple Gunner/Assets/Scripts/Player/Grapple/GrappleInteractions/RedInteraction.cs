@@ -9,8 +9,8 @@ public class RedInteraction : I_GrappleInteraction
     private Rigidbody playerRB;
     private Vector3 ropeDirection;
 
-    private float breakAmount;
-    private bool reverse;
+    private float speedIncreaseInput;
+    private bool brake;
 
     public void OnHit(Transform gunTip, Transform hookPoint)
     {
@@ -39,26 +39,26 @@ public class RedInteraction : I_GrappleInteraction
 
         float multiplier = props.redVelocityCurve.Evaluate(distanceFromPoint);
         Vector3 targetVelocity = -ropeDirection * props.redGrappleSpeed * multiplier;
-        targetVelocity *= (1 - breakAmount);
+        targetVelocity *= (props.speedIncreaseMultiplier * speedIncreaseInput) + (1 - speedIncreaseInput);
 
-        if (reverse)
+        if (brake)
         {
-            targetVelocity *= -1;
+            targetVelocity = Vector3.zero;
         }
 
         float damper = multiplier >= 1 ? props.redVelocityDamper : 1;
         playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
         playerRB.AddForce(PlayerManager.Instance.movementController.groundNormal * props.redGroundKick, ForceMode.VelocityChange);
 
-        reverse = false;
+        brake = false;
     }
     public void OnReelIn(float reelStrength)
     {
-        breakAmount = reelStrength;
+        speedIncreaseInput = reelStrength;
     }
     public void OnReelOut()
     {
-        reverse = true;
+        brake = true;
     }
     public void OnSwing(Vector3 swingVelocity)
     {

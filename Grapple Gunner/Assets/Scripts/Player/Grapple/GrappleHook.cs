@@ -46,14 +46,6 @@ public class GrappleHook : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeAll;
         rb.velocity = Vector3.zero;
 
-        Rigidbody otherRB = other.gameObject.GetComponent<Rigidbody>();
-        if (otherRB)
-        {
-            rb.constraints = RigidbodyConstraints.None;
-            joint = gameObject.AddComponent<FixedJoint>();
-            joint.connectedBody = other.gameObject.GetComponent<Rigidbody>();
-        }
-
         if (other.gameObject.CompareTag("Hookable"))
         {
 
@@ -63,7 +55,7 @@ public class GrappleHook : MonoBehaviour
             if (grapplePoint.useRaycastPosition)
             {
                 transform.position = other.contacts[0].point;
-                transform.rotation = Quaternion.LookRotation(-other.contacts[0].normal, Vector3.up);
+                transform.forward = (-other.contacts[0].normal);
             }
             else
             {
@@ -96,7 +88,16 @@ public class GrappleHook : MonoBehaviour
             Invoke("ReleaseHook", GrappleManager.Instance.options.timeBeforeRetract);
         }
 
+        Rigidbody otherRB = other.gameObject.GetComponent<Rigidbody>();
+        if (otherRB)
+        {
+            rb.constraints = RigidbodyConstraints.None;
+            joint = gameObject.AddComponent<FixedJoint>();
+            joint.connectedBody = other.gameObject.GetComponent<Rigidbody>();
+        }
+
     }
+
     public void FireHook()
     {
         gameObject.SetActive(true);

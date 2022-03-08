@@ -24,7 +24,7 @@ MonoBehaviour:
   rideHeight: 0.3
   rideSpringStrength: 500
   rideSpringDamper: 10
-  groundSnapDistance: 0.6
+  groundSnapDistance: 0.5
   colliderHeightOffset: 0.35
   gravityStrength: 9.8
   groundMaxNormal: 60

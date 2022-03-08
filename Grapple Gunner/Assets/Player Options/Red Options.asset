@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Red Options
   m_EditorClassIdentifier: 
   redGrappleSpeed: 40
+  redGroundKick: 2
   redVelocityDamper: 0.06
   redVelocityCurve:
     serializedVersion: 2
