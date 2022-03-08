@@ -6,6 +6,7 @@ using UnityEngine;
 public class RedOptions : ScriptableObject
 {
     public float redGrappleSpeed;
+    public float redGroundKick;
     public float redVelocityDamper;
     public AnimationCurve redVelocityCurve;
 }

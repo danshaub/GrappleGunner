@@ -9,7 +9,7 @@ public class PlayerMovementController : MonoBehaviour
     public Vector2 moveInput { private get; set; }
     public Vector3 horizontalVelocity { get; private set; }
     public bool JumpInput { private get; set; }
-    public bool pauseGroundSnap { get; private set; }
+    public bool jumpCooldown { get; private set; }
     public Vector3 groundNormal { get; private set; }
 
     [SerializeField] private Transform headTransform;
@@ -39,11 +39,11 @@ public class PlayerMovementController : MonoBehaviour
     private void FollowPhysicalPlayer()
     {
         // Player Height
-        float newHeight = (headTransform.localPosition.y + options.colliderHeightOffset) - options.rayCastHeightOffset;
+        float newHeight = (headTransform.localPosition.y + options.colliderHeightOffset) - options.rideHeight;
         playerCollider.height = (newHeight >= playerCollider.radius * 2) ? newHeight : playerCollider.radius * 2;
 
         // Reset Collider Center
-        playerCollider.center = new Vector3(headTransform.localPosition.x, (playerCollider.height / 2) + options.rayCastHeightOffset, headTransform.localPosition.z);
+        playerCollider.center = new Vector3(headTransform.localPosition.x, (playerCollider.height / 2) + options.rideHeight, headTransform.localPosition.z);
 
 
         // Send player height and offset info to PlayerManager
@@ -53,20 +53,48 @@ public class PlayerMovementController : MonoBehaviour
 
     private void HandleGround()
     {
-        Vector3 rayCastOrigin = playerCollider.center;
-        rayCastOrigin = transform.TransformPoint(rayCastOrigin);
-
-        Vector3 targetPosition = transform.position;
+        Vector3 rayCastOrigin = transform.TransformPoint(playerCollider.center);
+        float targetCenterHeight = (playerCollider.height * .5f) + options.rideHeight;
+        float rayCastLength = (playerCollider.height * .5f) + (options.groundSnapDistance);
 
         RaycastHit hit;
 
-        if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, (playerCollider.height * .5f) + options.rayCastHeightOffset, options.whatIsGround) &&
+        Debug.DrawLine(rayCastOrigin, rayCastOrigin - (Vector3.up * rayCastLength), Color.blue);
+        Debug.DrawLine(rayCastOrigin, rayCastOrigin - (Vector3.up * targetCenterHeight), Color.black);
+
+        if (Physics.Raycast(rayCastOrigin, Vector3.down, out hit, rayCastLength, options.whatIsGround) &&
            Mathf.Abs(Vector3.Angle(hit.normal, Vector3.up)) < options.groundMaxNormal)
         {
-            isGrounded = true;
-
-            targetPosition.y = hit.point.y;
             groundNormal = hit.normal;
+
+            Vector3 otehrVelocity = Vector3.zero;
+            Rigidbody hitBody = hit.rigidbody;
+            if (hitBody != null)
+            {
+                otehrVelocity = hitBody.velocity;
+            }
+
+            float rayCastDirectionalVelocity = Vector3.Dot(Vector3.down, rigidbody.velocity);
+            float otherDirectionalVelocity = Vector3.Dot(Vector3.down, otehrVelocity);
+
+            float relativeVelocity = rayCastDirectionalVelocity - otherDirectionalVelocity;
+
+            float rideHeightDifference = hit.distance - targetCenterHeight;
+            isGrounded = rideHeightDifference <= options.groundSnapDistance * .5f;
+
+            float springForce = (rideHeightDifference * options.rideSpringStrength) - (relativeVelocity * options.rideSpringDamper);
+
+            if (!jumpCooldown)
+            {
+                rigidbody.AddForce(Vector3.down * springForce);
+            }
+
+            if (hitBody != null)
+            {
+                hitBody.AddForceAtPosition(Vector3.down * -springForce * .1f, hit.point);
+            }
+
+            // targetPosition.y = hit.point.y;
         }
         else
         {
@@ -74,28 +102,31 @@ public class PlayerMovementController : MonoBehaviour
             isGrounded = false;
         }
 
-        if (isGrounded && !pauseGroundSnap)
-        {
-            if (transform.position.y < targetPosition.y)
-            {
-                rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, options.landingBounce));
-            }
-            else
-            {
-                rigidbody.MovePosition(targetPosition);
-            }
-        }
+        // if (isGrounded && !pauseGroundSnap)
+        // {
+        //     if (transform.position.y < targetPosition.y)
+        //     {
+        //         rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, options.landingBounce));
+        //     }
+        //     else
+        //     {
+        //         rigidbody.MovePosition(targetPosition);
+        //     }
+        // }
 
-        if(PlayerManager.Instance.useGrapplePhysicsMaterial){
+        if (PlayerManager.Instance.useGrapplePhysicsMaterial)
+        {
             playerCollider.material = options.grappleMaterial;
         }
-        else if(isGrounded){
+        else if (isGrounded)
+        {
             playerCollider.material = options.groundedMaterial;
         }
-        else{
+        else
+        {
             playerCollider.material = options.airborneMaterial;
         }
-        
+
     }
 
     private void ApplyGravity()
@@ -129,7 +160,7 @@ public class PlayerMovementController : MonoBehaviour
         }
 
         // Jump
-        if (JumpInput && !pauseGroundSnap && isGrounded)
+        if (JumpInput && !jumpCooldown && isGrounded)
         {
             rigidbody.velocity = horizontalVelocity;
             rigidbody.AddForce(transform.up * options.jumpStrength, ForceMode.Force);
@@ -142,13 +173,13 @@ public class PlayerMovementController : MonoBehaviour
     public void PauseGroundSnap()
     {
         CancelInvoke("PauseTimer");
-        pauseGroundSnap = true;
-        Invoke("PauseTimer", options.pauseTimer);
+        jumpCooldown = true;
+        Invoke("PauseTimer", options.jumpCooldown);
     }
     // Signals enough time has passed since jumping resume snapping to ground
     void PauseTimer()
     {
-        pauseGroundSnap = false;
+        jumpCooldown = false;
     }
 
     // Ensures movement is applied in the correct direction relative to the direction the HMD is pointing

@@ -14,14 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 5
   maxSpeed: 15
-  jumpStrength: 400
-  pauseTimer: 0.1
+  jumpStrength: 500
+  jumpCooldown: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 193
   airborneMoveStrength: 0.05
   landingBounce: 0.25
-  rayCastHeightOffset: 0.25
+  rideHeight: 0.3
+  rideSpringStrength: 500
+  rideSpringDamper: 10
+  groundSnapDistance: 0.6
   colliderHeightOffset: 0.35
   gravityStrength: 9.8
   groundMaxNormal: 60
