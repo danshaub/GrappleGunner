@@ -44,6 +44,7 @@ public class RedInteraction : I_GrappleInteraction
         
         float damper = multiplier >= 1 ? props.redVelocityDamper : 1;
         playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
+        // playerRB.AddForce(targetVelocity, ForceMode.VelocityChange)
 
 
         reverse = false;

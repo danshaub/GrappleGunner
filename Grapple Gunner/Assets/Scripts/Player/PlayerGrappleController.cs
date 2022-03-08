@@ -22,7 +22,7 @@ public class PlayerGrappleController : MonoBehaviour
                 if(reelingIn[index]){
                     GrappleManager.Instance.grappleInteractions[index].OnReelIn(reelInInput[index]);
                 }
-                else if (reelingOut[index])
+                if (reelingOut[index])
                 {
                     GrappleManager.Instance.grappleInteractions[index].OnReelOut();
                 }
