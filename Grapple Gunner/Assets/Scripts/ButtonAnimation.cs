@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ButtonAnimation : MonoBehaviour
 {
+    public bool isStuck = false;
     public Transform visualTransform;
     public Vector3 targetPosition;
     public float returnSpeed;
@@ -16,10 +17,19 @@ public class ButtonAnimation : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        visualTransform.localPosition = Vector3.Lerp(visualTransform.localPosition, returnPosition,returnSpeed*Time.fixedDeltaTime);
+        if(isStuck){
+            visualTransform.localPosition = Vector3.Lerp(visualTransform.localPosition, returnPosition, returnSpeed * Time.fixedDeltaTime);
+        }        
     }
 
     public void MoveButton(){
         visualTransform.localPosition = targetPosition;
+    }
+
+    public void Unstick(){
+        isStuck = false;
+    }
+    public void Stick(){
+        isStuck = true;
     }
 }
