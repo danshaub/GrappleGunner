@@ -15,6 +15,8 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private Transform headTransform;
 
     new public Rigidbody rigidbody { get; private set; }
+    private Rigidbody groundBody;
+    private Vector3 groundVelocity = Vector3.zero;
     private CapsuleCollider playerCollider;
 
     private void Awake()
@@ -67,15 +69,18 @@ public class PlayerMovementController : MonoBehaviour
         {
             groundNormal = hit.normal;
 
-            Vector3 otehrVelocity = Vector3.zero;
-            Rigidbody hitBody = hit.rigidbody;
-            if (hitBody != null)
+
+            groundBody = hit.rigidbody;
+            if (groundBody != null)
             {
-                otehrVelocity = hitBody.velocity;
+                groundVelocity = groundBody.velocity;
+            }
+            else{
+                groundVelocity = Vector3.zero;
             }
 
             float rayCastDirectionalVelocity = Vector3.Dot(Vector3.down, rigidbody.velocity);
-            float otherDirectionalVelocity = Vector3.Dot(Vector3.down, otehrVelocity);
+            float otherDirectionalVelocity = Vector3.Dot(Vector3.down, groundVelocity);
 
             float relativeVelocity = rayCastDirectionalVelocity - otherDirectionalVelocity;
 
@@ -89,17 +94,17 @@ public class PlayerMovementController : MonoBehaviour
                 rigidbody.AddForce(Vector3.down * springForce);
             }
 
-            if (hitBody != null)
+            if (groundBody != null)
             {
-                hitBody.AddForceAtPosition(Vector3.down * -springForce * .1f, hit.point);
+                groundBody.AddForceAtPosition(Vector3.down * -springForce * .1f, hit.point);
             }
-
-            // targetPosition.y = hit.point.y;
         }
         else
         {
             groundNormal = Vector3.zero;
             isGrounded = false;
+            transform.parent = null;
+            groundVelocity = Vector3.zero;
         }
 
         // if (isGrounded && !pauseGroundSnap)
@@ -127,6 +132,9 @@ public class PlayerMovementController : MonoBehaviour
             playerCollider.material = options.airborneMaterial;
         }
 
+        if(transform.parent?.GetComponent<Rigidbody>() != null){
+        }
+
     }
 
     private void ApplyGravity()
@@ -141,7 +149,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (isGrounded)
         {
-            rigidbody.AddForce(-rigidbody.velocity * options.frictionCoefficient, ForceMode.Force);
+            rigidbody.AddForce((groundVelocity - rigidbody.velocity) * options.frictionCoefficient, ForceMode.Force);
         }
     }
 
