@@ -12,7 +12,7 @@ public class RedInteraction : I_GrappleInteraction
     private float speedIncreaseInput;
     private bool brake;
 
-    public void OnHit(Transform gunTip, Transform hookPoint)
+    public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index)
     {
         props = GrappleManager.Instance.redProperties;
         playerRB = PlayerManager.Instance.movementController.rigidbody;

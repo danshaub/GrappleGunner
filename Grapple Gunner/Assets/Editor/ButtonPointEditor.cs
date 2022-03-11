@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+[CanEditMultipleObjects]
 [CustomEditor(typeof(ButtonPoint))]
 public class ButtonPointEditor : Editor
 {

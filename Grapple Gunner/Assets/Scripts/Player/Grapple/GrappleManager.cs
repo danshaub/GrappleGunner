@@ -17,6 +17,8 @@ public class GrappleManager : Singleton<GrappleManager>
     public GrappleHook[] hooks = new GrappleHook[2];
     public I_GrappleInteraction[] grappleInteractions = new I_GrappleInteraction[2];
 
+    [HideInInspector] public bool grappleLocked = false;
+
 
     private void LateUpdate()
     {
@@ -29,14 +31,20 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void FireHook(int index)
     {
-        guns[index].DisableReticle();
-        hooks[index].FireHook();
+        if (!grappleLocked)
+        {
+            guns[index].DisableReticle();
+            hooks[index].FireHook();
+        }
     }
 
     public void ReleaseHook(int index)
     {
-        guns[index].EnableReticle();
-        hooks[index].ReleaseHook();
+        if (!grappleLocked)
+        {
+            guns[index].EnableReticle();
+            hooks[index].ReleaseHook();
+        }
     }
 
     public void DisableReticle(int index)
@@ -55,7 +63,7 @@ public class GrappleManager : Singleton<GrappleManager>
         {
             case GrapplePoint.GrappleType.Red:
                 grappleInteractions[index] = new RedInteraction();
-                if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction) || 
+                if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction) ||
                     grappleInteractions[(index + 1) % 2]?.GetType() == typeof(GreenInteraction))
                 {
                     hooks[(index + 1) % 2]?.ReleaseHook();
@@ -80,7 +88,7 @@ public class GrappleManager : Singleton<GrappleManager>
 
         if (grappleInteractions[index] != null)
         {
-            grappleInteractions[index].OnHit(guns[index].gunTip, guns[index].hookPoint);
+            grappleInteractions[index].OnHit(guns[index].gunTip, guns[index].hookPoint, hooks[index].grapplePoint, index);
         }
     }
 
@@ -92,5 +100,18 @@ public class GrappleManager : Singleton<GrappleManager>
         }
 
         grappleInteractions[index] = null;
+    }
+
+    public void QueueTeleport(OrangeInteraction orangeInteraction, int index){
+        hooks[(index + 1) % 2]?.ReleaseHook(true);
+        grappleLocked = true;
+
+        StartCoroutine(WaitForTeleportDelay(orangeInteraction));
+    }
+
+    private IEnumerator WaitForTeleportDelay(OrangeInteraction orangeInteraction){
+        yield return new WaitForSeconds(orangeProperties.teleportTransitionTime);
+
+        orangeInteraction.Teleport();
     }
 }

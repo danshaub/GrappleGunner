@@ -76,7 +76,6 @@ public class GrappleHook : MonoBehaviour
             }
             else
             {
-                Debug.Log("Release");
                 Invoke("ReleaseHook", GrappleManager.Instance.options.timeBeforeRetract);
             }
         }

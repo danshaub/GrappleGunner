@@ -21,7 +21,7 @@ MonoBehaviour:
   timeBeforeRetract: 0.1
   sphereCastMask:
     serializedVersion: 2
-    m_Bits: 3265
+    m_Bits: 11457
   reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
   disabledTransparency: 0.5
   minReticleDistance: 5

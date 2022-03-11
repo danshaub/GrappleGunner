@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GreenInteraction : I_GrappleInteraction
 {
-    public void OnHit(Transform gunTip, Transform hookPoint){
+    public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index){
         Debug.Log("GreenHit");
     }
     public void OnRelease(){

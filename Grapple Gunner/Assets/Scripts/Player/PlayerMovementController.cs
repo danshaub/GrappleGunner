@@ -17,7 +17,7 @@ public class PlayerMovementController : MonoBehaviour
     new public Rigidbody rigidbody { get; private set; }
     private Rigidbody groundBody;
     private Vector3 groundVelocity = Vector3.zero;
-    private CapsuleCollider playerCollider;
+    public CapsuleCollider playerCollider { get; private set; }
 
     private void Awake()
     {
@@ -106,18 +106,6 @@ public class PlayerMovementController : MonoBehaviour
             transform.parent = null;
             groundVelocity = Vector3.zero;
         }
-
-        // if (isGrounded && !pauseGroundSnap)
-        // {
-        //     if (transform.position.y < targetPosition.y)
-        //     {
-        //         rigidbody.MovePosition(Vector3.Lerp(transform.position, targetPosition, options.landingBounce));
-        //     }
-        //     else
-        //     {
-        //         rigidbody.MovePosition(targetPosition);
-        //     }
-        // }
 
         if (PlayerManager.Instance.useGrapplePhysicsMaterial)
         {

@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1286223106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286223107}
+  - component: {fileID: 1286223110}
+  - component: {fileID: 1286223109}
+  - component: {fileID: 1286223108}
+  m_Layer: 3
+  m_Name: Capsule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1286223107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286223106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 7382778893730682430}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1286223110
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286223106}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1286223109
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286223106}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1286223108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286223106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a28ce10d7f3d043b15fe0e0a92287a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1400027854
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 7415262506755402476}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -836,6 +931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 3960915934138019889}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -1143,6 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 1460369833410629874}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -1308,6 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 6211666487342334765}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -1392,6 +1490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 49666738547233304}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -1476,6 +1575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 2671879191329207512}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -2120,7 +2220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticleVisual: {fileID: 2914717042424842904}
   gunTip: {fileID: 2730171560821330532}
-  hookPoint: {fileID: 2914717043450199281}
+  hookPoint: {fileID: 12026515767155275}
   ropeRender: {fileID: 2914717044053797768}
 --- !u!114 &2914717044053797770
 MonoBehaviour:
@@ -2593,6 +2693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 2678799079776160507}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -3064,6 +3165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 7876398651527250987}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
@@ -3216,7 +3318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticleVisual: {fileID: 12026515644564792}
   gunTip: {fileID: 989130734809832900}
-  hookPoint: {fileID: 2914717043379540819}
+  hookPoint: {fileID: 2914717042287056363}
   ropeRender: {fileID: 1000807457354809730}
 --- !u!114 &9153003301762859195
 MonoBehaviour:
@@ -3705,7 +3807,7 @@ MonoBehaviour:
   options: {fileID: 11400000, guid: 9d0e85e735aeb67459f066e3b4a4c172, type: 2}
   redProperties: {fileID: 11400000, guid: dcff21dd3c6fbe04b826b4cc4789f649, type: 2}
   greenProperties: {fileID: 0}
-  orangeProperties: {fileID: 0}
+  orangeProperties: {fileID: 11400000, guid: b28672d18bcf8234f8960c5f162542cc, type: 2}
   blueProperties: {fileID: 0}
   guns:
   - {fileID: 2914717044053797771}
@@ -3713,6 +3815,7 @@ MonoBehaviour:
   hooks:
   - {fileID: 2914717043450199285}
   - {fileID: 2914717043379540817}
+  grappleLocked: 0
 --- !u!1 &6455402682748250843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,6 +4731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7382778893060063891}
+  - {fileID: 1286223107}
   m_Father: {fileID: 3561913862872785002}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5438,6 +5542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bc194be7169548b00706551444ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStuck: 0
   visualTransform: {fileID: 5716245001375813707}
   targetPosition: {x: 0, y: 0, z: 0.5}
   returnSpeed: 10
