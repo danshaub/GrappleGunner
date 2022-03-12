@@ -5,7 +5,7 @@ using UnityEngine;
 public class GreenInteraction : I_GrappleInteraction
 {
     public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index){
-        Debug.Log("GreenHit");
+        GrappleManager.Instance.guns[index].lightening.SetColor(GrappleManager.Instance.LighteningColors.greenColor);
     }
     public void OnRelease(){
         Debug.Log("GreenRelease");

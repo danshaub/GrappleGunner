@@ -6,10 +6,13 @@ using UnityEngine;
 public class GrappleManager : Singleton<GrappleManager>
 {
     public GrappleOptions options;
-    public RedOptions redProperties;
-    public GreenOptions greenProperties;
-    public OrangeOptions orangeProperties;
-    public BlueOptions blueProperties;
+    public RedOptions redOptions;
+    public GreenOptions greenOptions;
+    public OrangeOptions orangeOptions;
+    public BlueOptions blueOptions;
+
+    public LighteningOptions LighteningOptions;
+    public LighteningColors LighteningColors;
 
     [Tooltip("References to the gun objects. Indices 0 and 1 are left and right respectively")]
     public GrappleGun[] guns = new GrappleGun[2];
@@ -110,7 +113,7 @@ public class GrappleManager : Singleton<GrappleManager>
     }
 
     private IEnumerator WaitForTeleportDelay(OrangeInteraction orangeInteraction){
-        yield return new WaitForSeconds(orangeProperties.teleportTransitionTime);
+        yield return new WaitForSeconds(orangeOptions.teleportTransitionTime);
 
         orangeInteraction.Teleport();
     }

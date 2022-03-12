@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlueInteraction : I_GrappleInteraction
 {
     public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index){
-        Debug.Log("Blue Hit");
+        GrappleManager.Instance.guns[index].lightening.SetColor(GrappleManager.Instance.LighteningColors.blueColor);
     }
     public void OnRelease(){
         Debug.Log("Blue Release");
