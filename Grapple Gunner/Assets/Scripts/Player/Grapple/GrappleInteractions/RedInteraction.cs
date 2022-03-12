@@ -7,6 +7,7 @@ public class RedInteraction : I_GrappleInteraction
     private RedOptions props;
     private Transform currentGunTip, currentHookPoint;
     private Rigidbody playerRB;
+    private Rigidbody pointRB;
     private Vector3 ropeDirection;
 
     private float speedIncreaseInput;
@@ -22,6 +23,8 @@ public class RedInteraction : I_GrappleInteraction
         PlayerManager.Instance.allowMovement = false;
         PlayerManager.Instance.useGravity = false;
         PlayerManager.Instance.useFriction = false;
+
+        pointRB = grapplePoint.GetComponent<Rigidbody>();
 
     }
     public void OnRelease()
@@ -46,7 +49,12 @@ public class RedInteraction : I_GrappleInteraction
             targetVelocity = Vector3.zero;
         }
 
+        if(pointRB != null){
+            targetVelocity += pointRB.velocity;
+        }
+
         float damper = multiplier >= 1 ? props.redVelocityDamper : 1;
+        damper = brake ? 1 : damper;
         playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
         playerRB.AddForce(PlayerManager.Instance.movementController.groundNormal * props.redGroundKick, ForceMode.VelocityChange);
 
