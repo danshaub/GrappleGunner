@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ddb17ce19c893b458143e8ac4c7ee2a, type: 3}
-  m_Name: Lightening Options
+  m_Script: {fileID: 11500000, guid: 7998d0c600d8e61419304fcfac03c9e1, type: 3}
+  m_Name: BlueOptions
   m_EditorClassIdentifier: 
-  nubmerArks: 3
-  drawThreshold: 0.2
-  targetSegmentLength: 0.584
-  positionRange: 0.051
-  updateRate: 1
-  rendererWidth: 0.15

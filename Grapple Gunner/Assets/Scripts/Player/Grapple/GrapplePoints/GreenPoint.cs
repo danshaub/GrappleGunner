@@ -7,6 +7,7 @@ public class GreenPoint : GrapplePoint
     override protected void Awake()
     {
         base.Awake();
+        useRaycastPosition = true;
         type = GrappleType.Green;
     }
     override public void OnPointHit()
