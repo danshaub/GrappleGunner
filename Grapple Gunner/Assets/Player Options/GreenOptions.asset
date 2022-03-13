@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GreenOptions
   m_EditorClassIdentifier: 
   limitContactDistance: 10
-  swingDamper: 0.005
+  swingDamper: 0
   swingVelocityThreshold: 0.25
   maxSwingVelocity: 3.5
   swingForceMultiplier: 100

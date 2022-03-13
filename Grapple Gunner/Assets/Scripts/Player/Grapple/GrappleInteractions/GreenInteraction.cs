@@ -30,6 +30,17 @@ public class GreenInteraction : I_GrappleInteraction
 
         joint = PlayerManager.Instance.player.AddComponent<ConfigurableJoint>();
         joint.autoConfigureConnectedAnchor = false;
+        joint.anchor = PlayerManager.Instance.player.transform.InverseTransformPoint(gunTip.position);
+        // joint.anchor = player.InverseTransformPoint(vrCamera.position);
+        joint.connectedAnchor = currentHookPoint.position;
+
+        float distanceFromPoint = Vector3.Distance(gunTip.position, currentHookPoint.position);
+
+        SoftJointLimit limit = new SoftJointLimit();
+        limit.limit = distanceFromPoint;
+        limit.bounciness = 0;
+        limit.contactDistance = props.limitContactDistance;
+        joint.linearLimit = limit;
 
         pointRB = grapplePoint.GetComponent<Rigidbody>();
     }
@@ -57,17 +68,74 @@ public class GreenInteraction : I_GrappleInteraction
         bool reeledThisFrame = false;
         bool groundedThisFrame = false;
 
-        if (reeling)
+        if (reeling && distanceFromPoint > PlayerManager.Instance.playerHeight * props.snapDistanceMultiplier)
         {
             playerRB.AddForce(-ropeDirection * reelInput * props.greenReelForce);
             if (PlayerManager.Instance.grounded)
             {
-                Debug.Log("JFKSDJF");
                 playerRB.AddForce(-ropeDirection * props.groundedReelMultiplier);
+            }
+            reeledThisFrame = true;
+        }
+
+        if (PlayerManager.Instance.grounded)
+        {
+            groundedThisFrame = true;
+
+            limit.limit = distanceFromPoint;
+
+            greenCurrentSpoolSpeed = 0f;
+
+            joint.xMotion = ConfigurableJointMotion.Free;
+            joint.yMotion = ConfigurableJointMotion.Free;
+            joint.zMotion = ConfigurableJointMotion.Free;
+            // joint.xMotion = ConfigurableJointMotion.Limited;
+            // joint.yMotion = ConfigurableJointMotion.Limited;
+            // joint.zMotion = ConfigurableJointMotion.Limited;
+        }
+        else if (slacking)
+        {
+            slackedThisFrame = true;
+            greenCurrentSpoolSpeed = Mathf.Lerp(greenCurrentSpoolSpeed, props.greenMaxSlackSpeed, props.greenSlackDamper);
+            limit.limit = joint.linearLimit.limit + (greenCurrentSpoolSpeed * Time.deltaTime);
+
+            joint.xMotion = ConfigurableJointMotion.Limited;
+            joint.yMotion = ConfigurableJointMotion.Limited;
+            joint.zMotion = ConfigurableJointMotion.Limited;
+        }
+        else if (distanceFromPoint <= PlayerManager.Instance.playerHeight * props.snapDistanceMultiplier)
+        {
+            float multiplier = props.greenSnapVelocityCurve.Evaluate(distanceFromPoint);
+            Vector3 targetVelocity = -ropeDirection * props.greenSnapSpeed * multiplier;
+
+            float damper = multiplier >= 1 ? props.greenSnapVelocityDamper : 1;
+            playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
+        }
+        else
+        {
+            // allow auto retracting, but not slacking
+            limit.limit = Mathf.Clamp(distanceFromPoint, PlayerManager.Instance.playerHeight - .05f, joint.linearLimit.limit);
+
+            joint.xMotion = ConfigurableJointMotion.Limited;
+            joint.yMotion = ConfigurableJointMotion.Limited;
+            joint.zMotion = ConfigurableJointMotion.Limited;
+
+            playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, Vector3.zero, props.swingDamper);
+        }
+
+        if (!reeledThisFrame && !slackedThisFrame)
+        {
+            greenCurrentSpoolSpeed = Mathf.Lerp(greenCurrentSpoolSpeed, 0, props.greenSlackDamper);
+
+            if (!groundedThisFrame && greenCurrentSpoolSpeed >= 0.001)
+            {
+                limit.limit = joint.linearLimit.limit + (greenCurrentSpoolSpeed * Time.deltaTime);
             }
         }
 
-        reeling = false;
+        joint.linearLimit = limit;
+
+        slacking = false;
     }
     public void OnReelIn(float reelStrength)
     {
@@ -76,7 +144,7 @@ public class GreenInteraction : I_GrappleInteraction
     }
     public void OnReelOut()
     {
-        reeling = true;
+        slacking = true;
     }
     public void OnSwing(Vector3 swingVelocity)
     {
@@ -92,10 +160,12 @@ public class GreenInteraction : I_GrappleInteraction
 
     public float SwingForceMultiplier()
     {
-        if(GrappleManager.Instance.grappleInteractions[(currentIndex + 1) % 2]?.GetType() == typeof(GreenInteraction)){
+        if (GrappleManager.Instance.grappleInteractions[(currentIndex + 1) % 2]?.GetType() == typeof(GreenInteraction))
+        {
             return props.doubleGreenMultiplier;
         }
-        else{
+        else
+        {
             return props.swingForceMultiplier;
         }
     }
