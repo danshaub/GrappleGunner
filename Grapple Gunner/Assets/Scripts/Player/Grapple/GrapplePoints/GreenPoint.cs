@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GreenPoint : GrapplePoint
 {
+    public bool playerCollided { get; private set; }
     override protected void Awake()
     {
         base.Awake();
@@ -18,5 +19,21 @@ public class GreenPoint : GrapplePoint
     override public void OnPointReleased()
     {
         return;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerCollided = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerCollided = false;
+        }
     }
 }

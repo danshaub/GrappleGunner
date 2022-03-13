@@ -12,50 +12,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71a00a25aa125b48b46fb684ae68486, type: 3}
   m_Name: GreenOptions
   m_EditorClassIdentifier: 
-  limitContactDistance: 10
-  swingDamper: 0
-  swingVelocityThreshold: 0.25
-  maxSwingVelocity: 3.5
-  swingForceMultiplier: 100
-  doubleGreenMultiplier: 75
-  snapDistanceMultiplier: 0.6
-  greenReelForce: 25
-  groundedReelMultiplier: 150
-  greenSnapSpeed: 10
-  greenSnapVelocityDamper: 0.06
-  greenSnapVelocityCurve:
+  springForce: 1000
+  springDamper: 0
+  forceGroundedMultiplier: 3
+  forceDistanceMultiplier:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.6779167
-      outSlope: 0.6779167
+      inSlope: 0.7535052
+      outSlope: 0.7535052
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.073755376
+      outWeight: 0.04505655
     - serializedVersion: 3
-      time: 1
-      value: 0.2
-      inSlope: 0.14703377
-      outSlope: 0.14703377
+      time: 0.09743731
+      value: 0.38449535
+      inSlope: 0.41158402
+      outSlope: 0.41158402
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 1
+      outWeight: 0.05986123
     - serializedVersion: 3
-      time: 2
-      value: 0.4
-      inSlope: 0.09056437
-      outSlope: 0.09056437
+      time: 5
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  greenMaxSlackSpeed: 20
-  reelDeadZone: 0.01
-  greenSlackDamper: 0.5
+  minLinearLimit: 0.05
+  contactVelocityDamper: 0.2
+  swingInputThreshold: 0.25
+  maxSwingVelocity: 3.5
+  swingForce: 150
+  doubleGreenMultiplier: 0.75
+  reelInForce: 50
+  reelInDistanceVelocityDamper:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 0.17675121
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.045747362
+    - serializedVersion: 3
+      time: 4
+      value: 0.001
+      inSlope: -0.16558465
+      outSlope: -0.16558465
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10929233
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reelInDeadZone: 0.25
+  maxReelOutSpeed: 10
+  reelOutDamper: 0.2
