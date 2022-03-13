@@ -16,9 +16,15 @@ public class Lightening : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    private void OnEnable() {
-        SetColor(GrappleManager.Instance.LighteningColors.standardColor);
-        lineRenderer.widthCurve = AnimationCurve.Constant(0,1, GrappleManager.Instance.LighteningOptions.rendererWidth);
+    private void OnEnable()
+    {
+        try
+        {
+            SetColor(GrappleManager.Instance.LighteningColors.standardColor);
+            lineRenderer.widthCurve = AnimationCurve.Constant(0, 1, GrappleManager.Instance.LighteningOptions.rendererWidth);
+        }
+        catch{}
+
     }
 
     private void Update()
@@ -28,7 +34,8 @@ public class Lightening : MonoBehaviour
             endPoint = hookRopePointTransform.position;
 
             float distance = Vector3.Distance(transform.position, endPoint);
-            if(distance <= GrappleManager.Instance.LighteningOptions.targetSegmentLength){
+            if (distance <= GrappleManager.Instance.LighteningOptions.targetSegmentLength)
+            {
                 numberSegments = 1;
                 lineRenderer.positionCount = numberSegments + 1;
 
