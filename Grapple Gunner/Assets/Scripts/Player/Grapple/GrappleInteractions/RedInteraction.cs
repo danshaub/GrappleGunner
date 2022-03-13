@@ -33,17 +33,21 @@ public class RedInteraction : I_GrappleInteraction
         PlayerManager.Instance.allowMovement = true;
         PlayerManager.Instance.useGravity = true;
         PlayerManager.Instance.useFriction = true;
+        PlayerManager.Instance.useGrapplePhysicsMaterial = false;
 
         playerRB.velocity = Vector3.zero;
     }
     public void OnFixedUpdate()
     {
+        PlayerManager.Instance.useGrapplePhysicsMaterial = true;
         ropeDirection = (currentGunTip.position - currentHookPoint.position).normalized;
         float distanceFromPoint = Vector3.Distance(currentGunTip.position, currentHookPoint.position);
 
         float multiplier = props.redVelocityCurve.Evaluate(distanceFromPoint);
         Vector3 targetVelocity = -ropeDirection * props.redGrappleSpeed * multiplier;
-        targetVelocity *= (props.speedIncreaseMultiplier * speedIncreaseInput) + (1 - speedIncreaseInput);
+        if(multiplier >= 1){
+            targetVelocity *= (props.speedIncreaseMultiplier * speedIncreaseInput) + (1 - speedIncreaseInput);
+        }
 
         if (brake)
         {
