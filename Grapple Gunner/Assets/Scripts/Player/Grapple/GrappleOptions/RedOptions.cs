@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RedOptions", menuName = "Grapple Gunner/RedOptions", order = 2)]
 public class RedOptions : ScriptableObject
 {
-    public float redGrappleSpeed;
-    public float redGroundKick;
-    public float redVelocityDamper;
+    public float grappleSpeed;
+    public float groundKick;
+    public float velocityDamper;
     public float speedIncreaseMultiplier;
-    public AnimationCurve redVelocityCurve;
+    public AnimationCurve velocityCurve;
 }
