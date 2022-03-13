@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d648fe4063a064d4c9dd9818975ed970, type: 3}
   m_Name: Lightning Options
   m_EditorClassIdentifier: 
-  drawThreshold: 0.2
-  targetSegmentLength: 0.25
-  rendererWidth: 0.1
+  rendererWidth: 1
+  unitsPerTile: 0.254

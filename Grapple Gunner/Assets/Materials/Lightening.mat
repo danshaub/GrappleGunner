@@ -99,6 +99,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Intensity: 0.5
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -109,6 +110,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _Tiling: 0.5
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -119,8 +121,10 @@ Material:
     - Vector4_d27c954a9e934952a7ce450f5ab9642b: {r: 14.8, g: 0, b: 0, a: 0}
     - Vector4_f63dd84c6abf4375b501c09b393e4802: {r: 38.9, g: 54.3, b: 70.8, a: 44.3}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0.007843138, b: 2, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlashSpeed: {r: 49.1, g: 65.9, b: 56.5, a: 37.6}
+    - _PanSpeed: {r: 1.26, g: 5.99, b: 2.68, a: 4.24}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7437932677935830746
