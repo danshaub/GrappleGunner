@@ -15,7 +15,7 @@ public class OrangeInteraction : I_GrappleInteraction
     private int gunIndex;
     public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index)
     {
-        GrappleManager.Instance.guns[index].lightening.SetColor(GrappleManager.Instance.LighteningColors.orangeColor);
+        GrappleManager.Instance.guns[index].lightning.SetColor(GrappleManager.Instance.LightningColors.orangeColor);
         props = GrappleManager.Instance.orangeOptions;
 
         orangePoint = (OrangePoint)grapplePoint;

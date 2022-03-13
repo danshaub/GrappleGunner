@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ddb17ce19c893b458143e8ac4c7ee2a, type: 3}
-  m_Name: Lightening Options
+  m_Script: {fileID: 11500000, guid: d648fe4063a064d4c9dd9818975ed970, type: 3}
+  m_Name: Lightning Options
   m_EditorClassIdentifier: 
-  nubmerArks: 1
   drawThreshold: 0.2
-  targetSegmentLength: 1
-  positionRange: 0.051
-  updateRate: 1
-  rendererWidth: 0.15
+  targetSegmentLength: 0.25
+  rendererWidth: 0.1

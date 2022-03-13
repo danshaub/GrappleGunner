@@ -9,7 +9,7 @@ public class GrappleGun : MonoBehaviour
     private Material reticleMaterial;
     [SerializeField] public Transform gunTip;
     [SerializeField] public Transform hookPoint;
-    public Lightening lightening;
+    public Lightning lightning;
     private bool fired;
 
     private void Start()
@@ -20,10 +20,10 @@ public class GrappleGun : MonoBehaviour
     public void DrawRope()
     {
         if(hookPoint.gameObject.activeInHierarchy){
-            lightening.gameObject.SetActive(true);
+            lightning.gameObject.SetActive(true);
         }
         else{
-            lightening.gameObject.SetActive(false);
+            lightning.gameObject.SetActive(false);
         }
     }
 

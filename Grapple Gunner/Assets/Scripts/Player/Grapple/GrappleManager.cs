@@ -11,8 +11,8 @@ public class GrappleManager : Singleton<GrappleManager>
     public OrangeOptions orangeOptions;
     public BlueOptions blueOptions;
 
-    public LighteningOptions LighteningOptions;
-    public LighteningColors LighteningColors;
+    public LightningOptions LightningOptions;
+    public LightningColors LightningColors;
 
     [Tooltip("References to the gun objects. Indices 0 and 1 are left and right respectively")]
     public GrappleGun[] guns = new GrappleGun[2];

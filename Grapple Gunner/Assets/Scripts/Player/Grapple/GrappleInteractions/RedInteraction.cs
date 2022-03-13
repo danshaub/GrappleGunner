@@ -15,7 +15,7 @@ public class RedInteraction : I_GrappleInteraction
 
     public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index)
     {
-        GrappleManager.Instance.guns[index].lightening.SetColor(GrappleManager.Instance.LighteningColors.redColor);
+        GrappleManager.Instance.guns[index].lightning.SetColor(GrappleManager.Instance.LightningColors.redColor);
         props = GrappleManager.Instance.redOptions;
         playerRB = PlayerManager.Instance.movementController.rigidbody;
         currentGunTip = gunTip;

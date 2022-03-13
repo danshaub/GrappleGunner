@@ -20,7 +20,7 @@ public class GreenInteraction : I_GrappleInteraction
 
     public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index)
     {
-        GrappleManager.Instance.guns[index].lightening.SetColor(GrappleManager.Instance.LighteningColors.greenColor);
+        GrappleManager.Instance.guns[index].lightning.SetColor(GrappleManager.Instance.LightningColors.greenColor);
 
         props = GrappleManager.Instance.greenOptions;
         playerRB = PlayerManager.Instance.movementController.rigidbody;

@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Lightening Colors", menuName = "Grapple Gunner/VFX/LighteningColors", order = 0)]
-public class LighteningColors : ScriptableObject
+[CreateAssetMenu(fileName = "Lightning Colors", menuName = "Grapple Gunner/VFX/LightningColors", order = 0)]
+public class LightningColors : ScriptableObject
 {
     public Color standardColor = Color.white;
     public Color redColor = Color.red;

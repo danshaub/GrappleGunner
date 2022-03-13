@@ -1849,7 +1849,7 @@ Transform:
   m_Children:
   - {fileID: 2914717042287056363}
   m_Father: {fileID: 3561913862872785002}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2914717043379540780
 MeshRenderer:
@@ -1977,7 +1977,7 @@ Transform:
   m_Children:
   - {fileID: 12026515767155275}
   m_Father: {fileID: 3561913862872785002}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2914717043450199283
 MeshRenderer:
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   reticleVisual: {fileID: 2914717042424842904}
   gunTip: {fileID: 2730171560821330532}
   hookPoint: {fileID: 12026515767155275}
-  ropeRender: {fileID: 2914717044053797768}
+  lightning: {fileID: 0}
 --- !u!114 &2914717044053797770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2906,7 +2906,6 @@ MonoBehaviour:
   movementController: {fileID: 0}
   grappleController: {fileID: 0}
   allowMovement: 1
-  grounded: 1
   useGrapplePhysicsMaterial: 0
   useFriction: 1
   useGravity: 1
@@ -3319,7 +3318,7 @@ MonoBehaviour:
   reticleVisual: {fileID: 12026515644564792}
   gunTip: {fileID: 989130734809832900}
   hookPoint: {fileID: 2914717042287056363}
-  ropeRender: {fileID: 1000807457354809730}
+  lightning: {fileID: 0}
 --- !u!114 &9153003301762859195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3805,10 +3804,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: {fileID: 11400000, guid: 9d0e85e735aeb67459f066e3b4a4c172, type: 2}
-  redProperties: {fileID: 11400000, guid: dcff21dd3c6fbe04b826b4cc4789f649, type: 2}
-  greenProperties: {fileID: 0}
-  orangeProperties: {fileID: 11400000, guid: b28672d18bcf8234f8960c5f162542cc, type: 2}
-  blueProperties: {fileID: 0}
+  redOptions: {fileID: 0}
+  greenOptions: {fileID: 0}
+  orangeOptions: {fileID: 0}
+  blueOptions: {fileID: 0}
+  LightningOptions: {fileID: 0}
+  LightningColors: {fileID: 0}
   guns:
   - {fileID: 2914717044053797771}
   - {fileID: 8958145294123646575}
@@ -3927,8 +3928,8 @@ Transform:
   - {fileID: 1755976371768903144}
   - {fileID: 7382778893730682430}
   - {fileID: 7798767920855442831}
-  - {fileID: 2914717043379540819}
   - {fileID: 2914717043450199281}
+  - {fileID: 2914717043379540819}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
