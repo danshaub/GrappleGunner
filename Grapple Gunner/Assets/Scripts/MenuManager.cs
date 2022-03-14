@@ -6,11 +6,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class MenuManager : MonoBehaviour
+public class MenuManager : Singleton<MenuManager>
 {
     public GameObject homeMenu;
     public GameObject comfortMenu;
     public GameObject controlsMenu;
+    public GameObject background;
     public TMP_Text indicatorArrow;
     public TMP_Text turnSpeedIndicator;
     public Transform controllerMountPoint;
@@ -24,6 +25,15 @@ public class MenuManager : MonoBehaviour
     private void Update() {
         controllerMounterTransform.rotation = controllerMountPoint.rotation;
         controllerMounterTransform.position = controllerMountPoint.position;
+    }
+
+    public void ShowMenu() {
+        background.SetActive(true);
+        HomeMenu();
+    }
+    public void HideMenu()
+    {
+        background.SetActive(false);
     }
 
     public void MainMenu(){
@@ -91,7 +101,8 @@ public class MenuManager : MonoBehaviour
     public void Decrement(){
         if (snapTurnProvider.enabled)
         {
-            snapValue = (snapValue - 1) % 8;
+            snapValue = (snapValue - 1);
+            snapValue = snapValue < 0 ? 7 : snapValue;
             snapTurnProvider.turnAmount = snapValues[snapValue];
             turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() + "°";
         }

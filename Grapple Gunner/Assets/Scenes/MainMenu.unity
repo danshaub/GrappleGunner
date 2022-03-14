@@ -252,14 +252,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuBox
       objectReference: {fileID: 0}
-    - target: {fileID: 7970831861128894182, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126521591052438505, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 475e852edbae96b4cb25acac668747fc, type: 2}
     - target: {fileID: 8584273805973109434, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
       propertyPath: m_RootOrder
       value: 1

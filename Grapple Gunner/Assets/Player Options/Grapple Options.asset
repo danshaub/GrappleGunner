@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de4702cd3652ab4e87c99a8529b9144, type: 3}
+  m_Name: Grapple Options
+  m_EditorClassIdentifier: 
+  swingVelocityThreshold: 0
+  reelDeadZone: 0.1
+  hookTravelSpeed: 300
+  retractInterpolateValue: 0.75
+  returnSnapDistance: 0.5
+  sphereCastRadius: 0.15
+  timeBeforeRetract: 0.1
+  sphereCastMask:
+    serializedVersion: 2
+    m_Bits: 11457
+  reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
+  disabledTransparency: 0.5
+  minReticleDistance: 5
+  maxReticleDistance: 10
+  reticleScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.33
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.33
+      inSlope: Infinity
+      outSlope: 1.3399999
+      tangentMode: 71
+      weightedMode: 0
+      inWeight: 0.052704632
+      outWeight: 0.063800216
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.3399999
+      outSlope: 1.3399999
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

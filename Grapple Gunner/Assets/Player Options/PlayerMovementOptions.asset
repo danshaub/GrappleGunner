@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff3b09e5fe71b7439633c8f53331f79, type: 3}
+  m_Name: PlayerMovementOptions
+  m_EditorClassIdentifier: 
+  acceleration: 5
+  maxSpeed: 15
+  jumpStrength: 500
+  jumpCooldown: 0.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8385
+  airborneMoveStrength: 0.05
+  landingBounce: 0.25
+  rideHeight: 0.3
+  rideSpringStrength: 500
+  rideSpringDamper: 10
+  groundSnapDistance: 0.5
+  colliderHeightOffset: 0.35
+  gravityStrength: 15
+  groundMaxNormal: 60
+  frictionCoefficient: 15
+  groundedMaterial: {fileID: 13400000, guid: 76d16598333f4a84b8e741a4f20302ce, type: 2}
+  airborneMaterial: {fileID: 13400000, guid: f14ae809b8ec7c44b8bae87fd23060e2, type: 2}
+  grappleMaterial: {fileID: 13400000, guid: 3757aa8ab8f716845b678a870f7bd04f, type: 2}
