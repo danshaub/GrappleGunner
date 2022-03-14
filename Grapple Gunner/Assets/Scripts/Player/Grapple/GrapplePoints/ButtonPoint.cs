@@ -16,13 +16,11 @@ public class ButtonPoint : GrapplePoint
     }
     override public void OnPointHit()
     {
-        Debug.Log("Button Hit");
         onButtonPress.Invoke();
     }
 
     public override void OnPointReleased()
     {
-        Debug.Log("Button Released");
         onButtonRelease.Invoke();
     }
 }

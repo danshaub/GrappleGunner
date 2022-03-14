@@ -7,9 +7,6 @@ public class Lightning : MonoBehaviour
 {
     public Transform hookRopePointTransform;
     private LineRenderer lineRenderer;
-    private int updateCounter = 0;
-    private Vector3 endPoint;
-    private int numberSegments;
 
     private void Start()
     {

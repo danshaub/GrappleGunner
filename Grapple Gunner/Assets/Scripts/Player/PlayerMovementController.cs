@@ -98,6 +98,26 @@ public class PlayerMovementController : MonoBehaviour
             {
                 groundBody.AddForceAtPosition(Vector3.down * -springForce * .1f, hit.point);
             }
+
+            DisablePlayerMovement dpmGround = hit.transform.gameObject.GetComponent<DisablePlayerMovement>();
+            if(dpmGround != null){
+                PlayerManager.Instance.allowMovement = !dpmGround.active;
+            }
+            else{
+                PlayerManager.Instance.allowMovement = true;
+            }
+
+            DeathBlock deathBlockGround = hit.transform.gameObject.GetComponent<DeathBlock>();
+            if (deathBlockGround != null)
+            {
+                deathBlockGround.KillPlayer();
+            }
+
+            LoadLevel loadLevel = hit.transform.gameObject.GetComponent<LoadLevel>();
+            if (loadLevel != null)
+            {
+                loadLevel.Activate();
+            }
         }
         else
         {

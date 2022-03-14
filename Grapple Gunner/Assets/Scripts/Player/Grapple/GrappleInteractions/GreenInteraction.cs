@@ -14,7 +14,6 @@ public class GreenInteraction : I_GrappleInteraction
     private float reelInput;
     private bool reelingIn;
     private bool reelingOut;
-    private float reelOutSpeed;
     private float distanceFromPoint;
     private GreenPoint greenPoint;
     private SoftJointLimit linearLimit;
@@ -94,8 +93,6 @@ public class GreenInteraction : I_GrappleInteraction
         if (PlayerManager.Instance.grounded || reelingOut)
         {
             linearLimit.limit = distanceFromPoint;
-
-            reelOutSpeed = 0f;
 
             joint.xMotion = ConfigurableJointMotion.Free;
             joint.yMotion = ConfigurableJointMotion.Free;
