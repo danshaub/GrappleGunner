@@ -20,8 +20,11 @@ public class GrappleManager : Singleton<GrappleManager>
     public GrappleHook[] hooks = new GrappleHook[2];
     public I_GrappleInteraction[] grappleInteractions = new I_GrappleInteraction[2];
 
-    [HideInInspector] public bool grappleLocked = false;
+    [HideInInspector] public bool[] grappleLocked;
 
+    private void Start(){
+        grappleLocked = new bool[] {false,false};
+    }
 
     private void LateUpdate()
     {
@@ -34,7 +37,7 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void FireHook(int index)
     {
-        if (!grappleLocked)
+        if (!grappleLocked[index])
         {
             guns[index].DisableReticle();
             hooks[index].FireHook();
@@ -43,7 +46,7 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void ReleaseHook(int index)
     {
-        if (!grappleLocked)
+        if (!grappleLocked[index])
         {
             guns[index].EnableReticle();
             hooks[index].ReleaseHook();
@@ -107,7 +110,7 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void QueueTeleport(OrangeInteraction orangeInteraction, int index){
         hooks[(index + 1) % 2]?.ReleaseHook(true);
-        grappleLocked = true;
+        grappleLocked[index] = true;
 
         StartCoroutine(WaitForTeleportDelay(orangeInteraction));
     }

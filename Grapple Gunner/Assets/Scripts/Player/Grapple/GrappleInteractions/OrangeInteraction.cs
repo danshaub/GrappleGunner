@@ -87,7 +87,7 @@ public class OrangeInteraction : I_GrappleInteraction
             orangePoint.transform.position = blockTargetPosition;
         }
 
-        GrappleManager.Instance.grappleLocked = false;
+        GrappleManager.Instance.grappleLocked[gunIndex] = false;
 
         GrappleManager.Instance.ReleaseHook(0);
         GrappleManager.Instance.ReleaseHook(1);
