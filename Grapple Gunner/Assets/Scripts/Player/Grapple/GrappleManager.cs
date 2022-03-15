@@ -42,6 +42,9 @@ public class GrappleManager : Singleton<GrappleManager>
             guns[index].DisableReticle();
             hooks[index].FireHook();
         }
+        else if (grappleInteractions[index].GetType() == typeof(BlueInteraction)){
+            ((BlueInteraction)grappleInteractions[index]).attemptedRelease = false;
+        }
     }
 
     public void ReleaseHook(int index)
@@ -50,6 +53,9 @@ public class GrappleManager : Singleton<GrappleManager>
         {
             guns[index].EnableReticle();
             hooks[index].ReleaseHook();
+        }
+        else if (grappleInteractions[index].GetType() == typeof(BlueInteraction)){
+            ((BlueInteraction)grappleInteractions[index]).attemptedRelease = true;
         }
     }
 
