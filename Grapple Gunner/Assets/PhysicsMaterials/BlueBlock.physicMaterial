@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: BlueBlock
   dynamicFriction: 1.5
   staticFriction: 1
-  bounciness: 0.2
-  frictionCombine: 2
+  bounciness: 0.5
+  frictionCombine: 0
   bounceCombine: 0

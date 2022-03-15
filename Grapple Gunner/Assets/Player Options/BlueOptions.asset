@@ -19,5 +19,9 @@ MonoBehaviour:
   torsionalSpringStrength: 10
   rotationalSlerpValue: 0.5
   launchForce: 0
+  storeBlockInputThreshold: 0.25
+  miniPointScale: 0.05
+  miniPointLocalPosition: {x: 0, y: 0, z: 0.1}
+  miniPointInterpolation: 0.5
   heldPhysicsMaterial: {fileID: 13400000, guid: aece17f3f60952d45979e8cdcc06a5ff, type: 2}
-  releasedPhysicsMaterial: {fileID: 13400000, guid: 45692f66d0b7e6c4ea687f63d25241ad, type: 2}
+  releasedPhysicsMaterial: {fileID: 13400000, guid: 201d9ea4eb4c02d4fbc92499a1fc9cce, type: 2}
