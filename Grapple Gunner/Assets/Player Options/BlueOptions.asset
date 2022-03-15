@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7998d0c600d8e61419304fcfac03c9e1, type: 3}
   m_Name: BlueOptions
   m_EditorClassIdentifier: 
+  hookMass: 1
+  targetHookPosition: {x: 0, y: 0, z: 0.5}
+  targetHookRotation: {x: 0, y: 0, z: 0}
+  springStrength: 1000
+  torsionalSpringStrength: 100
+  rotationalSlerpValue: 0.5
+  launchForce: 0
