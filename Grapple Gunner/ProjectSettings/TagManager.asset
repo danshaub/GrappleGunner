@@ -23,7 +23,7 @@ TagManager:
   - TPTargetCollider
   - Block
   - HeldBlock
-  - 
+  - TakeOutBlockTrigger
   - 
   - 
   - 
