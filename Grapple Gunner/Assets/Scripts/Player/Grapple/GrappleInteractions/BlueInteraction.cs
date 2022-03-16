@@ -7,13 +7,14 @@ public class BlueInteraction : I_GrappleInteraction
     private BlueOptions props;
     private Transform currentGunTip;
     private Transform currentHoookPoint;
-    private BluePoint bluePoint;
+    public BluePoint bluePoint { get; private set; }
     private Rigidbody pointRB;
     private Rigidbody hookRB;
     private Rigidbody playerRB;
     private int gunIndex;
 
     public bool attemptedRelease = false;
+    private bool launchOnRelease = false;
 
     private float springDamper;
 
@@ -32,13 +33,24 @@ public class BlueInteraction : I_GrappleInteraction
         currentGunTip = gunTip;
         currentHoookPoint = hookPoint;
         bluePoint = (BluePoint)grapplePoint;
+
+        if (GrappleManager.Instance.grappleInteractions[(gunIndex + 1) % 2]?.GetType() == typeof(BlueInteraction))
+        {
+            BluePoint otherPoint = ((BlueInteraction)GrappleManager.Instance.grappleInteractions[(gunIndex + 1) % 2]).bluePoint;
+
+            if (bluePoint.Equals(otherPoint))
+            {
+                GrappleManager.Instance.hooks[(gunIndex + 1) % 2].ReleaseHook();
+            }
+        }
+
+
         pointRB = bluePoint.GetComponent<Rigidbody>();
         hookRB = currentHoookPoint.GetComponentInParent<Rigidbody>();
 
         bluePoint.GetComponent<Collider>().material = props.heldPhysicsMaterial;
 
         pointRB.useGravity = false;
-        // pointRB.mass = 0;
         hookRB.mass = props.hookMass;
 
         bluePoint.gameObject.layer = 14;
@@ -52,33 +64,46 @@ public class BlueInteraction : I_GrappleInteraction
         bluePoint.GetComponent<Collider>().material = props.releasedPhysicsMaterial;
         bluePoint.gameObject.layer = 13;
         pointRB.useGravity = true;
-        // pointRB.mass = 1;
         hookRB.mass = 0;
 
         GrappleManager.Instance.EnableReticle(gunIndex);
+
+        if (launchOnRelease)
+        {
+            bluePoint.ApplyLaunchForce(currentGunTip.forward * props.launchForce);
+        }
     }
     public void OnFixedUpdate()
     {
-        Vector3 distanceFromTarget = currentHoookPoint.position - currentGunTip.TransformPoint(props.targetHookPosition);
+        if (blockIsStored)
+        {
+            hookRB.MovePosition(currentGunTip.TransformPoint(props.storingTargetHookPosition - currentHoookPoint.localPosition) +
+                                Time.fixedDeltaTime * PlayerManager.Instance.movementController.rigidbody.velocity);
+            hookRB.MoveRotation(currentGunTip.rotation);
+        }
+        else
+        {
+            Vector3 distanceFromTarget = currentHoookPoint.position - currentGunTip.TransformPoint(props.targetHookPosition);
 
-        Vector3 springForce = (props.springStrength * -distanceFromTarget) - (springDamper * hookRB.velocity);
-        hookRB.AddForce(springForce);
-        hookRB.velocity += playerRB.velocity;
+            Vector3 springForce = (props.springStrength * -distanceFromTarget) - (springDamper * (hookRB.velocity - playerRB.velocity));
+            hookRB.AddForce(springForce);
+            if (distanceFromTarget.magnitude > props.velocityClampDistance)
+            {
+                hookRB.velocity = Vector3.ClampMagnitude(hookRB.velocity, props.maxHookVelocity);
+            }
 
-        // hookRB.MoveRotation(Quaternion.Slerp(currentHoookPoint.rotation, currentGunTip.rotation, props.rotationalSlerpValue));
+            //Find the rotation difference in eulers
+            Quaternion diff = Quaternion.Inverse(hookRB.rotation) * currentGunTip.rotation;
+            Vector3 eulers = OrientTorque(diff.eulerAngles);
+            Vector3 torque = eulers;
+            //put the torque back in body space
+            torque = hookRB.rotation * torque;
 
-        //Find the rotation difference in eulers
-        Quaternion diff = Quaternion.Inverse(hookRB.rotation) * currentGunTip.rotation;
-        Vector3 eulers = OrientTorque(diff.eulerAngles);
-        Vector3 torque = eulers;
-        //put the torque back in body space
-        torque = hookRB.rotation * torque;
+            //just zero out the current angularVelocity so it doesnt interfere
+            hookRB.angularVelocity = Vector3.zero;
 
-        //just zero out the current angularVelocity so it doesnt interfere
-        hookRB.angularVelocity = Vector3.zero;
-
-        hookRB.AddTorque(torque, ForceMode.VelocityChange);
-
+            hookRB.AddTorque(torque, ForceMode.VelocityChange);
+        }
     }
 
     private Vector3 OrientTorque(Vector3 torque)
@@ -121,22 +146,49 @@ public class BlueInteraction : I_GrappleInteraction
     {
         blockIsStored = true;
         GrappleManager.Instance.grappleLocked[gunIndex] = true;
-        bluePoint.ShowMiniPoint(currentGunTip, props.miniPointLocalPosition, props.miniPointScale, props.miniPointInterpolation);
+        bluePoint.ShowMiniPoint(currentHoookPoint, props.miniPointLocalPosition, props.miniPointScale, props.interpolationValue);
+        hookRB.isKinematic = true;
+        hookRB.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+
+        bluePoint.gameObject.layer = 15;
     }
 
     private void TakeOutBlock()
     {
+        if (!bluePoint.validTakeOutLocation) return;
         blockIsStored = false;
         GrappleManager.Instance.grappleLocked[gunIndex] = false;
         bluePoint.HideMiniPoint();
 
-        if(attemptedRelease){
+        hookRB.isKinematic = false;
+        hookRB.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        bluePoint.gameObject.layer = 14;
+
+        if (attemptedRelease)
+        {
             GrappleManager.Instance.hooks[gunIndex].ReleaseHook();
         }
+
+        
     }
     public void OnReelOut()
     {
-        // Debug.Log("Blue R_Out");
+        if (launchOnRelease) return;
+        launchOnRelease = true;
+
+        if (blockIsStored)
+        {
+            if (bluePoint.validTakeOutLocation)
+            {
+                TakeOutBlock();
+            }
+            else{
+                launchOnRelease = false;
+                return;
+            }
+        }
+
+        GrappleManager.Instance.hooks[gunIndex].ReleaseHook();
     }
     public void OnSwing(Vector3 swingVelocity)
     {

@@ -13,6 +13,8 @@ public class BluePoint : GrapplePoint
     private float targetLocalScale;
     private float lerpValue;
     private bool showingMiniPoint = false;
+
+    public bool validTakeOutLocation { get; private set; } = true;
     override protected void Awake()
     {
         base.Awake();
@@ -32,20 +34,35 @@ public class BluePoint : GrapplePoint
         return;
     }
 
-    private void Update() {
-        if(showingMiniPoint){
+    private void Update()
+    {
+        if (showingMiniPoint)
+        {
             pointVisual.localPosition = Vector3.Lerp(pointVisual.localPosition, targetLocalPosition, lerpValue);
             pointVisual.localScale = Vector3.Lerp(pointVisual.localScale, targetLocalScale * Vector3.one, lerpValue);
-            pointVisual.rotation = Quaternion.Slerp(pointVisual.rotation, Random.rotation, lerpValue);
+            if (validTakeOutLocation)
+            {
+                pointVisual.rotation = Quaternion.Slerp(pointVisual.rotation, Random.rotation, lerpValue);
+            }
         }
-        else{
+        else
+        {
             pointVisual.localPosition = Vector3.Lerp(pointVisual.localPosition, Vector3.zero, lerpValue);
             pointVisual.localScale = Vector3.Lerp(pointVisual.localScale, Vector3.one, lerpValue);
             pointVisual.localRotation = Quaternion.Slerp(pointVisual.localRotation, Quaternion.identity, lerpValue);
         }
     }
 
-    public void ShowMiniPoint(Transform parent, Vector3 targetPosition, float targetScale, float interpolationValue){
+    public void ShowMiniPoint(Transform parent, Vector3 targetPosition, float targetScale, float interpolationValue)
+    {
+        if (pointCollider.GetType() == typeof(SphereCollider))
+        {
+            ((SphereCollider)pointCollider).radius = .25f;
+        }
+        else if (pointCollider.GetType() == typeof(BoxCollider))
+        {
+            ((BoxCollider)pointCollider).size = Vector3.one * .5f;
+        }
         targetLocalPosition = targetPosition;
         targetLocalScale = targetScale;
         lerpValue = interpolationValue;
@@ -58,14 +75,46 @@ public class BluePoint : GrapplePoint
 
         pointVisual.parent = parent;
 
-        pointCollider.enabled = false;
+        pointCollider.isTrigger = true;
 
     }
 
-    public void HideMiniPoint(){
+    public void HideMiniPoint()
+    {
+        if (pointCollider.GetType() == typeof(SphereCollider))
+        {
+            ((SphereCollider)pointCollider).radius = .5f;
+        }
+        else if (pointCollider.GetType() == typeof(BoxCollider))
+        {
+            ((BoxCollider)pointCollider).size = Vector3.one;
+        }
+        
         showingMiniPoint = false;
         pointVisual.parent = transform;
 
-        pointCollider.enabled = true;
+        pointCollider.isTrigger = false;
+    }
+
+    public void ApplyLaunchForce(Vector3 force)
+    {
+        StartCoroutine(LaunchForceCoroutine(force));
+    }
+
+    private IEnumerator LaunchForceCoroutine(Vector3 force)
+    {
+        yield return new WaitForFixedUpdate();
+
+        GetComponent<Rigidbody>().AddForce(force);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        validTakeOutLocation = false;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        validTakeOutLocation = true;
     }
 }
