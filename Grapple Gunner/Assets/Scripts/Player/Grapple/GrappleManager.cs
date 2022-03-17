@@ -47,16 +47,21 @@ public class GrappleManager : Singleton<GrappleManager>
         }
     }
 
-    public void ReleaseHook(int index)
-    {
+    public void ReleaseHook(int index, bool instant){
         if (!grappleLocked[index])
         {
             guns[index].EnableReticle();
-            hooks[index].ReleaseHook();
+            hooks[index].ReleaseHook(instant);
         }
-        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction)){
+        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction))
+        {
             ((BlueInteraction)grappleInteractions[index]).attemptedRelease = true;
         }
+    }
+
+    public void ReleaseHook(int index)
+    {
+        ReleaseHook(index, false);
     }
 
     public void DisableReticle(int index)
@@ -115,7 +120,12 @@ public class GrappleManager : Singleton<GrappleManager>
     }
 
     public void QueueTeleport(OrangeInteraction orangeInteraction, int index){
-        hooks[(index + 1) % 2]?.ReleaseHook(true);
+        if((grappleInteractions[(index+1)%2]?.GetType()==typeof(BlueInteraction) && 
+            ((BlueInteraction)grappleInteractions[(index + 1) % 2]).blockIsStored)){
+        }
+        else{
+            ReleaseHook((index + 1) % 2, true);
+        }
         grappleLocked[index] = true;
 
         StartCoroutine(WaitForTeleportDelay(orangeInteraction));
