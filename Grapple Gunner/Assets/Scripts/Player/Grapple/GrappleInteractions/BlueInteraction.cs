@@ -190,8 +190,18 @@ public class BlueInteraction : I_GrappleInteraction
 
         GrappleManager.Instance.hooks[gunIndex].ReleaseHook();
     }
+
+    // Called from OrangeInteraction TODO: Refactor to be called by TP Manager
+    public void TeleportWithBlock(Vector3 playerTargetPosition){
+        Vector3 hookOffset = hookRB.position - playerRB.position;
+        Vector3 blockOffset = pointRB.position - playerRB.position;
+
+        playerRB.MovePosition(playerTargetPosition);
+        hookRB.MovePosition(playerTargetPosition + hookOffset);
+        pointRB.MovePosition(playerTargetPosition + blockOffset);
+    }
     public void OnSwing(Vector3 swingVelocity)
     {
-        // Debug.Log("Blue R_Swing");
+        return;
     }
 }
