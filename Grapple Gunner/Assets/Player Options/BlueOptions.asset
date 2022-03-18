@@ -17,6 +17,7 @@ MonoBehaviour:
   storingTargetHookPosition: {x: 0, y: 0, z: 0.25}
   springStrength: 1000
   maxHookVelocity: 50
+  maxSpringForce: 6000
   velocityClampDistance: 4
   launchForce: 1000
   storeBlockInputThreshold: 0.25

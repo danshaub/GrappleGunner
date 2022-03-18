@@ -11,6 +11,7 @@ public class BlueOptions : ScriptableObject
 
     public float springStrength;
     public float maxHookVelocity = 500;
+    public float maxSpringForce = 1500f;
     public float velocityClampDistance = 4f;
     public float launchForce;
 

@@ -85,11 +85,13 @@ public class BlueInteraction : I_GrappleInteraction
             Vector3 distanceFromTarget = currentHoookPoint.position - currentGunTip.TransformPoint(props.targetHookPosition);
 
             Vector3 springForce = (props.springStrength * -distanceFromTarget) - (springDamper * (hookRB.velocity - playerRB.velocity));
-            hookRB.AddForce(springForce);
+
             if (distanceFromTarget.magnitude > props.velocityClampDistance)
             {
                 hookRB.velocity = Vector3.ClampMagnitude(hookRB.velocity, props.maxHookVelocity);
+                springForce = Vector3.ClampMagnitude(springForce, props.maxSpringForce);
             }
+            hookRB.AddForce(springForce);
 
             //Find the rotation difference in eulers
             Quaternion diff = Quaternion.Inverse(hookRB.rotation) * currentGunTip.rotation;
@@ -143,6 +145,8 @@ public class BlueInteraction : I_GrappleInteraction
 
     private void StoreBlock()
     {
+        if(!bluePoint.canStore) return;
+        
         blockIsStored = true;
         GrappleManager.Instance.grappleLocked[gunIndex] = true;
         bluePoint.ShowMiniPoint(currentHoookPoint, props.miniPointLocalPosition, props.miniPointScale, props.interpolationValue);
