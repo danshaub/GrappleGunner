@@ -7,6 +7,7 @@ public class BluePoint : GrapplePoint
 {
     public bool queueDestroyBlock = false;
     public bool blockHeld;
+    public bool canStore = true;
     public Vector3 worldRespawnPosition;
     public Transform pointVisual;
     private Collider pointCollider;
