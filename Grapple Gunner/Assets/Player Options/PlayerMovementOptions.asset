@@ -18,7 +18,7 @@ MonoBehaviour:
   jumpCooldown: 0.5
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 193
+    m_Bits: 8385
   airborneMoveStrength: 0.05
   landingBounce: 0.25
   rideHeight: 0.3
@@ -26,7 +26,7 @@ MonoBehaviour:
   rideSpringDamper: 10
   groundSnapDistance: 0.5
   colliderHeightOffset: 0.35
-  gravityStrength: 9.8
+  gravityStrength: 15
   groundMaxNormal: 60
   frictionCoefficient: 15
   groundedMaterial: {fileID: 13400000, guid: 76d16598333f4a84b8e741a4f20302ce, type: 2}

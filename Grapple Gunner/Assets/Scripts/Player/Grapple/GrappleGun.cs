@@ -9,7 +9,7 @@ public class GrappleGun : MonoBehaviour
     private Material reticleMaterial;
     [SerializeField] public Transform gunTip;
     [SerializeField] public Transform hookPoint;
-    public LineRenderer ropeRender;
+    public Lightning lightning;
     private bool fired;
 
     private void Start()
@@ -20,12 +20,10 @@ public class GrappleGun : MonoBehaviour
     public void DrawRope()
     {
         if(hookPoint.gameObject.activeInHierarchy){
-            ropeRender.enabled = true;
-            ropeRender.SetPosition(0, gunTip.position);
-            ropeRender.SetPosition(1, hookPoint.position);
+            lightning.gameObject.SetActive(true);
         }
         else{
-            ropeRender.enabled = false;
+            lightning.gameObject.SetActive(false);
         }
     }
 

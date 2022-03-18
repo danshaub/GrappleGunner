@@ -20,12 +20,12 @@ TagManager:
   - InvisibleWall
   - MenuButton
   - HandheldMenu
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TPTargetCollider
+  - Block
+  - HeldBlock
+  - TakeOutBlockTrigger
+  - BlockDestroyer
+  - BlockBarrier
   - 
   - 
   - 

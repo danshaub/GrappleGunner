@@ -12,4 +12,8 @@ public class DeathBlock : MonoBehaviour
             PlayerManager.Instance.TeleportPlayer(deathTeleportPoint);
         }
     }
+
+    public void KillPlayer(){
+        PlayerManager.Instance.TeleportPlayer(deathTeleportPoint);
+    }
 }

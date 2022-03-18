@@ -76,7 +76,6 @@ public class GrappleHook : MonoBehaviour
             }
             else
             {
-                Debug.Log("Release");
                 Invoke("ReleaseHook", GrappleManager.Instance.options.timeBeforeRetract);
             }
         }
@@ -118,18 +117,17 @@ public class GrappleHook : MonoBehaviour
         rb.velocity = GrappleManager.Instance.options.hookTravelSpeed * transform.forward;
     }
 
-    public void ReleaseHook()
+    public void ReleaseHook(){
+        ReleaseHook(false);
+    }
+
+    public void ReleaseHook(bool instant)
     {
         if (grapplePoint)
         {
             grapplePoint.OnPointReleased();
             grapplePoint = null;
         }
-        ReleaseHook(false);
-    }
-
-    public void ReleaseHook(bool instant)
-    {
         GrappleManager.Instance.EndGrapple(index);
         Destroy(joint);
         if (instant)

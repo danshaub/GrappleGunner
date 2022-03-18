@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class MenuManager : MonoBehaviour
+public class MenuManager : Singleton<MenuManager>
 {
     public GameObject homeMenu;
     public GameObject comfortMenu;
@@ -101,7 +101,8 @@ public class MenuManager : MonoBehaviour
     public void Decrement(){
         if (snapTurnProvider.enabled)
         {
-            snapValue = (snapValue - 1) % 8;
+            snapValue = (snapValue - 1);
+            snapValue = snapValue < 0 ? 7 : snapValue;
             snapTurnProvider.turnAmount = snapValues[snapValue];
             turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() + "°";
         }

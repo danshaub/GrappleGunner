@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64b6ecf43fcd4d4ebaabadd132d44cc, type: 3}
   m_Name: Red Options
   m_EditorClassIdentifier: 
-  redGrappleSpeed: 40
-  redGroundKick: 2
-  redVelocityDamper: 0.06
-  redVelocityCurve:
+  grappleSpeed: 20
+  groundKick: 2
+  velocityDamper: 0.06
+  speedIncreaseMultiplier: 4
+  velocityCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3

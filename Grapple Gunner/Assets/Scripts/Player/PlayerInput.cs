@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    private MenuManager menuManager;
-
     // Basic Input Actions
     public InputActionReference jumpReference = null;
     public InputActionReference moveReference = null;
@@ -49,11 +47,6 @@ public class PlayerInput : MonoBehaviour
         reelOutReferenceRight.action.canceled += ReelOutEndRightHook;
 
         debugReference.action.performed += Debug;
-    }
-
-    private void Start()
-    {
-        menuManager = GetComponent<MenuManager>();
     }
     private void OnDestroy()
     {
@@ -110,13 +103,13 @@ public class PlayerInput : MonoBehaviour
     private void ShowMenu(InputAction.CallbackContext context)
     {
         GrappleManager.Instance.DisableReticle(0);
-        menuManager.ShowMenu();
+        MenuManager.Instance.ShowMenu();
     }
 
     private void HideMenu(InputAction.CallbackContext context)
     {
         GrappleManager.Instance.EnableReticle(0);
-        menuManager.HideMenu();
+        MenuManager.Instance.HideMenu();
     }
     #endregion
     #region HookActions

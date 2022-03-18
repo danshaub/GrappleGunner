@@ -11,7 +11,7 @@ public class PlayerManager : Singleton<PlayerManager>
     public PlayerMovementController movementController;
     public PlayerGrappleController grappleController;
     public bool allowMovement = true;
-    public bool grounded = true;
+    public bool grounded {get {return movementController.isGrounded;} private set {} }
     public bool useGrapplePhysicsMaterial = false;
     public bool useFriction = true;
     public bool useGravity = true;
