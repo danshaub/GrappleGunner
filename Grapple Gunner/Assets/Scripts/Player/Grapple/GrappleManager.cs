@@ -20,8 +20,11 @@ public class GrappleManager : Singleton<GrappleManager>
     public GrappleHook[] hooks = new GrappleHook[2];
     public I_GrappleInteraction[] grappleInteractions = new I_GrappleInteraction[2];
 
-    [HideInInspector] public bool grappleLocked = false;
+    [HideInInspector] public bool[] grappleLocked;
 
+    private void Start(){
+        grappleLocked = new bool[] {false,false};
+    }
 
     private void LateUpdate()
     {
@@ -34,20 +37,31 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void FireHook(int index)
     {
-        if (!grappleLocked)
+        if (!grappleLocked[index])
         {
             guns[index].DisableReticle();
             hooks[index].FireHook();
+        }
+        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction)){
+            ((BlueInteraction)grappleInteractions[index]).attemptedRelease = false;
+        }
+    }
+
+    public void ReleaseHook(int index, bool instant){
+        if (!grappleLocked[index])
+        {
+            guns[index].EnableReticle();
+            hooks[index].ReleaseHook(instant);
+        }
+        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction))
+        {
+            ((BlueInteraction)grappleInteractions[index]).attemptedRelease = true;
         }
     }
 
     public void ReleaseHook(int index)
     {
-        if (!grappleLocked)
-        {
-            guns[index].EnableReticle();
-            hooks[index].ReleaseHook();
-        }
+        ReleaseHook(index, false);
     }
 
     public void DisableReticle(int index)
@@ -69,8 +83,7 @@ public class GrappleManager : Singleton<GrappleManager>
                 if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction) ||
                     grappleInteractions[(index + 1) % 2]?.GetType() == typeof(GreenInteraction))
                 {
-                    hooks[(index + 1) % 2]?.ReleaseHook();
-                    guns[(index + 1) % 2].EnableReticle();
+                    ReleaseHook((index + 1) % 2);
                 }
                 break;
             case GrapplePoint.GrappleType.Orange:
@@ -80,8 +93,7 @@ public class GrappleManager : Singleton<GrappleManager>
                 grappleInteractions[index] = new GreenInteraction();
                 if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction))
                 {
-                    hooks[(index + 1) % 2]?.ReleaseHook();
-                    guns[(index + 1) % 2].EnableReticle();
+                    ReleaseHook((index + 1) % 2);
                 }
                 break;
             case GrapplePoint.GrappleType.Blue:
@@ -106,8 +118,13 @@ public class GrappleManager : Singleton<GrappleManager>
     }
 
     public void QueueTeleport(OrangeInteraction orangeInteraction, int index){
-        hooks[(index + 1) % 2]?.ReleaseHook(true);
-        grappleLocked = true;
+        if((grappleInteractions[(index+1)%2]?.GetType()==typeof(BlueInteraction) && 
+            ((BlueInteraction)grappleInteractions[(index + 1) % 2]).blockIsStored)){
+        }
+        else{
+            ReleaseHook((index + 1) % 2, true);
+        }
+        grappleLocked[index] = true;
 
         StartCoroutine(WaitForTeleportDelay(orangeInteraction));
     }

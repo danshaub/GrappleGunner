@@ -22,10 +22,10 @@ TagManager:
   - HandheldMenu
   - TPTargetCollider
   - Block
-  - 
-  - 
-  - 
-  - 
+  - HeldBlock
+  - TakeOutBlockTrigger
+  - BlockDestroyer
+  - BlockBarrier
   - 
   - 
   - 

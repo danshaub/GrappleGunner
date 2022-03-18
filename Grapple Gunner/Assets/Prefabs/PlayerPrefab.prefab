@@ -4098,7 +4098,7 @@ MonoBehaviour:
   hooks:
   - {fileID: 2914717043450199285}
   - {fileID: 2914717043379540817}
-  grappleLocked: 0
+  grappleLocked: 
 --- !u!1 &6455402682748250843
 GameObject:
   m_ObjectHideFlags: 0

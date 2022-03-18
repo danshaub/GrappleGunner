@@ -74,7 +74,15 @@ public class OrangeInteraction : I_GrappleInteraction
         Vector3 blockTargetPosition = blockTargetRB.transform.position;
         Vector3 blockTargetVelocity = blockRB != null ? playerRB.velocity : Vector3.zero;
 
-        playerRB.MovePosition(playerTargetPosition);
+        
+
+        if(GrappleManager.Instance.grappleInteractions[(gunIndex + 1) % 2]?.GetType() == typeof(BlueInteraction)){
+            ((BlueInteraction)GrappleManager.Instance.grappleInteractions[(gunIndex + 1) % 2]).TeleportWithBlock(playerTargetPosition);
+        }
+        else{
+            playerRB.MovePosition(playerTargetPosition);
+        }
+
         playerRB.velocity = playerTargetVelocity;
 
         if (blockRB != null)
@@ -87,10 +95,9 @@ public class OrangeInteraction : I_GrappleInteraction
             orangePoint.transform.position = blockTargetPosition;
         }
 
-        GrappleManager.Instance.grappleLocked = false;
+        GrappleManager.Instance.grappleLocked[gunIndex] = false;
 
-        GrappleManager.Instance.ReleaseHook(0);
-        GrappleManager.Instance.ReleaseHook(1);
+        GrappleManager.Instance.ReleaseHook(gunIndex, true);
 
         teleporting = false;
     }
