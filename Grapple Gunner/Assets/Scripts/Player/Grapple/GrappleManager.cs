@@ -47,16 +47,21 @@ public class GrappleManager : Singleton<GrappleManager>
         }
     }
 
-    public void ReleaseHook(int index)
-    {
+    public void ReleaseHook(int index, bool instant){
         if (!grappleLocked[index])
         {
             guns[index].EnableReticle();
-            hooks[index].ReleaseHook();
+            hooks[index].ReleaseHook(instant);
         }
-        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction)){
+        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction))
+        {
             ((BlueInteraction)grappleInteractions[index]).attemptedRelease = true;
         }
+    }
+
+    public void ReleaseHook(int index)
+    {
+        ReleaseHook(index, false);
     }
 
     public void DisableReticle(int index)
@@ -78,8 +83,7 @@ public class GrappleManager : Singleton<GrappleManager>
                 if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction) ||
                     grappleInteractions[(index + 1) % 2]?.GetType() == typeof(GreenInteraction))
                 {
-                    hooks[(index + 1) % 2]?.ReleaseHook();
-                    guns[(index + 1) % 2].EnableReticle();
+                    ReleaseHook((index + 1) % 2);
                 }
                 break;
             case GrapplePoint.GrappleType.Orange:
@@ -89,8 +93,7 @@ public class GrappleManager : Singleton<GrappleManager>
                 grappleInteractions[index] = new GreenInteraction();
                 if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction))
                 {
-                    hooks[(index + 1) % 2]?.ReleaseHook();
-                    guns[(index + 1) % 2].EnableReticle();
+                    ReleaseHook((index + 1) % 2);
                 }
                 break;
             case GrapplePoint.GrappleType.Blue:
@@ -115,7 +118,12 @@ public class GrappleManager : Singleton<GrappleManager>
     }
 
     public void QueueTeleport(OrangeInteraction orangeInteraction, int index){
-        hooks[(index + 1) % 2]?.ReleaseHook(true);
+        if((grappleInteractions[(index+1)%2]?.GetType()==typeof(BlueInteraction) && 
+            ((BlueInteraction)grappleInteractions[(index + 1) % 2]).blockIsStored)){
+        }
+        else{
+            ReleaseHook((index + 1) % 2, true);
+        }
         grappleLocked[index] = true;
 
         StartCoroutine(WaitForTeleportDelay(orangeInteraction));

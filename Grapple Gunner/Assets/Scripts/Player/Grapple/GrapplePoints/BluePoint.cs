@@ -5,7 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BluePoint : GrapplePoint
 {
-    public Vector3 defaultHookPosition;
+    public bool queueDestroyBlock = false;
+    public bool blockHeld;
+    public bool canStore = true;
+    public Vector3 worldRespawnPosition;
     public Transform pointVisual;
     private Collider pointCollider;
 
@@ -13,6 +16,7 @@ public class BluePoint : GrapplePoint
     private float targetLocalScale;
     private float lerpValue;
     private bool showingMiniPoint = false;
+
 
     public bool validTakeOutLocation { get; private set; } = true;
     override protected void Awake()
@@ -31,6 +35,7 @@ public class BluePoint : GrapplePoint
 
     override public void OnPointReleased()
     {
+        pointVisual.parent = transform;
         return;
     }
 
@@ -116,5 +121,17 @@ public class BluePoint : GrapplePoint
     private void OnTriggerExit(Collider other)
     {
         validTakeOutLocation = true;
+    }
+
+    public void DestroyBlock(){
+        Rigidbody pointRB = GetComponent<Rigidbody>();
+        
+        queueDestroyBlock = false;
+        
+        transform.position = worldRespawnPosition;
+        transform.rotation = Quaternion.identity;
+
+        pointRB.velocity = Vector3.zero;
+        pointRB.angularVelocity = Vector3.zero;
     }
 }

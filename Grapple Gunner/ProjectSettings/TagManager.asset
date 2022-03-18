@@ -24,8 +24,8 @@ TagManager:
   - Block
   - HeldBlock
   - TakeOutBlockTrigger
-  - 
-  - 
+  - BlockDestroyer
+  - BlockBarrier
   - 
   - 
   - 
