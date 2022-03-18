@@ -83,8 +83,7 @@ public class GrappleManager : Singleton<GrappleManager>
                 if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction) ||
                     grappleInteractions[(index + 1) % 2]?.GetType() == typeof(GreenInteraction))
                 {
-                    hooks[(index + 1) % 2]?.ReleaseHook();
-                    guns[(index + 1) % 2].EnableReticle();
+                    ReleaseHook((index + 1) % 2);
                 }
                 break;
             case GrapplePoint.GrappleType.Orange:
@@ -94,8 +93,7 @@ public class GrappleManager : Singleton<GrappleManager>
                 grappleInteractions[index] = new GreenInteraction();
                 if (grappleInteractions[(index + 1) % 2]?.GetType() == typeof(RedInteraction))
                 {
-                    hooks[(index + 1) % 2]?.ReleaseHook();
-                    guns[(index + 1) % 2].EnableReticle();
+                    ReleaseHook((index + 1) % 2);
                 }
                 break;
             case GrapplePoint.GrappleType.Blue:

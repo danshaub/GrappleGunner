@@ -34,15 +34,12 @@ public class BlueInteraction : I_GrappleInteraction
         currentHoookPoint = hookPoint;
         bluePoint = (BluePoint)grapplePoint;
 
-        if (GrappleManager.Instance.grappleInteractions[(gunIndex + 1) % 2]?.GetType() == typeof(BlueInteraction))
+        if (bluePoint.blockHeld)
         {
-            BluePoint otherPoint = ((BlueInteraction)GrappleManager.Instance.grappleInteractions[(gunIndex + 1) % 2]).bluePoint;
-
-            if (bluePoint.Equals(otherPoint))
-            {
-                GrappleManager.Instance.hooks[(gunIndex + 1) % 2].ReleaseHook();
-            }
+            GrappleManager.Instance.ReleaseHook((gunIndex + 1) % 2, true);
         }
+
+        bluePoint.blockHeld = true;
 
 
         pointRB = bluePoint.GetComponent<Rigidbody>();
@@ -65,6 +62,8 @@ public class BlueInteraction : I_GrappleInteraction
         bluePoint.gameObject.layer = 13;
         pointRB.useGravity = true;
         hookRB.mass = 0;
+
+        bluePoint.blockHeld = false;
 
         GrappleManager.Instance.EnableReticle(gunIndex);
 
@@ -166,10 +165,10 @@ public class BlueInteraction : I_GrappleInteraction
 
         if (attemptedRelease)
         {
-            GrappleManager.Instance.hooks[gunIndex].ReleaseHook();
+            GrappleManager.Instance.ReleaseHook(gunIndex); ;
         }
 
-        
+
     }
     public void OnReelOut()
     {
@@ -182,23 +181,37 @@ public class BlueInteraction : I_GrappleInteraction
             {
                 TakeOutBlock();
             }
-            else{
+            else
+            {
                 launchOnRelease = false;
                 return;
             }
         }
 
-        GrappleManager.Instance.hooks[gunIndex].ReleaseHook();
+        GrappleManager.Instance.ReleaseHook(gunIndex); ;
     }
 
     // Called from OrangeInteraction TODO: Refactor to be called by TP Manager
-    public void TeleportWithBlock(Vector3 playerTargetPosition){
+    public void TeleportWithBlock(Vector3 playerTargetPosition)
+    {
         Vector3 hookOffset = hookRB.position - playerRB.position;
         Vector3 blockOffset = pointRB.position - playerRB.position;
 
         playerRB.MovePosition(playerTargetPosition);
         hookRB.MovePosition(playerTargetPosition + hookOffset);
         pointRB.MovePosition(playerTargetPosition + blockOffset);
+    }
+
+    public void DestroyBlock()
+    {
+        if (blockIsStored)
+        {
+            TakeOutBlock();
+        }
+
+        bluePoint.DestroyBlock();
+
+        GrappleManager.Instance.ReleaseHook(gunIndex);
     }
     public void OnSwing(Vector3 swingVelocity)
     {
