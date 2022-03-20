@@ -142,4 +142,12 @@ public class OrangePoint : GrapplePoint
         type = GrappleType.Orange;
         GetComponent<MeshRenderer>().sharedMaterial = originalMaterial;
     }
+
+#if UNITY_EDITOR
+    protected override void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        base.OnDrawGizmos();
+    }
+#endif
 }

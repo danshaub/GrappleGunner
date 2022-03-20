@@ -16,18 +16,19 @@ public abstract class GrapplePoint : MonoBehaviour
         None = 6
     }
 
-    protected virtual void Awake() {
+    protected virtual void Awake()
+    {
         gameObject.tag = "Hookable";
     }
 
-    public GrappleType type {get; protected set;}
+    public GrappleType type { get; protected set; }
     public bool useRaycastPosition = true;
     public Vector3 grapplePosition;
     public Vector3 grappleRotation;
 
     public Vector3 GetGrapplePosition()
     {
-        return transform.position + grapplePosition;
+        return transform.position + transform.TransformVector(grapplePosition);
     }
     public Quaternion GetGrappleRotation()
     {
@@ -36,4 +37,35 @@ public abstract class GrapplePoint : MonoBehaviour
 
     public abstract void OnPointHit();
     public abstract void OnPointReleased();
+
+#if UNITY_EDITOR
+    private float maxDimension(Vector3 v)
+    {
+
+        return Mathf.Max(Mathf.Max(v.x, v.y), v.z);
+
+    }
+
+    private void DrawOutline()
+    {
+        MeshFilter filter = GetComponentInChildren<MeshFilter>();
+        Gizmos.DrawWireMesh(filter.sharedMesh, transform.position, transform.rotation, transform.lossyScale);
+    }
+    protected virtual void OnDrawGizmos()
+    {
+        if (Application.isPlaying)
+        {
+            return;
+        }
+
+        DrawOutline();
+
+        if (!useRaycastPosition)
+        {
+            Vector3 drawPosition = transform.position + transform.TransformVector(grapplePosition);
+            Gizmos.DrawSphere(drawPosition, .1f);
+            Gizmos.DrawRay(drawPosition, Quaternion.Euler(grappleRotation) * transform.forward * .25f);
+        }
+    }
+#endif
 }

@@ -133,4 +133,12 @@ public class BluePoint : GrapplePoint
         pointRB.velocity = Vector3.zero;
         pointRB.angularVelocity = Vector3.zero;
     }
+
+#if UNITY_EDITOR
+    protected override void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        base.OnDrawGizmos();
+    }
+#endif
 }

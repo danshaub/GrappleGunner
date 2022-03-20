@@ -36,4 +36,12 @@ public class GreenPoint : GrapplePoint
             playerCollided = false;
         }
     }
+
+#if UNITY_EDITOR
+    protected override void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        base.OnDrawGizmos();
+    }
+#endif
 }

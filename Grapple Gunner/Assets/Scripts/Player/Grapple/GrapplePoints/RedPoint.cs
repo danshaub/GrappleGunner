@@ -18,4 +18,12 @@ public class RedPoint : GrapplePoint
     {
         return;
     }
+
+#if UNITY_EDITOR
+    protected override void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        base.OnDrawGizmos();
+    }
+#endif
 }
