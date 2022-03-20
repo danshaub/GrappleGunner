@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Orange.unity
     guid: 58f054ac141fb074ba3a2fe79fe7bc64
   - enabled: 1
+    path: Assets/Scenes/Blue.unity
+    guid: ff399ab69c03ea54bbe3c4941cec8b9c
+  - enabled: 1
     path: Assets/Scenes/MechanicsTest.unity
     guid: 15d0250e13938104ab0f9d6ace6150e4
   m_configObjects:
