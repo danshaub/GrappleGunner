@@ -5,20 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BluePoint : GrapplePoint
 {
-    public bool queueDestroyBlock = false;
-    public bool blockHeld;
-    public bool canStore = true;
     public Vector3 worldRespawnPosition;
     public Transform pointVisual;
+    public bool canStore = true;
     private Collider pointCollider;
 
+    [HideInInspector] public bool blockHeld;
+    [HideInInspector] public bool queueDestroyBlock = false;
+    private bool showingMiniPoint = false;
+    public bool validTakeOutLocation { get; private set; } = true;
     private Vector3 targetLocalPosition;
     private float targetLocalScale;
     private float lerpValue;
-    private bool showingMiniPoint = false;
 
-
-    public bool validTakeOutLocation { get; private set; } = true;
     override protected void Awake()
     {
         base.Awake();
