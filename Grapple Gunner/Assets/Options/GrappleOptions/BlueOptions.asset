@@ -23,9 +23,11 @@ MonoBehaviour:
   storeBlockInputThreshold: 0.25
   miniPointScale: 0.05
   miniPointLocalPosition: {x: 0, y: 0, z: -0.1}
-  interpolationValue: 0.25
+  interpolationValue: 0.15
+  storeBlockCooldown: 0.2
+  maxPushbackForce: 2000
   heldPhysicsMaterial: {fileID: 13400000, guid: aece17f3f60952d45979e8cdcc06a5ff, type: 2}
-  releasedPhysicsMaterial: {fileID: 13400000, guid: 201d9ea4eb4c02d4fbc92499a1fc9cce, type: 2}
+  releasedPhysicsMaterial: {fileID: 13400000, guid: 72c49ff7899f6474b97e18c8c257fbc4, type: 2}
   invalidTakeOutLayers:
     serializedVersion: 2
     m_Bits: 0
