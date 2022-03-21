@@ -19,7 +19,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8385
-  airborneMoveStrength: 0.05
+  airborneMoveStrength: 0.005
   landingBounce: 0.25
   rideHeight: 0.3
   rideSpringStrength: 500
