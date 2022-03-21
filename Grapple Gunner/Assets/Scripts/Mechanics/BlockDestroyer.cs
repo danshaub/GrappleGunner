@@ -6,24 +6,10 @@ public class BlockDestroyer : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 3) // Player
+        if (other.gameObject.layer == 18) // Block
         {
-            for (int index = 0; index < 2; index++)
-            {
-                I_GrappleInteraction interaction = GrappleManager.Instance.grappleInteractions[index];
-                if (interaction?.GetType() == typeof(BlueInteraction))
-                {
-                    BlueInteraction blueInteraction = (BlueInteraction)interaction;
-                    if (blueInteraction.blockIsStored)
-                    {
-                        blueInteraction.DestroyBlock();
-                    }
-                }
-            }
-        }
-        else if (other.gameObject.layer == 13 || other.gameObject.layer == 14) // Block
-        {
-            BluePoint point = other.gameObject.GetComponent<BluePoint>();
+            BluePointVisual visual = other.gameObject.GetComponent<BluePointVisual>();
+            BluePoint point = other.gameObject.GetComponentInParent<BluePoint>();
             if (point != null)
             {
                 if (point.blockHeld)
@@ -34,6 +20,10 @@ public class BlockDestroyer : MonoBehaviour
                 {
                     point.DestroyBlock();
                 }
+            }
+            else
+            {
+                visual.QueueDestroyBlock();
             }
         }
 

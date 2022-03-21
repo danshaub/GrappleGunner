@@ -18,7 +18,7 @@ public class Speedline : MonoBehaviour {
 		speed = rb.velocity.magnitude;
 		if (speed >= speedlinesMax) {
 			speedlines.Play();
+			gameObject.transform.forward = rb.velocity.normalized;
 		}
-		gameObject.transform.forward = rb.velocity.normalized;
 	}
 }

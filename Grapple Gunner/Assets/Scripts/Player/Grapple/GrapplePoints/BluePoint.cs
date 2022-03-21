@@ -12,6 +12,9 @@ public class BluePoint : GrapplePoint
 
     [HideInInspector] public bool blockHeld;
     [HideInInspector] public bool queueDestroyBlock = false;
+    [HideInInspector] public bool colliding { get; private set; } = false;
+    [HideInInspector] public Vector3 collisionNormal { get; private set; }
+    [HideInInspector] public bool storageLockedByCooldown { get; private set; } = true;
     private bool showingMiniPoint = false;
     public bool validTakeOutLocation { get; private set; } = true;
     private Vector3 targetLocalPosition;
@@ -28,12 +31,16 @@ public class BluePoint : GrapplePoint
     }
     override public void OnPointHit()
     {
+        storageLockedByCooldown = true;
+        StartCoroutine(UnlockBlock());
         pointVisual.parent = transform;
         return;
     }
 
     override public void OnPointReleased()
     {
+        storageLockedByCooldown = true;
+        StopCoroutine(UnlockBlock());
         pointVisual.parent = transform;
         return;
     }
@@ -93,7 +100,7 @@ public class BluePoint : GrapplePoint
         {
             ((BoxCollider)pointCollider).size = Vector3.one;
         }
-        
+
         showingMiniPoint = false;
         pointVisual.parent = transform;
 
@@ -122,11 +129,23 @@ public class BluePoint : GrapplePoint
         validTakeOutLocation = true;
     }
 
-    public void DestroyBlock(){
+    private void OnCollisionStay(Collision other)
+    {
+        colliding = true;
+        collisionNormal = other.contacts[0].normal;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        colliding = false;
+    }
+
+    public void DestroyBlock()
+    {
         Rigidbody pointRB = GetComponent<Rigidbody>();
-        
+
         queueDestroyBlock = false;
-        
+
         transform.position = worldRespawnPosition;
         transform.rotation = Quaternion.identity;
 
@@ -134,10 +153,16 @@ public class BluePoint : GrapplePoint
         pointRB.angularVelocity = Vector3.zero;
     }
 
+    private IEnumerator UnlockBlock(){
+        yield return new WaitForSeconds(GrappleManager.Instance.blueOptions.storeBlockCooldown);
+        storageLockedByCooldown = false;
+    }
+
 #if UNITY_EDITOR
     protected override void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(worldRespawnPosition, .25f);
         base.OnDrawGizmos();
     }
 #endif

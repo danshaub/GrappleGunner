@@ -19,6 +19,8 @@ public class BlueOptions : ScriptableObject
     public float miniPointScale = 0.05f;
     public Vector3 miniPointLocalPosition;
     public float interpolationValue = 0.1f;
+    public float storeBlockCooldown = 0.5f;
+    public float maxPushbackForce = 2000f;
 
     public PhysicMaterial heldPhysicsMaterial;
     public PhysicMaterial releasedPhysicsMaterial;

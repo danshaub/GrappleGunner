@@ -17,7 +17,6 @@ public class BlueInteraction : I_GrappleInteraction
     private bool launchOnRelease = false;
 
     private float springDamper;
-
     public bool blockIsStored { get; private set; } = false;
     private bool buttonRealeased = true;
 
@@ -91,6 +90,13 @@ public class BlueInteraction : I_GrappleInteraction
                 hookRB.velocity = Vector3.ClampMagnitude(hookRB.velocity, props.maxHookVelocity);
                 springForce = Vector3.ClampMagnitude(springForce, props.maxSpringForce);
             }
+
+            if(bluePoint.colliding){
+                float forceAgainstCollision = Vector3.Dot(bluePoint.collisionNormal, springForce);
+                springForce = Vector3.ProjectOnPlane(springForce, bluePoint.collisionNormal);
+                springForce += bluePoint.collisionNormal * Mathf.Clamp(forceAgainstCollision, -props.maxPushbackForce, props.maxPushbackForce);
+            }
+            
             hookRB.AddForce(springForce);
 
             //Find the rotation difference in eulers
@@ -122,6 +128,7 @@ public class BlueInteraction : I_GrappleInteraction
 
     public void OnReelIn(float reelStrength)
     {
+        if(bluePoint.storageLockedByCooldown) return;
         if (reelStrength > props.storeBlockInputThreshold)
         {
             if (buttonRealeased)
@@ -150,8 +157,8 @@ public class BlueInteraction : I_GrappleInteraction
         blockIsStored = true;
         GrappleManager.Instance.grappleLocked[gunIndex] = true;
         bluePoint.ShowMiniPoint(currentHoookPoint, props.miniPointLocalPosition, props.miniPointScale, props.interpolationValue);
-        hookRB.isKinematic = true;
         hookRB.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        hookRB.isKinematic = true;
 
         bluePoint.gameObject.layer = 15;
     }
