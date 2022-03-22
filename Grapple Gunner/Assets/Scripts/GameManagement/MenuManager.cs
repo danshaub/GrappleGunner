@@ -37,7 +37,7 @@ public class MenuManager : Singleton<MenuManager>
     }
 
     public void MainMenu(){
-        SceneManager.LoadScene(0);
+        // SceneManager.LoadScene(0);
     }
 
     public void ControlsMenu(){

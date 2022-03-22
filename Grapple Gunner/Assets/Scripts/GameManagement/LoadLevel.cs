@@ -9,11 +9,11 @@ public class LoadLevel : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Player")){
-            SceneManager.LoadScene(LevelNum);
+            // SceneManager.LoadScene(LevelNum);
         }
     }
 
     public void Activate(){
-        SceneManager.LoadScene(LevelNum);
+        // SceneManager.LoadScene(LevelNum);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : Singleton<LevelManager>
+public class SFXManager : SingletonPersistent<SFXManager>
 {
     // Start is called before the first frame update
     void Start()
