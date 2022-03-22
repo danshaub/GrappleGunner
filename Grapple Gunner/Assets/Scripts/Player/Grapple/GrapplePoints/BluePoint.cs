@@ -161,7 +161,9 @@ public class BluePoint : GrapplePoint
 #if UNITY_EDITOR
     protected override void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Color c = Color.blue;
+        c.a = .25f;
+        Gizmos.color = c;
         Gizmos.DrawWireSphere(worldRespawnPosition, .25f);
         base.OnDrawGizmos();
     }

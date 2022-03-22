@@ -146,7 +146,9 @@ public class OrangePoint : GrapplePoint
 #if UNITY_EDITOR
     protected override void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
+        Color c = Color.yellow;
+        c.a = .25f;
+        Gizmos.color = c;
         base.OnDrawGizmos();
     }
 #endif

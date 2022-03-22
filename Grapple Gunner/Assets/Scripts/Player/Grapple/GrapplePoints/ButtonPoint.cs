@@ -23,4 +23,14 @@ public class ButtonPoint : GrapplePoint
     {
         onButtonRelease.Invoke();
     }
+
+#if UNITY_EDITOR
+    protected override void OnDrawGizmos()
+    {
+        Color c = Color.black;
+        c.a = .25f;
+        Gizmos.color = c;
+        base.OnDrawGizmos();
+    }
+#endif
 }

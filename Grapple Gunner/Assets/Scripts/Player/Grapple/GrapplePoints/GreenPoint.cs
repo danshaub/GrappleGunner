@@ -40,7 +40,9 @@ public class GreenPoint : GrapplePoint
 #if UNITY_EDITOR
     protected override void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Color c = Color.green;
+        c.a = .25f;
+        Gizmos.color = c;
         base.OnDrawGizmos();
     }
 #endif

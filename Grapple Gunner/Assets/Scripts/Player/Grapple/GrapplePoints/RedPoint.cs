@@ -22,7 +22,9 @@ public class RedPoint : GrapplePoint
 #if UNITY_EDITOR
     protected override void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Color c = Color.red;
+        c.a = .25f;
+        Gizmos.color = c;
         base.OnDrawGizmos();
     }
 #endif
