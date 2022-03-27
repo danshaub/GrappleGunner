@@ -20,10 +20,13 @@ public class GrappleManager : Singleton<GrappleManager>
     public GrappleHook[] hooks = new GrappleHook[2];
     public I_GrappleInteraction[] grappleInteractions = new I_GrappleInteraction[2];
 
-    [HideInInspector] public bool[] grappleLocked;
+    public bool[] grappleLocked;
+    private bool grappleDisabled;
 
-    private void Start(){
-        grappleLocked = new bool[] {false,false};
+    private void Start()
+    {
+        grappleLocked = new bool[] { false, false };
+        grappleDisabled = false;
     }
 
     private void LateUpdate()
@@ -37,17 +40,23 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void FireHook(int index)
     {
+        if(grappleDisabled) return;
+
         if (!grappleLocked[index])
         {
             guns[index].DisableReticle();
             hooks[index].FireHook();
         }
-        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction)){
+        else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction))
+        {
             ((BlueInteraction)grappleInteractions[index]).attemptedRelease = false;
         }
     }
 
-    public void ReleaseHook(int index, bool instant){
+    public void ReleaseHook(int index, bool instant)
+    {
+        if(grappleDisabled) return;
+
         if (!grappleLocked[index])
         {
             guns[index].EnableReticle();
@@ -62,6 +71,30 @@ public class GrappleManager : Singleton<GrappleManager>
     public void ReleaseHook(int index)
     {
         ReleaseHook(index, false);
+    }
+
+    public void SetGrappleDisabled(bool isDisabled)
+    {
+        if (!grappleDisabled && isDisabled)
+        {
+            ForceReleaseHook();
+            DisableReticle(0);
+            DisableReticle(1);
+        }
+        if(grappleDisabled && !isDisabled){
+            EnableReticle(0);
+            EnableReticle(1);
+        }
+        grappleDisabled = isDisabled;
+    }
+
+    private void ForceReleaseHook()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            guns[i].EnableReticle();
+            hooks[i].ReleaseHook(true);
+        }
     }
 
     public void DisableReticle(int index)
@@ -117,11 +150,14 @@ public class GrappleManager : Singleton<GrappleManager>
         grappleInteractions[index] = null;
     }
 
-    public void QueueTeleport(OrangeInteraction orangeInteraction, int index){
-        if((grappleInteractions[(index+1)%2]?.GetType()==typeof(BlueInteraction) && 
-            ((BlueInteraction)grappleInteractions[(index + 1) % 2]).blockIsStored)){
+    public void QueueTeleport(OrangeInteraction orangeInteraction, int index)
+    {
+        if ((grappleInteractions[(index + 1) % 2]?.GetType() == typeof(BlueInteraction) &&
+            ((BlueInteraction)grappleInteractions[(index + 1) % 2]).blockIsStored))
+        {
         }
-        else{
+        else
+        {
             ReleaseHook((index + 1) % 2, true);
         }
         grappleLocked[index] = true;
@@ -129,7 +165,8 @@ public class GrappleManager : Singleton<GrappleManager>
         StartCoroutine(WaitForTeleportDelay(orangeInteraction));
     }
 
-    private IEnumerator WaitForTeleportDelay(OrangeInteraction orangeInteraction){
+    private IEnumerator WaitForTeleportDelay(OrangeInteraction orangeInteraction)
+    {
         yield return new WaitForSeconds(orangeOptions.teleportTransitionTime);
 
         orangeInteraction.Teleport();

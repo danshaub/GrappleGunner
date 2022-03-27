@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : Singleton<PlayerInput>
 {
     // Basic Input Actions
     public InputActionReference jumpReference = null;
@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour
     public InputActionReference debugReference = null;
 
     // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
         jumpReference.action.started += JumpStart;
         jumpReference.action.canceled += JumpCancel;

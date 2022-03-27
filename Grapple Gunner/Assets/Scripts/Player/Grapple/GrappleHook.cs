@@ -17,7 +17,7 @@ public class GrappleHook : MonoBehaviour
     [Tooltip("Set to 0 for left, set to 1 for right")]
     public int index;
 
-    void Start()
+    void Awake()
     {
         gameObject.tag = "Hook";
         cd = GetComponent<Collider>();
@@ -129,7 +129,9 @@ public class GrappleHook : MonoBehaviour
             grapplePoint = null;
         }
         GrappleManager.Instance.EndGrapple(index);
-        Destroy(joint);
+        if(joint != null) {
+            Destroy(joint);
+        }
         if (instant)
         {
             FinishRetract();

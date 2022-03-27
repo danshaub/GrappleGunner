@@ -107,6 +107,16 @@ public class PlayerMovementController : MonoBehaviour
                 PlayerManager.Instance.allowMovement = true;
             }
 
+            DisableGrapple dgGround = hit.transform.gameObject.GetComponent<DisableGrapple>();
+            if (dgGround != null)
+            {
+                GrappleManager.Instance.SetGrappleDisabled(dgGround.active);
+            }
+            else
+            {
+                GrappleManager.Instance.SetGrappleDisabled(false);
+            }
+
             DeathBlock deathBlockGround = hit.transform.gameObject.GetComponent<DeathBlock>();
             if (deathBlockGround != null)
             {

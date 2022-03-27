@@ -5,14 +5,14 @@ using UnityEngine;
 public class GrappleGun : MonoBehaviour
 {
 
-    [SerializeField] private GameObject reticleVisual;
+    [SerializeField] public GameObject reticleVisual;
     private Material reticleMaterial;
     [SerializeField] public Transform gunTip;
     [SerializeField] public Transform hookPoint;
     public Lightning lightning;
     private bool fired;
 
-    private void Start()
+    private void Awake()
     {
         reticleMaterial = reticleVisual.GetComponent<Renderer>().material;
     }
