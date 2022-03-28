@@ -8,6 +8,8 @@ public class ButtonPoint : GrapplePoint
 {
     public UnityEvent onButtonPress;
     public UnityEvent onButtonRelease;
+
+    private bool released = false;
     override protected void Awake()
     { 
         base.Awake();
@@ -17,10 +19,14 @@ public class ButtonPoint : GrapplePoint
     override public void OnPointHit()
     {
         onButtonPress.Invoke();
+        released = false;
     }
 
     public override void OnPointReleased()
     {
+        if(released == true) return;
+
+        released = true;
         onButtonRelease.Invoke();
     }
 

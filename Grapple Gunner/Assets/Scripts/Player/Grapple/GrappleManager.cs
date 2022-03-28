@@ -88,7 +88,7 @@ public class GrappleManager : Singleton<GrappleManager>
         grappleDisabled = isDisabled;
     }
 
-    private void ForceReleaseHook()
+    public void ForceReleaseHook()
     {
         for (int i = 0; i < 2; i++)
         {

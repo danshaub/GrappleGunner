@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 2835914521231392483}
   - component: {fileID: 3336896427513198063}
   - component: {fileID: 3336896427513198060}
+  - component: {fileID: 6533031284433648569}
   m_Layer: 6
   m_Name: RespawnMenuBox
   m_TagString: Untagged
@@ -461,7 +462,6 @@ Transform:
   m_Children:
   - {fileID: 5327969162932494331}
   - {fileID: 5327969164182830697}
-  - {fileID: 5327969163834136813}
   - {fileID: 5327969162870687948}
   - {fileID: 3293153603036683683}
   - {fileID: 7487607246793207381}
@@ -541,6 +541,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70c64e2901fc6bf469a971301d1e3f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+--- !u!114 &6533031284433648569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336896427513198062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9d2566acc3ae3438daa0956eec418c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3904289876360943024
@@ -723,7 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5327969162870687948}
   m_Layer: 0
-  m_Name: PlayerSpawnPoint
+  m_Name: PlayerDeathTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +754,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5626962303109630750}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5327969162932494330
 GameObject:
@@ -1217,10 +1230,10 @@ MonoBehaviour:
   onButtonRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5327969163834136786}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 3
+      - m_Target: {fileID: 6533031284433648569}
+        m_TargetAssemblyTypeName: RespawnMenu, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1377,9 +1390,9 @@ MonoBehaviour:
   onButtonRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5327969163834136786}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: ReloadCurrentLevel
+      - m_Target: {fileID: 6533031284433648569}
+        m_TargetAssemblyTypeName: RespawnMenu, Assembly-CSharp
+        m_MethodName: Respawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1575,49 +1588,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!1 &5327969163834136812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5327969163834136813}
-  - component: {fileID: 5327969163834136786}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5327969163834136813
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327969163834136812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5626962303109630750}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5327969163834136786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327969163834136812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777fa05da0490d34b9286aa11fa06aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5327969164182830696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1777,7 @@ Transform:
   - {fileID: 5802181144393821375}
   - {fileID: 2109907324285011022}
   m_Father: {fileID: 5626962303109630750}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8380803156506737716
 GameObject:
@@ -1965,5 +1935,5 @@ Transform:
   - {fileID: 2536634312537471183}
   - {fileID: 2203362924267735442}
   m_Father: {fileID: 5626962303109630750}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

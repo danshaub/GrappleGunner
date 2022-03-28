@@ -9,7 +9,7 @@ public class DeathBlock : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerManager.Instance.TeleportPlayer(deathTeleportPoint);
+            KillPlayer();
         }
     }
 

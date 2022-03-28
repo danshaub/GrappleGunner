@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MenuManager : Singleton<MenuManager>
@@ -37,7 +36,7 @@ public class MenuManager : Singleton<MenuManager>
     }
 
     public void MainMenu(){
-        // SceneManager.LoadScene(0);
+        SceneLoader.Instance.LoadMainMenu(true);
     }
 
     public void ControlsMenu(){

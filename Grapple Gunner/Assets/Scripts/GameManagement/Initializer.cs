@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Initializer : Singleton<Initializer>
+public class Initializer : SingletonPersistent<Initializer>
 {
     public bool startupMainMenu = true;
     public List<GameObject> objectsToCreate;
@@ -29,13 +29,10 @@ public class Initializer : Singleton<Initializer>
         yield return new WaitForEndOfFrame();
         if (startupMainMenu)
         {
-            AsyncOperation oper = SceneLoader.Instance.LoadMainMenu();
-            oper.allowSceneActivation = false;
-            while (oper.progress < 0.9f)
-            {
-                yield return new WaitForEndOfFrame();
-            }
-            oper.allowSceneActivation = true;
+            SceneLoader.Instance.LoadMainMenu(false);
+        }
+        else{
+            PlayerManager.Instance.TeleportPlayer(LevelManager.Instance?.playerStartTransform);
         }
 
         yield return new WaitForEndOfFrame();
@@ -44,7 +41,5 @@ public class Initializer : Singleton<Initializer>
         {
             Destroy(gameObject);
         }
-
-        Destroy(this.gameObject);
     }
 }

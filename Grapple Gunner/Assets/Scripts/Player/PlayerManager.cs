@@ -38,17 +38,17 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     public void ResetView(){
-        subsystem.TryRecenter();
-    }
-    public void StopGrounded(){
-        // playerPhysics.StopGrounded();
+        // subsystem.TryRecenter();
     }
 
     public void TeleportPlayer(Transform tpTransform){
         ResetView();
-        // playerPhysics.ResetVelocity();
 
-        player.transform.position = tpTransform.position;
+        GrappleManager.Instance.ForceReleaseHook();
+
+        movementController.rigidbody.velocity = Vector3.zero;
+
+        player.transform.position = tpTransform.position - playerXZLocalPosistion;
         player.transform.rotation = tpTransform.rotation;
     }
 }

@@ -123,7 +123,7 @@ public class PlayerMovementController : MonoBehaviour
                 deathBlockGround.KillPlayer();
             }
 
-            LoadLevel loadLevel = hit.transform.gameObject.GetComponent<LoadLevel>();
+            LevelComplete loadLevel = hit.transform.gameObject.GetComponent<LevelComplete>();
             if (loadLevel != null)
             {
                 loadLevel.Activate();
