@@ -34,7 +34,7 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
 
         yield return new WaitForSeconds(Time.deltaTime * 2);
 
-        PlayerManager.Instance.TeleportPlayer(LevelManager.Instance?.playerStartTransform);
+        PlayerManager.Instance.TeleportPlayer(LocationManager.Instance?.playerStartTransform);
 
     }
 }

@@ -32,7 +32,7 @@ public class Initializer : SingletonPersistent<Initializer>
             SceneLoader.Instance.LoadMainMenu(false);
         }
         else{
-            PlayerManager.Instance.TeleportPlayer(LevelManager.Instance?.playerStartTransform);
+            PlayerManager.Instance.TeleportPlayer(LocationManager.Instance?.playerStartTransform);
         }
 
         yield return new WaitForEndOfFrame();

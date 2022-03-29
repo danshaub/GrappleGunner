@@ -11,6 +11,6 @@ public class LevelComplete : MonoBehaviour
     }
 
     public void Activate(){
-        LevelManager.Instance.LoadNextLevel();
+        LocationManager.Instance.LoadNextLevel();
     }
 }
