@@ -13,8 +13,16 @@ public class MainMenuManager : LocationManager
     public GameObject controlsMenu;
     public GameObject confirmResetMenu;
 
-    private void Start() {
-        DisplayFileSelect();
+    private void Start()
+    {
+        if (GameManager.Instance.fileSelected)
+        {
+            DisplayMain();
+        }
+        else
+        {
+            DisplayFileSelect();
+        }
     }
 
     public void DisplayMain()
@@ -123,6 +131,7 @@ public class MainMenuManager : LocationManager
 
     public void SwapFile(int fileNumber)
     {
+        GameManager.Instance.fileSelected = true;
         GameSaveManager.Instance.ChangeProfile((byte)fileNumber);
     }
     public void ResetFile()

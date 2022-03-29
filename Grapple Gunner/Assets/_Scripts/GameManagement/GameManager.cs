@@ -6,6 +6,7 @@ public class GameManager : SingletonPersistent<GameManager>
 {
     public OptionsData options;
     public ProfileData profile;
+    public bool fileSelected = false;
 
     private void Start()
     {
