@@ -9,6 +9,18 @@ public class LevelManager : Singleton<LevelManager>
     public Transform playerStartTransform;
     public Transform playerDeathTransform;
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
+        {
+            GameManager.Instance.profile.unlockedLevels.Add(levelIndex);
+            GameManager.Instance.profile.unlockedLevels.Sort();
+            GameSaveManager.Instance.SaveGame();
+        }
+    }
+
     public virtual void LoadLevel(int levelIndex)
     {
         SceneLoader.Instance.LoadLevel(levelIndex);

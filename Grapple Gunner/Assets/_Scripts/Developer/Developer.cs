@@ -37,7 +37,8 @@ public class Developer
     }
 
     [MenuItem("Developer/KillPlayer")]
-    public static void KillPlayer(){
+    public static void KillPlayer()
+    {
         LevelManager.Instance.KillPlayer();
     }
     [MenuItem("Developer/RespawnPlayer")]
@@ -50,5 +51,46 @@ public class Developer
     public static void LoadNextLevel()
     {
         LevelManager.Instance.LoadNextLevel();
+    }
+
+    [MenuItem("Developer/Serialization/SaveGame")]
+    public static void SaveGame()
+    {
+        GameSaveManager.Instance.SaveGame();
+    }
+    [MenuItem("Developer/Serialization/LoadGame")]
+    public static void LoadGame()
+    {
+        GameSaveManager.Instance.LoadGame();
+    }
+
+    [MenuItem("Developer/Serialization/ChangeProfile/0")]
+    public static void ChangeProfile0()
+    {
+        ChangeProfile(0);
+    }
+    [MenuItem("Developer/Serialization/ChangeProfile/1")]
+    public static void ChangeProfile1()
+    {
+        ChangeProfile(1);
+    }
+    [MenuItem("Developer/Serialization/ChangeProfile/2")]
+    public static void ChangeProfile2()
+    {
+        ChangeProfile(2);
+    }
+    [MenuItem("Developer/Serialization/ChangeProfile/3")]
+    public static void ChangeProfile3()
+    {
+        ChangeProfile(3);
+    }
+    public static void ChangeProfile(byte profile)
+    {
+        GameSaveManager.Instance.ChangeProfile(profile);
+    }
+    [MenuItem("Developer/Serialization/ResetProfile")]
+    public static void ResetProfile()
+    {
+        GameSaveManager.Instance.ResetFile();
     }
 }
