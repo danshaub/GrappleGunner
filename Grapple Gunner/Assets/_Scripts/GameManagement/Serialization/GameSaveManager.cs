@@ -98,6 +98,8 @@ public class GameSaveManager : SingletonPersistent<GameSaveManager>
 
         LoadProfileData();
         LoadOptionsData();
+
+        ComfortManager.Instance.ApplyOptions();
     }
 
     public void LoadProfileData()

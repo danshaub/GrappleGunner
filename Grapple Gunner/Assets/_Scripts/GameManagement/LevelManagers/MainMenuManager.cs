@@ -6,6 +6,7 @@ using TMPro;
 public class MainMenuManager : LocationManager
 {
     // Submenues
+    public GameObject disclaimer;
     public GameObject fileSelectMenu;
     public GameObject mainMenu;
     public GameObject levelSelectMenu;
@@ -33,15 +34,29 @@ public class MainMenuManager : LocationManager
         }
         else
         {
-            DisplayFileSelect();
+            DisplayDisclaimer();
         }
     }
 
     #region display_functions
+
+    public void DisplayDisclaimer(){
+        disclaimer.SetActive(true); 
+
+        mainMenu.SetActive(false);
+        fileSelectMenu.SetActive(false);
+        levelSelectMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        comfortMenu.SetActive(false);
+        soundMenu.SetActive(false);
+        controlsMenu.SetActive(false);
+        confirmResetMenu.SetActive(false);
+    }
     public void DisplayMain()
     {
         mainMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         fileSelectMenu.SetActive(false);
         levelSelectMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -55,6 +70,7 @@ public class MainMenuManager : LocationManager
     {
         fileSelectMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         mainMenu.SetActive(false);
         levelSelectMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -68,6 +84,7 @@ public class MainMenuManager : LocationManager
     {
         levelSelectMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         mainMenu.SetActive(false);
         fileSelectMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -83,6 +100,7 @@ public class MainMenuManager : LocationManager
     {
         optionsMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         mainMenu.SetActive(false);
         fileSelectMenu.SetActive(false);
         levelSelectMenu.SetActive(false);
@@ -96,6 +114,7 @@ public class MainMenuManager : LocationManager
     {
         comfortMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         mainMenu.SetActive(false);
         fileSelectMenu.SetActive(false);
         levelSelectMenu.SetActive(false);
@@ -111,6 +130,7 @@ public class MainMenuManager : LocationManager
     {
         soundMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         mainMenu.SetActive(false);
         fileSelectMenu.SetActive(false);
         levelSelectMenu.SetActive(false);
@@ -124,6 +144,7 @@ public class MainMenuManager : LocationManager
     {
         controlsMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         mainMenu.SetActive(false);
         fileSelectMenu.SetActive(false);
         levelSelectMenu.SetActive(false);
@@ -137,6 +158,7 @@ public class MainMenuManager : LocationManager
     {
         confirmResetMenu.SetActive(true);
 
+        disclaimer.SetActive(false);
         mainMenu.SetActive(false);
         fileSelectMenu.SetActive(false);
         levelSelectMenu.SetActive(false);
