@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class VFXManager : SingletonPersistent<VFXManager>
 {
-
+    public Speedline speedlines;
 }

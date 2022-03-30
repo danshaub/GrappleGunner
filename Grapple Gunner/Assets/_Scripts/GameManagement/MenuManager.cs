@@ -7,6 +7,20 @@ using TMPro;
 
 public class MenuManager : Singleton<MenuManager>
 {
+    private bool _menuLocked;
+    public bool menuLocked
+    {
+        get { return _menuLocked; }
+        set
+        {
+            if (!_menuLocked && value)
+            {
+                HideMenu();
+            }
+
+            _menuLocked = value;
+        }
+    }
     public GameObject homeMenu;
     public GameObject comfortMenu;
     public GameObject controlsMenu;
@@ -18,15 +32,17 @@ public class MenuManager : Singleton<MenuManager>
     public ActionBasedContinuousTurnProvider continuousTurnProvider;
     public ActionBasedSnapTurnProvider snapTurnProvider;
 
-    private int[] snapValues = new int[] {5,6,9,10,15,18,30,45};
+    private int[] snapValues = new int[] { 5, 6, 9, 10, 15, 18, 30, 45 };
     private int snapValue = 4;
 
-    private void Update() {
+    private void Update()
+    {
         controllerMounterTransform.rotation = controllerMountPoint.rotation;
         controllerMounterTransform.position = controllerMountPoint.position;
     }
 
-    public void ShowMenu() {
+    public void ShowMenu()
+    {
         background.SetActive(true);
         HomeMenu();
     }
@@ -35,44 +51,51 @@ public class MenuManager : Singleton<MenuManager>
         background.SetActive(false);
     }
 
-    public void MainMenu(){
+    public void MainMenu()
+    {
         SceneLoader.Instance.LoadMainMenu(true);
     }
 
-    public void ControlsMenu(){
+    public void ControlsMenu()
+    {
         homeMenu.SetActive(false);
         comfortMenu.SetActive(false);
 
         controlsMenu.SetActive(true);
     }
 
-    public void ComfortMenu(){
+    public void ComfortMenu()
+    {
         homeMenu.SetActive(false);
         controlsMenu.SetActive(false);
 
         comfortMenu.SetActive(true);
 
-        if(snapTurnProvider.enabled){
+        if (snapTurnProvider.enabled)
+        {
             SetSnap();
         }
-        else{
+        else
+        {
             SetCont();
         }
     }
 
-    public void HomeMenu(){
+    public void HomeMenu()
+    {
         controlsMenu.SetActive(false);
         comfortMenu.SetActive(false);
 
         homeMenu.SetActive(true);
     }
 
-    public void SetSnap(){
+    public void SetSnap()
+    {
         continuousTurnProvider.enabled = false;
         snapTurnProvider.enabled = true;
 
         indicatorArrow.text = "<---";
-        turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() +  "°";
+        turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() + "°";
     }
 
     public void SetCont()
@@ -84,20 +107,24 @@ public class MenuManager : Singleton<MenuManager>
         turnSpeedIndicator.text = continuousTurnProvider.turnSpeed.ToString();
     }
 
-    public void Increment(){
-        if(snapTurnProvider.enabled){
+    public void Increment()
+    {
+        if (snapTurnProvider.enabled)
+        {
             snapValue = (snapValue + 1) % 8;
             snapTurnProvider.turnAmount = snapValues[snapValue];
             turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() + "°";
         }
-        else{
+        else
+        {
             continuousTurnProvider.turnSpeed += 15;
             continuousTurnProvider.turnSpeed = continuousTurnProvider.turnSpeed > 120 ? 120 : continuousTurnProvider.turnSpeed;
             turnSpeedIndicator.text = continuousTurnProvider.turnSpeed.ToString();
         }
     }
 
-    public void Decrement(){
+    public void Decrement()
+    {
         if (snapTurnProvider.enabled)
         {
             snapValue = (snapValue - 1);

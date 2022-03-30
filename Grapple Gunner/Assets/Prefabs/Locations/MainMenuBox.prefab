@@ -96,6 +96,23 @@ MonoBehaviour:
   soundMenu: {fileID: 3460795582370786096}
   controlsMenu: {fileID: 7628361004603077435}
   confirmResetMenu: {fileID: 194971784019234116}
+  turnProvider: {fileID: 959769633383533888}
+  turnAmount: {fileID: 7644918173734200581}
+  speedLineStatus: {fileID: 0}
+  levelText:
+  - {fileID: 1144596032014425359}
+  - {fileID: 4828688920401538833}
+  - {fileID: 5282563034582023437}
+  - {fileID: 8956469875342729330}
+  - {fileID: 5128822735856841762}
+  levelButtonVisuals:
+  - {fileID: 8290241502306786853}
+  - {fileID: 2712532146111856262}
+  - {fileID: 5740706808626795993}
+  - {fileID: 1679532235536312193}
+  - {fileID: 719908432051565191}
+  lockedLevelMaterial: {fileID: 2100000, guid: cdc00b00688b79c4daa4bf62853b5d20, type: 2}
+  unlockedLevelMaterial: {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
 --- !u!1 &710062652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,7 +2919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5931417207539790515
 Transform:
   m_ObjectHideFlags: 0
@@ -3556,10 +3573,10 @@ MonoBehaviour:
   onButtonRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 3
+      - m_Target: {fileID: 631262558}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ToggleSpeedLines
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4757,7 +4774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8076258272819835026
 Transform:
   m_ObjectHideFlags: 0
@@ -5567,10 +5584,10 @@ MonoBehaviour:
   onButtonRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 3
+      - m_Target: {fileID: 631262558}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ToggleTurnProvider
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6076,10 +6093,10 @@ MonoBehaviour:
   onButtonRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 3
+      - m_Target: {fileID: 631262558}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: Increment
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7470,7 +7487,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
+  - {fileID: 2100000, guid: cdc00b00688b79c4daa4bf62853b5d20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7759,10 +7776,10 @@ MonoBehaviour:
   onButtonRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 3
+      - m_Target: {fileID: 631262558}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: Decrement
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8360,7 +8377,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
+  - {fileID: 2100000, guid: cdc00b00688b79c4daa4bf62853b5d20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10683,7 +10700,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
+  - {fileID: 2100000, guid: cdc00b00688b79c4daa4bf62853b5d20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11470,7 +11487,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
+  - {fileID: 2100000, guid: cdc00b00688b79c4daa4bf62853b5d20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14169,7 +14186,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9fd7ca8a814977641aa7fd2a7a17f58c, type: 2}
+  - {fileID: 2100000, guid: cdc00b00688b79c4daa4bf62853b5d20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

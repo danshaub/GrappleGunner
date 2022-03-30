@@ -11,6 +11,7 @@ public class GameManager : SingletonPersistent<GameManager>
     private void Start()
     {
         GameSaveManager.Instance.LoadGame();
+        ComfortManager.Instance.ApplyOptions();
     }
 
     public void QuitGame()
