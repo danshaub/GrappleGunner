@@ -23,7 +23,7 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
     }
     public IEnumerator LoadLevelCoroutine(string levelName, bool useTransition)
     {
-
+        PlayerManager.Instance.movementController.enabled = false;
         AsyncOperation oper = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
         oper.allowSceneActivation = false;
         while (oper.progress < 0.9f)
@@ -35,6 +35,6 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
         yield return new WaitForSeconds(Time.deltaTime * 3);
 
         PlayerManager.Instance.TeleportPlayer(LocationManager.Instance?.playerStartTransform);
-
+        PlayerManager.Instance.movementController.enabled = true;
     }
 }
