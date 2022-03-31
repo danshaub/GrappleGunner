@@ -130,7 +130,7 @@ public class PlayerMovementController : MonoBehaviour
             }
 
             DisableHandleldMenu disableMenu = hit.transform.gameObject.GetComponent<DisableHandleldMenu>();
-            if (loadLevel != null)
+            if (disableMenu != null)
             {
                 MenuManager.Instance.menuLocked = true;
             }

@@ -102,6 +102,7 @@ public class PlayerInput : Singleton<PlayerInput>
     #region MenuActions
     private void ShowMenu(InputAction.CallbackContext context)
     {
+        if(MenuManager.Instance.menuLocked) return;
         GrappleManager.Instance.DisableReticle(0);
         MenuManager.Instance.ShowMenu();
     }
@@ -116,6 +117,7 @@ public class PlayerInput : Singleton<PlayerInput>
     #region LeftHook
     private void FireLeftHook(InputAction.CallbackContext context)
     {
+        MenuManager.Instance.HideMenu();
         GrappleManager.Instance.FireHook(0);
     }
     private void ReleaseLeftHook(InputAction.CallbackContext context)

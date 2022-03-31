@@ -21,19 +21,27 @@ public class MenuManager : Singleton<MenuManager>
             _menuLocked = value;
         }
     }
-    public GameObject homeMenu;
-    public GameObject comfortMenu;
-    public GameObject controlsMenu;
-    public GameObject background;
-    public TMP_Text indicatorArrow;
-    public TMP_Text turnSpeedIndicator;
+
+    // Mount transforms
     public Transform controllerMountPoint;
     public Transform controllerMounterTransform;
-    public ActionBasedContinuousTurnProvider continuousTurnProvider;
-    public ActionBasedSnapTurnProvider snapTurnProvider;
-
-    private int[] snapValues = new int[] { 5, 6, 9, 10, 15, 18, 30, 45 };
-    private int snapValue = 4;
+    // Submenues
+    public GameObject background;
+    public GameObject homeMenu;
+    public GameObject levelSelect;
+    public GameObject controlsMenu;
+    public GameObject comfortMenu;
+    public GameObject soundMenu;
+    // Text Objects
+    public List<TextMeshPro> levelTexts;
+    public TextMeshPro speedLinesText;
+    public TextMeshPro turnProviderStatusText;
+    public TextMeshPro musicVolume;
+    public TextMeshPro sfxVolume;
+    // Materials
+    public List<MeshRenderer> levelButtonVisuals;
+    public Material lockedMaterial;
+    public Material unlockedMaterial;
 
     private void Update()
     {
@@ -44,11 +52,67 @@ public class MenuManager : Singleton<MenuManager>
     public void ShowMenu()
     {
         background.SetActive(true);
-        HomeMenu();
+        GrappleManager.Instance.DisableReticle(0);
+        DisplayHome();
     }
     public void HideMenu()
     {
         background.SetActive(false);
+        GrappleManager.Instance.EnableReticle(0);
+    }
+
+    public void DisplayHome()
+    {
+        homeMenu.SetActive(true);
+
+        levelSelect.SetActive(false);
+        controlsMenu.SetActive(false);
+        comfortMenu.SetActive(false);
+        soundMenu.SetActive(false);
+    }
+
+    public void DisplayLevelSelect()
+    {
+        levelSelect.SetActive(true);
+
+        homeMenu.SetActive(false);
+        controlsMenu.SetActive(false);
+        comfortMenu.SetActive(false);
+        soundMenu.SetActive(false);
+
+        UpdateLevelButtons();
+    }
+
+    public void DisplayControls()
+    {
+        controlsMenu.SetActive(true);
+
+        homeMenu.SetActive(false);
+        levelSelect.SetActive(false);
+        comfortMenu.SetActive(false);
+        soundMenu.SetActive(false);
+    }
+
+    public void DisplayComfortMenu()
+    {
+        comfortMenu.SetActive(true);
+
+        homeMenu.SetActive(false);
+        levelSelect.SetActive(false);
+        controlsMenu.SetActive(false);
+        soundMenu.SetActive(false);
+
+        UpdateComfortMenu();
+    }
+
+    public void DisplaySoundMenu()
+    {
+        soundMenu.SetActive(true);
+
+        homeMenu.SetActive(false);
+        levelSelect.SetActive(false);
+        controlsMenu.SetActive(false);
+        comfortMenu.SetActive(false);
     }
 
     public void MainMenu()
@@ -56,87 +120,73 @@ public class MenuManager : Singleton<MenuManager>
         SceneLoader.Instance.LoadMainMenu(true);
     }
 
-    public void ControlsMenu()
+    public void LoadLevel(int levelIndex)
     {
-        homeMenu.SetActive(false);
-        comfortMenu.SetActive(false);
-
-        controlsMenu.SetActive(true);
+        SceneLoader.Instance.LoadLevel(levelIndex);
+        HideMenu();
     }
 
-    public void ComfortMenu()
+    public void RespawnPlayer()
     {
-        homeMenu.SetActive(false);
-        controlsMenu.SetActive(false);
+        LocationManager.Instance.RespawnPlayer();
+        HideMenu();
+    }
 
-        comfortMenu.SetActive(true);
-
-        if (snapTurnProvider.enabled)
+    public void UpdateLevelButtons()
+    {
+        for (int i = 0; i < SceneLoader.Instance.directory.levelNames.Count; i++)
         {
-            SetSnap();
+            if (GameManager.Instance.profile.unlockedLevels.Contains(i))
+            {
+                levelButtonVisuals[i].material = unlockedMaterial;
+                levelTexts[i].text = i == 0 ? "Playground" : "Level " + i.ToString();
+            }
+            else
+            {
+                levelButtonVisuals[i].material = lockedMaterial;
+                levelTexts[i].text = "Locked";
+            }
         }
-        else
-        {
-            SetCont();
-        }
     }
 
-    public void HomeMenu()
+    public void ToggleTurnProvider()
     {
-        controlsMenu.SetActive(false);
-        comfortMenu.SetActive(false);
-
-        homeMenu.SetActive(true);
+        ComfortManager.Instance.ToggleTurnProvider();
+        UpdateComfortMenu();
     }
-
-    public void SetSnap()
+    public void ToggleSpeedLines()
     {
-        continuousTurnProvider.enabled = false;
-        snapTurnProvider.enabled = true;
-
-        indicatorArrow.text = "<---";
-        turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() + "°";
+        ComfortManager.Instance.ToggleSpeedLines();
+        UpdateComfortMenu();
     }
-
-    public void SetCont()
-    {
-        continuousTurnProvider.enabled = true;
-        snapTurnProvider.enabled = false;
-
-        indicatorArrow.text = "--->";
-        turnSpeedIndicator.text = continuousTurnProvider.turnSpeed.ToString();
-    }
-
     public void Increment()
     {
-        if (snapTurnProvider.enabled)
-        {
-            snapValue = (snapValue + 1) % 8;
-            snapTurnProvider.turnAmount = snapValues[snapValue];
-            turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() + "°";
-        }
-        else
-        {
-            continuousTurnProvider.turnSpeed += 15;
-            continuousTurnProvider.turnSpeed = continuousTurnProvider.turnSpeed > 120 ? 120 : continuousTurnProvider.turnSpeed;
-            turnSpeedIndicator.text = continuousTurnProvider.turnSpeed.ToString();
-        }
+        ComfortManager.Instance.Increment();
+        UpdateComfortMenu();
     }
-
     public void Decrement()
     {
-        if (snapTurnProvider.enabled)
+        ComfortManager.Instance.Decrement();
+        UpdateComfortMenu();
+    }
+    public void UpdateComfortMenu()
+    {
+        if (GameManager.Instance.options.snapTurn)
         {
-            snapValue = (snapValue - 1);
-            snapValue = snapValue < 0 ? 7 : snapValue;
-            snapTurnProvider.turnAmount = snapValues[snapValue];
-            turnSpeedIndicator.text = snapTurnProvider.turnAmount.ToString() + "°";
+            turnProviderStatusText.text = "Snap\nAngle: " + ComfortManager.snapValues[GameManager.Instance.options.snapValue].ToString() + "°";
         }
         else
         {
-            continuousTurnProvider.turnSpeed -= 15;
-            continuousTurnProvider.turnSpeed = continuousTurnProvider.turnSpeed < 30 ? 30 : continuousTurnProvider.turnSpeed;
-            turnSpeedIndicator.text = continuousTurnProvider.turnSpeed.ToString();
+            turnProviderStatusText.text = "Continuous\nSpeed: " + GameManager.Instance.options.continuousTrunSpeed.ToString();
+        }
+
+        if (GameManager.Instance.options.useSpeedLines)
+        {
+            speedLinesText.text = "Speed Lines \u25A1";
+        }
+        else
+        {
+            speedLinesText.text = "Speed Lines X";
         }
     }
 }

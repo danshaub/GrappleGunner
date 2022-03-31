@@ -10,7 +10,9 @@ public class LevelManager : LocationManager
     protected override void Awake()
     {
         base.Awake();
+    }
 
+    private void Start() {
         if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
             GameManager.Instance.profile.unlockedLevels.Add(levelIndex);

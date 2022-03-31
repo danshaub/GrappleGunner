@@ -32,7 +32,7 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
         }
         oper.allowSceneActivation = true;
 
-        yield return new WaitForSeconds(Time.deltaTime * 2);
+        yield return new WaitForSeconds(Time.deltaTime * 3);
 
         PlayerManager.Instance.TeleportPlayer(LocationManager.Instance?.playerStartTransform);
 
