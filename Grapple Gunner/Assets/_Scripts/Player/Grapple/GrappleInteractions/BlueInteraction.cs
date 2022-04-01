@@ -91,12 +91,13 @@ public class BlueInteraction : I_GrappleInteraction
                 springForce = Vector3.ClampMagnitude(springForce, props.maxSpringForce);
             }
 
-            if(bluePoint.colliding){
+            if (bluePoint.colliding)
+            {
                 float forceAgainstCollision = Vector3.Dot(bluePoint.collisionNormal, springForce);
                 springForce = Vector3.ProjectOnPlane(springForce, bluePoint.collisionNormal);
                 springForce += bluePoint.collisionNormal * Mathf.Clamp(forceAgainstCollision, -props.maxPushbackForce, props.maxPushbackForce);
             }
-            
+
             hookRB.AddForce(springForce);
 
             //Find the rotation difference in eulers
@@ -128,14 +129,14 @@ public class BlueInteraction : I_GrappleInteraction
 
     public void OnReelIn(float reelStrength)
     {
-        if(bluePoint.storageLockedByCooldown) return;
+        if (bluePoint.storageLockedByCooldown) return;
         if (reelStrength > props.storeBlockInputThreshold)
         {
             if (buttonRealeased)
             {
                 if (blockIsStored)
                 {
-                    TakeOutBlock();
+                    TakeOutBlock(false);
                 }
                 else
                 {
@@ -152,8 +153,8 @@ public class BlueInteraction : I_GrappleInteraction
 
     private void StoreBlock()
     {
-        if(!bluePoint.canStore) return;
-        
+        if (!bluePoint.canStore) return;
+
         blockIsStored = true;
         GrappleManager.Instance.grappleLocked[gunIndex] = true;
         bluePoint.ShowMiniPoint(currentHoookPoint, props.miniPointLocalPosition, props.miniPointScale, props.interpolationValue);
@@ -163,23 +164,23 @@ public class BlueInteraction : I_GrappleInteraction
         bluePoint.gameObject.layer = 15;
     }
 
-    private void TakeOutBlock()
+    public void TakeOutBlock(bool force)
     {
-        if (!bluePoint.validTakeOutLocation) return;
-        blockIsStored = false;
-        GrappleManager.Instance.grappleLocked[gunIndex] = false;
-        bluePoint.HideMiniPoint();
-
-        hookRB.isKinematic = false;
-        hookRB.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-        bluePoint.gameObject.layer = 14;
-
-        if (attemptedRelease)
+        if (force || bluePoint.validTakeOutLocation)
         {
-            GrappleManager.Instance.ReleaseHook(gunIndex); ;
+            blockIsStored = false;
+            GrappleManager.Instance.grappleLocked[gunIndex] = false;
+            bluePoint.HideMiniPoint();
+
+            hookRB.isKinematic = false;
+            hookRB.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            bluePoint.gameObject.layer = 14;
+
+            if (attemptedRelease)
+            {
+                GrappleManager.Instance.ReleaseHook(gunIndex); ;
+            }
         }
-
-
     }
     public void OnReelOut()
     {
@@ -190,7 +191,7 @@ public class BlueInteraction : I_GrappleInteraction
         {
             if (bluePoint.validTakeOutLocation)
             {
-                TakeOutBlock();
+                TakeOutBlock(false);
             }
             else
             {
@@ -217,7 +218,7 @@ public class BlueInteraction : I_GrappleInteraction
     {
         if (blockIsStored)
         {
-            TakeOutBlock();
+            TakeOutBlock(true);
         }
 
         bluePoint.DestroyBlock();

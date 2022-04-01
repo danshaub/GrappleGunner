@@ -107,6 +107,10 @@ public class GrappleManager : Singleton<GrappleManager>
     {
         for (int i = 0; i < 2; i++)
         {
+            if (grappleInteractions[i]?.GetType() == typeof(BlueInteraction))
+            {
+                ((BlueInteraction)grappleInteractions[i]).TakeOutBlock(true);
+            }
             guns[i].EnableReticle();
             hooks[i].ReleaseHook(true);
         }

@@ -42,6 +42,8 @@ public class BluePoint : GrapplePoint
         storageLockedByCooldown = true;
         StopCoroutine(UnlockBlock());
         pointVisual.parent = transform;
+
+        GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, GrappleManager.Instance.blueOptions.maxHookVelocity * .75f);
         return;
     }
 
