@@ -27,6 +27,8 @@ public class RedInteraction : I_GrappleInteraction
 
         pointRB = grapplePoint.GetComponent<Rigidbody>();
 
+        GrappleManager.Instance.redConnected = true;
+
     }
     public void OnRelease()
     {
@@ -36,16 +38,20 @@ public class RedInteraction : I_GrappleInteraction
         PlayerManager.Instance.useGrapplePhysicsMaterial = false;
 
         playerRB.velocity = Vector3.zero;
+
+        GrappleManager.Instance.redConnected = false;
     }
     public void OnFixedUpdate()
     {
         PlayerManager.Instance.useGrapplePhysicsMaterial = true;
+        PlayerManager.Instance.allowMovement = false;
         ropeDirection = (currentGunTip.position - currentHookPoint.position).normalized;
         float distanceFromPoint = Vector3.Distance(currentGunTip.position, currentHookPoint.position);
 
         float multiplier = props.velocityCurve.Evaluate(distanceFromPoint);
         Vector3 targetVelocity = -ropeDirection * props.grappleSpeed * multiplier;
-        if(multiplier >= 1){
+        if (multiplier >= 1)
+        {
             targetVelocity *= (props.speedIncreaseMultiplier * speedIncreaseInput) + (1 - speedIncreaseInput);
         }
 
@@ -54,14 +60,27 @@ public class RedInteraction : I_GrappleInteraction
             targetVelocity = Vector3.zero;
         }
 
-        if(pointRB != null){
+        if (pointRB != null)
+        {
             targetVelocity += pointRB.velocity;
         }
 
-        float damper = multiplier >= 1 ? props.velocityDamper : 1;
-        damper = brake ? 1 : damper;
-        playerRB.velocity = Vector3.LerpUnclamped(playerRB.velocity, targetVelocity, damper);
-        playerRB.AddForce(PlayerManager.Instance.movementController.groundNormal * props.groundKick, ForceMode.VelocityChange);
+        float damper;
+        if (multiplier < 1)
+        {
+            damper = 1;
+        }
+        else if (brake)
+        {
+            damper = props.brakeDamper;
+        }
+        else
+        {
+            damper = props.velocityDamper;
+        }
+
+        playerRB.velocity = Vector3.Lerp(playerRB.velocity, targetVelocity, damper);
+        // playerRB.AddForce(PlayerManager.Instance.movementController.groundNormal * props.groundKick, ForceMode.VelocityChange);
 
         brake = false;
     }

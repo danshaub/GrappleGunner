@@ -165,13 +165,7 @@ public class PlayerInput : Singleton<PlayerInput>
 
     private void Debug(InputAction.CallbackContext context)
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#elif UNITY_WEBPLAYER
-            Application.OpenURL(webplayerQuitURL);
-#else
-            Application.Quit();
-#endif
+        GrappleManager.Instance.ForceReleaseHook();
     }
     #endregion
 }

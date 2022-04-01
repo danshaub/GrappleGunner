@@ -8,6 +8,7 @@ public class RedOptions : ScriptableObject
     public float grappleSpeed;
     public float groundKick;
     public float velocityDamper;
+    public float brakeDamper;
     public float speedIncreaseMultiplier;
     public AnimationCurve velocityCurve;
 }

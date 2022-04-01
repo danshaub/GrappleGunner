@@ -20,12 +20,26 @@ public class GrappleManager : Singleton<GrappleManager>
     public GrappleHook[] hooks = new GrappleHook[2];
     public I_GrappleInteraction[] grappleInteractions = new I_GrappleInteraction[2];
 
+    public bool redConnected = false;
+    public bool[] groundChecks { get; set; }
+    public bool groundCheck
+    {
+        get
+        {
+            foreach (bool check in groundChecks)
+            {
+                if (!check) return false;
+            }
+            return true;
+        }
+    }
     public bool[] grappleLocked;
     private bool grappleDisabled;
 
     private void Start()
     {
         grappleLocked = new bool[] { false, false };
+        groundChecks = new bool[] { true, true };
         grappleDisabled = false;
     }
 
@@ -40,7 +54,7 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void FireHook(int index)
     {
-        if(grappleDisabled) return;
+        if (grappleDisabled) return;
 
         if (!grappleLocked[index])
         {
@@ -55,7 +69,7 @@ public class GrappleManager : Singleton<GrappleManager>
 
     public void ReleaseHook(int index, bool instant)
     {
-        if(grappleDisabled) return;
+        if (grappleDisabled) return;
 
         if (!grappleLocked[index])
         {
@@ -81,7 +95,8 @@ public class GrappleManager : Singleton<GrappleManager>
             DisableReticle(0);
             DisableReticle(1);
         }
-        if(grappleDisabled && !isDisabled){
+        if (grappleDisabled && !isDisabled)
+        {
             EnableReticle(0);
             EnableReticle(1);
         }
@@ -92,6 +107,10 @@ public class GrappleManager : Singleton<GrappleManager>
     {
         for (int i = 0; i < 2; i++)
         {
+            if (grappleInteractions[i]?.GetType() == typeof(BlueInteraction))
+            {
+                ((BlueInteraction)grappleInteractions[i]).TakeOutBlock(true);
+            }
             guns[i].EnableReticle();
             hooks[i].ReleaseHook(true);
         }
