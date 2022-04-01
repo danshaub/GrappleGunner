@@ -61,7 +61,9 @@ public class OrangeInteraction : I_GrappleInteraction
         teleporting = true;
 
         GrappleManager.Instance.QueueTeleport(this, gunIndex);
-        // TODO: Start transition effect here
+
+        VFXManager.Instance.transitionSystem.SetParticleColor(props.particleColor);
+        VFXManager.Instance.transitionSystem.StartTransition();
     }
 
     public void Teleport()
@@ -100,5 +102,7 @@ public class OrangeInteraction : I_GrappleInteraction
         GrappleManager.Instance.ReleaseHook(gunIndex, true);
 
         teleporting = false;
+
+        VFXManager.Instance.transitionSystem.EndTransition();
     }
 }

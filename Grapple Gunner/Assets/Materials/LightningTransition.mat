@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lightening
-  m_Shader: {fileID: -6465566751694194690, guid: e78969854a1c89a4e8e6ffa6c476dac4, type: 3}
+  m_Name: LightningTransition
+  m_Shader: {fileID: -6465566751694194690, guid: 8eb07f0881dad664c918bcbfc1c1410f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 5000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -87,30 +87,46 @@ Material:
     - Vector1_c6603b9bc94e4898b2bddf1ee2d99166: 1
     - _AlphaClip: 0
     - _Blend: 0
+    - _BlendOp: 0
     - _BumpScale: 1
+    - _CameraFadingEnabled: 0
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ColorMode: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
+    - _DistortionStrength: 1
+    - _DistortionStrengthScaled: 0.1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _FlipbookBlending: 0
+    - _FlipbookMode: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Intensity: 0.5
     - _Metallic: 0
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _SampleGI: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _SoftParticlesEnabled: 0
+    - _SoftParticlesFarFadeDistance: 1
+    - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Tiling: 0.5
+    - _Tiling: 2.72
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -121,10 +137,13 @@ Material:
     - Vector4_d27c954a9e934952a7ce450f5ab9642b: {r: 14.8, g: 0, b: 0, a: 0}
     - Vector4_f63dd84c6abf4375b501c09b393e4802: {r: 38.9, g: 54.3, b: 70.8, a: 44.3}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 0.007843138, b: 2, a: 1}
+    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 0.4, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlashSpeed: {r: 49.1, g: 65.9, b: 56.5, a: 37.6}
-    - _PanSpeed: {r: 1.26, g: 5.99, b: 2.68, a: 4.24}
+    - _FlashSpeed: {r: 5, g: 4, b: 6, a: 3}
+    - _PanSpeed: {r: 2, g: 1, b: 2, a: 1}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7437932677935830746

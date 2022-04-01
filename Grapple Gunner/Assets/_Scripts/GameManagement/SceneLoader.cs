@@ -21,20 +21,23 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
             StartCoroutine(LoadLevelCoroutine(directory.GetLevelName(levelIndex), true));
         }
     }
-    public IEnumerator LoadLevelCoroutine(string levelName, bool useTransition)
+    private IEnumerator LoadLevelCoroutine(string levelName, bool useTransition)
     {
-
-        AsyncOperation oper = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
-        oper.allowSceneActivation = false;
-        while (oper.progress < 0.9f)
-        {
-            yield return new WaitForEndOfFrame();
+        if(useTransition){
+            VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
+            VFXManager.Instance.transitionSystem.StartTransition();
+            yield return new WaitForSeconds(1f);
         }
-        oper.allowSceneActivation = true;
+        PlayerManager.Instance.movementController.enabled = false;
+        SceneManager.LoadScene(levelName);
 
-        yield return new WaitForSeconds(Time.deltaTime * 2);
+        StartCoroutine(FinishLoadingLevel());
+    }
 
-        PlayerManager.Instance.TeleportPlayer(LevelManager.Instance?.playerStartTransform);
+    private IEnumerator FinishLoadingLevel(){
+        yield return new WaitForSeconds(0.5f);
+        PlayerManager.Instance.TeleportPlayer(LocationManager.Instance?.playerStartTransform);
 
+        PlayerManager.Instance.movementController.enabled = true;
     }
 }

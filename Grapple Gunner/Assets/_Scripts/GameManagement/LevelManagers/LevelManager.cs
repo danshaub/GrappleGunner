@@ -2,47 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : Singleton<LevelManager>
+public class LevelManager : LocationManager
 {
-    // TODO remove from this class and include in child classes
     public int levelIndex = -1;
-    public Transform playerStartTransform;
     public Transform playerDeathTransform;
 
-    public virtual void LoadLevel(int levelIndex)
+    protected override void Awake()
     {
-        SceneLoader.Instance.LoadLevel(levelIndex);
-    }
-    public virtual void LoadMainMenu()
-    {
-        SceneLoader.Instance.LoadMainMenu(true);
+        base.Awake();
     }
 
-    private void OnDrawGizmos()
-    {
-        if (playerStartTransform != null)
+    private void Start() {
+        if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawSphere(playerStartTransform.position, 0.2f);
-            Gizmos.DrawLine(playerStartTransform.position, (playerStartTransform.position + (0.4f * playerStartTransform.forward)));
+            GameManager.Instance.profile.unlockedLevels.Add(levelIndex);
+            GameManager.Instance.profile.unlockedLevels.Sort();
+            GameSaveManager.Instance.SaveGame();
         }
     }
 
-    public virtual void RespawnPlayer()
-    {
-        PlayerManager.Instance.TeleportPlayer(playerStartTransform);
-    }
-
-    public virtual void KillPlayer()
-    {
-        PlayerManager.Instance.TeleportPlayer(playerDeathTransform);
-    }
-
-    // TODO: Make abstract and implement in subsequent levels
-    public virtual void LoadNextLevel()
+    public override void LoadNextLevel()
     {
         if (levelIndex < 0) return;
 
         SceneLoader.Instance.LoadLevel((levelIndex + 1) % SceneLoader.Instance.directory.levelNames.Count);
+    }
+
+    public override void RespawnPlayer()
+    {
+        VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
+        VFXManager.Instance.transitionSystem.StartTransition();
+        PlayerManager.Instance.TeleportAfter(playerStartTransform, 0.25f);
+    }
+
+    public override void KillPlayer()
+    {
+        VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.deathTransitionColor);
+        VFXManager.Instance.transitionSystem.StartTransition();
+        PlayerManager.Instance.TeleportAfter(playerDeathTransform, 0.1f);
     }
 }

@@ -11,7 +11,7 @@ public class PlayerManager : Singleton<PlayerManager>
     public PlayerMovementController movementController;
     public PlayerGrappleController grappleController;
     public bool allowMovement = true;
-    public bool grounded {get {return movementController.isGrounded;} private set {} }
+    public bool grounded { get { return movementController.isGrounded; } private set { } }
     public bool useGrapplePhysicsMaterial = false;
     public bool useFriction = true;
     public bool useGravity = true;
@@ -31,17 +31,29 @@ public class PlayerManager : Singleton<PlayerManager>
         grappleController = player.GetComponent<PlayerGrappleController>();
     }
 
-    private void Start() {
+    private void Start()
+    {
         ResetView();
 
         menu.SetActive(false);
     }
 
-    public void ResetView(){
+    public void ResetView()
+    {
         // subsystem.TryRecenter();
     }
 
-    public void TeleportPlayer(Transform tpTransform){
+    public void TeleportAfter(Transform tpTransform, float time){
+        StartCoroutine(TeleportCoroutine(tpTransform, time));
+    }
+
+    private IEnumerator TeleportCoroutine(Transform tpTransform, float time){
+        yield return new WaitForSeconds(time);
+        TeleportPlayer(tpTransform);
+    }
+
+    public void TeleportPlayer(Transform tpTransform)
+    {
         ResetView();
 
         GrappleManager.Instance.ForceReleaseHook();
@@ -50,5 +62,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
         player.transform.position = tpTransform.position - playerXZLocalPosistion;
         player.transform.rotation = tpTransform.rotation;
+
+        VFXManager.Instance.transitionSystem.EndTransition();
     }
 }

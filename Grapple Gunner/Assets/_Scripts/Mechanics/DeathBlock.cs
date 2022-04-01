@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DeathBlock : MonoBehaviour
 {
-    public Transform deathTeleportPoint;
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -14,6 +13,6 @@ public class DeathBlock : MonoBehaviour
     }
 
     public void KillPlayer(){
-        PlayerManager.Instance.TeleportPlayer(deathTeleportPoint);
+        LevelManager.Instance.KillPlayer();
     }
 }

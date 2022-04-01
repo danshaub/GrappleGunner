@@ -5,9 +5,9 @@ using UnityEngine;
 public class RespawnMenu : MonoBehaviour
 {
     public void Respawn(){
-        LevelManager.Instance.RespawnPlayer();
+        LocationManager.Instance.RespawnPlayer();
     }
     public void ReturnToMainMenu(){
-        LevelManager.Instance.LoadMainMenu();
+        LocationManager.Instance.LoadMainMenu();
     }
 }
