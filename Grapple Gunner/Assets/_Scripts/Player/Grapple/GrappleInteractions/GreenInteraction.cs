@@ -10,7 +10,7 @@ public class GreenInteraction : I_GrappleInteraction
     private Rigidbody pointRB;
     private Transform currentGunTip;
     private Transform currentHookPoint;
-    private int currentIndex;
+    private int gunIndex;
     private float reelInput;
     private bool reelingIn;
     private bool reelingOut;
@@ -32,7 +32,7 @@ public class GreenInteraction : I_GrappleInteraction
         playerRB = PlayerManager.Instance.movementController.rigidbody;
         currentGunTip = gunTip;
         currentHookPoint = hookPoint;
-        currentIndex = index;
+        gunIndex = index;
 
         greenPoint = (GreenPoint)grapplePoint;
 
@@ -61,10 +61,13 @@ public class GreenInteraction : I_GrappleInteraction
     {
         numGreenHooks--;
         PlayerManager.Instance.useGrapplePhysicsMaterial = false;
+        GrappleManager.Instance.groundChecks[gunIndex] = true;
         Object.Destroy(joint);
     }
     public void OnFixedUpdate()
     {
+        GrappleManager.Instance.groundChecks[gunIndex] = true;
+
         PlayerManager.Instance.useGrapplePhysicsMaterial = true;
 
         joint.connectedAnchor = currentHookPoint.position;
@@ -117,6 +120,10 @@ public class GreenInteraction : I_GrappleInteraction
     {
         reelInput = reelStrength;
         reelingIn = reelInput > props.reelInDeadZone;
+
+        if(reelingIn){
+            GrappleManager.Instance.groundChecks[gunIndex] = false;
+        }
     }
     public void OnReelOut()
     {
@@ -129,6 +136,7 @@ public class GreenInteraction : I_GrappleInteraction
         float swingMagnitude = Vector3.Dot(swingVelocity, ropeDirection);
         if (swingMagnitude > props.swingInputThreshold)
         {
+            GrappleManager.Instance.groundChecks[gunIndex] = false;
             swingMagnitude = Mathf.Clamp(swingMagnitude, props.swingInputThreshold, props.maxSwingVelocity);
             playerRB.AddForce(swingMagnitude * props.swingForce * ForceMultiplier() * DoubleGreenMultiplier() * (-ropeDirection));
         }

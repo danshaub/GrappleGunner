@@ -32,9 +32,8 @@ public class PlayerMovementController : MonoBehaviour
 
         HandleGround();
         if (PlayerManager.Instance.useGravity) ApplyGravity();
-        ApplyFriction();
 
-        if (PlayerManager.Instance.allowMovement) Move();
+        if (!GrappleManager.Instance.redConnected && PlayerManager.Instance.allowMovement) Move();
     }
 
     // Resets player collider to reflect the current location of the headset.
@@ -75,7 +74,8 @@ public class PlayerMovementController : MonoBehaviour
             {
                 groundVelocity = groundBody.velocity;
             }
-            else{
+            else
+            {
                 groundVelocity = Vector3.zero;
             }
 
@@ -89,21 +89,34 @@ public class PlayerMovementController : MonoBehaviour
 
             float springForce = (rideHeightDifference * options.rideSpringStrength) - (relativeVelocity * options.rideSpringDamper);
 
-            if (!jumpCooldown)
+            if (GrappleManager.Instance.groundCheck)
             {
-                rigidbody.AddForce(Vector3.down * springForce);
-            }
+                if (!jumpCooldown)
+                {
+                    if(GrappleManager.Instance.redConnected){
+                        springForce = Mathf.Clamp(springForce, float.MinValue, 0f);
+                    }
+                    rigidbody.AddForce(Vector3.down * springForce);
+                }
 
-            if (groundBody != null)
-            {
-                groundBody.AddForceAtPosition(Vector3.down * -springForce * .1f, hit.point);
+                if (groundBody != null)
+                {
+                    groundBody.AddForceAtPosition(Vector3.down * -springForce * .1f, hit.point);
+                }
+
+                if (!GrappleManager.Instance.redConnected && isGrounded)
+                {
+                    rigidbody.AddForce((groundVelocity - rigidbody.velocity) * options.frictionCoefficient, ForceMode.Force);
+                }
             }
 
             DisablePlayerMovement dpmGround = hit.transform.gameObject.GetComponent<DisablePlayerMovement>();
-            if(dpmGround != null){
+            if (dpmGround != null)
+            {
                 PlayerManager.Instance.allowMovement = !dpmGround.active;
             }
-            else{
+            else
+            {
                 PlayerManager.Instance.allowMovement = true;
             }
 
@@ -134,7 +147,8 @@ public class PlayerMovementController : MonoBehaviour
             {
                 MenuManager.Instance.menuLocked = true;
             }
-            else{
+            else
+            {
                 MenuManager.Instance.menuLocked = false;
             }
         }
@@ -159,7 +173,8 @@ public class PlayerMovementController : MonoBehaviour
             playerCollider.material = options.airborneMaterial;
         }
 
-        if(transform.parent?.GetComponent<Rigidbody>() != null){
+        if (transform.parent?.GetComponent<Rigidbody>() != null)
+        {
         }
 
     }
@@ -174,10 +189,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void ApplyFriction()
     {
-        if (isGrounded)
-        {
-            rigidbody.AddForce((groundVelocity - rigidbody.velocity) * options.frictionCoefficient, ForceMode.Force);
-        }
+
     }
 
 

@@ -15,6 +15,7 @@ MonoBehaviour:
   grappleSpeed: 20
   groundKick: 2
   velocityDamper: 0.06
+  brakeDamper: 0.1
   speedIncreaseMultiplier: 4
   velocityCurve:
     serializedVersion: 2

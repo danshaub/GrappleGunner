@@ -27,6 +27,8 @@ public class RedInteraction : I_GrappleInteraction
 
         pointRB = grapplePoint.GetComponent<Rigidbody>();
 
+        GrappleManager.Instance.redConnected = true;
+
     }
     public void OnRelease()
     {
@@ -36,10 +38,13 @@ public class RedInteraction : I_GrappleInteraction
         PlayerManager.Instance.useGrapplePhysicsMaterial = false;
 
         playerRB.velocity = Vector3.zero;
+
+        GrappleManager.Instance.redConnected = false;
     }
     public void OnFixedUpdate()
     {
         PlayerManager.Instance.useGrapplePhysicsMaterial = true;
+        PlayerManager.Instance.allowMovement = false;
         ropeDirection = (currentGunTip.position - currentHookPoint.position).normalized;
         float distanceFromPoint = Vector3.Distance(currentGunTip.position, currentHookPoint.position);
 
@@ -59,7 +64,7 @@ public class RedInteraction : I_GrappleInteraction
         {
             targetVelocity += pointRB.velocity;
         }
-        
+
         float damper;
         if (multiplier < 1)
         {
@@ -75,7 +80,7 @@ public class RedInteraction : I_GrappleInteraction
         }
 
         playerRB.velocity = Vector3.Lerp(playerRB.velocity, targetVelocity, damper);
-        playerRB.AddForce(PlayerManager.Instance.movementController.groundNormal * props.groundKick, ForceMode.VelocityChange);
+        // playerRB.AddForce(PlayerManager.Instance.movementController.groundNormal * props.groundKick, ForceMode.VelocityChange);
 
         brake = false;
     }
