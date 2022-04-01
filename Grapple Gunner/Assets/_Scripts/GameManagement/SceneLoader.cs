@@ -23,6 +23,11 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
     }
     public IEnumerator LoadLevelCoroutine(string levelName, bool useTransition)
     {
+        if(useTransition){
+            VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
+            VFXManager.Instance.transitionSystem.StartTransition();
+            yield return new WaitForSeconds(1f);
+        }
         PlayerManager.Instance.movementController.enabled = false;
         AsyncOperation oper = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
         oper.allowSceneActivation = false;
@@ -32,7 +37,10 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
         }
         oper.allowSceneActivation = true;
 
-        yield return new WaitForSeconds(Time.deltaTime * 3);
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
 
         PlayerManager.Instance.TeleportPlayer(LocationManager.Instance?.playerStartTransform);
         PlayerManager.Instance.movementController.enabled = true;

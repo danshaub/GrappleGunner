@@ -93,4 +93,14 @@ public class Developer
     {
         GameSaveManager.Instance?.ResetFile();
     }
+    [MenuItem("Developer/Transition/Start")]
+    public static void StartTransition()
+    {
+        VFXManager.Instance?.transitionSystem.StartTransition();
+    }
+    [MenuItem("Developer/Transition/End")]
+    public static void EndTransition()
+    {
+        VFXManager.Instance?.transitionSystem.EndTransition();
+    }
 }

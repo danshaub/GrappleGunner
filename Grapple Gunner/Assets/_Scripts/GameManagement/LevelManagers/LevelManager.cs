@@ -30,11 +30,15 @@ public class LevelManager : LocationManager
 
     public override void RespawnPlayer()
     {
-        PlayerManager.Instance.TeleportPlayer(playerStartTransform);
+        VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
+        VFXManager.Instance.transitionSystem.StartTransition();
+        PlayerManager.Instance.TeleportAfter(playerStartTransform, 0.25f);
     }
 
     public override void KillPlayer()
     {
-        PlayerManager.Instance.TeleportPlayer(playerDeathTransform);
+        VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.deathTransitionColor);
+        VFXManager.Instance.transitionSystem.StartTransition();
+        PlayerManager.Instance.TeleportAfter(playerDeathTransform, 0.1f);
     }
 }
