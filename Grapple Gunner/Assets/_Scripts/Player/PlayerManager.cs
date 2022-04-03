@@ -44,6 +44,7 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     public void TeleportAfter(Transform tpTransform, float time){
+        movementController.rigidbody.velocity = Vector3.zero;
         StartCoroutine(TeleportCoroutine(tpTransform, time));
     }
 

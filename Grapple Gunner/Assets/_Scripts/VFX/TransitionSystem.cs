@@ -42,12 +42,16 @@ public class TransitionSystem : MonoBehaviour
 
     private IEnumerator EndTransitionCoroutine()
     {
-        fadeInOut.SetTrigger("FadeOut");
-        while (!transitionParticles.isPaused)
+        while (useParticles && !transitionParticles.isPaused)
         {
-            Debug.Log("Waiting for stopped");
             yield return new WaitForEndOfFrame();
         }
-        transitionParticles.Play();
+
+        if (useParticles)
+        {
+            transitionParticles.Play();
+        }
+
+        fadeInOut.SetTrigger("FadeOut");
     }
 }

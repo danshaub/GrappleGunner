@@ -7,38 +7,46 @@ public class Door : MonoBehaviour
     public Transform doorTransform;
     public Transform openTransform;
     public Transform closedTransform;
-    private Vector3 targetPosition;
     public float speed;
-    public bool startClosed = true;
+    public bool closed = true;
     // Start is called before the first frame update
     void Start()
     {
-        if (startClosed)
+        if (closed)
         {
             doorTransform.localPosition = closedTransform.localPosition;
-            targetPosition = closedTransform.localPosition;
         }
         else
         {
             doorTransform.localPosition = openTransform.localPosition;
-            targetPosition = openTransform.localPosition;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        doorTransform.localPosition = Vector3.Lerp(doorTransform.localPosition, targetPosition, speed * Time.deltaTime);
+        if (closed)
+        {
+            doorTransform.localPosition = Vector3.Lerp(doorTransform.localPosition, closedTransform.localPosition, speed * Time.deltaTime);
+        }
+        else
+        {
+            doorTransform.localPosition = Vector3.Lerp(doorTransform.localPosition, openTransform.localPosition, speed * Time.deltaTime);
+        }
     }
 
     public void Open()
     {
-        targetPosition = openTransform.localPosition;
+        closed = false;
     }
 
     public void Close()
     {
-        targetPosition = closedTransform.localPosition;
+        closed = true;
+    }
+
+    public void Toggle(){
+        closed = !closed;
     }
 
     private void OnDrawGizmos()

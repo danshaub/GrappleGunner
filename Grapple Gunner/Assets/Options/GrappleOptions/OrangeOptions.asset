@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe755f1ffb32d04f9cfd5d4fb45bf55, type: 3}
   m_Name: OrangeOptions
   m_EditorClassIdentifier: 
-  teleportTransitionTime: 0.02
+  teleportTransitionTime: 0.2
   reelInThreshold: 0.5
+  particleColor: {r: 1, g: 0.4, b: 0, a: 1}

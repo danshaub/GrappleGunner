@@ -231,7 +231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &9576461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,7 +1265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &85102324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &106672533
 GameObject:
   m_ObjectHideFlags: 0
@@ -4648,7 +4645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &465012179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6372,9 +6368,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363cd3bf1c60adf438785a4edb72cb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 1
   playerStartTransform: {fileID: 800130476}
+  levelIndex: 1
   playerDeathTransform: {fileID: 1945280893}
+  playerRespawnTransform: {fileID: 0}
+  movingObjects: []
 --- !u!4 &574115888
 Transform:
   m_ObjectHideFlags: 0
@@ -9259,7 +9257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &823187702
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10841,7 +10838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &930389242
 GameObject:
   m_ObjectHideFlags: 0
@@ -14347,7 +14343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1220636898
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15983,7 +15978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1416274790
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16203,7 +16197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1427081527
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16312,7 +16305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!135 &1428416992
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17022,7 +17014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &1464632163
 GameObject:
   m_ObjectHideFlags: 0
@@ -19232,7 +19223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &1694425435
 GameObject:
   m_ObjectHideFlags: 0
@@ -20256,7 +20246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &1855233196
 GameObject:
   m_ObjectHideFlags: 0
@@ -23766,7 +23755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 1945280893}
 --- !u!1 &2090341179
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ public class OrangePoint : GrapplePoint
     private bool hookConnected = false;
     private int remainingUses;
 
+    private OrangeInfo savedInfo;
+
     override protected void Awake()
     {
         base.Awake();
@@ -57,7 +59,7 @@ public class OrangePoint : GrapplePoint
     private void CalculatePlayerTargetCenter()
     {
         // Set collider Height and center
-        playerTargetCollider.height = PlayerManager.Instance.movementController.playerCollider.height + 
+        playerTargetCollider.height = PlayerManager.Instance.movementController.playerCollider.height +
                                       PlayerManager.Instance.movementController.options.rideHeight;
         playerTargetCollider.center = Vector3.up * playerTargetCollider.height * 0.5f;
 
@@ -141,6 +143,28 @@ public class OrangePoint : GrapplePoint
         remainingUses = numberUses;
         type = GrappleType.Orange;
         GetComponent<MeshRenderer>().sharedMaterial = originalMaterial;
+    }
+
+    public void SaveState()
+    {
+        savedInfo = new OrangeInfo();
+        savedInfo.remainingUses = remainingUses;
+        savedInfo.material = GetComponent<MeshRenderer>().sharedMaterial;
+        savedInfo.type = type;
+    }
+
+    public void LoadState()
+    {
+        remainingUses = savedInfo.remainingUses;
+        GetComponent<MeshRenderer>().sharedMaterial = savedInfo.material;
+        type = savedInfo.type;
+    }
+
+    private struct OrangeInfo
+    {
+        public int remainingUses;
+        public Material material;
+        public GrapplePoint.GrappleType type;
     }
 
 #if UNITY_EDITOR
