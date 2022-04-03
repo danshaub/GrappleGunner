@@ -150,18 +150,21 @@ public class OrangePoint : GrapplePoint
         savedInfo = new OrangeInfo();
         savedInfo.remainingUses = remainingUses;
         savedInfo.material = GetComponent<MeshRenderer>().sharedMaterial;
+        savedInfo.type = type;
     }
 
     public void LoadState()
     {
         remainingUses = savedInfo.remainingUses;
         GetComponent<MeshRenderer>().sharedMaterial = savedInfo.material;
+        type = savedInfo.type;
     }
 
     private struct OrangeInfo
     {
         public int remainingUses;
         public Material material;
+        public GrapplePoint.GrappleType type;
     }
 
 #if UNITY_EDITOR

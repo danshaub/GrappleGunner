@@ -1156,7 +1156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &42488611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1775,7 +1774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &61994231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6178,7 +6176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &296299276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13815,7 +13812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &640391019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15682,7 +15678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &728441308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17052,7 +17047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &804758777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20367,7 +20361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &952898869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20670,7 +20663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &963592170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24806,7 +24798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &1129155362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26222,7 +26213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &1211523768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29174,7 +29164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &1394953664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29887,7 +29876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &1432311356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69611,7 +69599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTeleportPoint: {fileID: 34732302}
 --- !u!65 &1823175369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77067,9 +77054,234 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363cd3bf1c60adf438785a4edb72cb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 3
   playerStartTransform: {fileID: 1036294109870656891}
+  levelIndex: 3
   playerDeathTransform: {fileID: 34732302}
+  playerRespawnTransform: {fileID: 0}
+  movingObjects:
+  - {fileID: 586413913}
+  - {fileID: 1023656863}
+  - {fileID: 1630047990}
+  - {fileID: 701894845}
+  - {fileID: 504342124}
+  - {fileID: 958479519}
+  - {fileID: 132622502}
+  - {fileID: 1996541395}
+  - {fileID: 1003397703}
+  - {fileID: 1994438290}
+  - {fileID: 1168970958}
+  - {fileID: 314890336}
+  - {fileID: 655900727}
+  - {fileID: 855453092}
+  - {fileID: 1856636754}
+  - {fileID: 130178800}
+  - {fileID: 831659343}
+  - {fileID: 1444357799}
+  - {fileID: 1166947440}
+  - {fileID: 1274437923}
+  - {fileID: 447411496}
+  - {fileID: 636528634}
+  - {fileID: 331153467}
+  - {fileID: 662801981}
+  - {fileID: 460219069}
+  - {fileID: 1294619547}
+  - {fileID: 589513218}
+  - {fileID: 1620099114}
+  - {fileID: 974428223}
+  - {fileID: 144683294}
+  - {fileID: 612695811}
+  - {fileID: 368590271}
+  - {fileID: 1108590659}
+  - {fileID: 1690134228}
+  - {fileID: 817723239}
+  - {fileID: 2062036935}
+  - {fileID: 2023462911}
+  - {fileID: 405637567}
+  - {fileID: 248960031}
+  - {fileID: 174670892}
+  - {fileID: 59133873}
+  - {fileID: 774675390}
+  - {fileID: 1651393938}
+  - {fileID: 1617128131}
+  - {fileID: 926360493}
+  - {fileID: 1880985472}
+  - {fileID: 1947093265}
+  - {fileID: 600279073}
+  - {fileID: 1334830861}
+  - {fileID: 486218730}
+  - {fileID: 1833864674}
+  - {fileID: 876416354}
+  - {fileID: 261408540}
+  - {fileID: 949938287}
+  - {fileID: 420173647}
+  - {fileID: 923844106}
+  - {fileID: 873628713}
+  - {fileID: 428940592}
+  - {fileID: 1463187329}
+  - {fileID: 659811269}
+  - {fileID: 1827612474}
+  - {fileID: 418641471}
+  - {fileID: 1622887654}
+  - {fileID: 2074020893}
+  - {fileID: 376847379}
+  - {fileID: 44494708}
+  - {fileID: 1901939059}
+  - {fileID: 856798179}
+  - {fileID: 1055579593}
+  - {fileID: 705608924}
+  - {fileID: 33885344}
+  - {fileID: 978678584}
+  - {fileID: 2066362662}
+  - {fileID: 1982358599}
+  - {fileID: 115872275}
+  - {fileID: 1413150533}
+  - {fileID: 438764255}
+  - {fileID: 1581535001}
+  - {fileID: 1698710336}
+  - {fileID: 2095023578}
+  - {fileID: 1210204310}
+  - {fileID: 1737410582}
+  - {fileID: 2052669142}
+  - {fileID: 618584013}
+  - {fileID: 2099329456}
+  - {fileID: 79119181}
+  - {fileID: 1932084316}
+  - {fileID: 1074429365}
+  - {fileID: 1253615304}
+  - {fileID: 368347227}
+  - {fileID: 475233865}
+  - {fileID: 98179743}
+  - {fileID: 1176878366}
+  - {fileID: 1521407694}
+  - {fileID: 1575697809}
+  - {fileID: 1595729270}
+  - {fileID: 496903062}
+  - {fileID: 1764729151}
+  - {fileID: 296974595}
+  - {fileID: 1254147519}
+  - {fileID: 1387287706}
+  - {fileID: 1650687323}
+  - {fileID: 711514194}
+  - {fileID: 2028991852}
+  - {fileID: 2051443949}
+  - {fileID: 893658491}
+  - {fileID: 159041994}
+  - {fileID: 483751332}
+  - {fileID: 471995232}
+  - {fileID: 784571574}
+  - {fileID: 1066742377}
+  - {fileID: 1860432790}
+  - {fileID: 188816023}
+  - {fileID: 208257083}
+  - {fileID: 657148536}
+  - {fileID: 1947458843}
+  - {fileID: 1517339388}
+  - {fileID: 1841941356}
+  - {fileID: 1907633299}
+  - {fileID: 1486867719}
+  - {fileID: 175298416}
+  - {fileID: 2059412194}
+  - {fileID: 1354998874}
+  - {fileID: 1849637389}
+  - {fileID: 1551319680}
+  - {fileID: 1386728570}
+  - {fileID: 1200982173}
+  - {fileID: 1684663867}
+  - {fileID: 517729399}
+  - {fileID: 1765735465}
+  - {fileID: 1639800927}
+  - {fileID: 2110259622}
+  - {fileID: 320197156}
+  - {fileID: 1783176669}
+  - {fileID: 1063195256}
+  - {fileID: 1746705800}
+  - {fileID: 614468076}
+  - {fileID: 1947857911}
+  - {fileID: 809819467}
+  - {fileID: 959310619}
+  - {fileID: 1068162711}
+  - {fileID: 775573028}
+  - {fileID: 384284438}
+  - {fileID: 1424028961}
+  - {fileID: 1073160294}
+  - {fileID: 1781902246}
+  - {fileID: 820562079}
+  - {fileID: 2135936228}
+  - {fileID: 512587223}
+  - {fileID: 590382205}
+  - {fileID: 1846985580}
+  - {fileID: 2097441991}
+  - {fileID: 665931265}
+  - {fileID: 449398381}
+  - {fileID: 591118967}
+  - {fileID: 727305715}
+  - {fileID: 1776675193}
+  - {fileID: 1367686174}
+  - {fileID: 1067343061}
+  - {fileID: 1308880081}
+  - {fileID: 1971321529}
+  - {fileID: 1369226782}
+  - {fileID: 486398413}
+  - {fileID: 1030686555}
+  - {fileID: 514472212}
+  - {fileID: 937722574}
+  - {fileID: 405804128}
+  - {fileID: 974878188}
+  - {fileID: 492365022}
+  - {fileID: 575929250}
+  - {fileID: 2090173106}
+  - {fileID: 1223634015}
+  - {fileID: 835701014}
+  - {fileID: 584942645}
+  - {fileID: 2044646973}
+  - {fileID: 589717173}
+  - {fileID: 16862714}
+  - {fileID: 173318124}
+  - {fileID: 1625699277}
+  - {fileID: 1208186822}
+  - {fileID: 890521958}
+  - {fileID: 695560779}
+  - {fileID: 951569426}
+  - {fileID: 341841953}
+  - {fileID: 1181013357}
+  - {fileID: 1575887007}
+  - {fileID: 1110970326}
+  - {fileID: 122276918}
+  - {fileID: 1212901232}
+  - {fileID: 570742329}
+  - {fileID: 2119839503}
+  - {fileID: 1083001931}
+  - {fileID: 315443592}
+  - {fileID: 136507677}
+  - {fileID: 947534148}
+  - {fileID: 260946421}
+  - {fileID: 2039240154}
+  - {fileID: 1279372851}
+  - {fileID: 2032858070}
+  - {fileID: 2095255027}
+  - {fileID: 1789220695}
+  - {fileID: 19188231}
+  - {fileID: 505236535}
+  - {fileID: 1102396623}
+  - {fileID: 1247028831}
+  - {fileID: 218325990}
+  - {fileID: 1617046398}
+  - {fileID: 1738979083}
+  - {fileID: 29832888}
+  - {fileID: 569078322}
+  - {fileID: 1532803400}
+  - {fileID: 1541565266}
+  - {fileID: 1040926738}
+  - {fileID: 230607807}
+  - {fileID: 1730877227}
+  - {fileID: 1911751194}
+  - {fileID: 1452984478}
+  - {fileID: 1178952366}
+  - {fileID: 1618693740}
+  - {fileID: 1859069184}
+  - {fileID: 1708708189}
+  - {fileID: 1657802170}
+  - {fileID: 66808004}
 --- !u!1 &1036294109643593977
 GameObject:
   m_ObjectHideFlags: 0
