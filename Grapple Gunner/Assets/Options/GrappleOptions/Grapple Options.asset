@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swingVelocityThreshold: 0
   reelDeadZone: 0.1
-  hookTravelSpeed: 300
+  hookTravelSpeed: 400
   retractInterpolateValue: 0.75
   returnSnapDistance: 0.5
   sphereCastRadius: 0.15

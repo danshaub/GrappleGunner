@@ -1,5 +1,6 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
@@ -18,6 +19,7 @@ public class PlayerMovementController : MonoBehaviour
     private Rigidbody groundBody;
     private Vector3 groundVelocity = Vector3.zero;
     public CapsuleCollider playerCollider { get; private set; }
+    public List<Collider> gunColliders;
 
     private void Awake()
     {
@@ -93,7 +95,8 @@ public class PlayerMovementController : MonoBehaviour
             {
                 if (!jumpCooldown)
                 {
-                    if(GrappleManager.Instance.redConnected){
+                    if (GrappleManager.Instance.redConnected)
+                    {
                         springForce = Mathf.Clamp(springForce, float.MinValue, 0f);
                     }
                     rigidbody.AddForce(Vector3.down * springForce);
@@ -164,14 +167,26 @@ public class PlayerMovementController : MonoBehaviour
         if (PlayerManager.Instance.useGrapplePhysicsMaterial)
         {
             playerCollider.material = options.grappleMaterial;
+            foreach (Collider c in gunColliders)
+            {
+                c.material = options.grappleMaterial;
+            }
         }
         else if (isGrounded)
         {
             playerCollider.material = options.groundedMaterial;
+            foreach (Collider c in gunColliders)
+            {
+                c.material = options.groundedMaterial;
+            }
         }
         else
         {
             playerCollider.material = options.airborneMaterial;
+            foreach (Collider c in gunColliders)
+            {
+                c.material = options.airborneMaterial;
+            }
         }
 
         if (transform.parent?.GetComponent<Rigidbody>() != null)

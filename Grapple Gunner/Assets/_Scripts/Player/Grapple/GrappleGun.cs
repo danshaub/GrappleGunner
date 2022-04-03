@@ -19,10 +19,12 @@ public class GrappleGun : MonoBehaviour
 
     public void DrawRope()
     {
-        if(hookPoint.gameObject.activeInHierarchy){
+        if (hookPoint.gameObject.activeInHierarchy)
+        {
             lightning.gameObject.SetActive(true);
         }
-        else{
+        else
+        {
             lightning.gameObject.SetActive(false);
         }
     }
@@ -52,8 +54,9 @@ public class GrappleGun : MonoBehaviour
         {
             hitMenu = hit.transform.gameObject.layer == 11;
 
-            if (hit.transform.CompareTag("Hookable"))
+            try
             {
+
                 GrapplePoint.GrappleType type = hit.transform.gameObject.GetComponent<GrapplePoint>().type;
                 reticleMaterial.SetFloat("_Transparency", 1f);
                 switch (type)
@@ -78,7 +81,7 @@ public class GrappleGun : MonoBehaviour
                         break;
                 }
             }
-            else
+            catch
             {
                 reticleMaterial.SetFloat("_Transparency", GrappleManager.Instance.options.disabledTransparency);
                 reticleMaterial.SetTexture("_MainTex", GrappleManager.Instance.options.reticleManager.disabled);

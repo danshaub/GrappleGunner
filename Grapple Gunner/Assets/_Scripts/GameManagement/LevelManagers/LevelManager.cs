@@ -25,7 +25,7 @@ public class LevelManager : LocationManager
             GameSaveManager.Instance.SaveGame();
         }
 
-        playerRespawnTransform = playerStartTransform;
+        MakeCheckpoint(playerStartTransform);
     }
 
     public void MakeCheckpoint(Transform respawnTransform)

@@ -5403,7 +5403,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12026515619419131}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.375, y: 0.32475957, z: 0.05196154}
@@ -12676,6 +12676,7 @@ GameObject:
   - component: {fileID: 1103887917603293140}
   - component: {fileID: 5402184334928468531}
   - component: {fileID: 6315749456278394924}
+  - component: {fileID: 7454332231701588815}
   m_Layer: 3
   m_Name: GunModel
   m_TagString: Untagged
@@ -12746,6 +12747,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7454332231701588815
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208607032874029617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.010000003
+  m_Height: 0.042709317
+  m_Direction: 1
+  m_Center: {x: 1.0327021e-14, y: 0.011354678, z: -0.000000002030374}
 --- !u!1 &2497610778079015312
 GameObject:
   m_ObjectHideFlags: 0
@@ -13726,7 +13741,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914717043003645019}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.375, y: 0.32475957, z: 0.05196154}
@@ -17900,6 +17915,7 @@ MonoBehaviour:
   hooks:
   - {fileID: 2914717043450199285}
   - {fileID: 2914717043379540817}
+  redConnected: 0
   grappleLocked: 
 --- !u!1 &6195209677155400681
 GameObject:
@@ -19953,6 +19969,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   options: {fileID: 11400000, guid: 6843017e1d79e734496b6f3f57132513, type: 2}
   headTransform: {fileID: 7382778893807782159}
+  gunColliders:
+  - {fileID: 7454332231701588815}
+  - {fileID: 4771638992799270995}
+  - {fileID: 2914717043003645016}
+  - {fileID: 12026515619419128}
 --- !u!54 &7382778893730682561
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19962,8 +19983,8 @@ Rigidbody:
   m_GameObject: {fileID: 7382778893730682424}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
+  m_Drag: 0.1
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -22039,6 +22060,7 @@ GameObject:
   - component: {fileID: 1292873597946935592}
   - component: {fileID: 7198744112158662928}
   - component: {fileID: 2249438586870817451}
+  - component: {fileID: 4771638992799270995}
   m_Layer: 3
   m_Name: GunModel
   m_TagString: Untagged
@@ -22109,6 +22131,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4771638992799270995
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907090488972967611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.010000003
+  m_Height: 0.042709317
+  m_Direction: 1
+  m_Center: {x: 1.0327021e-14, y: 0.011354678, z: -0.000000002030374}
 --- !u!1 &9000321612984163775
 GameObject:
   m_ObjectHideFlags: 0
