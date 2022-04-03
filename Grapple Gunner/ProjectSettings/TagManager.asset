@@ -27,8 +27,8 @@ TagManager:
   - BlockDestroyer
   - BlockBarrier
   - BlockVisual
-  - 
-  - 
+  - PressurePlates
+  - PressurePlateConstraint
   - 
   - 
   - 
