@@ -25,7 +25,7 @@ public class LevelManager : LocationManager
             GameSaveManager.Instance.SaveGame();
         }
 
-
+        playerRespawnTransform = playerStartTransform;
     }
 
     public void MakeCheckpoint(Transform respawnTransform)
@@ -54,7 +54,7 @@ public class LevelManager : LocationManager
     {
         VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
         VFXManager.Instance.transitionSystem.StartTransition();
-        PlayerManager.Instance.TeleportAfter(playerStartTransform, 0.25f);
+        PlayerManager.Instance.TeleportAfter(playerRespawnTransform, 0.25f);
     }
 
     public override void KillPlayer()
@@ -69,6 +69,6 @@ public class LevelManager : LocationManager
             movingObjects[i].rotation = movingObjectRotations[i];
         }
 
-        PlayerManager.Instance.TeleportAfter(playerRespawnTransform, 0.1f);
+        PlayerManager.Instance.TeleportAfter(playerDeathTransform, 0.25f);
     }
 }

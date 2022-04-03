@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeathBlock : MonoBehaviour
 {
+    private bool killedPlayer = false;
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -13,6 +14,14 @@ public class DeathBlock : MonoBehaviour
     }
 
     public void KillPlayer(){
+        if(killedPlayer) return;
         LevelManager.Instance.KillPlayer();
+
+        killedPlayer = true;
+        Invoke("ResetKilledPlayer", 1f);
+    }
+
+    private void ResetKilledPlayer(){
+        killedPlayer = false;
     }
 }
