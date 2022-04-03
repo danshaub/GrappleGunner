@@ -20,6 +20,7 @@ public class PlayerMovementOptions : ScriptableObject {
     public float gravityStrength = 9.8f;
     public float groundMaxNormal = 60f;
     public float frictionCoefficient = 15f;
+    public float massMultiplier = 10;
 
     public PhysicMaterial groundedMaterial;
     public PhysicMaterial airborneMaterial;

@@ -101,7 +101,8 @@ public class PlayerMovementController : MonoBehaviour
 
                 if (groundBody != null)
                 {
-                    groundBody.AddForceAtPosition(Vector3.down * -springForce * .1f, hit.point);
+                    groundBody.AddForceAtPosition(Vector3.down * -(springForce) * .1f, hit.point);
+                    groundBody.AddForceAtPosition(Vector3.down * rigidbody.mass * options.massMultiplier, hit.point);
                 }
 
                 if (!GrappleManager.Instance.redConnected && isGrounded)

@@ -9,35 +9,32 @@ public class PressurePlate : MonoBehaviour
     public UnityEvent onPressurePlatePress;
     public UnityEvent onPressurePlateRelease;
 
-    public Vector3 anchorPosition;
     public Transform plateTransform;
     public float springDistance;
-    private bool released = false;
+    private bool released = true;
+    private SpringJoint joint;
 
-    public void onPlatePress(){
-        if (anchorPosition.y - plateTransform.localPosition.y <= .25f + springDistance){
-            return;
-        } else {
+    private void Start() {
+        joint = GetComponentInChildren<SpringJoint>();
+    }
+
+    private void FixedUpdate()
+    {
+        if (Mathf.Abs(plateTransform.localPosition.y) > springDistance)
+        {
+            if (released)
+            {
+                onPressurePlatePress.Invoke();
+            }
             released = false;
-            onPressurePlatePress.Invoke();
+        }
+        else
+        {
+            if (!released)
+            {
+                onPressurePlateRelease.Invoke();
+            }
+            released = true;
         }
     }
-
-    public void onPlateRelease(){
-        if(released == true) return;
-
-        released = true;
-        onPressurePlateRelease.Invoke();
-    }
-
-
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Color c = Color.green;
-        c.a = .25f;
-        Gizmos.color = c;
-        Gizmos.DrawCube(anchorPosition, Vector3.one * .05f);
-    }
-#endif
 }
