@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2414307143918731247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.077, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.95, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5285244021174265222}
@@ -86,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 6059323440060144861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 0.25}
+  m_LocalScale: {x: 1.5, y: 2.5, z: 0.25}
   m_Children:
   - {fileID: 9103767348506207321}
   - {fileID: 4756705335167101376}
@@ -109,7 +109,7 @@ MonoBehaviour:
   doorTransform: {fileID: 9103767348506207321}
   openTransform: {fileID: 4756705335167101376}
   closedTransform: {fileID: 4215179515580959965}
-  speed: 10
+  speed: 7
   startClosed: 1
 --- !u!1 &7335048563101032430
 GameObject:
