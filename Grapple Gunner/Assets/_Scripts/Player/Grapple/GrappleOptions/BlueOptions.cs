@@ -22,6 +22,10 @@ public class BlueOptions : ScriptableObject
     public float storeBlockCooldown = 0.5f;
     public float maxPushbackForce = 2000f;
 
+    public float destructionTime = 0.25f;
+    public GameObject destructionPS;
+    public GameObject respawnPS;
+
     public PhysicMaterial heldPhysicsMaterial;
     public PhysicMaterial releasedPhysicsMaterial;
 

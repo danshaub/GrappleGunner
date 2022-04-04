@@ -26,6 +26,9 @@ MonoBehaviour:
   interpolationValue: 0.15
   storeBlockCooldown: 0.2
   maxPushbackForce: 2000
+  destructionTime: 1
+  destructionPS: {fileID: 6681185035466507807, guid: 836a10866780ca94999437b0c89ef3c3, type: 3}
+  respawnPS: {fileID: 3736841386756057390, guid: 982c5baab8ebeb24986fa16176b84248, type: 3}
   heldPhysicsMaterial: {fileID: 13400000, guid: aece17f3f60952d45979e8cdcc06a5ff, type: 2}
   releasedPhysicsMaterial: {fileID: 13400000, guid: 72c49ff7899f6474b97e18c8c257fbc4, type: 2}
   invalidTakeOutLayers:

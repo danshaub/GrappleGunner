@@ -122,7 +122,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7661103674631755766}
-  m_Material: {fileID: 13400000, guid: 201d9ea4eb4c02d4fbc92499a1fc9cce, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -159,7 +159,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  worldRespawnPosition: {x: 0, y: 0, z: 0}
+  worldRespawnPosition: {x: -12, y: -99.5, z: 20}
   pointVisual: {fileID: 8988479797754075053}
   canStore: 0
   blockHeld: 0
