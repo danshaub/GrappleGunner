@@ -43,3 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece3a39f2e07e6044bdb33c2724e3589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 2ae181273edf8034bbbdc9024c53e1d8, type: 3}
+    volume: 0
+    pitch: 1
