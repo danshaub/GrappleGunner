@@ -16,6 +16,7 @@ public class BluePoint : GrapplePoint
     [HideInInspector] public Vector3 collisionNormal { get; private set; }
     [HideInInspector] public bool storageLockedByCooldown { get; private set; } = true;
     private bool showingMiniPoint = false;
+    private bool destroying = false;
     public bool validTakeOutLocation { get; private set; } = true;
     private Vector3 targetLocalPosition;
     private float targetLocalScale;
@@ -49,7 +50,13 @@ public class BluePoint : GrapplePoint
 
     private void Update()
     {
-        if (showingMiniPoint)
+        if (destroying)
+        {
+            Debug.Log("Destroying");
+            pointVisual.localScale = Vector3.Lerp(pointVisual.localScale, Vector3.zero, lerpValue);
+            Debug.Log(pointVisual.localScale);
+        }
+        else if (showingMiniPoint)
         {
             pointVisual.localPosition = Vector3.Lerp(pointVisual.localPosition, targetLocalPosition, lerpValue);
             pointVisual.localScale = Vector3.Lerp(pointVisual.localScale, targetLocalScale * Vector3.one, lerpValue);
@@ -144,18 +151,43 @@ public class BluePoint : GrapplePoint
 
     public void DestroyBlock()
     {
-        Rigidbody pointRB = GetComponent<Rigidbody>();
+        if (destroying) return;
+
+        type = GrappleType.DestroyingBlue;
+
+        lerpValue = GrappleManager.Instance.blueOptions.interpolationValue;
+        pointCollider.isTrigger = true;
 
         queueDestroyBlock = false;
+        destroying = true;
+
+        Transform ps = Instantiate(GrappleManager.Instance.blueOptions.destructionPS, pointVisual.position, pointVisual.rotation).transform;
+        ps.localScale = pointVisual.lossyScale;
+
+        Invoke("RespawnBlock", GrappleManager.Instance.blueOptions.destructionTime);
+
+    }
+
+    private void RespawnBlock()
+    {
+        type = GrappleType.Blue;
+        Transform ps = Instantiate(GrappleManager.Instance.blueOptions.respawnPS, worldRespawnPosition, Quaternion.identity).transform;
+        ps.localScale = transform.lossyScale;
+        pointCollider.isTrigger = false;
 
         transform.position = worldRespawnPosition;
         transform.rotation = Quaternion.identity;
 
+        Rigidbody pointRB = GetComponent<Rigidbody>();
+
         pointRB.velocity = Vector3.zero;
         pointRB.angularVelocity = Vector3.zero;
+
+        destroying = false;
     }
 
-    private IEnumerator UnlockBlock(){
+    private IEnumerator UnlockBlock()
+    {
         yield return new WaitForSeconds(GrappleManager.Instance.blueOptions.storeBlockCooldown);
         storageLockedByCooldown = false;
     }

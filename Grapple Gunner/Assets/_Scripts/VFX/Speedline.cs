@@ -4,28 +4,38 @@ using UnityEngine;
 
 public class Speedline : MonoBehaviour
 {
-    public bool active = true;
     private float speed;
     private ParticleSystem speedlines;
-    public float speedlinesMax;
+    private ParticleSystem.MainModule main;
+    public bool active = true;
+    public AnimationCurve particleAlphaSpeedCurve;
     private Rigidbody rb;
 
     void Start()
     {
         rb = PlayerManager.Instance.movementController.rigidbody;
         speedlines = GetComponent<ParticleSystem>();
+        main = speedlines.main;
+        main.startColor = Color.white;
     }
 
     void FixedUpdate()
     {
-        if (active)
+        if (!active) return;
+
+        speed = rb.velocity.magnitude;
+        float alpha = particleAlphaSpeedCurve.Evaluate(speed);
+
+        if (alpha > float.Epsilon)
         {
-            speed = rb.velocity.magnitude;
-            if (speed >= speedlinesMax)
-            {
-                speedlines.Play();
-                gameObject.transform.forward = rb.velocity.normalized;
-            }
+            gameObject.transform.forward = rb.velocity.normalized;
+            main.startColor = new Color(1, 1, 1, alpha);
+            speedlines.Play();
         }
+        else
+        {
+            speedlines.Stop();
+        }
+
     }
 }

@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251053266240259516}
-  m_Material: {fileID: 13400000, guid: 201d9ea4eb4c02d4fbc92499a1fc9cce, type: 2}
+  m_Material: {fileID: 13400000, guid: 72c49ff7899f6474b97e18c8c257fbc4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -78,7 +78,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  worldRespawnPosition: {x: 0, y: 0, z: 0}
+  worldRespawnPosition: {x: -12, y: -99.5, z: 19}
   pointVisual: {fileID: 251053266312307637}
   canStore: 0
   blockHeld: 0
@@ -94,8 +94,10 @@ GameObject:
   - component: {fileID: 251053266312307637}
   - component: {fileID: 251053266312307639}
   - component: {fileID: 251053266312307636}
-  m_Layer: 13
-  m_Name: MiniPointBlock
+  - component: {fileID: 73606312}
+  - component: {fileID: 73606313}
+  m_Layer: 18
+  m_Name: Visual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,3 +166,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &73606312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251053266312307634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &73606313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251053266312307634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7039bf6a5c9342a45807f1821b596a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
