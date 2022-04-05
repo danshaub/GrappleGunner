@@ -76,5 +76,9 @@ public class FieldVFX : MonoBehaviour
 
         emission = lightning.emission;
         emission.rateOverTime = lightningFrequency * coll.size.x * coll.size.y * coll.size.z;
+
+        Gizmos.color = new Color(color.r, color.g, color.b, 0.25f);
+
+        Gizmos.DrawCube(transform.TransformPoint(coll.center), transform.TransformVector(coll.size));
     }
 }

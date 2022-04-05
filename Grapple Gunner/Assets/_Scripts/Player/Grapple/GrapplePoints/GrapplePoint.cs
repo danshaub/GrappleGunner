@@ -13,7 +13,8 @@ public abstract class GrapplePoint : MonoBehaviour
         Orange = 3,
         OrangeDisabled = 4,
         Button = 5,
-        None = 6
+        None = 6,
+        DestroyingBlue = 7
     }
 
     protected virtual void Awake()

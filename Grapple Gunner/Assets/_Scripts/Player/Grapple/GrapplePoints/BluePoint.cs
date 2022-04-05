@@ -153,6 +153,8 @@ public class BluePoint : GrapplePoint
     {
         if (destroying) return;
 
+        type = GrappleType.DestroyingBlue;
+
         lerpValue = GrappleManager.Instance.blueOptions.interpolationValue;
         pointCollider.isTrigger = true;
 
@@ -168,6 +170,7 @@ public class BluePoint : GrapplePoint
 
     private void RespawnBlock()
     {
+        type = GrappleType.Blue;
         Transform ps = Instantiate(GrappleManager.Instance.blueOptions.respawnPS, worldRespawnPosition, Quaternion.identity).transform;
         ps.localScale = transform.lossyScale;
         pointCollider.isTrigger = false;

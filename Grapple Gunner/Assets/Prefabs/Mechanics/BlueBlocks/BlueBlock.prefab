@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2242364817383446941}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 72c49ff7899f6474b97e18c8c257fbc4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -94,8 +94,10 @@ GameObject:
   - component: {fileID: 3933533741122311188}
   - component: {fileID: 6227905934417219856}
   - component: {fileID: 973031889253149216}
-  m_Layer: 13
-  m_Name: MiniPointBlock
+  - component: {fileID: 1605382637}
+  - component: {fileID: 1605382638}
+  m_Layer: 18
+  m_Name: Visual
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,3 +166,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1605382637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5458638074550139015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1605382638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5458638074550139015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7039bf6a5c9342a45807f1821b596a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
