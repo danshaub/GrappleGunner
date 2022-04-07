@@ -59,6 +59,7 @@ public class LevelManager : LocationManager
             movingObjects[i].position = movingObjectPositions[i];
             movingObjects[i].rotation = movingObjectRotations[i];
         }
+
     }
 
     public override void LoadNextLevel()
