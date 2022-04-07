@@ -23,6 +23,10 @@ public class SceneLoader : SingletonPersistent<SceneLoader>
     }
     private IEnumerator LoadLevelCoroutine(string levelName, bool useTransition)
     {
+        SFXManager.Instance.FadeOutMusic(1f);
+        SFXManager.Instance.StopAllVoiceClips();
+        SFXManager.Instance.StopAllLoopingSounds();
+        
         if(useTransition){
             VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
             VFXManager.Instance.transitionSystem.StartTransition();

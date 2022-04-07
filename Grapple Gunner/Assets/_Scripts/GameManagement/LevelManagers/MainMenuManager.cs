@@ -26,8 +26,10 @@ public class MainMenuManager : LocationManager
     public List<MeshRenderer> levelButtonVisuals;
     public Material lockedLevelMaterial;
     public Material unlockedLevelMaterial;
-    private void Start()
+    override protected void Start()
     {
+        base.Start();
+        
         if (GameManager.Instance.fileSelected)
         {
             DisplayMain();
