@@ -228,7 +228,6 @@ public class PlayerMovementController : MonoBehaviour
         {
             
             JumpInput = false;
-            Debug.Log("jump");
             StartCoroutine(Jump());
         }
     }
@@ -244,7 +243,6 @@ public class PlayerMovementController : MonoBehaviour
         rigidbody.AddForce(Vector3.up * options.jumpStrength);
 
         yield return new WaitForFixedUpdate();
-        Debug.Log(rigidbody.velocity.y);
 
         yield return new WaitForSeconds(options.jumpCooldown);
 
