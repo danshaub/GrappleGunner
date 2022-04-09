@@ -9,12 +9,13 @@ public class PlayerMovementOptions : ScriptableObject {
     public float jumpCooldown = 0.1f;
     public LayerMask whatIsGround;
     public float airborneMoveStrength = 0.05f;
-    public float landingBounce = 0.25f;
+    public float maxJumpRideHeightDifference = 0.25f;
     public float rideHeight = 0.25f;
     public float rideSpringStrength = 1;
     public float rideSpringDamper = 1;
     public float groundSnapDistance = 0.3f;
     public float colliderHeightOffset = .35f;
+    public int jumpBufferFrames = 5;
 
     [Header("Custom Physics")]
     public float gravityStrength = 9.8f;

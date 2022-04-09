@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNames:
   - MechanicsTest
-  - L1-RED
+  - Blue
   - L2-GREEN
   - L3-ORANGE
   - L4-BLUE
