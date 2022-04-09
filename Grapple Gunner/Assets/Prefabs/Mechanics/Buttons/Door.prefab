@@ -86,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 6059323440060144861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2.5, z: 0.25}
+  m_LocalScale: {x: 2.5, y: 4, z: 0.25}
   m_Children:
   - {fileID: 9103767348506207321}
   - {fileID: 4756705335167101376}
@@ -110,7 +110,7 @@ MonoBehaviour:
   openTransform: {fileID: 4756705335167101376}
   closedTransform: {fileID: 4215179515580959965}
   speed: 7
-  startClosed: 1
+  closed: 1
 --- !u!1 &7335048563101032430
 GameObject:
   m_ObjectHideFlags: 0

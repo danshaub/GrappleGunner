@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrangePoint : GrapplePoint
+public class OrangePoint : GrapplePoint, ISaveState
 {
 
     public Material disabledMaterial;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -20,6 +21,8 @@ public class PlayerMovementController : MonoBehaviour
     private Vector3 groundVelocity = Vector3.zero;
     public CapsuleCollider playerCollider { get; private set; }
     public List<Collider> gunColliders;
+    private bool bufferingJumpInput;
+    private float rideHeightDifference;
 
     private void Awake()
     {
@@ -33,9 +36,13 @@ public class PlayerMovementController : MonoBehaviour
         horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
 
         HandleGround();
-        if (PlayerManager.Instance.useGravity) ApplyGravity();
 
+        if (PlayerManager.Instance.useGravity) ApplyGravity();
         if (!GrappleManager.Instance.redConnected && PlayerManager.Instance.allowMovement) Move();
+
+        if(JumpInput && !bufferingJumpInput){
+            StartCoroutine(JumpBuffer());
+        }
     }
 
     // Resets player collider to reflect the current location of the headset.
@@ -86,7 +93,7 @@ public class PlayerMovementController : MonoBehaviour
 
             float relativeVelocity = rayCastDirectionalVelocity - otherDirectionalVelocity;
 
-            float rideHeightDifference = hit.distance - targetCenterHeight;
+            rideHeightDifference = hit.distance - targetCenterHeight;
             isGrounded = rideHeightDifference <= options.groundSnapDistance * .5f;
 
             float springForce = (rideHeightDifference * options.rideSpringStrength) - (relativeVelocity * options.rideSpringDamper);
@@ -110,7 +117,7 @@ public class PlayerMovementController : MonoBehaviour
 
                 if (!GrappleManager.Instance.redConnected && isGrounded)
                 {
-                    rigidbody.AddForce((groundVelocity - rigidbody.velocity) * options.frictionCoefficient, ForceMode.Force);
+                    rigidbody.AddForce((groundVelocity - horizontalVelocity) * options.frictionCoefficient, ForceMode.Force);
                 }
             }
 
@@ -203,12 +210,6 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private void ApplyFriction()
-    {
-
-    }
-
-
     private void Move()
     {
         // Movement
@@ -225,25 +226,49 @@ public class PlayerMovementController : MonoBehaviour
         // Jump
         if (JumpInput && !jumpCooldown && isGrounded)
         {
-            rigidbody.velocity = horizontalVelocity;
-            rigidbody.AddForce(transform.up * options.jumpStrength, ForceMode.Force);
+            
             JumpInput = false;
-
-            PauseGroundSnap();
+            StartCoroutine(Jump());
         }
     }
 
-    public void PauseGroundSnap()
-    {
-        CancelInvoke("PauseTimer");
+    private IEnumerator Jump(){
+
+        while(rideHeightDifference > options.maxJumpRideHeightDifference){
+            yield return new WaitForFixedUpdate();
+        }
+
         jumpCooldown = true;
-        Invoke("PauseTimer", options.jumpCooldown);
-    }
-    // Signals enough time has passed since jumping resume snapping to ground
-    void PauseTimer()
-    {
+        yield return new WaitForFixedUpdate();  
+        rigidbody.AddForce(Vector3.up * options.jumpStrength);
+
+        yield return new WaitForFixedUpdate();
+
+        yield return new WaitForSeconds(options.jumpCooldown);
+
         jumpCooldown = false;
     }
+
+    private IEnumerator JumpBuffer(){
+        bufferingJumpInput = true;
+        for(int i = 0; i < options.jumpBufferFrames; i++){
+            yield return new WaitForFixedUpdate();
+        }
+        bufferingJumpInput = false;
+        JumpInput = false;
+    }
+
+    // public void PauseGroundSnap()
+    // {
+    //     CancelInvoke("PauseTimer");
+    //     jumpCooldown = true;
+    //     Invoke("PauseTimer", options.jumpCooldown);
+    // }
+    // // Signals enough time has passed since jumping resume snapping to ground
+    // void PauseTimer()
+    // {
+    //     jumpCooldown = false;
+    // }
 
     // Ensures movement is applied in the correct direction relative to the direction the HMD is pointing
     public Vector3 TransformInputToMoveDirection(Vector2 inputVector)

@@ -39,7 +39,7 @@ public class LevelManager : LocationManager
             movingObjectPositions.Add(t.position);
             movingObjectRotations.Add(t.rotation);
 
-            t.GetComponent<OrangePoint>()?.SaveState();
+            t.GetComponent<ISaveState>()?.SaveState();
         }
     }
 
@@ -63,7 +63,7 @@ public class LevelManager : LocationManager
         VFXManager.Instance.transitionSystem.StartTransition();
 
         for(int i = 0; i < movingObjects.Count; i++){
-            movingObjects[i].GetComponent<OrangePoint>()?.LoadState();
+            movingObjects[i].GetComponent<ISaveState>()?.LoadState();
 
             movingObjects[i].position = movingObjectPositions[i];
             movingObjects[i].rotation = movingObjectRotations[i];

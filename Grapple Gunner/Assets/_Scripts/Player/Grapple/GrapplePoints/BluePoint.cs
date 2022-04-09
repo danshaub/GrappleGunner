@@ -52,9 +52,7 @@ public class BluePoint : GrapplePoint
     {
         if (destroying)
         {
-            Debug.Log("Destroying");
             pointVisual.localScale = Vector3.Lerp(pointVisual.localScale, Vector3.zero, lerpValue);
-            Debug.Log(pointVisual.localScale);
         }
         else if (showingMiniPoint)
         {

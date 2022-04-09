@@ -13,15 +13,17 @@ public class DeathBlock : MonoBehaviour
         }
     }
 
-    public void KillPlayer(){
-        if(killedPlayer) return;
+    public void KillPlayer()
+    {
+        if (killedPlayer) return;
         LevelManager.Instance.KillPlayer();
 
         killedPlayer = true;
         Invoke("ResetKilledPlayer", 1f);
     }
 
-    private void ResetKilledPlayer(){
+    private void ResetKilledPlayer()
+    {
         killedPlayer = false;
     }
 }
