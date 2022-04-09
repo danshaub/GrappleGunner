@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, ISaveState
 {
     public Transform doorTransform;
     public Transform openTransform;
     public Transform closedTransform;
     public float speed;
     public bool closed = true;
+
+    private State state;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,8 +47,33 @@ public class Door : MonoBehaviour
         closed = true;
     }
 
-    public void Toggle(){
+    public void Toggle()
+    {
         closed = !closed;
+    }
+
+    public void SaveState()
+    {
+        state = new State();
+        state.closed = closed;
+    }
+
+    public void LoadState()
+    {
+        closed = state.closed;
+        if (state.closed)
+        {
+            doorTransform.localPosition = closedTransform.localPosition;
+        }
+        else
+        {
+            doorTransform.localPosition = openTransform.localPosition;
+        }
+    }
+
+    private struct State
+    {
+        public bool closed;
     }
 
     private void OnDrawGizmos()
