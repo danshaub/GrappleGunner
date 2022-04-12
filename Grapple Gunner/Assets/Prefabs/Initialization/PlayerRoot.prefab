@@ -6266,14 +6266,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575382397152408823}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.5, z: 2}
+  m_LocalRotation: {x: 0.08449525, y: -0, z: -0, w: 0.9964239}
+  m_LocalPosition: {x: 0, y: 1.7210721, z: -2.726079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8595115271245965527}
   m_Father: {fileID: 224590375033394850}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.694, y: 0, z: 0}
 --- !u!20 &897601717698989812
 Camera:
   m_ObjectHideFlags: 0
@@ -6305,7 +6305,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8388599
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1
@@ -15036,7 +15036,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3522809540065174437}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -15074,7 +15074,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 2097416
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 2
@@ -16353,7 +16353,7 @@ GameObject:
   - component: {fileID: 6394951695135069748}
   - component: {fileID: 4791053028497713891}
   m_Layer: 3
-  m_Name: Camera2 (1)
+  m_Name: Camera3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16366,8 +16366,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4741154420768602822}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.5, z: 2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5307032101096246070}
@@ -16408,7 +16408,7 @@ Camera:
     m_Bits: 8388599
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 3
+  m_TargetDisplay: 2
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
