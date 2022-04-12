@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7305d90df38d84b9304c3a1f751529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
 --- !u!1001 &6106099954530707337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,15 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7318315501700978425, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7318315501700978425, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7318315501700978425, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7318315501700978425, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
       propertyPath: m_LocalRotation.w
@@ -97,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7318315501700978428, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
       propertyPath: m_Name
-      value: BlockDestroyer
+      value: BlockDestroyer Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7318315501700978428, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
       propertyPath: m_Layer

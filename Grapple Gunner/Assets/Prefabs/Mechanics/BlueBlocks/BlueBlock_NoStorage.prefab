@@ -78,7 +78,7 @@ MonoBehaviour:
   useRaycastPosition: 1
   grapplePosition: {x: 0, y: 0, z: 0}
   grappleRotation: {x: 0, y: 0, z: 0}
-  worldRespawnPosition: {x: -12, y: -99.5, z: 19}
+  worldRespawnPosition: {x: 0, y: 0, z: 0}
   pointVisual: {fileID: 251053266312307637}
   canStore: 0
   blockHeld: 0
