@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockDestroyer : MonoBehaviour
+public class BlockDestroyer : Field
 {
     private void OnTriggerEnter(Collider other)
     {
