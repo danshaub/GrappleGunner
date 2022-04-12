@@ -12,6 +12,10 @@ public class FieldVFX : MonoBehaviour
     public float fogVolume;
     public float lightningFrequency;
     public Color color;
+
+    private bool isActive = true;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +49,20 @@ public class FieldVFX : MonoBehaviour
         {
             lightning.GetComponent<ParticleSystemRenderer>().materials[1].SetColor("_Color", color);
         }
+
+        if(!isActive) SetInactive();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void SetActive(){
+        isActive = true;
 
+        lightning.Play();
+    }
+
+    public void SetInactive(){
+        isActive = false;
+
+        lightning.Stop();
     }
 
     private void OnDrawGizmos()
