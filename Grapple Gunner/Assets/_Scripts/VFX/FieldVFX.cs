@@ -7,6 +7,11 @@ public class FieldVFX : MonoBehaviour
 {
     public ParticleSystem fog;
     public ParticleSystem lightning;
+    public Transform posXplane;
+    public Transform negXplane;
+    public Transform posYplane;
+    public Transform negYplane;
+
     private BoxCollider coll;
 
     public float fogVolume;
@@ -88,6 +93,11 @@ public class FieldVFX : MonoBehaviour
 
         emission = lightning.emission;
         emission.rateOverTime = lightningFrequency * coll.size.x * coll.size.y * coll.size.z;
+
+        posXplane.localPosition = Vector3.right * coll.size.x * .5f;
+        negXplane.localPosition = Vector3.right * coll.size.x * -.5f;
+        posYplane.localPosition = Vector3.up * coll.size.y * .5f;
+        negYplane.localPosition = Vector3.up * coll.size.y * -.5f;
 
         Gizmos.color = new Color(color.r, color.g, color.b, 0.25f);
 
