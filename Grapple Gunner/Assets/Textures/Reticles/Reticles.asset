@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921f2f3b445adbc4ab95c2814ea79340, type: 3}
+  m_Name: Reticles
+  m_EditorClassIdentifier: 
+  disabled: {fileID: 2800000, guid: 4ec3590e0a70af945a72bdf232663536, type: 3}
+  red: {fileID: 2800000, guid: 9eff4cd37164c374b99f11d3edc7e53a, type: 3}
+  green: {fileID: 2800000, guid: b8902b87f86072f44838d12ce3ec4ae0, type: 3}
+  blue: {fileID: 2800000, guid: a21b32d14708c73479f6c768784e57f9, type: 3}
+  orange: {fileID: 2800000, guid: 66a2fe4201b031c4085fb0399c457b05, type: 3}
+  button: {fileID: 2800000, guid: dd77a42d96acb9f49bd3cd48e5d5c710, type: 3}

@@ -130,13 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410211116}
     m_Modifications:
-    - target: {fileID: 2475070822083536632, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
-      propertyPath: closed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_LocalPosition.x
@@ -168,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6059323440060144861, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_Name
-      value: Door (3)
+      value: Door (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
@@ -305,6 +301,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 590512480}
     m_Modifications:
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1831175124}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Door, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -327,15 +351,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -351,35 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308315623861134311, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_Name
-      value: DummyButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1831175124}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Toggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Door, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
@@ -846,6 +842,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 590512480}
     m_Modifications:
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 831031459}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BluePoint, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -864,11 +888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -876,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -884,7 +908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -892,35 +916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308315623861134311, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_Name
-      value: DummyButton (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 831031459}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DestroyBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: BluePoint, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Button (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
@@ -8048,6 +8044,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 590512480}
     m_Modifications:
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 466273245}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BluePoint, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8094,35 +8118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308315623861134311, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_Name
-      value: DummyButton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 466273245}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DestroyBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: BluePoint, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Button (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
@@ -8138,6 +8134,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 590512480}
     m_Modifications:
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1830309830}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Door, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377024335299397615, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8184,35 +8208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308315623861134311, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_Name
-      value: DummyButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1830309830}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Toggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Door, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317172076098762262, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
-      propertyPath: onButtonPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Button (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
@@ -8407,13 +8403,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410211116}
     m_Modifications:
-    - target: {fileID: 4756705335167101376, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.7833335
-      objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8445,7 +8437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6059323440060144861, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Door (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
@@ -8714,7 +8706,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8746,7 +8738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6059323440060144861, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Door (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
@@ -10491,11 +10483,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1831175123}
-  - {fileID: 1091964468}
   - {fileID: 1830309829}
+  - {fileID: 1091964468}
   - {fileID: 1455284207}
-  - {fileID: 1174080591}
   - {fileID: 29692097}
+  - {fileID: 1174080591}
   m_Father: {fileID: 1838132423}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10580,10 +10572,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410211116}
     m_Modifications:
-    - target: {fileID: 4756705335167101376, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.96111125
-      objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10618,7 +10606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6059323440060144861, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_Name
-      value: Door (2)
+      value: Door (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
@@ -13158,13 +13146,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410211116}
     m_Modifications:
-    - target: {fileID: 4756705335167101376, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.9388891
-      objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13223,10 +13207,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410211116}
     m_Modifications:
-    - target: {fileID: 4756705335167101376, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.9166668
-      objectReference: {fileID: 0}
     - target: {fileID: 5285244021174265222, guid: a0d3d77db1aa54b4eb44180ff3c16320, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.25

@@ -7,20 +7,21 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LightningField
-  m_Shader: {fileID: -6465566751694194690, guid: 8eb07f0881dad664c918bcbfc1c1410f, type: 3}
+  m_Name: PressurePlate_T
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e383368d020f70a4aac215d202ddb63c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -44,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e383368d020f70a4aac215d202ddb63c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,10 +64,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture2DAsset_c976739efbce411da40173027162d677_Out_0:
-        m_Texture: {fileID: 2800000, guid: d47962baba042844b812b03814dac3ad, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -80,73 +77,39 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_03da47fadae54d4eb5ec72d16559ccc0: 0
-    - Vector1_461f80da030f4cc991c95cedd9fa8cbc: 1
-    - Vector1_6d1eb9df60a2428aaaeac5a4ced70658: 0.21
-    - Vector1_7821c945ffdf4bc1a9df15006e00becb: 0.75
-    - Vector1_c6603b9bc94e4898b2bddf1ee2d99166: 1
     - _AlphaClip: 0
     - _Blend: 0
-    - _BlendOp: 0
     - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColorMode: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
-    - _FlipbookMode: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Intensity: 0.75
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SampleGI: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Tiling: 2.33
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_7dced128f1fe49ca83650a1e8aca7887: {r: 0.09372544, g: 1, b: 0, a: 0}
-    - Color_b336d4a12d5f4bf09351ee0b2a2c7e74: {r: 0, g: 0.16078424, b: 1, a: 0}
-    - Vector4_3debc1d1cf8a4efd86ca3a515bfc360a: {r: 0.21, g: 1.57, b: 0, a: 0}
-    - Vector4_75c8249e814e4a29adc3388cdb1f5cc6: {r: 2.06, g: 1.02, b: 6.82, a: 3.07}
-    - Vector4_d27c954a9e934952a7ce450f5ab9642b: {r: 14.8, g: 0, b: 0, a: 0}
-    - Vector4_f63dd84c6abf4375b501c09b393e4802: {r: 38.9, g: 54.3, b: 70.8, a: 44.3}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 0, b: 0.9411765, a: 0.4}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlashSpeed: {r: 30, g: 50, b: 60, a: 20}
-    - _PanSpeed: {r: -1.08, g: 0.27, b: 1.18, a: -1.33}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7437932677935830746
+--- !u!114 &4332717649540535134
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
