@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider))]
 public class Checkpoint : MonoBehaviour
 {
     public Transform respawnPosition;
+    public UnityEvent onCheckpointReached;
+    public UnityEvent onCheckpointRespawn;
     private bool used = false;
 
     private void OnTriggerEnter(Collider other) {
         if(used) return;
-        ((LevelManager)LevelManager.Instance).MakeCheckpoint(respawnPosition);
+        onCheckpointReached.Invoke();
+        ((LevelManager)LevelManager.Instance).MakeCheckpoint(respawnPosition, onCheckpointRespawn);
         used = true;
     }
 

@@ -6,6 +6,12 @@ public abstract class LocationManager : Singleton<LocationManager>
 {
 
     public Transform playerStartTransform;
+    public Sound music;
+
+    protected virtual void Start()
+    {
+        SFXManager.Instance.PlayMusic(music);
+    }
 
     public void LoadLevel(int levelIndex)
     {
@@ -17,6 +23,11 @@ public abstract class LocationManager : Singleton<LocationManager>
     public virtual void LoadMainMenu()
     {
         SceneLoader.Instance.LoadMainMenu(true);
+    }
+
+    public void PlayVoiceClip(string clipName)
+    {
+        SFXManager.Instance.PlayVoiceClip(clipName);
     }
 
     private void OnDrawGizmos()
