@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStuck: 0
-  visualTransform: {fileID: 0}
+  visualTransform: {fileID: 3691482741300405689}
   targetPosition: {x: 0, y: 0, z: -0.1}
   returnSpeed: 7.5
 --- !u!114 &1377024335299397615
