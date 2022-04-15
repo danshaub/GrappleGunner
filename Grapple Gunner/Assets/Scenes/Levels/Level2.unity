@@ -164,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2099049799956981368, guid: 549f37bc007166341af30e25819c5c08, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2099049799956981368, guid: 549f37bc007166341af30e25819c5c08, type: 3}
       propertyPath: m_LocalScale.y
@@ -4418,7 +4418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2099049799956981368, guid: 549f37bc007166341af30e25819c5c08, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2099049799956981368, guid: 549f37bc007166341af30e25819c5c08, type: 3}
       propertyPath: m_LocalScale.y
@@ -14250,7 +14250,7 @@ Transform:
   m_Children:
   - {fileID: 230451657}
   m_Father: {fileID: 1898253908}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1889450791
 MeshCollider:
@@ -14273,7 +14273,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889450788}
-  m_Mesh: {fileID: 4300000, guid: 9d2ad7adcae512f4caba6edca235338b, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 15c548bf6ef3f9c4eb776a3c818a75e5, type: 2}
 --- !u!23 &1889450793
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14345,8 +14345,8 @@ Transform:
   - {fileID: 1993995037}
   - {fileID: 1485621905}
   - {fileID: 1524909416}
-  - {fileID: 1962433907}
   - {fileID: 1889450789}
+  - {fileID: 1962433907}
   - {fileID: 1661414025}
   - {fileID: 1135560294}
   - {fileID: 14716850}
@@ -14582,7 +14582,7 @@ Transform:
   m_Children:
   - {fileID: 780118209}
   m_Father: {fileID: 1898253908}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1962433908
 MeshCollider:
@@ -14605,7 +14605,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962433906}
-  m_Mesh: {fileID: 4300000, guid: 15c548bf6ef3f9c4eb776a3c818a75e5, type: 2}
+  m_Mesh: {fileID: 4300000, guid: b52d54f4982d03c4cb1ab36ad4637308, type: 2}
 --- !u!23 &1962433910
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15470,7 +15470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2099049799956981368, guid: 549f37bc007166341af30e25819c5c08, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2099049799956981368, guid: 549f37bc007166341af30e25819c5c08, type: 3}
       propertyPath: m_LocalScale.y
@@ -15648,6 +15648,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStartTransform: {fileID: 5554162921738862783}
+  music:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   levelIndex: 2
   playerDeathTransform: {fileID: 1312687484}
   playerRespawnTransform: {fileID: 0}
@@ -15666,6 +15673,9 @@ MonoBehaviour:
   - {fileID: 1382611854}
   - {fileID: 655238812}
   - {fileID: 1423006332}
+  onLevelStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5554162921814971709
 GameObject:
   m_ObjectHideFlags: 0

@@ -334,8 +334,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 1.125
       objectReference: {fileID: 0}
     - target: {fileID: 1986298190535856381, guid: 56b7927dff62f724397a7a2cc1acb6b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -490,6 +498,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPosition: {fileID: 1931377182}
+  onCheckpointReached:
+    m_PersistentCalls:
+      m_Calls: []
+  onCheckpointRespawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &242044080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -549,6 +563,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPosition: {fileID: 2102298630}
+  onCheckpointReached:
+    m_PersistentCalls:
+      m_Calls: []
+  onCheckpointRespawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &242728221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1129,6 +1149,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPosition: {fileID: 234207291}
+  onCheckpointReached:
+    m_PersistentCalls:
+      m_Calls: []
+  onCheckpointRespawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &379590855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3632,6 +3658,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPosition: {fileID: 153414668}
+  onCheckpointReached:
+    m_PersistentCalls:
+      m_Calls: []
+  onCheckpointRespawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &588989155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8804,6 +8836,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPosition: {fileID: 294823660}
+  onCheckpointReached:
+    m_PersistentCalls:
+      m_Calls: []
+  onCheckpointRespawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1176302396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10482,10 +10520,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1831175123}
   - {fileID: 1830309829}
   - {fileID: 1091964468}
   - {fileID: 1455284207}
+  - {fileID: 1831175123}
   - {fileID: 29692097}
   - {fileID: 1174080591}
   m_Father: {fileID: 1838132423}
@@ -13509,12 +13547,8 @@ PrefabInstance:
       value: -6.75
       objectReference: {fileID: 0}
     - target: {fileID: 1453310387, guid: 52446312198109840a3c61c7d47b6377, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1453310387, guid: 52446312198109840a3c61c7d47b6377, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 67.25
+      value: 67.5
       objectReference: {fileID: 0}
     - target: {fileID: 2138852423868212402, guid: 52446312198109840a3c61c7d47b6377, type: 3}
       propertyPath: m_RootOrder
@@ -13607,10 +13641,6 @@ PrefabInstance:
     - target: {fileID: 7278632841511481144, guid: 52446312198109840a3c61c7d47b6377, type: 3}
       propertyPath: m_Name
       value: PressurePlate
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889205578991408784, guid: 52446312198109840a3c61c7d47b6377, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52446312198109840a3c61c7d47b6377, type: 3}
@@ -13866,6 +13896,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStartTransform: {fileID: 5554162921738862783}
+  music:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   levelIndex: 1
   playerDeathTransform: {fileID: 1312687484}
   playerRespawnTransform: {fileID: 0}
@@ -13881,6 +13918,9 @@ MonoBehaviour:
   - {fileID: 1455284207}
   - {fileID: 1174080591}
   - {fileID: 29692097}
+  onLevelStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5554162921814971709
 GameObject:
   m_ObjectHideFlags: 0

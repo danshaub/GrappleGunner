@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8771243673160663702}
   - component: {fileID: 8771243673160663705}
   - component: {fileID: 8771243673160663704}
+  - component: {fileID: 1461299261150331614}
   m_Layer: 0
   m_Name: DeathCylinder
   m_TagString: Untagged
@@ -97,6 +98,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9ee9478276d5d48418b839f765daa9ad, type: 2}
+--- !u!114 &1461299261150331614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771243673160663707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a817d1e5e8346af46bd1252f55877d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8771243674103483144
 PrefabInstance:
   m_ObjectHideFlags: 0
