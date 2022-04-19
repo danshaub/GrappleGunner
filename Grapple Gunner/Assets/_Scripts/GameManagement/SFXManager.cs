@@ -36,6 +36,12 @@ public class SFXManager : SingletonPersistent<SFXManager>
             s.source.pitch = s.pitch;
 
             s.source.outputAudioMixerGroup = group;
+
+            s.source.playOnAwake = s.playOnAwake;
+            s.source.loop = s.loop;
+
+
+            if(s.playOnAwake) s.source.Play();
         }
     }
 
@@ -48,6 +54,50 @@ public class SFXManager : SingletonPersistent<SFXManager>
             return;
         }
         s.source.Play();
+    }
+
+    public void SetSFXVolume(string name, float volume)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+        s.source.volume = volume;
+    }
+
+    public float GetSFXVolume(string name)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return 0;
+        }
+        return s.source.volume;
+    }
+
+    public void SetSFXPitch(string name, float pitch)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+        s.source.pitch = pitch;
+    }
+
+    public float GetSFXPitch(string name)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return 0;
+        }
+        return s.source.pitch;
     }
 
     public void PlayVoiceClip(string name)

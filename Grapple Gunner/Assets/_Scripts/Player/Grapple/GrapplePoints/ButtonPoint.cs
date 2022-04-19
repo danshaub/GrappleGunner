@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class ButtonPoint : GrapplePoint
 {
     public UnityEvent onButtonPress;
@@ -18,6 +19,7 @@ public class ButtonPoint : GrapplePoint
     }
     override public void OnPointHit()
     {
+        GetComponent<AudioSource>().Play();
         onButtonPress.Invoke();
         released = false;
     }

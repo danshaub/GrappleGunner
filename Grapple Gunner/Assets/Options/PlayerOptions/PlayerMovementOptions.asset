@@ -34,3 +34,21 @@ MonoBehaviour:
   groundedMaterial: {fileID: 13400000, guid: 76d16598333f4a84b8e741a4f20302ce, type: 2}
   airborneMaterial: {fileID: 13400000, guid: f14ae809b8ec7c44b8bae87fd23060e2, type: 2}
   grappleMaterial: {fileID: 13400000, guid: 3757aa8ab8f716845b678a870f7bd04f, type: 2}
+  stepSpeedMultiplier: 1.76
+  maxStepTime: 0.95
+  minStepTime: 0.01
+  groundedStepTime: 0.35
+  initialStepTime: 0.1
+  wallBonkThreshold: 6.4
+  wooshVolume:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  wooshPitch:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
