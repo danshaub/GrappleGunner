@@ -52,9 +52,9 @@ MonoBehaviour:
   contactVelocityDamper: 0.2
   swingInputThreshold: 0.25
   maxSwingVelocity: 3.5
-  swingForce: 150
+  swingForce: 50
   doubleGreenMultiplier: 0.75
-  reelInForce: 50
+  reelInForce: 20
   reelInDistanceVelocityDamper:
     serializedVersion: 2
     m_Curve:
