@@ -20,9 +20,9 @@ public class LevelManager : LocationManager
         base.Awake();
     }
 
-    override protected void Start()
+    protected virtual void Start()
     {
-        base.Start();
+        SFXManager.Instance.PlayMusic(music);
 
         if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {

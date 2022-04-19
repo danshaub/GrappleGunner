@@ -191,6 +191,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 631262558, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
+      propertyPath: music.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9519ee91b0d806845b69c745696c7207, type: 3}
+    - target: {fileID: 631262558, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
+      propertyPath: music.name
+      value: Thematic
+      objectReference: {fileID: 0}
+    - target: {fileID: 631262558, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
+      propertyPath: music.volume
+      value: 0.595
+      objectReference: {fileID: 0}
     - target: {fileID: 113271632077936731, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
