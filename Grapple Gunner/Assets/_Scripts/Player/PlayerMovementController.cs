@@ -24,6 +24,8 @@ public class PlayerMovementController : MonoBehaviour
     private bool bufferingJumpInput;
     private float rideHeightDifference;
 
+    private float footstepTimer = 0;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -40,9 +42,13 @@ public class PlayerMovementController : MonoBehaviour
         if (PlayerManager.Instance.useGravity) ApplyGravity();
         if (!GrappleManager.Instance.redConnected && PlayerManager.Instance.allowMovement) Move();
 
-        if(JumpInput && !bufferingJumpInput){
+        if (JumpInput && !bufferingJumpInput)
+        {
             StartCoroutine(JumpBuffer());
         }
+
+        HandleFootsteps();
+        HandleWoosh();
     }
 
     // Resets player collider to reflect the current location of the headset.
@@ -94,7 +100,13 @@ public class PlayerMovementController : MonoBehaviour
             float relativeVelocity = rayCastDirectionalVelocity - otherDirectionalVelocity;
 
             rideHeightDifference = hit.distance - targetCenterHeight;
+            bool wasGrounded = isGrounded;
             isGrounded = rideHeightDifference <= options.groundSnapDistance * .5f;
+
+            if (!wasGrounded && isGrounded)
+            {
+                SFXManager.Instance.PlaySFX("PlayerLanding");
+            }
 
             float springForce = (rideHeightDifference * options.rideSpringStrength) - (relativeVelocity * options.rideSpringDamper);
 
@@ -226,21 +238,24 @@ public class PlayerMovementController : MonoBehaviour
         // Jump
         if (JumpInput && !jumpCooldown && isGrounded)
         {
-            
+
             JumpInput = false;
             StartCoroutine(Jump());
         }
     }
 
-    private IEnumerator Jump(){
+    private IEnumerator Jump()
+    {
 
-        while(rideHeightDifference > options.maxJumpRideHeightDifference){
+        while (rideHeightDifference > options.maxJumpRideHeightDifference)
+        {
             yield return new WaitForFixedUpdate();
         }
 
         jumpCooldown = true;
-        yield return new WaitForFixedUpdate();  
+        yield return new WaitForFixedUpdate();
         rigidbody.AddForce(Vector3.up * options.jumpStrength);
+        SFXManager.Instance.PlaySFX("PlayerJump");
 
         yield return new WaitForFixedUpdate();
 
@@ -249,9 +264,11 @@ public class PlayerMovementController : MonoBehaviour
         jumpCooldown = false;
     }
 
-    private IEnumerator JumpBuffer(){
+    private IEnumerator JumpBuffer()
+    {
         bufferingJumpInput = true;
-        for(int i = 0; i < options.jumpBufferFrames; i++){
+        for (int i = 0; i < options.jumpBufferFrames; i++)
+        {
             yield return new WaitForFixedUpdate();
         }
         bufferingJumpInput = false;
@@ -290,5 +307,52 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = moveInput - (Math.Min(horizontalVelocity.magnitude, options.maxSpeed) / options.maxSpeed) * horizontalVelocity.normalized;
 
         return moveInput;
+    }
+
+    private void HandleFootsteps()
+    {
+        if (!isGrounded)
+        {
+            footstepTimer = options.groundedStepTime;
+            return;
+        }
+        if (moveInput == Vector2.zero)
+        {
+            footstepTimer = options.initialStepTime;
+            return;
+        }
+
+        footstepTimer -= Time.fixedDeltaTime;
+
+        if (footstepTimer <= 0)
+        {
+            SFXManager.Instance.PlaySFX("PlayerWalking");
+            footstepTimer = Mathf.Clamp(options.stepSpeedMultiplier / horizontalVelocity.magnitude, options.minStepTime, options.maxStepTime);
+        }
+    }
+
+    private void HandleWoosh(){
+        float targetVolume;
+        float targetPitch;
+        if(isGrounded){
+            targetVolume = options.wooshVolume.Evaluate(0);
+            targetPitch = options.wooshPitch.Evaluate(0);
+        }
+        else{
+            targetVolume = options.wooshVolume.Evaluate(rigidbody.velocity.magnitude);
+            targetPitch = options.wooshPitch.Evaluate(rigidbody.velocity.magnitude);
+        }
+            
+        SFXManager.Instance.SetSFXVolume("Woosh", Mathf.Lerp(SFXManager.Instance.GetSFXVolume("Woosh"), targetVolume, options.wooshDecay));
+        SFXManager.Instance.SetSFXPitch("Woosh", Mathf.Lerp(SFXManager.Instance.GetSFXPitch("Woosh"), targetPitch, options.wooshDecay));
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(isGrounded) return;
+
+        if(Vector3.Dot(other.relativeVelocity, other.contacts[0].normal) > options.wallBonkThreshold){
+            SFXManager.Instance.PlaySFX("PlayerWallBonk");
+        }
     }
 }

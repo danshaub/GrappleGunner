@@ -46,88 +46,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxs:
   - name: PlayerDeath
-    clip: {fileID: 8300000, guid: 2ae181273edf8034bbbdc9024c53e1d8, type: 3}
+    clip: {fileID: 8300000, guid: f1aaa17b3aa9f5641965295209552d53, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: PlayerWalking
-    clip: {fileID: 8300000, guid: ed9dad6187b238848880e1b487589c07, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
+    clip: {fileID: 8300000, guid: 44686da2f9a023e4ca08839945817b4a, type: 3}
+    volume: 0.175
+    pitch: 0.85
+    loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: PlayerJump
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 3a57bcf43ec43314d8b62a7b4dc0717c, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: PlayerLanding
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: d657ce52d6d76f84a98e8bb0719bda71, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: PlayerWallBonk
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: b031745e3a0676e44aeedb9c97ce1e25, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: Woosh
-    clip: {fileID: 0}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 8b7d26d9bf6912c429d6b5e91d38a91b, type: 3}
+    volume: 0
     pitch: 1
     loop: 1
+    playOnAwake: 1
     source: {fileID: 0}
   - name: TransitionStart
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 95a7b4fe5059cc549a5a06b0d012491b, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: TransitionEnd
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 95a7b4fe5059cc549a5a06b0d012491b, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: GunFire
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 9e73b1d27fa4f544fa3e2955802aaae0, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: GunHit
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 640fec0a4f941b74e8251981d59fa6b6, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: GunRetract
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: c7fd25e0ea712a541a96b81ca003fdc3, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: GunReelIn
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: ec721a4b2c5fdca4690d1bc9e95284f4, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: GunReelOut
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 13d0aa51a329e66408b1c590d10e3381, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   - name: GunRopeHum
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 8ed0a637e2403bb4a85f8fba15fa62bc, type: 3}
     volume: 0.5
     pitch: 1
     loop: 1
+    playOnAwake: 0
     source: {fileID: 0}
   voiceClips:
   - name: Test
@@ -135,10 +149,11 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
-  sfxGroup: {fileID: -1921035248737291988, guid: 71654758232fa2541a101dd44a8d000e, type: 2}
-  musicGroup: {fileID: 6000554049880235972, guid: 71654758232fa2541a101dd44a8d000e, type: 2}
-  voiceGroup: {fileID: -2818670598110586871, guid: 71654758232fa2541a101dd44a8d000e, type: 2}
+  sfxGroup: {fileID: -1921035248737291988, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
+  musicGroup: {fileID: 6000554049880235972, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
+  voiceGroup: {fileID: -2818670598110586871, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
 --- !u!82 &8676553071785987262
 AudioSource:
   m_ObjectHideFlags: 0

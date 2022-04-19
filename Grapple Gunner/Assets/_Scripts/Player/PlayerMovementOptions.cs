@@ -26,4 +26,18 @@ public class PlayerMovementOptions : ScriptableObject {
     public PhysicMaterial groundedMaterial;
     public PhysicMaterial airborneMaterial;
     public PhysicMaterial grappleMaterial;
+
+    [Header("SFX Parameters")]
+    public float stepSpeedMultiplier = 1f;
+    public float maxStepTime = 1f;
+    public float minStepTime = 0.01f;
+    public float groundedStepTime = .35f;
+    public float initialStepTime = .1f;
+
+    public float wallBonkThreshold = 5f;
+
+    public AnimationCurve wooshVolume;
+    public AnimationCurve wooshPitch;
+    public float wooshDecay = .1f;
+
 }
