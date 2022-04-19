@@ -331,28 +331,46 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private void HandleWoosh(){
+    private void HandleWoosh()
+    {
         float targetVolume;
         float targetPitch;
-        if(isGrounded){
+        if (isGrounded)
+        {
             targetVolume = options.wooshVolume.Evaluate(0);
             targetPitch = options.wooshPitch.Evaluate(0);
         }
-        else{
+        else
+        {
             targetVolume = options.wooshVolume.Evaluate(rigidbody.velocity.magnitude);
             targetPitch = options.wooshPitch.Evaluate(rigidbody.velocity.magnitude);
         }
-            
+
         SFXManager.Instance.SetSFXVolume("Woosh", Mathf.Lerp(SFXManager.Instance.GetSFXVolume("Woosh"), targetVolume, options.wooshDecay));
         SFXManager.Instance.SetSFXPitch("Woosh", Mathf.Lerp(SFXManager.Instance.GetSFXPitch("Woosh"), targetPitch, options.wooshDecay));
     }
 
+    private bool bonked = false;
     private void OnCollisionEnter(Collision other)
     {
-        if(isGrounded) return;
+        if (isGrounded) return;
 
-        if(Vector3.Dot(other.relativeVelocity, other.contacts[0].normal) > options.wallBonkThreshold){
+        if (bonked) return;
+
+        float hitVelocity = Vector3.Dot(other.relativeVelocity, other.contacts[0].normal);
+        if (hitVelocity > options.wallBonkThreshold)
+        {
+            bonked = true;
+            SFXManager.Instance.SetSFXVolume("PlayerWallBonk", options.wallBonkVolume.Evaluate(hitVelocity));
             SFXManager.Instance.PlaySFX("PlayerWallBonk");
+
+            StartCoroutine(WallBonkCooldown());
         }
+    }
+
+    private IEnumerator WallBonkCooldown()
+    {
+        yield return new WaitForSeconds(options.wallBonkCooldown);
+        bonked = false;
     }
 }

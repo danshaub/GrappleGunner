@@ -133,6 +133,59 @@ public class SFXManager : SingletonPersistent<SFXManager>
         s.source.Stop();
     }
 
+    public void FadeInSFX(string name, float decayTime)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+
+        if(!s.source.isPlaying){
+            s.source.Play();
+        }
+        StartCoroutine(FadeInSFXCoroutine(decayTime, s));
+    }
+
+    private IEnumerator FadeInSFXCoroutine(float decayTime, Sound s)
+    {
+        float decayRate = s.volume / decayTime;
+
+        while (s.source.volume < s.volume)
+        {
+            s.source.volume += (decayRate * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    public void FadeOutSFX(string name, float decayTime, bool stopClip)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+
+        StartCoroutine(FadeOutSFXCoroutine(decayTime, s, stopClip));
+    }
+
+    private IEnumerator FadeOutSFXCoroutine(float decayTime, Sound s, bool stopClip)
+    {
+        float decayRate = s.volume / decayTime;
+
+        while (s.source.volume > 0f)
+        {
+            s.source.volume -= (decayRate * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        if(stopClip){
+            s.source.Stop();
+        }
+    }
+
     public void StopAllVoiceClips()
     {
         foreach (Sound s in voiceClips)

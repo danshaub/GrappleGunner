@@ -35,7 +35,7 @@ public class GrappleHook : MonoBehaviour
 
             if (Vector3.Distance(transform.position, dummyHookTransform.position) <= GrappleManager.Instance.options.returnSnapDistance)
             {
-                FinishRetract();
+                FinishRetract(false);
             }
         }
     }
@@ -45,6 +45,8 @@ public class GrappleHook : MonoBehaviour
         cd.enabled = false;
         rb.constraints = RigidbodyConstraints.FreezeAll;
         rb.velocity = Vector3.zero;
+
+        GetComponent<AudioSource>().Play();
 
         if (other.gameObject.CompareTag("Hookable"))
         {
@@ -117,7 +119,8 @@ public class GrappleHook : MonoBehaviour
         rb.velocity = GrappleManager.Instance.options.hookTravelSpeed * transform.forward;
     }
 
-    public void ReleaseHook(){
+    public void ReleaseHook()
+    {
         ReleaseHook(false);
     }
 
@@ -129,12 +132,13 @@ public class GrappleHook : MonoBehaviour
             grapplePoint = null;
         }
         GrappleManager.Instance.EndGrapple(index);
-        if(joint != null) {
+        if (joint != null)
+        {
             Destroy(joint);
         }
         if (instant)
         {
-            FinishRetract();
+            FinishRetract(instant);
         }
         else
         {
@@ -145,7 +149,7 @@ public class GrappleHook : MonoBehaviour
             retracting = true;
         }
     }
-    private void FinishRetract()
+    private void FinishRetract(bool instant)
     {
         cd.enabled = true;
         retracting = false;
@@ -153,6 +157,19 @@ public class GrappleHook : MonoBehaviour
         rb.isKinematic = false;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         rb.detectCollisions = true;
+
+        if (!instant)
+        {
+            SFXManager.Instance.PlaySFX("GunRetract");
+            if (index == 0)
+            {
+                SFXManager.Instance.FadeOutSFX("GunRopeHumRight", 0.5f, true);
+            }
+            else
+            {
+                SFXManager.Instance.FadeOutSFX("GunRopeHumLeft", 0.5f, true);
+            }
+        }
 
         dummyHookTransform.gameObject.SetActive(true);
         gameObject.SetActive(false);

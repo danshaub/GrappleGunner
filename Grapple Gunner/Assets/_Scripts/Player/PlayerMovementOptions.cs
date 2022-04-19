@@ -35,6 +35,8 @@ public class PlayerMovementOptions : ScriptableObject {
     public float initialStepTime = .1f;
 
     public float wallBonkThreshold = 5f;
+    public float wallBonkCooldown = 0.25f;
+    public AnimationCurve wallBonkVolume;
 
     public AnimationCurve wooshVolume;
     public AnimationCurve wooshPitch;

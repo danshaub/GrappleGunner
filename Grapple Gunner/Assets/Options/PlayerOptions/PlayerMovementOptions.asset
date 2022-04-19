@@ -39,7 +39,32 @@ MonoBehaviour:
   minStepTime: 0.01
   groundedStepTime: 0.35
   initialStepTime: 0.1
-  wallBonkThreshold: 6.4
+  wallBonkThreshold: 2
+  wallBonkCooldown: 0.25
+  wallBonkVolume:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 2
+      value: 0.1
+      inSlope: -0.0007589011
+      outSlope: -0.0007589011
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.4327324
+    - serializedVersion: 3
+      time: 50
+      value: 0.5
+      inSlope: 0.007014469
+      outSlope: 0.007014469
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.038141374
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   wooshVolume:
     serializedVersion: 2
     m_Curve:
