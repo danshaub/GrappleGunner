@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelManager : LocationManager
 {
@@ -10,14 +11,19 @@ public class LevelManager : LocationManager
     public List<Transform> movingObjects;
     private List<Vector3> movingObjectPositions;
     private List<Quaternion> movingObjectRotations;
+    public UnityEvent onLevelStart;
+
+    private UnityEvent onRespawn;
 
     protected override void Awake()
     {
         base.Awake();
     }
 
-    private void Start()
+    override protected void Start()
     {
+        base.Start();
+
         if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
             GameManager.Instance.profile.unlockedLevels.Add(levelIndex);
@@ -25,10 +31,10 @@ public class LevelManager : LocationManager
             GameSaveManager.Instance.SaveGame();
         }
 
-        MakeCheckpoint(playerStartTransform);
+        MakeCheckpoint(playerStartTransform, onLevelStart);
     }
 
-    public void MakeCheckpoint(Transform respawnTransform)
+    public void MakeCheckpoint(Transform respawnTransform, UnityEvent onPlayerRespawn)
     {
         playerRespawnTransform = respawnTransform;
 
@@ -41,6 +47,18 @@ public class LevelManager : LocationManager
 
             t.GetComponent<ISaveState>()?.SaveState();
         }
+
+        onRespawn = onPlayerRespawn;
+    }
+
+    private void UseCheckpoint(){
+        for (int i = 0; i < movingObjects.Count; i++)
+        {
+            movingObjects[i].GetComponent<ISaveState>()?.LoadState();
+
+            movingObjects[i].position = movingObjectPositions[i];
+            movingObjects[i].rotation = movingObjectRotations[i];
+        }
     }
 
     public override void LoadNextLevel()
@@ -52,23 +70,31 @@ public class LevelManager : LocationManager
 
     public override void RespawnPlayer()
     {
+        UseCheckpoint();
+
         VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
         VFXManager.Instance.transitionSystem.StartTransition();
         PlayerManager.Instance.TeleportAfter(playerRespawnTransform, 0.25f);
+
+        Invoke("InvokeOnRespawn", .5f);
+    }
+
+    private void InvokeOnRespawn(){
+        SFXManager.Instance.PlayMusic(music);
+        onRespawn.Invoke();
     }
 
     public override void KillPlayer()
     {
+        CancelInvoke("InvokeOnRespawn");
         VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.deathTransitionColor);
         VFXManager.Instance.transitionSystem.StartTransition();
 
-        for(int i = 0; i < movingObjects.Count; i++){
-            movingObjects[i].GetComponent<ISaveState>()?.LoadState();
-
-            movingObjects[i].position = movingObjectPositions[i];
-            movingObjects[i].rotation = movingObjectRotations[i];
-        }
-
         PlayerManager.Instance.TeleportAfter(playerDeathTransform, 0.25f);
+
+        SFXManager.Instance.PlaySFX("PlayerDeath");
+        SFXManager.Instance.StopAllVoiceClips();
+        SFXManager.Instance.StopAllLoopingSounds();
+        SFXManager.Instance.FadeOutMusic(.5f);
     }
 }

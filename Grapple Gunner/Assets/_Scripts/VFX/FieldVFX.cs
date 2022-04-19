@@ -7,11 +7,20 @@ public class FieldVFX : MonoBehaviour
 {
     public ParticleSystem fog;
     public ParticleSystem lightning;
+    public Transform posXplane;
+    public Transform negXplane;
+    public Transform posYplane;
+    public Transform negYplane;
+
     private BoxCollider coll;
 
     public float fogVolume;
     public float lightningFrequency;
     public Color color;
+
+    private bool isActive = true;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +54,20 @@ public class FieldVFX : MonoBehaviour
         {
             lightning.GetComponent<ParticleSystemRenderer>().materials[1].SetColor("_Color", color);
         }
+
+        if(!isActive) SetInactive();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void SetActive(){
+        isActive = true;
 
+        lightning.Play();
+    }
+
+    public void SetInactive(){
+        isActive = false;
+
+        lightning.Stop();
     }
 
     private void OnDrawGizmos()
@@ -76,6 +93,11 @@ public class FieldVFX : MonoBehaviour
 
         emission = lightning.emission;
         emission.rateOverTime = lightningFrequency * coll.size.x * coll.size.y * coll.size.z;
+
+        posXplane.localPosition = Vector3.right * coll.size.x * .5f;
+        negXplane.localPosition = Vector3.right * coll.size.x * -.5f;
+        posYplane.localPosition = Vector3.up * coll.size.y * .5f;
+        negYplane.localPosition = Vector3.up * coll.size.y * -.5f;
 
         Gizmos.color = new Color(color.r, color.g, color.b, 0.25f);
 

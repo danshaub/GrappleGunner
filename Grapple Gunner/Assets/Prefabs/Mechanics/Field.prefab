@@ -4942,7 +4942,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -9778,6 +9778,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fog: {fileID: 7318315501319648877}
   lightning: {fileID: 7318315501589217842}
+  posXplane: {fileID: 7318315501026279731}
+  negXplane: {fileID: 7318315501260255367}
+  posYplane: {fileID: 7318315501516404738}
+  negYplane: {fileID: 7318315502556664554}
   fogVolume: 2.5
   lightningFrequency: 1
   color: {r: 1, g: 1, b: 1, a: 1}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNames:
   - MechanicsTest
-  - Blue
-  - L2-GREEN
+  - Level1
+  - Level2
   - L3-ORANGE
   - L4-BLUE
   mainMenuName: MainMenu

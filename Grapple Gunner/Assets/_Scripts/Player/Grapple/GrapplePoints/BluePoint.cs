@@ -149,7 +149,7 @@ public class BluePoint : GrapplePoint
 
     public void DestroyBlock()
     {
-        if (destroying) return;
+        if (destroying || blockHeld) return;
 
         type = GrappleType.DestroyingBlue;
 

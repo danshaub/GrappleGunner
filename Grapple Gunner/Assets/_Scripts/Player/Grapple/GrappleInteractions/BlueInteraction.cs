@@ -221,9 +221,9 @@ public class BlueInteraction : I_GrappleInteraction
             TakeOutBlock(true);
         }
 
-        bluePoint.DestroyBlock();
-
         GrappleManager.Instance.ReleaseHook(gunIndex);
+
+        bluePoint.DestroyBlock();
     }
     public void OnSwing(Vector3 swingVelocity)
     {
