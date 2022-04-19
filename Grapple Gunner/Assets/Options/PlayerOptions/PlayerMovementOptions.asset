@@ -42,13 +42,50 @@ MonoBehaviour:
   wallBonkThreshold: 6.4
   wooshVolume:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 5
+      value: 0
+      inSlope: 2
+      outSlope: 0.066498265
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.040720716
+    - serializedVersion: 3
+      time: 50
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   wooshPitch:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 15
+      value: 0.75
+      inSlope: 0.021428572
+      outSlope: 0.021428572
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 50
+      value: 1.5
+      inSlope: 0.021428572
+      outSlope: 0.021428572
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  wooshDecay: 0.1

@@ -26,10 +26,10 @@ public class MainMenuManager : LocationManager
     public List<MeshRenderer> levelButtonVisuals;
     public Material lockedLevelMaterial;
     public Material unlockedLevelMaterial;
-    override protected void Start()
+
+    private bool musicPlaying = false;
+    protected void Start()
     {
-        base.Start();
-        
         if (GameManager.Instance.fileSelected)
         {
             DisplayMain();
@@ -66,6 +66,11 @@ public class MainMenuManager : LocationManager
         soundMenu.SetActive(false);
         controlsMenu.SetActive(false);
         confirmResetMenu.SetActive(false);
+
+        if(!musicPlaying){
+            SFXManager.Instance.PlayMusic(music);
+            musicPlaying = true;
+        }
     }
 
     public void DisplayFileSelect()

@@ -14070,11 +14070,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStartTransform: {fileID: 5554162921738862783}
   music:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
+    name: Completion
+    clip: {fileID: 8300000, guid: 94aab8623a1ed3448997bcc2a6c8c6c9, type: 3}
+    volume: 0.299
     pitch: 1
     loop: 0
+    playOnAwake: 0
     source: {fileID: 0}
   levelIndex: 1
   playerDeathTransform: {fileID: 1312687484}
