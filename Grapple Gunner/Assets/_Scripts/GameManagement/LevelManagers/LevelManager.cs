@@ -51,6 +51,16 @@ public class LevelManager : LocationManager
         onRespawn = onPlayerRespawn;
     }
 
+    private void UseCheckpoint(){
+        for (int i = 0; i < movingObjects.Count; i++)
+        {
+            movingObjects[i].GetComponent<ISaveState>()?.LoadState();
+
+            movingObjects[i].position = movingObjectPositions[i];
+            movingObjects[i].rotation = movingObjectRotations[i];
+        }
+    }
+
     public override void LoadNextLevel()
     {
         if (levelIndex < 0) return;
@@ -60,6 +70,8 @@ public class LevelManager : LocationManager
 
     public override void RespawnPlayer()
     {
+        UseCheckpoint();
+
         VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
         VFXManager.Instance.transitionSystem.StartTransition();
         PlayerManager.Instance.TeleportAfter(playerRespawnTransform, 0.25f);
@@ -77,13 +89,6 @@ public class LevelManager : LocationManager
         CancelInvoke("InvokeOnRespawn");
         VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.deathTransitionColor);
         VFXManager.Instance.transitionSystem.StartTransition();
-
-        for(int i = 0; i < movingObjects.Count; i++){
-            movingObjects[i].GetComponent<ISaveState>()?.LoadState();
-
-            movingObjects[i].position = movingObjectPositions[i];
-            movingObjects[i].rotation = movingObjectRotations[i];
-        }
 
         PlayerManager.Instance.TeleportAfter(playerDeathTransform, 0.25f);
 

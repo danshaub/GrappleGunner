@@ -44,6 +44,7 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     public void TeleportAfter(Transform tpTransform, float time){
+        GrappleManager.Instance.ForceReleaseHook();
         movementController.rigidbody.velocity = Vector3.zero;
         StartCoroutine(TeleportCoroutine(tpTransform, time));
     }
