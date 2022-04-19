@@ -49,6 +49,15 @@ public class GrappleManager : Singleton<GrappleManager>
         {
             guns[index].UpdateReticle();
             guns[index].DrawRope();
+
+            if (index == 0)
+            {
+                SFXManager.Instance.SetSFXPitch("GunRopeHumRight", options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed));
+            }
+            else
+            {
+                SFXManager.Instance.SetSFXPitch("GunRopeHumLeft", options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed));
+            }
         }
     }
 
@@ -60,6 +69,16 @@ public class GrappleManager : Singleton<GrappleManager>
         {
             guns[index].DisableReticle();
             hooks[index].FireHook();
+
+            SFXManager.Instance.PlaySFX("GunFire");
+            if (index == 0)
+            {
+                SFXManager.Instance.FadeInSFX("GunRopeHumRight", 0.75f);
+            }
+            else
+            {
+                SFXManager.Instance.FadeInSFX("GunRopeHumLeft", 0.75f);
+            }
         }
         else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction))
         {

@@ -22,4 +22,7 @@ public class GrappleOptions : ScriptableObject
     public float minReticleDistance;
     public float maxReticleDistance;
     public AnimationCurve reticleScaleCurve;
+
+    [Header("Gun SFX Options")]
+    public AnimationCurve ropeHumPitch;
 }

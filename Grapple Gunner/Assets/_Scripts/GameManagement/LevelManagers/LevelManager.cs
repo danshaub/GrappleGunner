@@ -65,6 +65,8 @@ public class LevelManager : LocationManager
     public override void LoadNextLevel()
     {
         if (levelIndex < 0) return;
+        SFXManager.Instance.StopAllLoopingSounds();
+        SFXManager.Instance.StopAllVoiceClips();
 
         SceneLoader.Instance.LoadLevel((levelIndex + 1) % SceneLoader.Instance.directory.levelNames.Count);
     }
@@ -88,6 +90,7 @@ public class LevelManager : LocationManager
     public override void KillPlayer()
     {
         CancelInvoke("InvokeOnRespawn");
+
         VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.deathTransitionColor);
         VFXManager.Instance.transitionSystem.StartTransition();
 

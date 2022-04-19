@@ -88,21 +88,28 @@ MonoBehaviour:
     playOnAwake: 1
     source: {fileID: 0}
   - name: TransitionStart
-    clip: {fileID: 8300000, guid: 95a7b4fe5059cc549a5a06b0d012491b, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 79c5e5b7329820f478014e215ec64293, type: 3}
+    volume: 0.25
     pitch: 1
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: TransitionSustain
+    clip: {fileID: 8300000, guid: 3d104965c7c8a5e4ea767f90a304474b, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
   - name: TransitionEnd
-    clip: {fileID: 8300000, guid: 95a7b4fe5059cc549a5a06b0d012491b, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: da03df4d7b651c548adf056331face72, type: 3}
+    volume: 0.25
     pitch: 1
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
   - name: GunFire
-    clip: {fileID: 8300000, guid: 9e73b1d27fa4f544fa3e2955802aaae0, type: 3}
+    clip: {fileID: 8300000, guid: 21767ab52e891d0449c32234e4f43e90, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -116,7 +123,7 @@ MonoBehaviour:
     playOnAwake: 0
     source: {fileID: 0}
   - name: GunRetract
-    clip: {fileID: 8300000, guid: c7fd25e0ea712a541a96b81ca003fdc3, type: 3}
+    clip: {fileID: 8300000, guid: 620bfcce721ce21429e5c2e9fc753f7e, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -136,9 +143,16 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
-  - name: GunRopeHum
-    clip: {fileID: 8300000, guid: 8ed0a637e2403bb4a85f8fba15fa62bc, type: 3}
-    volume: 0.5
+  - name: GunRopeHumLeft
+    clip: {fileID: 8300000, guid: 9250c9bf5872180498bb98dc04fe1ead, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: GunRopeHumRight
+    clip: {fileID: 8300000, guid: 9250c9bf5872180498bb98dc04fe1ead, type: 3}
+    volume: 0.75
     pitch: 1
     loop: 1
     playOnAwake: 0
