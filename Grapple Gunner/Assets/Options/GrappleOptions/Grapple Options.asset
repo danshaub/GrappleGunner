@@ -25,37 +25,46 @@ MonoBehaviour:
   reticleManager: {fileID: 11400000, guid: 1b3146d8ba110854d8fa86a90184b26c, type: 2}
   disabledTransparency: 0.5
   minReticleDistance: 5
-  maxReticleDistance: 10
+  maxReticleDistance: 15
   reticleScaleCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.33
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 0.33
+      value: 0.3
       inSlope: Infinity
-      outSlope: 1.3399999
+      outSlope: 0
       tangentMode: 71
       weightedMode: 0
       inWeight: 0.052704632
       outWeight: 0.063800216
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1.3399999
-      outSlope: 1.3399999
-      tangentMode: 34
+      time: 0.14
+      value: 0.3
+      inSlope: -0
+      outSlope: 0.5457415
+      tangentMode: 5
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.33
+      value: 0.75
+      inSlope: 0.68014896
+      outSlope: 0.7462687
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1.25
+      inSlope: 0.7462687
+      outSlope: 2
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

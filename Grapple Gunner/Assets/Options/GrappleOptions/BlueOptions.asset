@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hookMass: 1
   targetHookPosition: {x: 0, y: 0, z: 0.5}
-  storingTargetHookPosition: {x: 0, y: 0, z: 0.25}
+  storingTargetHookPosition: {x: 0, y: 0, z: 0.2}
   springStrength: 1000
   maxHookVelocity: 50
   maxSpringForce: 6000
@@ -22,7 +22,7 @@ MonoBehaviour:
   launchForce: 1000
   storeBlockInputThreshold: 0.25
   miniPointScale: 0.05
-  miniPointLocalPosition: {x: 0, y: 0, z: -0.1}
+  miniPointLocalPosition: {x: 0, y: 0, z: -0.225}
   interpolationValue: 0.15
   storeBlockCooldown: 0.2
   maxPushbackForce: 2000
