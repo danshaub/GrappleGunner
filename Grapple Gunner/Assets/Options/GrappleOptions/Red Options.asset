@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Red Options
   m_EditorClassIdentifier: 
   grappleSpeed: 20
-  groundKick: 2
+  groundKick: 0
   velocityDamper: 0.06
   brakeDamper: 0.1
   speedIncreaseMultiplier: 4

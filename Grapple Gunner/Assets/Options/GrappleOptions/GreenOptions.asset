@@ -50,11 +50,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   minLinearLimit: 0.05
   contactVelocityDamper: 0.2
-  swingInputThreshold: 0.25
-  maxSwingVelocity: 3.5
-  swingForce: 50
+  swingInputThreshold: 0.75
+  maxSwingVelocity: 2.5
+  swingForce: 80
   doubleGreenMultiplier: 0.75
-  reelInForce: 20
+  reelInForce: 35
   reelInDistanceVelocityDamper:
     serializedVersion: 2
     m_Curve:
@@ -68,13 +68,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.045747362
     - serializedVersion: 3
-      time: 4
-      value: 0.001
-      inSlope: -0.16558465
-      outSlope: -0.16558465
+      time: 3.850277
+      value: 0
+      inSlope: -0.20331489
+      outSlope: -0.20331489
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.10929233
+      inWeight: 0.22748363
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

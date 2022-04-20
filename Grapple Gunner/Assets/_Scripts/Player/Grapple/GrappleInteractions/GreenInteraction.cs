@@ -12,7 +12,7 @@ public class GreenInteraction : I_GrappleInteraction
     private Transform currentHookPoint;
     private int gunIndex;
     private float reelInput;
-    private bool reelingIn;
+    public bool reelingIn;
     private bool reelingOut;
     private float distanceFromPoint;
     private GreenPoint greenPoint;

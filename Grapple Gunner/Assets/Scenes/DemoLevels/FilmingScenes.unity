@@ -10506,7 +10506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363cd3bf1c60adf438785a4edb72cb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStartTransform: {fileID: 177548892}
+  playerStartTransform: {fileID: 1036294110505199991}
   music:
     name: 
     clip: {fileID: 0}

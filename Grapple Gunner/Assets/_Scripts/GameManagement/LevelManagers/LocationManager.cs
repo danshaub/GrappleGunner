@@ -15,7 +15,7 @@ public abstract class LocationManager : Singleton<LocationManager>
 
     public void LoadLevel(int levelIndex)
     {
-        if (GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
+        // if (GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
             SceneLoader.Instance.LoadLevel(levelIndex);
         }
