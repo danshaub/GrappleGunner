@@ -24,5 +24,6 @@ public class GrappleOptions : ScriptableObject
     public AnimationCurve reticleScaleCurve;
 
     [Header("Gun SFX Options")]
+    public float ropeHumPitchDamper;
     public AnimationCurve ropeHumPitch;
 }

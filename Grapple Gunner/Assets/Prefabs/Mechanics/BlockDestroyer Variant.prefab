@@ -20,6 +20,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5850776341847644779, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
+      propertyPath: m_Pitch
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850776341847644779, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7318315501026279730, guid: e2f3b30f04408004abf34c7deb282b89, type: 3}
       propertyPath: m_Layer
       value: 16

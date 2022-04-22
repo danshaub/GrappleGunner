@@ -12,9 +12,11 @@ public class RedInteraction : I_GrappleInteraction
 
     private float speedIncreaseInput;
     private bool brake;
+    private bool wasBraking;
 
     public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index)
     {
+        wasBraking = false;
         GrappleManager.Instance.guns[index].lightning.SetColor(GrappleManager.Instance.LightningColors.redColor);
         props = GrappleManager.Instance.redOptions;
         playerRB = PlayerManager.Instance.movementController.rigidbody;
@@ -57,8 +59,17 @@ public class RedInteraction : I_GrappleInteraction
 
         if (brake)
         {
+            if(!wasBraking){
+                SFXManager.Instance.PlaySFXOneShot("GearshotBrake");
+            }
             targetVelocity = Vector3.zero;
         }
+
+        if(wasBraking && !brake){
+            SFXManager.Instance.PlaySFXOneShot("GearshotUnbrake");
+        }
+
+        wasBraking = brake;
 
         if (pointRB != null)
         {

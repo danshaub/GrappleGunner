@@ -30,4 +30,15 @@ public class BlueOptions : ScriptableObject
     public PhysicMaterial releasedPhysicsMaterial;
 
     public LayerMask invalidTakeOutLayers;
+
+    [Header("SFX")]
+    public float bonkCooldown;
+    public float bonkThreshold;
+    public AnimationCurve bonkVolume;
+    public AudioClip bonkSound;
+    public AudioClip bonkBarrierSound;
+
+    public float spawnVolume;
+    public AudioClip destroySound;
+    public AudioClip respawnSound;
 }

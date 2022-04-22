@@ -23,6 +23,7 @@ public class LevelManager : LocationManager
     protected virtual void Start()
     {
         SFXManager.Instance.PlayMusic(music);
+        SFXManager.Instance.PlaySFX("Ambient");
 
         if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
@@ -65,8 +66,6 @@ public class LevelManager : LocationManager
     public override void LoadNextLevel()
     {
         if (levelIndex < 0) return;
-        SFXManager.Instance.StopAllLoopingSounds();
-        SFXManager.Instance.StopAllVoiceClips();
 
         SceneLoader.Instance.LoadLevel((levelIndex + 1) % SceneLoader.Instance.directory.levelNames.Count);
     }
@@ -84,6 +83,7 @@ public class LevelManager : LocationManager
 
     private void InvokeOnRespawn(){
         SFXManager.Instance.PlayMusic(music);
+        SFXManager.Instance.PlaySFX("Ambient");
         onRespawn.Invoke();
     }
 

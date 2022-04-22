@@ -52,11 +52,13 @@ public class GrappleManager : Singleton<GrappleManager>
 
             if (index == 0)
             {
-                SFXManager.Instance.SetSFXPitch("GunRopeHumRight", options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed));
+                float targetVolume = Mathf.Lerp(SFXManager.Instance.GetSFXPitch("GunRopeHumRight"),options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed), options.ropeHumPitchDamper);
+                SFXManager.Instance.SetSFXPitch("GunRopeHumRight", targetVolume);
             }
             else
             {
-                SFXManager.Instance.SetSFXPitch("GunRopeHumLeft", options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed));
+                float targetVolume = Mathf.Lerp(SFXManager.Instance.GetSFXPitch("GunRopeHumLeft"),options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed), options.ropeHumPitchDamper);
+                SFXManager.Instance.SetSFXPitch("GunRopeHumLeft", targetVolume);
             }
         }
     }
@@ -73,11 +75,11 @@ public class GrappleManager : Singleton<GrappleManager>
             SFXManager.Instance.PlaySFX("GunFire");
             if (index == 0)
             {
-                SFXManager.Instance.FadeInSFX("GunRopeHumRight", 0.75f);
+                SFXManager.Instance.SetSFXVolume("GunRopeHumRight", 0.75f, true);
             }
             else
             {
-                SFXManager.Instance.FadeInSFX("GunRopeHumLeft", 0.75f);
+                SFXManager.Instance.SetSFXVolume("GunRopeHumLeft", 0.75f, true);
             }
         }
         else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction))

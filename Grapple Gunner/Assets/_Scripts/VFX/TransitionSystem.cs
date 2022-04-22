@@ -57,7 +57,6 @@ public class TransitionSystem : MonoBehaviour
             transitionParticles.Play();
         }
 
-        Debug.Log("Finishing transition");
         SFXManager.Instance.FadeOutSFX("TransitionSustain", .25f, true);
         SFXManager.Instance.PlaySFX("TransitionEnd");
 

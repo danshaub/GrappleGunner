@@ -17,7 +17,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
     {
         base.Awake();
 
-        InitSoundArray(sfxs, musicGroup);
+        InitSoundArray(sfxs, sfxGroup);
         InitSoundArray(voiceClips, voiceGroup);
 
         musicSource = gameObject.AddComponent<AudioSource>();
@@ -45,6 +45,16 @@ public class SFXManager : SingletonPersistent<SFXManager>
         }
     }
 
+    public void PlaySFXOneShot(string name){
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+        s.source.PlayOneShot(s.clip);
+    }
+
     public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxs, sound => sound.name == name);
@@ -56,7 +66,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
         s.source.Play();
     }
 
-    public void SetSFXVolume(string name, float volume)
+    public void SetSFXVolume(string name, float volume, bool playSound)
     {
         Sound s = Array.Find(sfxs, sound => sound.name == name);
         if (s == null)
@@ -65,6 +75,10 @@ public class SFXManager : SingletonPersistent<SFXManager>
             return;
         }
         s.source.volume = volume;
+
+        if(playSound && !s.source.isPlaying){
+            s.source.Play();
+        }
     }
 
     public float GetSFXVolume(string name)
@@ -151,7 +165,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
     private IEnumerator FadeInSFXCoroutine(float decayTime, Sound s)
     {
         float decayRate = s.volume / decayTime;
-
+        
         while (s.source.volume < s.volume)
         {
             s.source.volume += (decayRate * Time.deltaTime);

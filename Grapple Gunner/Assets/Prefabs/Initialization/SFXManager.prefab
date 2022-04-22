@@ -129,20 +129,6 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
-  - name: GunReelIn
-    clip: {fileID: 8300000, guid: ec721a4b2c5fdca4690d1bc9e95284f4, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: GunReelOut
-    clip: {fileID: 8300000, guid: 13d0aa51a329e66408b1c590d10e3381, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
   - name: GunRopeHumLeft
     clip: {fileID: 8300000, guid: 9250c9bf5872180498bb98dc04fe1ead, type: 3}
     volume: 0.75
@@ -155,6 +141,48 @@ MonoBehaviour:
     volume: 0.75
     pitch: 1
     loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: GearshotBrake
+    clip: {fileID: 8300000, guid: b8553b3b1dde7c5489068ba7a3669602, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: GearshotUnbrake
+    clip: {fileID: 8300000, guid: cf745380c68702a4198b9add4b8bb61f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Ambient
+    clip: {fileID: 8300000, guid: ec18e44d1a3e7754eaba6529f4780189, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: StoreMagLev
+    clip: {fileID: 8300000, guid: bc25bc3236aa32e47a7865f64e92c27a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: LaunchMagLev
+    clip: {fileID: 8300000, guid: 96b4df5b9418e9945ac0fdb0ff197137, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: ReleaseMagLev
+    clip: {fileID: 8300000, guid: 184011278139daf4aa7f41f0674423dd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     playOnAwake: 0
     source: {fileID: 0}
   voiceClips:

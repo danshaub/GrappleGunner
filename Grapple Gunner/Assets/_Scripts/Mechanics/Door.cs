@@ -7,9 +7,12 @@ public class Door : MonoBehaviour, ISaveState
     public Transform doorTransform;
     public Transform openTransform;
     public Transform closedTransform;
+
     public float speed;
     public bool closed = true;
 
+    public AudioClip doorOpenSound;
+    public AudioClip doorCloseSound;
     private State state;
     // Start is called before the first frame update
     void Start()
@@ -39,16 +42,27 @@ public class Door : MonoBehaviour, ISaveState
 
     public void Open()
     {
+        GetComponent<AudioSource>().PlayOneShot(doorOpenSound);
         closed = false;
     }
 
     public void Close()
     {
+        GetComponent<AudioSource>().PlayOneShot(doorCloseSound);
         closed = true;
     }
 
     public void Toggle()
     {
+        if (closed)
+        {
+            GetComponent<AudioSource>().PlayOneShot(doorOpenSound);
+        }
+        else
+        {
+            GetComponent<AudioSource>().PlayOneShot(doorCloseSound);
+        }
+
         closed = !closed;
     }
 

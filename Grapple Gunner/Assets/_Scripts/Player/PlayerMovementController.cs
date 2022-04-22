@@ -67,6 +67,7 @@ public class PlayerMovementController : MonoBehaviour
         PlayerManager.Instance.playerXZLocalPosistion = new Vector3(headTransform.localPosition.x, 0, headTransform.localPosition.z);
     }
 
+    private bool wasGrounded = true;
     private void HandleGround()
     {
         Vector3 rayCastOrigin = transform.TransformPoint(playerCollider.center);
@@ -100,13 +101,13 @@ public class PlayerMovementController : MonoBehaviour
             float relativeVelocity = rayCastDirectionalVelocity - otherDirectionalVelocity;
 
             rideHeightDifference = hit.distance - targetCenterHeight;
-            bool wasGrounded = isGrounded;
             isGrounded = rideHeightDifference <= options.groundSnapDistance * .5f;
 
             if (!wasGrounded && isGrounded)
             {
                 SFXManager.Instance.PlaySFX("PlayerLanding");
             }
+            wasGrounded = isGrounded;
 
             float springForce = (rideHeightDifference * options.rideSpringStrength) - (relativeVelocity * options.rideSpringDamper);
 
@@ -346,7 +347,7 @@ public class PlayerMovementController : MonoBehaviour
             targetPitch = options.wooshPitch.Evaluate(rigidbody.velocity.magnitude);
         }
 
-        SFXManager.Instance.SetSFXVolume("Woosh", Mathf.Lerp(SFXManager.Instance.GetSFXVolume("Woosh"), targetVolume, options.wooshDecay));
+        SFXManager.Instance.SetSFXVolume("Woosh", Mathf.Lerp(SFXManager.Instance.GetSFXVolume("Woosh"), targetVolume, options.wooshDecay), true);
         SFXManager.Instance.SetSFXPitch("Woosh", Mathf.Lerp(SFXManager.Instance.GetSFXPitch("Woosh"), targetPitch, options.wooshDecay));
     }
 
@@ -361,9 +362,7 @@ public class PlayerMovementController : MonoBehaviour
         if (hitVelocity > options.wallBonkThreshold)
         {
             bonked = true;
-            SFXManager.Instance.SetSFXVolume("PlayerWallBonk", options.wallBonkVolume.Evaluate(hitVelocity));
-            SFXManager.Instance.PlaySFX("PlayerWallBonk");
-
+            SFXManager.Instance.SetSFXVolume("PlayerWallBonk", options.wallBonkVolume.Evaluate(hitVelocity), true);
             StartCoroutine(WallBonkCooldown());
         }
     }
