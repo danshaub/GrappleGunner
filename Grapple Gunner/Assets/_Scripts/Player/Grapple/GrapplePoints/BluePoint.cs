@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public class BluePoint : GrapplePoint
 {
     public Vector3 worldRespawnPosition;
@@ -147,11 +148,50 @@ public class BluePoint : GrapplePoint
         colliding = false;
     }
 
+    public bool bonked = false;
+    private void OnCollisionEnter(Collision other)
+    {
+        if (bonked || other.gameObject.layer == 8) return;
+
+
+        BlueOptions options = GrappleManager.Instance.blueOptions;
+
+        float hitVelocity = Vector3.Dot(other.relativeVelocity, other.contacts[0].normal);
+
+        if (hitVelocity > options.bonkThreshold)
+        {
+            bonked = true;
+            GetComponent<AudioSource>().volume = options.bonkVolume.Evaluate(hitVelocity);
+            if (other.gameObject.layer == 17)
+            {
+                GetComponent<AudioSource>().PlayOneShot(options.bonkBarrierSound);
+            }
+            else if (other.gameObject.layer == 13 || other.gameObject.layer == 14)
+            {
+                GetComponent<AudioSource>().volume *= .8f;
+            }
+            else
+            {
+                GetComponent<AudioSource>().PlayOneShot(options.bonkSound);
+            }
+            StartCoroutine(BonkCooldown(options.bonkCooldown));
+        }
+    }
+
+    private IEnumerator BonkCooldown(float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        bonked = false;
+    }
+
     public void DestroyBlock()
     {
         if (destroying || blockHeld) return;
 
         type = GrappleType.DestroyingBlue;
+
+        GetComponent<AudioSource>().volume = GrappleManager.Instance.blueOptions.spawnVolume;
+        GetComponent<AudioSource>().PlayOneShot(GrappleManager.Instance.blueOptions.destroySound);
 
         lerpValue = GrappleManager.Instance.blueOptions.interpolationValue;
         pointCollider.isTrigger = true;
@@ -180,7 +220,8 @@ public class BluePoint : GrapplePoint
 
         pointRB.velocity = Vector3.zero;
         pointRB.angularVelocity = Vector3.zero;
-
+        GetComponent<AudioSource>().volume = GrappleManager.Instance.blueOptions.spawnVolume;
+        GetComponent<AudioSource>().PlayOneShot(GrappleManager.Instance.blueOptions.respawnSound);
         destroying = false;
     }
 

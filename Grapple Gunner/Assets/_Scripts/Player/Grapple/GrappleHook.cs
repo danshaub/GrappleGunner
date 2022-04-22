@@ -161,14 +161,15 @@ public class GrappleHook : MonoBehaviour
         if (!instant)
         {
             SFXManager.Instance.PlaySFX("GunRetract");
-            if (index == 0)
-            {
-                SFXManager.Instance.FadeOutSFX("GunRopeHumRight", 0.5f, true);
-            }
-            else
-            {
-                SFXManager.Instance.FadeOutSFX("GunRopeHumLeft", 0.5f, true);
-            }
+        }
+
+        if (index == 0)
+        {
+            SFXManager.Instance.SetSFXVolume("GunRopeHumRight", 0, false);
+        }
+        else
+        {
+            SFXManager.Instance.SetSFXVolume("GunRopeHumLeft", 0, false);
         }
 
         dummyHookTransform.gameObject.SetActive(true);

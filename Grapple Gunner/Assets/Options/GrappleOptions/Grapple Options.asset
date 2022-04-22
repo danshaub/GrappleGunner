@@ -68,35 +68,36 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ropeHumPitchDamper: 0.05
   ropeHumPitch:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -100
-      value: 1.2
-      inSlope: -0.0029036468
-      outSlope: -0.0029036468
+      time: -50
+      value: 1.5
+      inSlope: -0.000070194495
+      outSlope: -0.000070194495
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.0912957
+      outWeight: 0.6765913
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.0014229906
-      outSlope: -0.0014229906
+      inSlope: -0.013346135
+      outSlope: -0.013346135
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.10414588
+      inWeight: 0.12502342
       outWeight: 0.036061026
     - serializedVersion: 3
-      time: 100
-      value: 0.8
-      inSlope: -0.0024216864
-      outSlope: -0.0024216864
+      time: 50
+      value: 0.75
+      inSlope: -0.000051245257
+      outSlope: -0.000051245257
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.08248436
+      inWeight: 0.5457383
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

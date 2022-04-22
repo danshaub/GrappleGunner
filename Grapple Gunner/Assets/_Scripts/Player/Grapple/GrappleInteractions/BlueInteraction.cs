@@ -68,6 +68,7 @@ public class BlueInteraction : I_GrappleInteraction
 
         if (launchOnRelease)
         {
+            SFXManager.Instance.PlaySFXOneShot("LaunchMagLev");
             bluePoint.ApplyLaunchForce(currentGunTip.forward * props.launchForce);
         }
     }
@@ -136,6 +137,7 @@ public class BlueInteraction : I_GrappleInteraction
             {
                 if (blockIsStored)
                 {
+                    SFXManager.Instance.PlaySFXOneShot("ReleaseMagLev");
                     TakeOutBlock(false);
                 }
                 else
@@ -155,6 +157,7 @@ public class BlueInteraction : I_GrappleInteraction
     {
         if (!bluePoint.canStore) return;
 
+        SFXManager.Instance.PlaySFXOneShot("StoreMagLev");
         blockIsStored = true;
         GrappleManager.Instance.grappleLocked[gunIndex] = true;
         bluePoint.ShowMiniPoint(currentHoookPoint, props.miniPointLocalPosition, props.miniPointScale, props.interpolationValue);
@@ -191,6 +194,7 @@ public class BlueInteraction : I_GrappleInteraction
         {
             if (bluePoint.validTakeOutLocation)
             {
+                SFXManager.Instance.PlaySFXOneShot("ReleaseMagLev");
                 TakeOutBlock(false);
             }
             else

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider)), ExecuteInEditMode]
+[RequireComponent(typeof(AudioSource))]
 public class FieldVFX : MonoBehaviour
 {
     public ParticleSystem fog;
@@ -13,6 +14,8 @@ public class FieldVFX : MonoBehaviour
     public Transform negYplane;
 
     private BoxCollider coll;
+
+    private AudioSource audioSource;
 
     public float fogVolume;
     public float lightningFrequency;
@@ -56,18 +59,49 @@ public class FieldVFX : MonoBehaviour
         }
 
         if(!isActive) SetInactive();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void SetActive(){
         isActive = true;
-
         lightning.Play();
+
+        StartCoroutine(FadeInSound(.75f, 1f));
     }
 
     public void SetInactive(){
         isActive = false;
-
         lightning.Stop();
+
+        StartCoroutine(FadeOutSound(.75f));
+    }
+
+    private IEnumerator FadeInSound(float decayTime, float targetVolume)
+    {
+        audioSource.Play();
+
+        float decayRate = targetVolume / decayTime;
+
+        while (audioSource.volume < targetVolume)
+        {
+            audioSource.volume += (decayRate * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
+
+    private IEnumerator FadeOutSound(float decayTime)
+    {
+        float decayRate = audioSource.volume / decayTime;
+
+        while (audioSource.volume > 0f)
+        {
+            audioSource.volume -= (decayRate * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        audioSource.Stop();
     }
 
     private void OnDrawGizmos()
