@@ -49,6 +49,17 @@ public class GrappleManager : Singleton<GrappleManager>
         {
             guns[index].UpdateReticle();
             guns[index].DrawRope();
+
+            if (index == 0)
+            {
+                float targetVolume = Mathf.Lerp(SFXManager.Instance.GetSFXPitch("GunRopeHumRight"),options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed), options.ropeHumPitchDamper);
+                SFXManager.Instance.SetSFXPitch("GunRopeHumRight", targetVolume);
+            }
+            else
+            {
+                float targetVolume = Mathf.Lerp(SFXManager.Instance.GetSFXPitch("GunRopeHumLeft"),options.ropeHumPitch.Evaluate(guns[index].relativeHookSpeed), options.ropeHumPitchDamper);
+                SFXManager.Instance.SetSFXPitch("GunRopeHumLeft", targetVolume);
+            }
         }
     }
 
@@ -60,6 +71,16 @@ public class GrappleManager : Singleton<GrappleManager>
         {
             guns[index].DisableReticle();
             hooks[index].FireHook();
+
+            SFXManager.Instance.PlaySFX("GunFire");
+            if (index == 0)
+            {
+                SFXManager.Instance.SetSFXVolume("GunRopeHumRight", 0.75f, true);
+            }
+            else
+            {
+                SFXManager.Instance.SetSFXVolume("GunRopeHumLeft", 0.75f, true);
+            }
         }
         else if (grappleInteractions[index]?.GetType() == typeof(BlueInteraction))
         {

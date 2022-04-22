@@ -8,4 +8,11 @@ public class OrangeOptions : ScriptableObject
     public float teleportTransitionTime = .25f;
     public float reelInThreshold;
     public Color particleColor = new Color(1f,0.4f,0f);
+
+    [Header("BonkSFX")]
+    public float bonkCooldown;
+    public float bonkThreshold;
+    public AnimationCurve bonkVolume;
+    public AudioClip bonkSound;
+    public AudioClip bonkBarrierSound;
 }

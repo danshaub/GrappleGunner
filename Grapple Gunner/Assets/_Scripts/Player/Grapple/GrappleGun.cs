@@ -9,6 +9,10 @@ public class GrappleGun : MonoBehaviour
     private Material reticleMaterial;
     [SerializeField] public Transform gunTip;
     [SerializeField] public Transform hookPoint;
+
+    public float relativeHookSpeed;
+    private float currentHookLength;
+    private float previousHookLength;
     public Lightning lightning;
     private bool fired;
 
@@ -22,10 +26,16 @@ public class GrappleGun : MonoBehaviour
         if (hookPoint.gameObject.activeInHierarchy)
         {
             lightning.gameObject.SetActive(true);
+
+            previousHookLength = currentHookLength;
+            currentHookLength = (gunTip.position - hookPoint.position).magnitude;
+
+            relativeHookSpeed = (currentHookLength - previousHookLength) / Time.deltaTime;
         }
         else
         {
             lightning.gameObject.SetActive(false);
+            relativeHookSpeed = 0;
         }
     }
 

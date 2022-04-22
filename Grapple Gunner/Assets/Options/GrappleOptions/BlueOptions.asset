@@ -34,3 +34,34 @@ MonoBehaviour:
   invalidTakeOutLayers:
     serializedVersion: 2
     m_Bits: 0
+  bonkCooldown: 0.15
+  bonkThreshold: 0.2
+  bonkVolume:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.05
+      outSlope: 0.05
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 25
+      value: 1.25
+      inSlope: 0.05
+      outSlope: 0.05
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bonkSound: {fileID: 8300000, guid: d9b81153325cda94c8db1a5c8974dfe2, type: 3}
+  bonkBarrierSound: {fileID: 8300000, guid: 170dce8900359914bafc62dda585f2e4, type: 3}
+  spawnVolume: 0.5
+  destroySound: {fileID: 8300000, guid: 7f4989098c30e9a459113f81022ff302, type: 3}
+  respawnSound: {fileID: 8300000, guid: b7e8395c92e799c47a8dd71229295774, type: 3}

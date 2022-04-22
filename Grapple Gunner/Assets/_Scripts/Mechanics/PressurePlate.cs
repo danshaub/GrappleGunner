@@ -9,6 +9,9 @@ public class PressurePlate : MonoBehaviour
     public UnityEvent onPressurePlatePress;
     public UnityEvent onPressurePlateRelease;
 
+    public AudioClip onPressSound;
+    public AudioClip onReleaseSound;
+
     public Transform plateTransform;
     public float springDistance;
     private bool released = true;
@@ -24,6 +27,7 @@ public class PressurePlate : MonoBehaviour
         {
             if (released)
             {
+                GetComponent<AudioSource>().PlayOneShot(onPressSound);
                 onPressurePlatePress.Invoke();
             }
             released = false;
@@ -32,6 +36,7 @@ public class PressurePlate : MonoBehaviour
         {
             if (!released)
             {
+                GetComponent<AudioSource>().PlayOneShot(onReleaseSound);
                 onPressurePlateRelease.Invoke();
             }
             released = true;

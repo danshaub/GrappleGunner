@@ -20,9 +20,10 @@ public class LevelManager : LocationManager
         base.Awake();
     }
 
-    override protected void Start()
+    protected virtual void Start()
     {
-        base.Start();
+        SFXManager.Instance.PlayMusic(music);
+        SFXManager.Instance.PlaySFX("Ambient");
 
         if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
@@ -59,6 +60,7 @@ public class LevelManager : LocationManager
             movingObjects[i].position = movingObjectPositions[i];
             movingObjects[i].rotation = movingObjectRotations[i];
         }
+
     }
 
     public override void LoadNextLevel()
@@ -81,12 +83,14 @@ public class LevelManager : LocationManager
 
     private void InvokeOnRespawn(){
         SFXManager.Instance.PlayMusic(music);
+        SFXManager.Instance.PlaySFX("Ambient");
         onRespawn.Invoke();
     }
 
     public override void KillPlayer()
     {
         CancelInvoke("InvokeOnRespawn");
+
         VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.deathTransitionColor);
         VFXManager.Instance.transitionSystem.StartTransition();
 

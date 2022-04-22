@@ -34,3 +34,83 @@ MonoBehaviour:
   groundedMaterial: {fileID: 13400000, guid: 76d16598333f4a84b8e741a4f20302ce, type: 2}
   airborneMaterial: {fileID: 13400000, guid: f14ae809b8ec7c44b8bae87fd23060e2, type: 2}
   grappleMaterial: {fileID: 13400000, guid: 3757aa8ab8f716845b678a870f7bd04f, type: 2}
+  stepSpeedMultiplier: 1.76
+  maxStepTime: 0.95
+  minStepTime: 0.01
+  groundedStepTime: 0.35
+  initialStepTime: 0.1
+  wallBonkThreshold: 2
+  wallBonkCooldown: 0.25
+  wallBonkVolume:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 2
+      value: 0.1
+      inSlope: -0.0007589011
+      outSlope: -0.0007589011
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.4327324
+    - serializedVersion: 3
+      time: 50
+      value: 0.4
+      inSlope: 0.007014469
+      outSlope: 0.007014469
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.038141374
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  wooshVolume:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 10
+      value: 0
+      inSlope: 2
+      outSlope: 0.038157094
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06719675
+    - serializedVersion: 3
+      time: 50
+      value: 1
+      inSlope: 0.0010493861
+      outSlope: 0.0010493861
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.061603356
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  wooshPitch:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 15
+      value: 0.8
+      inSlope: 0.0142857125
+      outSlope: 0.0142857125
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 50
+      value: 1.3
+      inSlope: 0.0142857125
+      outSlope: 0.0142857125
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  wooshDecay: 0.1

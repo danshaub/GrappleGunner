@@ -18,7 +18,11 @@ public class TransitionSystem : MonoBehaviour
         if (useParticles)
         {
             transitionParticles.Play();
+            SFXManager.Instance.PlaySFX("TransitionStart");
+            SFXManager.Instance.FadeInSFX("TransitionSustain", .25f);
         }
+
+
         StartCoroutine(PauseTransition());
     }
 
@@ -30,6 +34,7 @@ public class TransitionSystem : MonoBehaviour
         {
             transitionParticles.Pause();
         }
+        
     }
 
     public void EndTransition()
@@ -51,6 +56,9 @@ public class TransitionSystem : MonoBehaviour
         {
             transitionParticles.Play();
         }
+
+        SFXManager.Instance.FadeOutSFX("TransitionSustain", .25f, true);
+        SFXManager.Instance.PlaySFX("TransitionEnd");
 
         fadeInOut.SetTrigger("FadeOut");
     }

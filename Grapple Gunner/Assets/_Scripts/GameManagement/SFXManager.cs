@@ -17,7 +17,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
     {
         base.Awake();
 
-        InitSoundArray(sfxs, musicGroup);
+        InitSoundArray(sfxs, sfxGroup);
         InitSoundArray(voiceClips, voiceGroup);
 
         musicSource = gameObject.AddComponent<AudioSource>();
@@ -36,7 +36,23 @@ public class SFXManager : SingletonPersistent<SFXManager>
             s.source.pitch = s.pitch;
 
             s.source.outputAudioMixerGroup = group;
+
+            s.source.playOnAwake = s.playOnAwake;
+            s.source.loop = s.loop;
+
+
+            if(s.playOnAwake) s.source.Play();
         }
+    }
+
+    public void PlaySFXOneShot(string name){
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+        s.source.PlayOneShot(s.clip);
     }
 
     public void PlaySFX(string name)
@@ -48,6 +64,54 @@ public class SFXManager : SingletonPersistent<SFXManager>
             return;
         }
         s.source.Play();
+    }
+
+    public void SetSFXVolume(string name, float volume, bool playSound)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+        s.source.volume = volume;
+
+        if(playSound && !s.source.isPlaying){
+            s.source.Play();
+        }
+    }
+
+    public float GetSFXVolume(string name)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return 0;
+        }
+        return s.source.volume;
+    }
+
+    public void SetSFXPitch(string name, float pitch)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+        s.source.pitch = pitch;
+    }
+
+    public float GetSFXPitch(string name)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return 0;
+        }
+        return s.source.pitch;
     }
 
     public void PlayVoiceClip(string name)
@@ -81,6 +145,59 @@ public class SFXManager : SingletonPersistent<SFXManager>
             return;
         }
         s.source.Stop();
+    }
+
+    public void FadeInSFX(string name, float decayTime)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+
+        if(!s.source.isPlaying){
+            s.source.Play();
+        }
+        StartCoroutine(FadeInSFXCoroutine(decayTime, s));
+    }
+
+    private IEnumerator FadeInSFXCoroutine(float decayTime, Sound s)
+    {
+        float decayRate = s.volume / decayTime;
+        
+        while (s.source.volume < s.volume)
+        {
+            s.source.volume += (decayRate * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    public void FadeOutSFX(string name, float decayTime, bool stopClip)
+    {
+        Sound s = Array.Find(sfxs, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound Effect: " + name + " was not found.");
+            return;
+        }
+
+        StartCoroutine(FadeOutSFXCoroutine(decayTime, s, stopClip));
+    }
+
+    private IEnumerator FadeOutSFXCoroutine(float decayTime, Sound s, bool stopClip)
+    {
+        float decayRate = s.volume / decayTime;
+
+        while (s.source.volume > 0f)
+        {
+            s.source.volume -= (decayRate * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        if(stopClip){
+            s.source.Stop();
+        }
     }
 
     public void StopAllVoiceClips()
