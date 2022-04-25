@@ -15,6 +15,9 @@ MonoBehaviour:
   teleportTransitionTime: 0.2
   reelInThreshold: 0.5
   particleColor: {r: 1, g: 0.4, b: 0, a: 1}
+  destructionTime: 0.25
+  destructionPS: {fileID: 6681185035466507807, guid: c0b4d53e9354a2946b03d0acfe1f3540, type: 3}
+  respawnPS: {fileID: 3736841386756057390, guid: 73313342d07d1554dbdb4822d1dfef9a, type: 3}
   bonkCooldown: 0.15
   bonkThreshold: 0.2
   bonkVolume:

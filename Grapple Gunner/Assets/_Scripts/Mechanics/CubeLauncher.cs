@@ -9,6 +9,7 @@ public class CubeLauncher : MonoBehaviour
     public Vector3 launchRotation;
     public Vector3 launchVelocity;
     public float launchPeriod;
+    public float launchDelay;
     public bool repeatOnStart;
     public bool toggleRepeat;
 
@@ -38,10 +39,16 @@ public class CubeLauncher : MonoBehaviour
     }
 
     private void LaunchBlock(){
+        StartCoroutine(LaunchBlockCR());
+    }
+
+    private IEnumerator LaunchBlockCR(){
+        rbToLaunch.GetComponent<OrangePoint>()?.DestroyBlock();
+        yield return new WaitForSeconds(launchDelay);
         rbToLaunch.angularVelocity = Vector3.zero;
 
-        rbToLaunch.position = launchLocation;
-        rbToLaunch.rotation = Quaternion.Euler(launchRotation);
+        rbToLaunch.GetComponent<OrangePoint>()?.RespawnBlock(launchLocation, launchRotation);
+        yield return new WaitForSeconds(.4f);
         rbToLaunch.velocity = launchVelocity;
     }
 

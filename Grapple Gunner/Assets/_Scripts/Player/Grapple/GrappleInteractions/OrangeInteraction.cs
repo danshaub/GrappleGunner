@@ -15,19 +15,22 @@ public class OrangeInteraction : I_GrappleInteraction
     private int gunIndex;
     public void OnHit(Transform gunTip, Transform hookPoint, GrapplePoint grapplePoint, int index)
     {
+        gunIndex = index;
+        orangePoint = (OrangePoint)grapplePoint;
+
+        if(!orangePoint.active){
+            GrappleManager.Instance.ReleaseHook(gunIndex);
+            return;
+        }
+
         GrappleManager.Instance.guns[index].lightning.SetColor(GrappleManager.Instance.LightningColors.orangeColor);
         props = GrappleManager.Instance.orangeOptions;
 
-        orangePoint = (OrangePoint)grapplePoint;
 
         playerRB = PlayerManager.Instance.movementController.rigidbody;
         playerTargetRB = orangePoint.playerTargetRigidbody;
         blockRB = orangePoint.blockRigidbody;
         blockTargetRB = orangePoint.blockTargetRigidbody;
-
-        gunIndex = index;
-
-        return;
     }
     public void OnRelease()
     {
@@ -35,7 +38,10 @@ public class OrangeInteraction : I_GrappleInteraction
     }
     public void OnFixedUpdate()
     {
-        return;
+        if (!orangePoint.active)
+        {
+            GrappleManager.Instance.ReleaseHook(gunIndex);
+        }
     }
     public void OnReelIn(float reelStrength)
     {
