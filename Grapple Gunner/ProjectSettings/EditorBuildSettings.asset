@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level4.unity
     guid: 58f054ac141fb074ba3a2fe79fe7bc64
   - enabled: 1
-    path: Assets/Scenes/DemoLevels/L4-BLUE.unity
-    guid: ff399ab69c03ea54bbe3c4941cec8b9c
-  - enabled: 1
     path: Assets/Scenes/Testing/MechanicsTest.unity
     guid: 15d0250e13938104ab0f9d6ace6150e4
   - enabled: 1
