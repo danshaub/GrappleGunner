@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LevelDirectory
   m_EditorClassIdentifier: 
   levelNames:
-  - MechanicsTest
+  - Playground
   - Level1
   - Level2
-  - L3-ORANGE
-  - L4-BLUE
+  - Level3
+  - Level4
   mainMenuName: MainMenu

@@ -17,6 +17,8 @@ public class OrangePoint : GrapplePoint, ISaveState
     private Vector3 blockTargetPosition = Vector3.zero;
     private Vector3 playerTargetPosition = Vector3.zero;
 
+    public bool active = true;
+
     private bool hookConnected = false;
     private int remainingUses;
 
@@ -160,6 +162,24 @@ public class OrangePoint : GrapplePoint, ISaveState
         GetComponent<MeshRenderer>().sharedMaterial = savedInfo.material;
         type = savedInfo.type;
     }
+
+    public void DestroyBlock()
+    {
+        active = false;
+        Transform ps = Instantiate(GrappleManager.Instance.orangeOptions.destructionPS, transform).transform;
+        GetComponent<Animator>().SetTrigger("Destroy");
+    }
+
+    public void RespawnBlock(Vector3 position, Vector3 rotation)
+    {
+        transform.position = position;
+        transform.eulerAngles = rotation;
+        active = true;
+        Transform ps = Instantiate(GrappleManager.Instance.orangeOptions.respawnPS, transform.position, transform.rotation).transform;
+        ps.localScale = Vector3.one;
+        GetComponent<Animator>().SetTrigger("Respawn");
+    }
+
 
     private struct OrangeInfo
     {

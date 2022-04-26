@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7666056873929304443}
   - component: {fileID: 7501418799116206519}
   m_Layer: 13
-  m_Name: BlockDestructionPS
+  m_Name: BlueBlockDestructionPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
