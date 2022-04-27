@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 5328450620893277194}
   - component: {fileID: 5328450620893277197}
   - component: {fileID: 275840596815854851}
-  - component: {fileID: -2627866494233408915}
   m_Layer: 13
   m_Name: OrangeBlock_Static_Finite
   m_TagString: Hookable
@@ -288,25 +287,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &-2627866494233408915
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328450620893277192}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8e45873656821af428448d9184d70813, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5328450621955507510
 GameObject:
   m_ObjectHideFlags: 0

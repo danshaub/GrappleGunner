@@ -167,7 +167,7 @@ public class OrangePoint : GrapplePoint, ISaveState
     {
         active = false;
         Transform ps = Instantiate(GrappleManager.Instance.orangeOptions.destructionPS, transform).transform;
-        GetComponent<Animator>().SetTrigger("Destroy");
+        GetComponentInChildren<Animator>().SetTrigger("Destroy");
     }
 
     public void RespawnBlock(Vector3 position, Vector3 rotation)
@@ -177,7 +177,7 @@ public class OrangePoint : GrapplePoint, ISaveState
         active = true;
         Transform ps = Instantiate(GrappleManager.Instance.orangeOptions.respawnPS, transform.position, transform.rotation).transform;
         ps.localScale = Vector3.one;
-        GetComponent<Animator>().SetTrigger("Respawn");
+        GetComponentInChildren<Animator>().SetTrigger("Respawn");
     }
 
 
