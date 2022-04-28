@@ -23,7 +23,7 @@ public class LevelManager : LocationManager
     protected virtual void Start()
     {
         SFXManager.Instance.PlayMusic(music);
-        SFXManager.Instance.PlaySFX("Ambient");
+        SFXManager.Instance.StartAmbientSounds();
 
         if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
@@ -83,7 +83,7 @@ public class LevelManager : LocationManager
 
     private void InvokeOnRespawn(){
         SFXManager.Instance.PlayMusic(music);
-        SFXManager.Instance.PlaySFX("Ambient");
+        SFXManager.Instance.StartAmbientSounds();
         onRespawn.Invoke();
     }
 

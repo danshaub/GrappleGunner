@@ -11083,8 +11083,8 @@ MonoBehaviour:
   turnProviderStatusText: {fileID: 7499386467800290492}
   musicVolume: {fileID: 3560645229069424856}
   sfxVolume: {fileID: 4425576768265140382}
-  voiceVolume: {fileID: 0}
-  ambientVolume: {fileID: 0}
+  voiceVolume: {fileID: 680547296090107521}
+  ambientVolume: {fileID: 5769077990778204901}
   levelButtonVisuals:
   - {fileID: 7155666580778148987}
   - {fileID: 5848020687973758372}

@@ -41,5 +41,10 @@ public class PressurePlate : MonoBehaviour
             }
             released = true;
         }
+
+        if (Mathf.Abs(plateTransform.localPosition.y) > springDistance * 2){
+            float newY = -(springDistance + springDistance * .05f);
+            plateTransform.localPosition = Vector3.up * newY;
+        }
     }
 }

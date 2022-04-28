@@ -7,7 +7,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
 {
     public Sound[] sfxs;
     public Sound[] voiceClips;
-    public Sound ambientBackground;
+    public Sound[] ambientBackgroundClips;
     public AudioMixer mixer;
     public AudioMixerGroup sfxGroup;
     public AudioMixerGroup musicGroup;
@@ -22,6 +22,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
 
         InitSoundArray(sfxs, sfxGroup);
         InitSoundArray(voiceClips, voiceGroup);
+        InitSoundArray(ambientBackgroundClips, ambientGroup);
 
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.outputAudioMixerGroup = musicGroup;
@@ -223,6 +224,20 @@ public class SFXManager : SingletonPersistent<SFXManager>
             {
                 s.source.Stop();
             }
+        }
+        foreach (Sound s in ambientBackgroundClips)
+        {
+            if (s.loop)
+            {
+                s.source.Stop();
+            }
+        }
+    }
+
+    public void StartAmbientSounds(){
+        foreach (Sound s in ambientBackgroundClips)
+        {
+            s.source.Play();
         }
     }
 
