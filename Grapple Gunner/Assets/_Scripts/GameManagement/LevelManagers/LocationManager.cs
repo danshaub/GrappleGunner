@@ -38,4 +38,5 @@ public abstract class LocationManager : Singleton<LocationManager>
     public abstract void RespawnPlayer();
     public abstract void KillPlayer();
     public abstract void LoadNextLevel();
+    public abstract void Debug();
 }

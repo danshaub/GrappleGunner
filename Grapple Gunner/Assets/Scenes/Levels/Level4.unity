@@ -1585,6 +1585,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9108331988587909216, guid: 4cfbb5bb698151249bbff2275fa0a22f, type: 3}
   m_PrefabInstance: {fileID: 75802062}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &75076013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75076014}
+  m_Layer: 0
+  m_Name: DebugTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75076014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75076013}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &79683340 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9060026774160065059, guid: 0b3af1a7428f89e4095fb4bff67dda93, type: 3}
@@ -4459,6 +4489,7 @@ MonoBehaviour:
   onLevelStart:
     m_PersistentCalls:
       m_Calls: []
+  debugTransform: {fileID: 75076014}
 --- !u!4 &621508429
 Transform:
   m_ObjectHideFlags: 0

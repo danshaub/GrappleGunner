@@ -165,7 +165,7 @@ public class PlayerInput : Singleton<PlayerInput>
 
     private void Debug(InputAction.CallbackContext context)
     {
-        GrappleManager.Instance.ForceReleaseHook();
+        LocationManager.Instance.Debug();
     }
     #endregion
 }

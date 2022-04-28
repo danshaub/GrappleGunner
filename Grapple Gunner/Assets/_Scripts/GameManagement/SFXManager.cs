@@ -234,7 +234,8 @@ public class SFXManager : SingletonPersistent<SFXManager>
         }
     }
 
-    public void StartAmbientSounds(){
+    public void StartAmbientSounds()
+    {
         foreach (Sound s in ambientBackgroundClips)
         {
             s.source.Play();
@@ -292,7 +293,30 @@ public class SFXManager : SingletonPersistent<SFXManager>
 
     public void SetVolume(string mixerVolume, float vol)
     {
+        SetVolume(mixerVolume, vol, true);
+    }
+
+    public void SetVolume(string mixerVolume, float vol, bool saveGame)
+    {
+        switch (mixerVolume)
+        {
+            case "MusicVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+            case "SFXVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+            case "VoiceVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+            case "AmbientVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+        }
+
         mixer.SetFloat(mixerVolume, Mathf.Clamp(vol, -80, 20));
+
+        if(saveGame) GameSaveManager.Instance.SaveGame();
     }
 
     public float GetVolume(string mixerVolume)

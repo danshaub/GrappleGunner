@@ -14,6 +14,7 @@ public class LevelManager : LocationManager
     public UnityEvent onLevelStart;
 
     private UnityEvent onRespawn;
+    public Transform debugTransform;
 
     protected override void Awake()
     {
@@ -100,5 +101,11 @@ public class LevelManager : LocationManager
         SFXManager.Instance.StopAllVoiceClips();
         SFXManager.Instance.StopAllLoopingSounds();
         SFXManager.Instance.FadeOutMusic(.5f);
+    }
+
+    public override void Debug(){
+        VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
+        VFXManager.Instance.transitionSystem.StartTransition();
+        PlayerManager.Instance.TeleportAfter(debugTransform, 0.25f);
     }
 }
