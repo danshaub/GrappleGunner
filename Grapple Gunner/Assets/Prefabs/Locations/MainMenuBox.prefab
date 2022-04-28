@@ -6433,7 +6433,7 @@ PrefabInstance:
       objectReference: {fileID: 631262558}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayOptions
+      value: ResetVolume
       objectReference: {fileID: 0}
     - target: {fileID: 3315837692287650337, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: m_text

@@ -8,12 +8,14 @@ public abstract class LocationManager : Singleton<LocationManager>
     public Transform playerStartTransform;
     public Sound music;
 
-    public void LoadLevel(int levelIndex)
+    public bool LoadLevel(int levelIndex)
     {
         if (GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
             SceneLoader.Instance.LoadLevel(levelIndex);
+            return true;
         }
+        return false;
     }
     public virtual void LoadMainMenu()
     {

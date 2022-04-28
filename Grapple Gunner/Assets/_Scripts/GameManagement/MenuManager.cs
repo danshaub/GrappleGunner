@@ -146,8 +146,9 @@ public class MenuManager : Singleton<MenuManager>
 
     public void LoadLevel(int levelIndex)
     {
-        SceneLoader.Instance.LoadLevel(levelIndex);
-        HideMenu();
+        if(LocationManager.Instance.LoadLevel(levelIndex)){
+            HideMenu();
+        }
     }
 
     public void RespawnPlayer()

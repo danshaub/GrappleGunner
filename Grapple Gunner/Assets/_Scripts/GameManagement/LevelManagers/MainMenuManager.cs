@@ -283,6 +283,16 @@ public class MainMenuManager : LocationManager
         SFXManager.Instance.VolumeDecrease("AmbientVolume");
         UpdateAudioMenu();
     }
+
+    public void ResetVolume()
+    {
+        SFXManager.Instance.SetVolume("MusicVolume", 0f);
+        SFXManager.Instance.SetVolume("SFXVolume", 0f);
+        SFXManager.Instance.SetVolume("VoiceVolume", 0f);
+        SFXManager.Instance.SetVolume("AmbientVolume", 0f);
+
+        UpdateAudioMenu();
+    }
     #endregion
 
     #region misc
