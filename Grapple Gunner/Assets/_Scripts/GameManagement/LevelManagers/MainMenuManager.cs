@@ -21,6 +21,10 @@ public class MainMenuManager : LocationManager
     public TextMeshPro turnAmount;
     public TextMeshPro speedLineStatus;
     public List<TextMeshPro> levelText;
+    public TextMeshPro musicVolume;
+    public TextMeshPro sfxVolume;
+    public TextMeshPro voiceVolume;
+    public TextMeshPro ambientVolume;
 
     // Materials
     public List<MeshRenderer> levelButtonVisuals;
@@ -42,8 +46,9 @@ public class MainMenuManager : LocationManager
 
     #region display_functions
 
-    public void DisplayDisclaimer(){
-        disclaimer.SetActive(true); 
+    public void DisplayDisclaimer()
+    {
+        disclaimer.SetActive(true);
 
         mainMenu.SetActive(false);
         fileSelectMenu.SetActive(false);
@@ -67,7 +72,8 @@ public class MainMenuManager : LocationManager
         controlsMenu.SetActive(false);
         confirmResetMenu.SetActive(false);
 
-        if(!musicPlaying){
+        if (!musicPlaying)
+        {
             SFXManager.Instance.PlayMusic(music);
             musicPlaying = true;
         }
@@ -145,6 +151,8 @@ public class MainMenuManager : LocationManager
         optionsMenu.SetActive(false);
         controlsMenu.SetActive(false);
         confirmResetMenu.SetActive(false);
+
+        UpdateAudioMenu();
     }
 
     public void DisplayControls()
@@ -192,10 +200,12 @@ public class MainMenuManager : LocationManager
             turnAmount.text = "Turn Speed: " + GameManager.Instance.options.continuousTrunSpeed.ToString();
         }
 
-        if(GameManager.Instance.options.useSpeedLines){
+        if (GameManager.Instance.options.useSpeedLines)
+        {
             speedLineStatus.text = "On";
         }
-        else{
+        else
+        {
             speedLineStatus.text = "Off";
         }
     }
@@ -223,16 +233,70 @@ public class MainMenuManager : LocationManager
 
     #endregion
 
+    #region sound_options
+    public void UpdateAudioMenu()
+    {
+        musicVolume.text = "Music " + ((int)(SFXManager.Instance.GetVolume("MusicVolume") + 80)).ToString();
+        sfxVolume.text = "SFX " + ((int)(SFXManager.Instance.GetVolume("SFXVolume") + 80)).ToString();
+        voiceVolume.text = "Voice " + ((int)(SFXManager.Instance.GetVolume("VoiceVolume") + 80)).ToString();
+        ambientVolume.text = "Ambient " + ((int)(SFXManager.Instance.GetVolume("AmbientVolume") + 80)).ToString();
+    }
+
+    public void VolumeIncreaseSFX()
+    {
+        SFXManager.Instance.VolumeIncrease("SFXVolume");
+        UpdateAudioMenu();
+    }
+    public void VolumeIncreaseMusic()
+    {
+        SFXManager.Instance.VolumeIncrease("MusicVolume");
+        UpdateAudioMenu();
+    }
+    public void VolumeIncreaseVoice()
+    {
+        SFXManager.Instance.VolumeIncrease("VoiceVolume");
+        UpdateAudioMenu();
+    }
+    public void VolumeIncreaseAmbient()
+    {
+        SFXManager.Instance.VolumeIncrease("AmbientVolume");
+        UpdateAudioMenu();
+    }
+
+    public void VolumeDecreaseSFX()
+    {
+        SFXManager.Instance.VolumeDecrease("SFXVolume");
+        UpdateAudioMenu();
+    }
+    public void VolumeDecreaseMusic()
+    {
+        SFXManager.Instance.VolumeDecrease("MusicVolume");
+        UpdateAudioMenu();
+    }
+    public void VolumeDecreaseVoice()
+    {
+        SFXManager.Instance.VolumeDecrease("VoiceVolume");
+        UpdateAudioMenu();
+    }
+    public void VolumeDecreaseAmbient()
+    {
+        SFXManager.Instance.VolumeDecrease("AmbientVolume");
+        UpdateAudioMenu();
+    }
+    #endregion
+
     #region misc
     public void UpdateLevelButtons()
     {
         for (int i = 0; i < SceneLoader.Instance.directory.levelNames.Count; i++)
         {
-            if(GameManager.Instance.profile.unlockedLevels.Contains(i)){
+            if (GameManager.Instance.profile.unlockedLevels.Contains(i))
+            {
                 levelButtonVisuals[i].material = unlockedLevelMaterial;
                 levelText[i].text = i == 0 ? "Playground" : "Level " + i.ToString();
             }
-            else{
+            else
+            {
                 levelButtonVisuals[i].material = lockedLevelMaterial;
                 levelText[i].text = "Locked";
             }

@@ -18,7 +18,7 @@ MonoBehaviour:
   jumpCooldown: 0.5
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 532673
+    m_Bits: 533185
   airborneMoveStrength: 0.05
   maxJumpRideHeightDifference: 0.1
   rideHeight: 0.2

@@ -31,13 +31,16 @@ public class MenuManager : Singleton<MenuManager>
     public GameObject levelSelect;
     public GameObject controlsMenu;
     public GameObject comfortMenu;
-    public GameObject soundMenu;
+    public GameObject audioMenu1;
+    public GameObject audioMenu2;
     // Text Objects
     public List<TextMeshPro> levelTexts;
     public TextMeshPro speedLinesText;
     public TextMeshPro turnProviderStatusText;
     public TextMeshPro musicVolume;
     public TextMeshPro sfxVolume;
+    public TextMeshPro voiceVolume;
+    public TextMeshPro ambientVolume;
     // Materials
     public List<MeshRenderer> levelButtonVisuals;
     public Material lockedMaterial;
@@ -68,7 +71,8 @@ public class MenuManager : Singleton<MenuManager>
         levelSelect.SetActive(false);
         controlsMenu.SetActive(false);
         comfortMenu.SetActive(false);
-        soundMenu.SetActive(false);
+        audioMenu1.SetActive(false);
+        audioMenu2.SetActive(false);
     }
 
     public void DisplayLevelSelect()
@@ -78,7 +82,8 @@ public class MenuManager : Singleton<MenuManager>
         homeMenu.SetActive(false);
         controlsMenu.SetActive(false);
         comfortMenu.SetActive(false);
-        soundMenu.SetActive(false);
+        audioMenu1.SetActive(false);
+        audioMenu2.SetActive(false);
 
         UpdateLevelButtons();
     }
@@ -90,7 +95,8 @@ public class MenuManager : Singleton<MenuManager>
         homeMenu.SetActive(false);
         levelSelect.SetActive(false);
         comfortMenu.SetActive(false);
-        soundMenu.SetActive(false);
+        audioMenu1.SetActive(false);
+        audioMenu2.SetActive(false);
     }
 
     public void DisplayComfortMenu()
@@ -100,19 +106,37 @@ public class MenuManager : Singleton<MenuManager>
         homeMenu.SetActive(false);
         levelSelect.SetActive(false);
         controlsMenu.SetActive(false);
-        soundMenu.SetActive(false);
+        audioMenu1.SetActive(false);
+        audioMenu2.SetActive(false);
+
 
         UpdateComfortMenu();
     }
 
-    public void DisplaySoundMenu()
+    public void DisplayAudioMenu1()
     {
-        soundMenu.SetActive(true);
+        audioMenu1.SetActive(true);
 
         homeMenu.SetActive(false);
         levelSelect.SetActive(false);
         controlsMenu.SetActive(false);
         comfortMenu.SetActive(false);
+        audioMenu2.SetActive(false);
+
+        UpdateAudioMenu1();
+    }
+
+    public void DisplayAudioMenu2()
+    {
+        audioMenu2.SetActive(true);
+
+        homeMenu.SetActive(false);
+        levelSelect.SetActive(false);
+        controlsMenu.SetActive(false);
+        comfortMenu.SetActive(false);
+        audioMenu1.SetActive(false);
+
+        UpdateAudioMenu2();
     }
 
     public void MainMenu()
@@ -169,6 +193,48 @@ public class MenuManager : Singleton<MenuManager>
         ComfortManager.Instance.Decrement();
         UpdateComfortMenu();
     }
+
+    public void VolumeIncreaseSFX()
+    {
+        SFXManager.Instance.VolumeIncrease("SFXVolume");
+        UpdateAudioMenu1();
+    }
+    public void VolumeIncreaseMusic()
+    {
+        SFXManager.Instance.VolumeIncrease("MusicVolume");
+        UpdateAudioMenu1();
+    }
+    public void VolumeIncreaseVoice()
+    {
+        SFXManager.Instance.VolumeIncrease("VoiceVolume");
+        UpdateAudioMenu2();
+    }
+    public void VolumeIncreaseAmbient()
+    {
+        SFXManager.Instance.VolumeIncrease("AmbientVolume");
+        UpdateAudioMenu2();
+    }
+
+    public void VolumeDecreaseSFX()
+    {
+        SFXManager.Instance.VolumeDecrease("SFXVolume");
+        UpdateAudioMenu1();
+    }
+    public void VolumeDecreaseMusic()
+    {
+        SFXManager.Instance.VolumeDecrease("MusicVolume");
+        UpdateAudioMenu1();
+    }
+    public void VolumeDecreaseVoice()
+    {
+        SFXManager.Instance.VolumeDecrease("VoiceVolume");
+        UpdateAudioMenu2();
+    }
+    public void VolumeDecreaseAmbient()
+    {
+        SFXManager.Instance.VolumeDecrease("AmbientVolume");
+        UpdateAudioMenu2();
+    }
     public void UpdateComfortMenu()
     {
         if (GameManager.Instance.options.snapTurn)
@@ -188,5 +254,17 @@ public class MenuManager : Singleton<MenuManager>
         {
             speedLinesText.text = "Speed Lines X";
         }
+    }
+
+    public void UpdateAudioMenu1()
+    {
+        musicVolume.text = ((int)(SFXManager.Instance.GetVolume("MusicVolume") + 80)).ToString();
+        sfxVolume.text = ((int)(SFXManager.Instance.GetVolume("SFXVolume") + 80)).ToString();
+    }
+
+    public void UpdateAudioMenu2()
+    {
+        voiceVolume.text = ((int)(SFXManager.Instance.GetVolume("VoiceVolume") + 80)).ToString();
+        ambientVolume.text = ((int)(SFXManager.Instance.GetVolume("AmbientVolume") + 80)).ToString();
     }
 }

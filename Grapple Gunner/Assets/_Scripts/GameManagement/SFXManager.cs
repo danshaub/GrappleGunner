@@ -7,9 +7,12 @@ public class SFXManager : SingletonPersistent<SFXManager>
 {
     public Sound[] sfxs;
     public Sound[] voiceClips;
+    public Sound ambientBackground;
+    public AudioMixer mixer;
     public AudioMixerGroup sfxGroup;
     public AudioMixerGroup musicGroup;
     public AudioMixerGroup voiceGroup;
+    public AudioMixerGroup ambientGroup;
 
     private AudioSource musicSource;
 
@@ -41,11 +44,12 @@ public class SFXManager : SingletonPersistent<SFXManager>
             s.source.loop = s.loop;
 
 
-            if(s.playOnAwake) s.source.Play();
+            if (s.playOnAwake) s.source.Play();
         }
     }
 
-    public void PlaySFXOneShot(string name){
+    public void PlaySFXOneShot(string name)
+    {
         Sound s = Array.Find(sfxs, sound => sound.name == name);
         if (s == null)
         {
@@ -76,7 +80,8 @@ public class SFXManager : SingletonPersistent<SFXManager>
         }
         s.source.volume = volume;
 
-        if(playSound && !s.source.isPlaying){
+        if (playSound && !s.source.isPlaying)
+        {
             s.source.Play();
         }
     }
@@ -156,7 +161,8 @@ public class SFXManager : SingletonPersistent<SFXManager>
             return;
         }
 
-        if(!s.source.isPlaying){
+        if (!s.source.isPlaying)
+        {
             s.source.Play();
         }
         StartCoroutine(FadeInSFXCoroutine(decayTime, s));
@@ -165,7 +171,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
     private IEnumerator FadeInSFXCoroutine(float decayTime, Sound s)
     {
         float decayRate = s.volume / decayTime;
-        
+
         while (s.source.volume < s.volume)
         {
             s.source.volume += (decayRate * Time.deltaTime);
@@ -195,7 +201,8 @@ public class SFXManager : SingletonPersistent<SFXManager>
             yield return new WaitForEndOfFrame();
         }
 
-        if(stopClip){
+        if (stopClip)
+        {
             s.source.Stop();
         }
     }
@@ -248,5 +255,35 @@ public class SFXManager : SingletonPersistent<SFXManager>
         musicSource.Stop();
     }
 
+    public void VolumeIncrease(string mixerVolume)
+    {
+        float vol;
+        mixer.GetFloat(mixerVolume, out vol);
 
+        vol = Mathf.Clamp(vol + 5, -80, 20);
+
+        mixer.SetFloat(mixerVolume, vol);
+    }
+
+    public void VolumeDecrease(string mixerVolume)
+    {
+        float vol;
+        mixer.GetFloat(mixerVolume, out vol);
+
+        vol = Mathf.Clamp(vol - 5, -80, 20);
+
+        mixer.SetFloat(mixerVolume, vol);
+    }
+
+    public void SetVolume(string mixerVolume, float vol)
+    {
+        mixer.SetFloat(mixerVolume, Mathf.Clamp(vol, -80, 20));
+    }
+
+    public float GetVolume(string mixerVolume)
+    {
+        float vol;
+        mixer.GetFloat(mixerVolume, out vol);
+        return vol;
+    }
 }
