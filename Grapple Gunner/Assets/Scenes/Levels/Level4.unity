@@ -2256,7 +2256,7 @@ Transform:
   - {fileID: 1275865708}
   - {fileID: 8544010290932610371}
   m_Father: {fileID: 1467926127}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &315353670
 Mesh:
@@ -10018,7 +10018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9060026774160065059, guid: 0b3af1a7428f89e4095fb4bff67dda93, type: 3}
       propertyPath: launchDelay
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9060026774160065059, guid: 0b3af1a7428f89e4095fb4bff67dda93, type: 3}
       propertyPath: launchPeriod
@@ -12622,8 +12622,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1030601245}
   - {fileID: 313596641}
+  - {fileID: 1030601245}
   - {fileID: 2091800356}
   - {fileID: 1151840500}
   - {fileID: 887666738}
@@ -16194,7 +16194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9060026774160065059, guid: 0b3af1a7428f89e4095fb4bff67dda93, type: 3}
       propertyPath: launchDelay
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9060026774160065059, guid: 0b3af1a7428f89e4095fb4bff67dda93, type: 3}
       propertyPath: launchPeriod
