@@ -340,6 +340,10 @@ public class MainMenuManager : LocationManager
         }
     }
 
+    public void LoadLevelIndex(int index){
+        base.LoadLevel(index);
+    }
+
     public override void LoadMainMenu()
     {
         return;

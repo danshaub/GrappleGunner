@@ -3824,7 +3824,7 @@ MonoBehaviour:
   onLevelStart:
     m_PersistentCalls:
       m_Calls: []
-  debugTransform: {fileID: 0}
+  debugTransform: {fileID: 1224759706}
 --- !u!4 &400872583
 Transform:
   m_ObjectHideFlags: 0

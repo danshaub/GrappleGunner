@@ -810,7 +810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5931417207539790515
 Transform:
   m_ObjectHideFlags: 0
@@ -1478,7 +1478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8076258272819835026
 Transform:
   m_ObjectHideFlags: 0
@@ -4137,11 +4137,11 @@ PrefabInstance:
       objectReference: {fileID: 631262558}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: LoadLevelIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LocationManager, Assembly-CSharp
+      value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3315837692287650337, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: m_text
@@ -4235,11 +4235,11 @@ PrefabInstance:
       objectReference: {fileID: 631262558}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: LoadLevelIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LocationManager, Assembly-CSharp
+      value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -4443,9 +4443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3315837692287650337, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: m_text
-      value: 'Angle
-
-        Up'
+      value: Angle Up
       objectReference: {fileID: 0}
     - target: {fileID: 8507048860486340953, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: m_RootOrder
@@ -4699,11 +4697,11 @@ PrefabInstance:
       objectReference: {fileID: 631262558}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: LoadLevelIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LocationManager, Assembly-CSharp
+      value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -5157,11 +5155,11 @@ PrefabInstance:
       objectReference: {fileID: 631262558}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: LoadLevelIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LocationManager, Assembly-CSharp
+      value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -5661,11 +5659,11 @@ PrefabInstance:
       objectReference: {fileID: 631262558}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: LoadLevelIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LocationManager, Assembly-CSharp
+      value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3057601967931701209, guid: e89587d47a028bd44b4ff19bdab19fe6, type: 3}
       propertyPath: onButtonRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument

@@ -195,18 +195,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuBox
       objectReference: {fileID: 0}
-    - target: {fileID: 1722193187570061309, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4506617904103586225, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
-      propertyPath: m_text
-      value: Angle Up
-      objectReference: {fileID: 0}
-    - target: {fileID: 8023185659008252538, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8584273805973109434, guid: 9f7aeb340f0e90548a8cc2fa08422da0, type: 3}
       propertyPath: m_RootOrder
       value: 0

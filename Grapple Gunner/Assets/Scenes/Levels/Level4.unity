@@ -2179,6 +2179,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9108331988587909216, guid: 4cfbb5bb698151249bbff2275fa0a22f, type: 3}
   m_PrefabInstance: {fileID: 532913007}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &532913009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9108331989043884190, guid: 4cfbb5bb698151249bbff2275fa0a22f, type: 3}
+  m_PrefabInstance: {fileID: 532913007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &539625924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2559,7 +2564,7 @@ MonoBehaviour:
   onLevelStart:
     m_PersistentCalls:
       m_Calls: []
-  debugTransform: {fileID: 0}
+  debugTransform: {fileID: 532913009}
 --- !u!4 &621508429
 Transform:
   m_ObjectHideFlags: 0
