@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: a98804ddc19de34418642517ecc8decc
+  m_OcclusionCullingData: {fileID: 36300000, guid: 624ee7105b476104d9e0363906b29cec, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 4c5ed852edd0b4a4db1448d9bf3009ae, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3d32ad7183e02c542a45f0f428558b14, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: b9c72cdae0fbea24aa4bf0816188a67c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -456,6 +456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &48436747 stripped
@@ -704,6 +708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &86209996 stripped
@@ -780,9 +788,81 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160687740235986862, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 231295445332449099, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 669165314317213937, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 708302610698246187, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121384741634203358, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211183007290355755, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023149020689239161, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153864983962768688, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2926964654041387322, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3336896427513198062, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
       propertyPath: m_Name
       value: RespawnMenuBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336896427513198062, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904289876360943024, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026115968456687567, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248389140055612116, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327969162870687951, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327969162932494329, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327969162932494330, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327969164182830696, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512498011060180937, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5626962303109630750, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
       propertyPath: m_RootOrder
@@ -827,6 +907,34 @@ PrefabInstance:
     - target: {fileID: 5626962303109630750, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236219077762052255, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741361669804857225, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966538596843645789, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107710579229646169, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427850703107150872, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835920751501744237, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876585286773229633, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c2f34f43e21004ebb6732c2d29302c, type: 3}
@@ -944,6 +1052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1034,6 +1146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1117,7 +1233,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134129844}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -1219,6 +1335,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -1516,7 +1636,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31510
+  m_Name: pb_Mesh-108990
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1680,7 +1800,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28470
+  m_Name: pb_Mesh-105994
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1857,9 +1977,21 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 7.8125
       objectReference: {fileID: 0}
+    - target: {fileID: 3545134047035429349, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134047238446984, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3545134047238446987, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134047302854072, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3545134047302854075, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: ShapeModule.m_Scale.x
@@ -1929,6 +2061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockDestroyer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3545134047423099253, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3545134047423099255, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_Size.x
       value: 2.5
@@ -1941,9 +2077,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3545134047799600827, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3545134048031463182, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134048031463183, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134048278689120, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3545134048278689123, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2085,6 +2233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &231712638 stripped
@@ -2222,7 +2374,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31270
+  m_Name: pb_Mesh-108752
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2509,6 +2661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &277062906 stripped
@@ -2582,6 +2738,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -2660,6 +2820,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -2796,6 +2960,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -3331,6 +3499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &336642954 stripped
@@ -3454,6 +3626,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -3809,6 +3985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &419008449 stripped
@@ -3822,7 +4002,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28872
+  m_Name: pb_Mesh-106388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4161,7 +4341,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493355279}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -4331,7 +4511,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!64 &526076192
 MeshCollider:
@@ -4418,7 +4598,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-29332
+  m_Name: pb_Mesh-106846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4631,6 +4811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &535094956 stripped
@@ -4837,6 +5021,99 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &585683391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585683392}
+  - component: {fileID: 585683393}
+  m_Layer: 0
+  m_Name: Directional Light (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &585683392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585683391}
+  m_LocalRotation: {x: 0.032241084, y: 0.52508324, z: 0.4218164, w: 0.73845726}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590744647}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -23.288, y: 60.915, z: 45.652}
+--- !u!108 &585683393
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585683391}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &587291052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4900,7 +5177,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-29732
+  m_Name: pb_Mesh-107238
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5257,7 +5534,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611754014}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -5420,6 +5697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5502,7 +5783,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28458
+  m_Name: pb_Mesh-105982
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6232,7 +6513,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!64 &765704422
 MeshCollider:
@@ -6431,7 +6712,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31324
+  m_Name: pb_Mesh-108806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6718,6 +6999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &825012688 stripped
@@ -6731,7 +7016,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-29866
+  m_Name: pb_Mesh-107372
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7291,7 +7576,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-30122
+  m_Name: pb_Mesh-107622
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7520,6 +7805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -7667,6 +7956,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -7923,6 +8216,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1008156460 stripped
@@ -7936,7 +8233,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28860
+  m_Name: pb_Mesh-106376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8100,7 +8397,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31336
+  m_Name: pb_Mesh-108818
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8698,6 +8995,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1139214753 stripped
@@ -8775,6 +9076,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -8962,6 +9267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1158419286 stripped
@@ -9032,7 +9341,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162721648}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -9246,6 +9555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1188468687 stripped
@@ -9259,7 +9572,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31210
+  m_Name: pb_Mesh-108694
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9778,6 +10091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -9860,7 +10177,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286046580}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -9960,6 +10277,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -10221,6 +10542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1325418928 stripped
@@ -10356,6 +10681,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -11259,6 +11588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1462901120 stripped
@@ -11739,7 +12072,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31422
+  m_Name: pb_Mesh-108904
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11960,7 +12293,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506977809}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -12087,7 +12420,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525459188}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -12185,7 +12518,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529708541}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -12288,6 +12621,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -12413,7 +12750,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31596
+  m_Name: pb_Mesh-109076
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12638,6 +12975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1557276297 stripped
@@ -12744,6 +13085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1579617979 stripped
@@ -12813,6 +13158,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7776417367784358434, guid: ab7498f6ba889d14fa0bb23ab0892edf, type: 3}
   m_PrefabInstance: {fileID: 1583853353}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1590744646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590744647}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590744647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590744646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1885917125}
+  - {fileID: 1652505764}
+  - {fileID: 585683392}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1593050425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12883,6 +13261,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -13002,13 +13384,106 @@ Transform:
   m_Father: {fileID: 1497627891}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1652505763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652505764}
+  - component: {fileID: 1652505765}
+  m_Layer: 0
+  m_Name: Directional Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652505764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652505763}
+  m_LocalRotation: {x: 0.2737166, y: 0.8585823, z: 0.32256472, w: 0.28959918}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590744647}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -23.288, y: 132.807, z: 45.652}
+--- !u!108 &1652505765
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652505763}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!43 &1655436954
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-30772
+  m_Name: pb_Mesh-108262
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13407,6 +13882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1701787971 stripped
@@ -13748,6 +14227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1738806334 stripped
@@ -13889,9 +14372,21 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 7.8125
       objectReference: {fileID: 0}
+    - target: {fileID: 3545134047035429349, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134047238446984, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3545134047238446987, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134047302854072, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3545134047302854075, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: ShapeModule.m_Scale.x
@@ -13961,6 +14456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockDestroyer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3545134047423099253, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3545134047423099255, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_Size.x
       value: 2.5
@@ -13973,9 +14472,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3545134047799600827, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3545134048031463182, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134048031463183, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545134048278689120, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3545134048278689123, guid: c1e05a1a79605854e83adf2bcd91a871, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14125,7 +14636,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818440938}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -14401,6 +14912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &1821482896 stripped
@@ -14478,6 +14993,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -14557,6 +15076,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7776417367784358434, guid: 0c5365fa812d34546a7f5fd0cbbee62e, type: 3}
   m_PrefabInstance: {fileID: 1859565071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1885917124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885917125}
+  - component: {fileID: 1885917126}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1885917125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885917124}
+  m_LocalRotation: {x: 0.38223746, y: -0.22474308, z: 0.09640162, w: 0.89111835}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590744647}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 46.433, y: -28.31, z: 0}
+--- !u!108 &1885917126
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885917124}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1887296835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14627,6 +15239,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -14821,6 +15437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -14902,6 +15522,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -15073,7 +15697,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986260162}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -15196,6 +15820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBaloon (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
 --- !u!4 &2013387733 stripped
@@ -15269,6 +15897,10 @@ PrefabInstance:
     - target: {fileID: 5230180750560803493, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
       propertyPath: m_Name
       value: RedBaloon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497878695277390718, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e995a8ebb0c8a334785ce15be4fc3f04, type: 3}
@@ -15794,6 +16426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -16244,6 +16880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTarget (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -16576,6 +17216,10 @@ PrefabInstance:
     - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Name
       value: RedTarget (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 77059952629232415, guid: aaa27619748fa1943982335a810fd69f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8396602044728001009, guid: aaa27619748fa1943982335a810fd69f, type: 3}
       propertyPath: m_Mesh
@@ -16946,6 +17590,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3321882953526054487, guid: c0691b290f42d6b4384410d64b7c67b5, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3321882953526054491, guid: c0691b290f42d6b4384410d64b7c67b5, type: 3}
       propertyPath: m_Name
       value: DoorFrameB
@@ -16959,6 +17607,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1917678578}
     m_Modifications:
+    - target: {fileID: 6274483256722654483, guid: 988513c056ab5f1469132cc02dcb6e66, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6274483256722654486, guid: 988513c056ab5f1469132cc02dcb6e66, type: 3}
       propertyPath: m_Name
       value: DoorFrameVertical
