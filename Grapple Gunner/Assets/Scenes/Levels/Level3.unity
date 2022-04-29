@@ -16288,7 +16288,7 @@ MonoBehaviour:
   music:
     name: asdfa
     clip: {fileID: 8300000, guid: 1b0b10f3e864a8944b5693338cf9b2e6, type: 3}
-    volume: 0
+    volume: 0.3
     pitch: 1
     loop: 0
     playOnAwake: 0
@@ -16296,7 +16296,14 @@ MonoBehaviour:
   levelIndex: 3
   playerDeathTransform: {fileID: 253940202}
   playerRespawnTransform: {fileID: 0}
-  movingObjects: []
+  movingObjects:
+  - {fileID: 1520540413}
+  - {fileID: 528188730}
+  - {fileID: 1837642591}
+  - {fileID: 673446}
+  - {fileID: 903112963}
+  - {fileID: 964973046}
+  - {fileID: 2064694517}
   onLevelStart:
     m_PersistentCalls:
       m_Calls: []
