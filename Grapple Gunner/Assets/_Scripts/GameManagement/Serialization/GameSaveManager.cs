@@ -132,6 +132,15 @@ public class GameSaveManager : SingletonPersistent<GameSaveManager>
 
         GameManager.Instance.options.useSpeedLines = data.useSpeedLines;
         GameManager.Instance.options.snapTurn = data.snapTurn;
+        GameManager.Instance.options.continuousTrunSpeed = data.continuousTrunSpeed;
+        GameManager.Instance.options.snapValue = data.snapValue;
+
+
+        SFXManager.Instance.SetVolume("MusicVolume", data.musicVolume, false);
+        SFXManager.Instance.SetVolume("SFXVolume", data.sfxVolume, false);
+        SFXManager.Instance.SetVolume("VoiceVolume", data.voiceVolume, false);
+        SFXManager.Instance.SetVolume("AmbientVolume", data.ambientVolume, false);
+
 
         file.Close();
     }

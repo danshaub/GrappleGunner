@@ -193,9 +193,33 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  ambientBackgroundClips:
+  - name: AmbientMachenery
+    clip: {fileID: 8300000, guid: ec18e44d1a3e7754eaba6529f4780189, type: 3}
+    volume: 0.075
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: GiantGears
+    clip: {fileID: 8300000, guid: f90fadc656f87454184b3b978c1ec2cf, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: SmallGears
+    clip: {fileID: 8300000, guid: 06893dd7930c12c4ca34aa916b8efd82, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
   sfxGroup: {fileID: -1921035248737291988, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
   musicGroup: {fileID: 6000554049880235972, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
   voiceGroup: {fileID: -2818670598110586871, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
+  ambientGroup: {fileID: 61709126944422132, guid: 9bf071c1dfc43b544b995b20543c76e5, type: 2}
 --- !u!82 &8676553071785987262
 AudioSource:
   m_ObjectHideFlags: 0

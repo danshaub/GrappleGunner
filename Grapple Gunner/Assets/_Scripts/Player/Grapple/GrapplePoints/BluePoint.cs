@@ -169,6 +169,7 @@ public class BluePoint : GrapplePoint
             else if (other.gameObject.layer == 13 || other.gameObject.layer == 14)
             {
                 GetComponent<AudioSource>().volume *= .8f;
+                GetComponent<AudioSource>().PlayOneShot(options.bonkSound);
             }
             else
             {

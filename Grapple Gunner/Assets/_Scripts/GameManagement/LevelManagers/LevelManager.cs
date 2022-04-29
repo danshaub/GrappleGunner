@@ -14,6 +14,7 @@ public class LevelManager : LocationManager
     public UnityEvent onLevelStart;
 
     private UnityEvent onRespawn;
+    public Transform debugTransform;
 
     protected override void Awake()
     {
@@ -23,7 +24,7 @@ public class LevelManager : LocationManager
     protected virtual void Start()
     {
         SFXManager.Instance.PlayMusic(music);
-        SFXManager.Instance.PlaySFX("Ambient");
+        SFXManager.Instance.StartAmbientSounds();
 
         if (levelIndex >= 0 && !GameManager.Instance.profile.unlockedLevels.Contains(levelIndex))
         {
@@ -83,7 +84,7 @@ public class LevelManager : LocationManager
 
     private void InvokeOnRespawn(){
         SFXManager.Instance.PlayMusic(music);
-        SFXManager.Instance.PlaySFX("Ambient");
+        SFXManager.Instance.StartAmbientSounds();
         onRespawn.Invoke();
     }
 
@@ -100,5 +101,11 @@ public class LevelManager : LocationManager
         SFXManager.Instance.StopAllVoiceClips();
         SFXManager.Instance.StopAllLoopingSounds();
         SFXManager.Instance.FadeOutMusic(.5f);
+    }
+
+    public override void Debug(){
+        VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
+        VFXManager.Instance.transitionSystem.StartTransition();
+        PlayerManager.Instance.TeleportAfter(debugTransform, 0.25f);
     }
 }

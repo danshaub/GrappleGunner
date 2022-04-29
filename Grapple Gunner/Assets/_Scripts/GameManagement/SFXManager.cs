@@ -7,9 +7,12 @@ public class SFXManager : SingletonPersistent<SFXManager>
 {
     public Sound[] sfxs;
     public Sound[] voiceClips;
+    public Sound[] ambientBackgroundClips;
+    public AudioMixer mixer;
     public AudioMixerGroup sfxGroup;
     public AudioMixerGroup musicGroup;
     public AudioMixerGroup voiceGroup;
+    public AudioMixerGroup ambientGroup;
 
     private AudioSource musicSource;
 
@@ -19,6 +22,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
 
         InitSoundArray(sfxs, sfxGroup);
         InitSoundArray(voiceClips, voiceGroup);
+        InitSoundArray(ambientBackgroundClips, ambientGroup);
 
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.outputAudioMixerGroup = musicGroup;
@@ -41,11 +45,12 @@ public class SFXManager : SingletonPersistent<SFXManager>
             s.source.loop = s.loop;
 
 
-            if(s.playOnAwake) s.source.Play();
+            if (s.playOnAwake) s.source.Play();
         }
     }
 
-    public void PlaySFXOneShot(string name){
+    public void PlaySFXOneShot(string name)
+    {
         Sound s = Array.Find(sfxs, sound => sound.name == name);
         if (s == null)
         {
@@ -76,7 +81,8 @@ public class SFXManager : SingletonPersistent<SFXManager>
         }
         s.source.volume = volume;
 
-        if(playSound && !s.source.isPlaying){
+        if (playSound && !s.source.isPlaying)
+        {
             s.source.Play();
         }
     }
@@ -156,7 +162,8 @@ public class SFXManager : SingletonPersistent<SFXManager>
             return;
         }
 
-        if(!s.source.isPlaying){
+        if (!s.source.isPlaying)
+        {
             s.source.Play();
         }
         StartCoroutine(FadeInSFXCoroutine(decayTime, s));
@@ -165,7 +172,7 @@ public class SFXManager : SingletonPersistent<SFXManager>
     private IEnumerator FadeInSFXCoroutine(float decayTime, Sound s)
     {
         float decayRate = s.volume / decayTime;
-        
+
         while (s.source.volume < s.volume)
         {
             s.source.volume += (decayRate * Time.deltaTime);
@@ -195,7 +202,8 @@ public class SFXManager : SingletonPersistent<SFXManager>
             yield return new WaitForEndOfFrame();
         }
 
-        if(stopClip){
+        if (stopClip)
+        {
             s.source.Stop();
         }
     }
@@ -216,6 +224,21 @@ public class SFXManager : SingletonPersistent<SFXManager>
             {
                 s.source.Stop();
             }
+        }
+        foreach (Sound s in ambientBackgroundClips)
+        {
+            if (s.loop)
+            {
+                s.source.Stop();
+            }
+        }
+    }
+
+    public void StartAmbientSounds()
+    {
+        foreach (Sound s in ambientBackgroundClips)
+        {
+            s.source.Play();
         }
     }
 
@@ -248,5 +271,58 @@ public class SFXManager : SingletonPersistent<SFXManager>
         musicSource.Stop();
     }
 
+    public void VolumeIncrease(string mixerVolume)
+    {
+        float vol;
+        mixer.GetFloat(mixerVolume, out vol);
 
+        vol = Mathf.Clamp(vol + 5, -80, 20);
+
+        mixer.SetFloat(mixerVolume, vol);
+    }
+
+    public void VolumeDecrease(string mixerVolume)
+    {
+        float vol;
+        mixer.GetFloat(mixerVolume, out vol);
+
+        vol = Mathf.Clamp(vol - 5, -80, 20);
+
+        mixer.SetFloat(mixerVolume, vol);
+    }
+
+    public void SetVolume(string mixerVolume, float vol)
+    {
+        SetVolume(mixerVolume, vol, true);
+    }
+
+    public void SetVolume(string mixerVolume, float vol, bool saveGame)
+    {
+        switch (mixerVolume)
+        {
+            case "MusicVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+            case "SFXVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+            case "VoiceVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+            case "AmbientVolume":
+                GameManager.Instance.options.ambientVolume = Mathf.Clamp(vol, -80, 20);
+                break;
+        }
+
+        mixer.SetFloat(mixerVolume, Mathf.Clamp(vol, -80, 20));
+
+        if(saveGame) GameSaveManager.Instance.SaveGame();
+    }
+
+    public float GetVolume(string mixerVolume)
+    {
+        float vol;
+        mixer.GetFloat(mixerVolume, out vol);
+        return vol;
+    }
 }
