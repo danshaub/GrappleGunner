@@ -33,6 +33,7 @@ public class LevelManager : LocationManager
             GameSaveManager.Instance.SaveGame();
         }
 
+        onLevelStart.Invoke();
         MakeCheckpoint(playerStartTransform, onLevelStart);
     }
 
@@ -104,8 +105,6 @@ public class LevelManager : LocationManager
     }
 
     public override void Debug(){
-        VFXManager.Instance.transitionSystem.SetParticleColor(VFXManager.Instance.defaultTransitionColor);
-        VFXManager.Instance.transitionSystem.StartTransition();
-        PlayerManager.Instance.TeleportAfter(debugTransform, 0.25f);
+        // RespawnPlayer();
     }
 }

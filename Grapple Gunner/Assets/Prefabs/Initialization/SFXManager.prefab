@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351962891805213829}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -186,9 +186,198 @@ MonoBehaviour:
     playOnAwake: 0
     source: {fileID: 0}
   voiceClips:
-  - name: Test
-    clip: {fileID: 8300000, guid: bc62373de1f4e14458a3c3c371860c2d, type: 3}
-    volume: 0.5
+  - name: 1.1.1
+    clip: {fileID: 8300000, guid: 132f1eafac1e1944eb60359c21e960a9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 1.2.1
+    clip: {fileID: 8300000, guid: 68e1de4ba20e3bf4cbc92d24fea54414, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 1.3.1
+    clip: {fileID: 8300000, guid: f88e76fd3fee1a84988445f228033a6d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 1.4.1
+    clip: {fileID: 8300000, guid: 62a177ff4147d5b4b98dbd0be42dd3b6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 1.4.2
+    clip: {fileID: 8300000, guid: 413c06551e843134fbe0797a5918bc40, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 1.5.1
+    clip: {fileID: 8300000, guid: afedaff7d1bda1f4380e8d676a77ee7e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 1.6.1
+    clip: {fileID: 8300000, guid: e65f5e8872f7ce94289c4b28c19ecd6d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 1.7.1
+    clip: {fileID: 8300000, guid: d9f727aef6daae5438326cffa3f333ec, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 2.1.1
+    clip: {fileID: 8300000, guid: c733d98cc1cf95848a9bdb9bf1128366, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 2.2.1
+    clip: {fileID: 8300000, guid: 9896797c25073de45845467e43319437, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 2.3.1
+    clip: {fileID: 8300000, guid: 78f9a5c77c8dd8545bda2708806eaf1a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 2.4.1
+    clip: {fileID: 8300000, guid: 9bbfd581dac201b43b0dafc3a4fca901, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 2.4.2
+    clip: {fileID: 8300000, guid: 647f15afe8c10f345ad4885fda94c2cb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 3.1.1
+    clip: {fileID: 8300000, guid: 6eab793be06725f4282d5729f1319000, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 3.2.1
+    clip: {fileID: 8300000, guid: f132f0645d04334459218396800fc9f7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 3.3.1
+    clip: {fileID: 8300000, guid: d222ae128bb9a4145a096733f9c927a2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 3.4.1
+    clip: {fileID: 8300000, guid: 52e05cb78052bbc41b7d7d2e167a8312, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 3.5.1
+    clip: {fileID: 8300000, guid: faa293badcfe4d247895795ec84e16da, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 3.6.1
+    clip: {fileID: 8300000, guid: f441897f6636bdc469f12a7476d4d74f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 3.7.1
+    clip: {fileID: 8300000, guid: 2205e9a5773782e4789ab3cc6a1034af, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.1.1
+    clip: {fileID: 8300000, guid: 52422b234cbd5ac4da542673b14b92fd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.2.1
+    clip: {fileID: 8300000, guid: 8106f1de963abe94aa84811e4a89ffc9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.3.1
+    clip: {fileID: 8300000, guid: 0987d511e4d50f74188aa426a6b5f4e9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.4.1
+    clip: {fileID: 8300000, guid: dccf4ef4244f1f443a1c9fcd63470347, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.4.2
+    clip: {fileID: 8300000, guid: 9cacfeec801de3d46bd237c24584a564, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.5.1
+    clip: {fileID: 8300000, guid: 319280a35b125804bae862531be4063e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.6.1
+    clip: {fileID: 8300000, guid: 3ace587f0893a2248a4a98296df65cf5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: 4.7.1
+    clip: {fileID: 8300000, guid: 867305e3652989f4db2370144682871a, type: 3}
+    volume: 1
     pitch: 1
     loop: 0
     playOnAwake: 0

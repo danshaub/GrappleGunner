@@ -122,12 +122,15 @@ public class SFXManager : SingletonPersistent<SFXManager>
 
     public void PlayVoiceClip(string name)
     {
+        Debug.Log("Playing " + name);
         Sound s = Array.Find(voiceClips, sound => sound.name == name);
         if (s == null)
         {
             Debug.LogWarning("Voice Clip: " + name + " was not found.");
             return;
         }
+
+        StopAllVoiceClips();
         s.source.Play();
     }
 

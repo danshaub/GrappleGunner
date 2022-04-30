@@ -360,17 +360,17 @@ public class MainMenuManager : LocationManager
 
     public override void Debug()
     {
-        GameManager.Instance.profile.unlockedLevels.Add(0);
-        GameManager.Instance.profile.unlockedLevels.Add(1);
-        GameManager.Instance.profile.unlockedLevels.Add(2);
-        GameManager.Instance.profile.unlockedLevels.Add(3);
-        GameManager.Instance.profile.unlockedLevels.Add(4);
-        var set = new HashSet<int>(GameManager.Instance.profile.unlockedLevels);
-        GameManager.Instance.profile.unlockedLevels = new List<int>(set);
-        GameManager.Instance.profile.unlockedLevels.Sort();
-        GameSaveManager.Instance.SaveGame();
+        // GameManager.Instance.profile.unlockedLevels.Add(0);
+        // GameManager.Instance.profile.unlockedLevels.Add(1);
+        // GameManager.Instance.profile.unlockedLevels.Add(2);
+        // GameManager.Instance.profile.unlockedLevels.Add(3);
+        // GameManager.Instance.profile.unlockedLevels.Add(4);
+        // var set = new HashSet<int>(GameManager.Instance.profile.unlockedLevels);
+        // GameManager.Instance.profile.unlockedLevels = new List<int>(set);
+        // GameManager.Instance.profile.unlockedLevels.Sort();
+        // GameSaveManager.Instance.SaveGame();
 
-        UpdateLevelButtons();
+        // UpdateLevelButtons();
     }
     #endregion
 }
