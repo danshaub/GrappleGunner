@@ -1,8 +1,12 @@
 # Grapple Gunner
+## A VR Puzzle Grappler
+[Download Game Here!](https://dandaman2356.itch.io/grapple-gunner)
+[Trailer](https://www.youtube.com/watch?v=mfwXeyt4omA)
 
-CPSC 440
+## Project Info
+Grapple Gunner is a VR puzzle-platformer that puts the player in a series of steampunk/sci-fi rooms with both obstacle challenges and object-interaction puzzles. The player’s goal is to explore each level while achieving grapple-mastery and to ultimately escape the building by beating the final level.
 
-Developed By:
+### Developed By:
 - Jordan Hadley (Project Manager)
     - jhadley@chapman.edu
 - Dan Haub (Programmer)
@@ -17,12 +21,3 @@ Developed By:
     - jsousa@chapman.edu
 - Mitchell Austrian (Composer)
     - austrian@chapman.edu
-
-## GitHub Repository
-https://github.com/danshaub/GrappleGunner
-
-## Run Instructions
-*Grapple Gunner is only compatible with Oculus Quest headsets*
-1. Download the build APK
-2. Use a sideloading program (i.e. Oculus Developer Hub or SideQuest) to load the APK onto your headset
-3. Once the APK is loaded, Grapple Gunner will appear in the "Unknown Sources" tab of Applications within the oculus headset.
